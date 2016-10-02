@@ -44,7 +44,6 @@
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC71DA1600300A6A272 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		AB97CAC81DA1600300A6A272 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = ViewControllers/PreviewViewController.swift; sourceTree = "<group>"; };
-		AB97CB181DA160D500A6A272 /* libpng-1.6.25.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "libpng-1.6.25.xcodeproj"; path = "APNGb/libpng-1.6.25/libpng-1.6.25.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +87,6 @@
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
-				AB97CAC41DA15F6F00A6A272 /* APNGb */,
 				AB3DF24E1D8E0D590048BE0A /* Resources */,
 				AB3DF24D1D8E0D4C0048BE0A /* Others */,
 			);
@@ -130,21 +128,6 @@
 				AB3DF2351D8DDE660048BE0A /* Main.storyboard */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		AB97CAC41DA15F6F00A6A272 /* APNGb */ = {
-			isa = PBXGroup;
-			children = (
-				AB97CB181DA160D500A6A272 /* libpng-1.6.25.xcodeproj */,
-			);
-			name = APNGb;
-			sourceTree = "<group>";
-		};
-		AB97CB191DA160D500A6A272 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +202,6 @@
 			mainGroup = AB3DF2231D8DDE660048BE0A;
 			productRefGroup = AB3DF22D1D8DDE660048BE0A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AB97CB191DA160D500A6A272 /* Products */;
-					ProjectRef = AB97CB181DA160D500A6A272 /* libpng-1.6.25.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				AB3DF22B1D8DDE660048BE0A /* APNGb */,
