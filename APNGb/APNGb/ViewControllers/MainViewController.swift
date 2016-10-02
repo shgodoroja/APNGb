@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainTabViewController.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 9/17/16.
@@ -8,12 +8,10 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class MainTabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
