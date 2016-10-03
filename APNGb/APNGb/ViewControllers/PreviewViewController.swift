@@ -8,11 +8,9 @@
 
 import Cocoa
 
-class PreviewViewController: NSViewController {
+final class PreviewViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
-    
 }

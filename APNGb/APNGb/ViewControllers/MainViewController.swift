@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainTabViewController: NSTabViewController {
+final class MainTabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +16,8 @@ class MainTabViewController: NSTabViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
         }
     }
-
 
 }
 

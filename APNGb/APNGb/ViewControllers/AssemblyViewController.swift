@@ -8,11 +8,10 @@
 
 import Cocoa
 
-class AssemblyViewController: NSViewController {
+final class AssemblyViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     
 }
