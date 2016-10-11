@@ -98,7 +98,7 @@
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
-				AB97CB561DA3093D00A6A272 /* Scripts */,
+				AB97CB561DA3093D00A6A272 /* Executables */,
 				AB3DF24E1D8E0D590048BE0A /* Resources */,
 				AB3DF24D1D8E0D4C0048BE0A /* Others */,
 			);
@@ -142,14 +142,31 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		AB97CB561DA3093D00A6A272 /* Scripts */ = {
+		AB8F4A0A1DADA0CA0002C73D /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
 				AB97CB571DA3098B00A6A272 /* apngasm */,
 				AB97CB5B1DA3099600A6A272 /* readme-asm.txt */,
+			);
+			name = Assembler;
+			sourceTree = "<group>";
+		};
+		AB8F4A0B1DADA0DA0002C73D /* Disassembler */ = {
+			isa = PBXGroup;
+			children = (
 				AB97CB581DA3098B00A6A272 /* apngdis */,
 				AB97CB5C1DA3099600A6A272 /* readme-dis.txt */,
 			);
+			name = Disassembler;
+			sourceTree = "<group>";
+		};
+		AB97CB561DA3093D00A6A272 /* Executables */ = {
+			isa = PBXGroup;
+			children = (
+				AB8F4A0A1DADA0CA0002C73D /* Assembler */,
+				AB8F4A0B1DADA0DA0002C73D /* Disassembler */,
+			);
+			name = Executables;
 			path = Scripts;
 			sourceTree = "<group>";
 		};
