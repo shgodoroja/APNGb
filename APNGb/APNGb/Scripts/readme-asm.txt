@@ -1,39 +1,39 @@
-  APNG Assembler 2.9
+APNG Assembler 2.9
 
-  Creates APNG animation from PNG/TGA image sequence.
+Creates APNG animation from PNG/TGA image sequence.
 
-  http://apngasm.sourceforge.net/
+http://apngasm.sourceforge.net/
 
-  Copyright (c) 2010-2014 Max Stepin
-  maxst@users.sourceforge.net
+Copyright (c) 2010-2014 Max Stepin
+maxst@users.sourceforge.net
 
-  License: zlib license
+License: zlib license
 
 --------------------------------
 
 
-  Changes in version 2.9:
+Changes in version 2.9:
 
 - Duplicate frames optimization (add frame delays)
 
-  Changes in version 2.8:
+Changes in version 2.8:
 
 - Added 7zip and Zopfli compression options
 - Added GUI version for Windows
 
-  Changes in version 2.7:
+Changes in version 2.7:
 
 - Better optimization after loading paletted PNG files
 
-  Changes in version 2.6:
+Changes in version 2.6:
 
 - Fixed a bug with loading 1,2,4-bit paletted PNG files
 
-  Changes in version 2.5:
+Changes in version 2.5:
 
 - Fixed a bug with loading mode2 or mode0 input files with tRNS
 
-  Changes in version 2.4:
+Changes in version 2.4:
 
 - Reads delay information from .txt files
 - Accepts input files of different color types
@@ -115,4 +115,3 @@ palette or colortype, use those switches to turn them off:
 
 /kp     : keep palette
 /kc     : keep color type
-

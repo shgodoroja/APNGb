@@ -1,17 +1,17 @@
-  APNG Disassembler 2.8
+APNG Disassembler 2.8
 
-  Deconstructs APNG files into individual frames.
+Deconstructs APNG files into individual frames.
 
-  http://apngdis.sourceforge.net/
+http://apngdis.sourceforge.net/
 
-  Copyright (c) 2010-2015 Max Stepin
-  maxst@users.sourceforge.net
+Copyright (c) 2010-2015 Max Stepin
+maxst@users.sourceforge.net
 
-  License: zlib license
+License: zlib license
 
 --------------------------------
 
-  Usage:
+Usage:
 
 apngdis anim.png [name]
 
@@ -23,8 +23,6 @@ regular (unpatched) libpng to decode them.
 
 Then, after processing blend/dispose operations, we get a vector of
 full-size frames in 32 bpp as the result.
-
-
 
 Other useful tools:
 
