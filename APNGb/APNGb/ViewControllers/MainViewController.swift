@@ -12,12 +12,11 @@ final class MainTabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        disableViewResizing()
     }
-
-    override var representedObject: Any? {
-        didSet {
-        }
+    
+    private func disableViewResizing() {
+        self.preferredContentSize = self.view.frame.size
     }
-
 }
 

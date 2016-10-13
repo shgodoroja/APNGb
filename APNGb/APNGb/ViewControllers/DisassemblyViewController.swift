@@ -8,45 +8,100 @@
 
 import Cocoa
 
-final class DisassemblyViewController: NSViewController {
+final class DisassemblyViewController: NSViewController, DragAndDropImageViewDelegate {
     
-    private var executableHandler: ExecutableHandler?
+    private var commandArguments: [String] = ["", ""]
+    private var process: ExecutableProcess?
+    private var statusViewController: StatusViewController?
     
-    @IBOutlet private var filePathLabel: NSTextField!
-    @IBOutlet private var filePathTextField: NSTextField!
-    @IBOutlet private var fileNamePrefixLabel: NSTextField!
     @IBOutlet private var fileNameTextField: NSTextField!
-    @IBOutlet private var statusLabel: NSTextField!
-    @IBOutlet private var statusProgress: NSProgressIndicator!
+    @IBOutlet private var startButton: NSButton!
+    @IBOutlet var destinationImageView: DragAndDropImageView!
+    @IBOutlet var dragAndDropPlaceholder: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        executableHandler = ExecutableHandler(withExecutableIdentifier: .Disassembly)
+        destinationImageView.delegate = self
+        setupStatusView()
+    }
+    
+    private func setupStatusView() {
+        statusViewController = storyboard?.instantiateController(withIdentifier: "StatusViewController") as! StatusViewController?
+        statusViewController?.cancelHandler = {
+            self.statusViewController?.dismiss(nil)
+        }
     }
     
     // MARK: IBActions
     
-    @IBAction func selectFile(_ sender: AnyObject) {
-        
-        let panel = NSOpenPanel()
-        panel.canChooseDirectories = false
-        panel.canChooseFiles = true
-        panel.allowsMultipleSelection = false
-        
-        let currentWindow = self.view.window
-        
-        panel.beginSheetModal(for: currentWindow!) { status  in
+    @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
+        commandArguments[1] = (filenamePrefix() + outputFilenameExtension())
+    
+        if haveArgumentsPassedValidation() {
+            self.presentViewControllerAsSheet(statusViewController!)
             
-            if status == NSFileHandlingPanelOKButton {
-                print("url: \(panel.url)")
+            let command = Command(withExecutableName: .Disassembly)
+            command.arguments = commandArguments
+            
+            process = ExecutableProcess(withCommand: command)
+            process?.terminationHandler = {
+                self.statusViewController?.dismiss(nil)
+                self.process?.stop()
+                self.showImageFramesInFinderApp()
             }
+            process?.start()
         }
     }
     
-    @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
-        
-        
+    // MARK: - DragAndDropImageViewDelegate
+    
+    func didDropImage(withPath path: String) {
+        commandArguments[0] = path
+        setDefaultOutputFilenamePrefixIfNeeded()
+        dragAndDropPlaceholder.isHidden = true
     }
     
+    // MARK: - Private
+    
+    private func showImageFramesInFinderApp() {
+        let fileUrlPath = NSURL.fileURL(withPath: self.commandArguments[0])
+        NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
+    }
+    
+    private func setDefaultOutputFilenamePrefixIfNeeded() {
+        
+        if fileNameTextField.stringValue.characters.count == 0 {
+            fileNameTextField.stringValue = defaultFilenamePrefix()
+        }
+    }
+    
+    private func filenamePrefix() -> String {
+        
+        if fileNameTextField.stringValue.characters.count == 0 {
+            return defaultFilenamePrefix()
+        } else {
+            return fileNameTextField.stringValue
+        }
+    }
+    
+    // TODO: Fix validation
+    private func haveArgumentsPassedValidation() -> Bool {
+        
+        for argument in commandArguments {
+            
+            if argument.characters.count == 0 {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    private func defaultFilenamePrefix() -> String {
+        return "apngframe"
+    }
+    
+    private func outputFilenameExtension() -> String {
+        return ".png"
+    }
 }

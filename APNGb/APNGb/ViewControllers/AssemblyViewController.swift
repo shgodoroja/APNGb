@@ -9,9 +9,8 @@
 import Cocoa
 
 final class AssemblyViewController: NSViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }

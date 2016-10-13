@@ -13,13 +13,16 @@
 
 import Cocoa
 
+enum ExecutableName: String {
+    case Assembly="apngasm", Disassembly="apngdis"
+}
+
 class Command: NSObject {
     
     var name: String
-    var options: [String]?
     var arguments: [String]?
     
-    init(withName name: String) {
-        self.name = name
+    init(withExecutableName name: ExecutableName) {
+        self.name = name.rawValue
     }
 }
