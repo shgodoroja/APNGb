@@ -17,6 +17,9 @@ final class StatusViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear() {
         progressIndicator.startAnimation(nil)
     }
     

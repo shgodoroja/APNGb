@@ -28,7 +28,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     private func setupStatusView() {
         statusViewController = storyboard?.instantiateController(withIdentifier: "StatusViewController") as! StatusViewController?
         statusViewController?.cancelHandler = {
-            self.statusViewController?.dismiss(nil)
+            self.stopDisassemblingProcess()
         }
     }
     
@@ -45,8 +45,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
             
             process = ExecutableProcess(withCommand: command)
             process?.terminationHandler = {
-                self.statusViewController?.dismiss(nil)
-                self.process?.stop()
+                self.stopDisassemblingProcess()
                 self.showImageFramesInFinderApp()
             }
             process?.start()
@@ -62,6 +61,11 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     }
     
     // MARK: - Private
+    
+    private func stopDisassemblingProcess() {
+        statusViewController?.dismiss(nil)
+        process?.stop()
+    }
     
     private func showImageFramesInFinderApp() {
         let fileUrlPath = NSURL.fileURL(withPath: self.commandArguments[0])
