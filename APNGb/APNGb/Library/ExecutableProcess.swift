@@ -28,8 +28,6 @@ class ExecutableProcess: NSObject {
                 })
             }
         }
-        
-        task.launch()
     }
     
     func start() {
