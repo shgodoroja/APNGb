@@ -243,7 +243,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
     }
     
-    
     @IBAction func showOpenPanel(_ sender: AnyObject) {
         let openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = false

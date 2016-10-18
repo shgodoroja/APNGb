@@ -142,6 +142,7 @@
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
+				AB9830261DB69069009E0254 /* Models */,
 				AB2C94E91DAEBD25008DB042 /* CustomViews */,
 				ABD8C36F1DB52CE000C74183 /* Extensions */,
 				AB97CB561DA3093D00A6A272 /* Executables */,
@@ -164,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				AB97CAC71DA1600300A6A272 /* MainViewController.swift */,
-				ABD8C3721DB53AC400C74183 /* AssemblyViewController */,
+				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
 				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
 				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				ABF4090D1DA9B92700B0D373 /* Library */,
@@ -217,21 +218,20 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		AB9830261DB69069009E0254 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABD8C3731DB58A2400C74183 /* DroppedImage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		ABD8C3721DB53AC400C74183 /* AssemblyViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ABD8C3731DB58A2400C74183 /* DroppedImage.swift */,
-				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
-			);
-			name = AssemblyViewController;
 			sourceTree = "<group>";
 		};
 		ABF4090D1DA9B92700B0D373 /* Library */ = {
