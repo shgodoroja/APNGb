@@ -1110,7 +1110,7 @@ CA
                         <outlet property="allFramesDelaySecondsTextField" destination="lqN-o3-fAX" id="5fg-4m-rBl"/>
                         <outlet property="allframesDelayFramesTextField" destination="tuM-rQ-Im4" id="Fyo-Yr-Xub"/>
                         <outlet property="dropImagesHereLabel" destination="bag-YP-hlO" id="sLE-mT-6Zg"/>
-                        <outlet property="filenameTextField" destination="UdI-81-fac" id="1eU-7X-syr"/>
+                        <outlet property="fileNameTextField" destination="UdI-81-fac" id="TLb-Z1-m00"/>
                         <outlet property="numberOfLoopsTextField" destination="3RM-5T-Naw" id="OUj-t2-kkJ"/>
                         <outlet property="selectedDelayFramesTextField" destination="imO-UT-Adw" id="0dk-4Q-bxY"/>
                         <outlet property="selectedDelaySecondsTextField" destination="dgu-B9-PKs" id="iEb-Yu-sq1"/>

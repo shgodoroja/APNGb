@@ -24,7 +24,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var statusViewController: StatusViewController?
     private var droppedImages: [DroppedImage] = []
     
-    @IBOutlet private var filenameTextField: NSTextField!
+    @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var numberOfLoopsTextField: NSTextField!
     @IBOutlet private var _7zipIterationsTextField: NSTextField!
     @IBOutlet private var zopfliIterationsTextField: NSTextField!
@@ -125,7 +125,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         commandArguments.removeAll()
         
         // 1. Final image url
-        commandArguments.append(filenameTextField.stringValue)
+        commandArguments.append(fileNameTextField.stringValue)
         
         // 2. Frames urls
         for image in droppedImages {
@@ -250,7 +250,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         openPanel.canChooseDirectories = true
         openPanel.beginSheetModal(for: self.view.window!) { status in
             let destinationFolder = openPanel.urls[0]
-            self.filenameTextField.stringValue = destinationFolder.appendingPathComponent(self.defaultOutputImageName()).relativePath
+            self.fileNameTextField.stringValue = destinationFolder.appendingPathComponent(self.defaultOutputImageName()).relativePath
         }
     }
     
