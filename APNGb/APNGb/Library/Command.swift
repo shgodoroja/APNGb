@@ -14,7 +14,7 @@
 import Cocoa
 
 enum ExecutableName: String {
-    case Assembly="apngasm", Disassembly="apngdis"
+    case Assembly = "apngasm", Disassembly = "apngdis"
 }
 
 class Command: NSObject {

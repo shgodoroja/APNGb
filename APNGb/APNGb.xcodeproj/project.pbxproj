@@ -12,7 +12,11 @@
 		AB2C94E21DAEAD7D008DB042 /* readme-asm.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E01DAEAD7D008DB042 /* readme-asm.txt */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
 		AB2C94E61DAEAD89008DB042 /* readme-dis.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E41DAEAD89008DB042 /* readme-dis.txt */; };
-		AB2C94E81DAEBD21008DB042 /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2C94E71DAEBD21008DB042 /* DragAndDropImageView.swift */; };
+		AB36BB411DB17AA3001F4DDD /* AssemblyParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB401DB17AA3001F4DDD /* AssemblyParameters.swift */; };
+		AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB431DB17BFF001F4DDD /* Playback.swift */; };
+		AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB451DB17D9E001F4DDD /* Optimization.swift */; };
+		AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB471DB17E24001F4DDD /* Compression.swift */; };
+		AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB491DB183E3001F4DDD /* FrameDelay.swift */; };
 		AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */; };
 		AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2331D8DDE660048BE0A /* Assets.xcassets */; };
 		AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2351D8DDE660048BE0A /* Main.storyboard */; };
@@ -23,6 +27,9 @@
 		AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
 		AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
 		AB97CACE1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
+		ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */; };
+		ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */; };
+		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +50,11 @@
 		AB2C94E01DAEAD7D008DB042 /* readme-asm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "readme-asm.txt"; path = "APNGb/Executables/readme-asm.txt"; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
 		AB2C94E41DAEAD89008DB042 /* readme-dis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "readme-dis.txt"; path = "APNGb/Executables/readme-dis.txt"; sourceTree = SOURCE_ROOT; };
-		AB2C94E71DAEBD21008DB042 /* DragAndDropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropImageView.swift; path = View/DragAndDropImageView.swift; sourceTree = "<group>"; };
+		AB36BB401DB17AA3001F4DDD /* AssemblyParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyParameters.swift; path = Library/AssemblyParameters.swift; sourceTree = "<group>"; };
+		AB36BB431DB17BFF001F4DDD /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playback.swift; path = Library/Playback.swift; sourceTree = "<group>"; };
+		AB36BB451DB17D9E001F4DDD /* Optimization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optimization.swift; path = Library/Optimization.swift; sourceTree = "<group>"; };
+		AB36BB471DB17E24001F4DDD /* Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Library/Compression.swift; sourceTree = "<group>"; };
+		AB36BB491DB183E3001F4DDD /* FrameDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameDelay.swift; path = Library/FrameDelay.swift; sourceTree = "<group>"; };
 		AB3DF22C1D8DDE660048BE0A /* APNGb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APNGb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB3DF2331D8DDE660048BE0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +66,9 @@
 		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC71DA1600300A6A272 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropImageView.swift; path = CustomViews/DragAndDropImageView.swift; sourceTree = "<group>"; };
+		ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
+		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,9 +102,21 @@
 		AB2C94E91DAEBD25008DB042 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				AB2C94E71DAEBD21008DB042 /* DragAndDropImageView.swift */,
+				ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */,
 			);
 			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		AB36BB421DB17BC2001F4DDD /* AssemblyParameters */ = {
+			isa = PBXGroup;
+			children = (
+				AB36BB401DB17AA3001F4DDD /* AssemblyParameters.swift */,
+				AB36BB431DB17BFF001F4DDD /* Playback.swift */,
+				AB36BB451DB17D9E001F4DDD /* Optimization.swift */,
+				AB36BB471DB17E24001F4DDD /* Compression.swift */,
+				AB36BB491DB183E3001F4DDD /* FrameDelay.swift */,
+			);
+			name = AssemblyParameters;
 			sourceTree = "<group>";
 		};
 		AB3DF2231D8DDE660048BE0A = {
@@ -115,8 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
-				AB2C94E91DAEBD25008DB042 /* CustomViews */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
+				AB2C94E91DAEBD25008DB042 /* CustomViews */,
+				ABD8C36F1DB52CE000C74183 /* Extensions */,
 				AB97CB561DA3093D00A6A272 /* Executables */,
 				AB3DF24E1D8E0D590048BE0A /* Resources */,
 				AB3DF24D1D8E0D4C0048BE0A /* Others */,
@@ -136,10 +163,10 @@
 		AB3DF24C1D8E0D400048BE0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				AB97CAC71DA1600300A6A272 /* MainViewController.swift */,
-				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
+				ABD8C3721DB53AC400C74183 /* AssemblyViewController */,
 				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
+				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				ABF4090D1DA9B92700B0D373 /* Library */,
 			);
 			name = ViewControllers;
@@ -190,11 +217,29 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		ABD8C3721DB53AC400C74183 /* AssemblyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABD8C3731DB58A2400C74183 /* DroppedImage.swift */,
+				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
+			);
+			name = AssemblyViewController;
+			sourceTree = "<group>";
+		};
 		ABF4090D1DA9B92700B0D373 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				ABF409161DAAF35000B0D373 /* Command.swift */,
 				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
+				AB36BB421DB17BC2001F4DDD /* AssemblyParameters */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -307,13 +352,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
-				AB2C94E81DAEBD21008DB042 /* DragAndDropImageView.swift in Sources */,
+				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
+				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
+				AB36BB411DB17AA3001F4DDD /* AssemblyParameters.swift in Sources */,
+				ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */,
+				ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
+				ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */,
 				AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */,
+				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
