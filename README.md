@@ -16,12 +16,24 @@ APNG = 193 101 bytes
 
 GIF = 229 346 bytes
 
-Assembling features
+Assembling feature
 ------
+Creates an animated image (.apng) from a series of .png/.tga images.
 
-Disassembling features
+> A number of optimization techniques used to make APNG files as small as possible: inter-frame optimization utilizing alpha-blend and dispose operations, smaller than the full-size subframes, dirty transparency, color type and palette optimizations, and various compression options: zlib, 7zip, Zopfli.
+
+![screen shot 2016-10-19 at 02 25 43](https://cloud.githubusercontent.com/assets/2619031/19501211/e63b3906-95a3-11e6-8d92-5b20bd16a668.png)
+![screen shot 2016-10-19 at 02 27 30](https://cloud.githubusercontent.com/assets/2619031/19501212/e63d3738-95a3-11e6-89d0-2721676921fe.png)
+
+Disassembling feature
 ------
+Breaks an .apng file into a series of .png images.
 
+> Decoding is implemented by parsing all chunks in the APNG file, remuxing them into a sequence of static PNG images, as shown in the diagram below, and then using regular (unpatched) libpng to decode them.
+Then, after processing blend/dispose operations, we finally get a vector of full-size frames in 32 bpp as the result.
+
+![screen shot 2016-10-19 at 02 27 33](https://cloud.githubusercontent.com/assets/2619031/19501213/e63edb92-95a3-11e6-9bf3-f9f3d5846541.png)
+![screen shot 2016-10-19 at 02 27 41](https://cloud.githubusercontent.com/assets/2619031/19501210/e6165b54-95a3-11e6-9a31-7986e47fdeb7.png)
 TO DO
 ------
 * Add unit tests.
