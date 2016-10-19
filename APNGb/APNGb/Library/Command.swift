@@ -6,11 +6,6 @@
 //  Copyright © 2016 Godoroja Stefan. All rights reserved.
 //
 
-// INFO:
-// General form of a UNIX command is: 
-// command [-option(s)] [argument(s)]
-//
-
 import Cocoa
 
 enum ExecutableName: String {

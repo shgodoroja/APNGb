@@ -28,6 +28,8 @@
 		AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
 		AB97CACE1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
 		AB98302A1DB7803A009E0254 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830291DB7803A009E0254 /* Global.swift */; };
+		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
+		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
 		ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */; };
 		ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */; };
 		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
@@ -68,6 +70,8 @@
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC71DA1600300A6A272 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		AB9830291DB7803A009E0254 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Utilities/Global.swift; sourceTree = "<group>"; };
+		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
+		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
 		ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropImageView.swift; path = CustomViews/DragAndDropImageView.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
@@ -237,6 +241,14 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		AB9830311DB79C14009E0254 /* DisassemblyArguments */ = {
+			isa = PBXGroup;
+			children = (
+				AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */,
+			);
+			name = DisassemblyArguments;
+			sourceTree = "<group>";
+		};
 		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +262,9 @@
 			children = (
 				ABF409161DAAF35000B0D373 /* Command.swift */,
 				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
+				AB9830371DB7A844009E0254 /* CommandArguments.swift */,
 				AB36BB421DB17BC2001F4DDD /* AssemblyParameters */,
+				AB9830311DB79C14009E0254 /* DisassemblyArguments */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -367,6 +381,7 @@
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
+				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
@@ -375,6 +390,7 @@
 				ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
+				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
 				ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */,
 				AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */,
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,

@@ -10,23 +10,26 @@ import Cocoa
 
 final class DisassemblyViewController: NSViewController, DragAndDropImageViewDelegate {
     
-    private var commandArguments: [String] = ["", ""]
+    private var disassemblyArguments = DisassemblyArguments()
     private var process: ExecutableProcess?
     private var statusViewController: StatusViewController?
     
     @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var startButton: NSButton!
-    @IBOutlet var destinationImageView: DragAndDropImageView!
-    @IBOutlet var dragAndDropPlaceholder: NSTextField!
+    @IBOutlet private var dropHintLabel: NSTextField!
+    @IBOutlet private var destinationImageView: DragAndDropImageView! {
+        didSet {
+            destinationImageView.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        destinationImageView.delegate = self
         setupStatusView()
     }
     
     private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: "StatusViewController") as! StatusViewController?
+        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
         statusViewController?.cancelHandler = {
             self.stopDisassemblingProcess()
         }
@@ -35,14 +38,12 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     // MARK: IBActions
     
     @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
-        commandArguments[1] = (filenamePrefix() + outputFilenameExtension())
+        disassemblyArguments.destinationImageNamePrefix = fileNameTextField.stringValue + defaultOutputFilenameExtension()
     
-        if haveArgumentsPassedValidation() {
+        if disassemblyArguments.havePassedValidation() {
             self.presentViewControllerAsSheet(statusViewController!)
-            
             let command = Command(withExecutableName: .Disassembly)
-            command.arguments = commandArguments
-            
+            command.arguments = disassemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
             process?.terminationHandler = {
                 self.stopDisassemblingProcess()
@@ -55,9 +56,9 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     // MARK: - DragAndDropImageViewDelegate
     
     func didDropImage(withPath path: String) {
-        commandArguments[0] = path
-        setDefaultOutputFilenamePrefixIfNeeded()
-        dragAndDropPlaceholder.isHidden = true
+        disassemblyArguments.sourceImagePath = path
+        setDefaultOutputFilenamePrefixIfNeeded(prefix: defaultOutputFilenamePrefix())
+        dropHintLabel.isHidden = true
     }
     
     // MARK: - Private
@@ -68,44 +69,22 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     }
     
     private func showImageFramesInFinderApp() {
-        let fileUrlPath = NSURL.fileURL(withPath: self.commandArguments[0])
-        NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
+        let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.sourceImagePath)
+        NSWorkspace.shared().open(fileUrl.deletingLastPathComponent())
     }
     
-    private func setDefaultOutputFilenamePrefixIfNeeded() {
+    private func setDefaultOutputFilenamePrefixIfNeeded(prefix: String) {
         
         if fileNameTextField.stringValue.characters.count == 0 {
-            fileNameTextField.stringValue = defaultFilenamePrefix()
+            fileNameTextField.stringValue = prefix
         }
     }
-    
-    private func filenamePrefix() -> String {
-        
-        if fileNameTextField.stringValue.characters.count == 0 {
-            return defaultFilenamePrefix()
-        } else {
-            return fileNameTextField.stringValue
-        }
-    }
-    
-    // TODO: Fix validation
-    private func haveArgumentsPassedValidation() -> Bool {
-        
-        for argument in commandArguments {
-            
-            if argument.characters.count == 0 {
-                return false
-            }
-        }
-        
-        return true
-    }
-    
-    private func defaultFilenamePrefix() -> String {
+
+    private func defaultOutputFilenamePrefix() -> String {
         return "apngframe"
     }
     
-    private func outputFilenameExtension() -> String {
+    private func defaultOutputFilenameExtension() -> String {
         return ".png"
     }
 }

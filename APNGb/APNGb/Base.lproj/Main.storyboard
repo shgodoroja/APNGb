@@ -1187,8 +1187,8 @@ CA
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="destinationImageView" destination="tfc-Yn-eY2" id="CCN-sU-I99"/>
-                        <outlet property="dragAndDropPlaceholder" destination="hCw-dG-cAk" id="xvN-i2-Uqt"/>
+                        <outlet property="destinationImageView" destination="tfc-Yn-eY2" id="fUs-Op-Th1"/>
+                        <outlet property="dropHintLabel" destination="hCw-dG-cAk" id="hN6-T6-HGF"/>
                         <outlet property="fileNameTextField" destination="zBX-5a-8mL" id="gNO-nd-Shi"/>
                         <outlet property="startButton" destination="C8z-vH-8vq" id="4Lp-IQ-Uvh"/>
                     </connections>

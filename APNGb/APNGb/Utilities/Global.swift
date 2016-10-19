@@ -8,4 +8,10 @@
 
 import Cocoa
 
+// MARK: - TypeAlias
 typealias VoidHandler = (()->())?
+
+// MARK: - Storyboard Ids
+struct StoryboarId {
+    static let statusView = "StatusViewController"
+}

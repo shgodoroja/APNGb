@@ -10,7 +10,7 @@ import Cocoa
 
 class ExecutableProcess: NSObject {
     
-    var terminationHandler: (() -> ())?
+    var terminationHandler: VoidHandler
     var progressHandler: ((String) -> ())?
     
     private var task = Process()
@@ -18,7 +18,7 @@ class ExecutableProcess: NSObject {
     init(withCommand command: Command) {
         super.init()
         
-        task.launchPath = pathForFile(withName: command.name)
+        task.launchPath = Bundle.main.path(forResource: command.name, ofType: nil)
         task.arguments = command.arguments
         task.terminationHandler = { process in
             
@@ -37,11 +37,4 @@ class ExecutableProcess: NSObject {
     func stop() {
         task.terminate()
     }
-    
-    // MARK: Private 
-    
-    private func pathForFile(withName name: String) ->  String? {
-        return Bundle.main.path(forResource: name, ofType: nil)
-    }
-    
 }

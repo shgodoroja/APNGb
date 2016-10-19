@@ -15,9 +15,13 @@ final class StatusViewController: NSViewController {
     @IBOutlet private var statusLabel: NSTextField!
     @IBOutlet private var progressIndicator: NSProgressIndicator!
     
+    // MARK: - Life-cycle
+    
     override func viewWillAppear() {
         progressIndicator.startAnimation(nil)
     }
+    
+    // MARK: - Update UI
     
     func updateStatusMessage(message: String) {
         statusLabel.stringValue = message
