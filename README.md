@@ -37,6 +37,7 @@ Then, after processing blend/dispose operations, we finally get a vector of full
 TO DO
 ------
 * Add unit tests.
+* Improve UX design.
 
 License
 ------
