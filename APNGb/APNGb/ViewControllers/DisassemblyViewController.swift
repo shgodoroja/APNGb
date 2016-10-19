@@ -38,8 +38,8 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     // MARK: IBActions
     
     @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
-        disassemblyArguments.destinationImageNamePrefix = fileNameTextField.stringValue + defaultOutputFilenameExtension()
-    
+        collectArguments()
+        
         if disassemblyArguments.havePassedValidation() {
             self.presentViewControllerAsSheet(statusViewController!)
             let command = Command(withExecutableName: .Disassembly)
@@ -62,6 +62,10 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     }
     
     // MARK: - Private
+    
+    private func collectArguments() {
+        disassemblyArguments.destinationImageNamePrefix = fileNameTextField.stringValue + defaultOutputFilenameExtension()
+    }
     
     private func stopDisassemblingProcess() {
         statusViewController?.dismiss(nil)

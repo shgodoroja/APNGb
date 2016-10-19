@@ -12,9 +12,25 @@ enum FrameDelayCategory {
     case All, Selected
 }
 
-class FrameDelay {
+final class FrameDelay: CommandArguments {
     
-    var category: FrameDelayCategory?
+    var category: FrameDelayCategory
+    var enabled: Bool
     var seconds = 1
     var frames = 10
+    
+    init(withCategory category: FrameDelayCategory = .All, andState state: Bool = true) {
+        self.category = category
+        self.enabled = state
+    }
+    
+    func commandArguments() -> [String] {
+        var arguments: [String] = []
+        
+        if enabled {
+            arguments.append("\(seconds) \(frames)")
+        }
+        
+        return arguments
+    }
 }

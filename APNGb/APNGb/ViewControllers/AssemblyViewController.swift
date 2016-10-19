@@ -9,20 +9,20 @@
 import Cocoa
 
 enum CheckboxIdentifier: Int {
-    case Play = 0, Skip = 1, Palette = 2, Color = 3
+    case play = 0, skip = 1, palette = 2, color = 3
 }
 
 enum RadioButtonIdentifier: Int {
     case zlib = 0, _7zip = 1, zopfli = 2
 }
 
-final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate {
     
-    private var parameters: AssemblyParameters?
-    private var commandArguments: [String] = []
+    private var assemblyArguments = AssemblyArguments()
     private var process: ExecutableProcess?
     private var statusViewController: StatusViewController?
     private var droppedImages: [DroppedImage] = []
+    private var selectedImagesIndexSet: IndexSet?
     
     @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var numberOfLoopsTextField: NSTextField!
@@ -37,14 +37,27 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        parameters = AssemblyParameters()
         setupStatusView()
         tableView.register(forDraggedTypes: [NSFilenamesPboardType])
     }
     
+    // MARK: - NSTableView
+    
     func tableView(_ tableView: NSTableView, didRemove rowView: NSTableRowView, forRow row: Int) {
         showDropImagesHereLabelIfNeeded()
     }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        let rowIndexes = tableView.selectedRowIndexes
+        
+        if rowIndexes.count > 0 {
+            updateSelectedFramesDelayTextFields(enabled: true, indexSet: rowIndexes)
+        } else {
+            updateSelectedFramesDelayTextFields(enabled: false, indexSet: nil)
+        }
+    }
+    
+    // MARK: - NSTableViewDataSource
     
     func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
         return .copy
@@ -55,15 +68,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         
         for imagePath in draggedImagesPaths {
             let imageUrl = NSURL(fileURLWithPath: imagePath)
-            var imageSizeInKB = 0
-            
-            do {
-                let imageAttributes = try FileManager.default.attributesOfItem(atPath: imagePath) as NSDictionary
-                imageSizeInKB = Int(imageAttributes.fileSize()) / 1000
-            } catch let error {
-                NSLog("error: \(error)")
-            }
-            
+            let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
             let droppedImage = DroppedImage(url: imageUrl,
                                             size: imageSizeInKB)
             droppedImages.append(droppedImage)
@@ -91,111 +96,15 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
     }
     
-    private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: "StatusViewController") as! StatusViewController?
-        statusViewController?.cancelHandler = {
-            self.stopAssemblingProcess()
-        }
-    }
-    
-    private func stopAssemblingProcess() {
-        statusViewController?.dismiss(nil)
-        process?.stop()
-    }
-    
-    // TODO: Fix validation
-    private func haveArgumentsPassedValidation() -> Bool {
-        
-        for argument in commandArguments {
-            
-            if argument.characters.count == 0 {
-                return false
-            }
-        }
-        
-        return true
-    }
-    
-    private func showImageInFinderApp() {
-        let fileUrlPath = NSURL.fileURL(withPath: self.commandArguments[0])
-        NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
-    }
-    
-    private func collectAllArguments() {
-        commandArguments.removeAll()
-        
-        // 1. Final image url
-        commandArguments.append(fileNameTextField.stringValue)
-        
-        // 2. Frames urls
-        for image in droppedImages {
-            commandArguments.append(image.path)
-        }
-        
-        // 3. Playback params
-        if parameters?.playback.playIndefinitely == false {
-            commandArguments.append("-l\(numberOfLoopsTextField.stringValue)")
-        }
-        
-        if parameters?.playback.skipFirstFrame == true {
-            commandArguments.append("-f")
-        }
-        
-        // 4. Optimizations
-        if parameters?.optimization.enablePalette == true {
-            commandArguments.append("-kp")
-        }
-        
-        if parameters?.optimization.enableColorType == true {
-            commandArguments.append("-kc")
-        }
-        
-        // 5. Compression
-        if parameters?.compression.enableZlib == true {
-            commandArguments.append("-z0")
-        }
-        
-        if parameters?.compression.enable7zip == true {
-            commandArguments.append("-z1")
-            commandArguments.append("-i\(_7zipIterationsTextField.stringValue)")
-        }
-        
-        if parameters?.compression.enableZopfli == true {
-            commandArguments.append("-z2")
-            commandArguments.append("-i\(zopfliIterationsTextField.stringValue)")
-        }
-        
-        // 6. All frames delays
-        commandArguments.append("\(allFramesDelaySecondsTextField.stringValue) \(allframesDelayFramesTextField.stringValue)")
-        
-        // 7. Selected frames delays
-        
-    }
-    
-    private func showDropImagesHereLabelIfNeeded() {
-        
-        if droppedImages.count > 0 {
-            dropImagesHereLabel.isHidden = true
-        } else {
-            dropImagesHereLabel.isHidden = false
-        }
-    }
-    
-    private func defaultOutputImageName() -> String {
-        return "output.png"
-    }
-    
     // MARK: IBActions
     
     @IBAction func startAssemblingProcess(_ sender: AnyObject) {
-        collectAllArguments()
+        collectArguments()
         
-        if haveArgumentsPassedValidation() {
+        if assemblyArguments.havePassedValidation() {
             self.presentViewControllerAsSheet(statusViewController!)
-            
             let command = Command(withExecutableName: .Assembly)
-            command.arguments = commandArguments
-            
+            command.arguments = assemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
             process?.terminationHandler = {
                 self.stopAssemblingProcess()
@@ -206,20 +115,20 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     @IBAction func didSelectRadioButton(_ sender: NSButton) {
-        parameters?.compression.enable7zip = false
+        assemblyArguments.compression.enable7zip = false
         _7zipIterationsTextField.isEnabled = false
-        parameters?.compression.enableZopfli = false
+        assemblyArguments.compression.enableZopfli = false
         zopfliIterationsTextField.isEnabled = false
-        parameters?.compression.enableZlib = false
+        assemblyArguments.compression.enableZlib = false
         
         switch sender.tag {
         case RadioButtonIdentifier.zlib.rawValue:
-            parameters?.compression.enableZlib = Bool(sender.state)
+            assemblyArguments.compression.enableZlib = Bool(sender.state)
         case RadioButtonIdentifier._7zip.rawValue:
-            parameters?.compression.enable7zip = Bool(sender.state)
+            assemblyArguments.compression.enable7zip = Bool(sender.state)
             _7zipIterationsTextField.isEnabled = true
         case RadioButtonIdentifier.zopfli.rawValue:
-            parameters?.compression.enableZopfli = Bool(sender.state)
+            assemblyArguments.compression.enableZopfli = Bool(sender.state)
             zopfliIterationsTextField.isEnabled = true
         default:
             print("\(#function): unhandled case")
@@ -229,15 +138,15 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     @IBAction func didSelectCheckbox(_ sender: NSButton) {
         
         switch sender.tag {
-        case CheckboxIdentifier.Play.rawValue:
-            parameters?.playback.playIndefinitely = Bool(sender.state)
+        case CheckboxIdentifier.play.rawValue:
+            assemblyArguments.playback.playIndefinitely = Bool(sender.state)
             numberOfLoopsTextField.isEnabled = !(Bool(sender.state))
-        case CheckboxIdentifier.Skip.rawValue:
-            parameters?.playback.skipFirstFrame = Bool(sender.state)
-        case CheckboxIdentifier.Palette.rawValue:
-            parameters?.optimization.enablePalette = Bool(sender.state)
-        case CheckboxIdentifier.Color.rawValue:
-            parameters?.optimization.enableColorType = Bool(sender.state)
+        case CheckboxIdentifier.skip.rawValue:
+            assemblyArguments.playback.skipFirstFrame = Bool(sender.state)
+        case CheckboxIdentifier.palette.rawValue:
+            assemblyArguments.optimization.enablePalette = Bool(sender.state)
+        case CheckboxIdentifier.color.rawValue:
+            assemblyArguments.optimization.enableColorType = Bool(sender.state)
         default:
             print("\(#function): unhandled case")
         }
@@ -263,5 +172,90 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         for index in selectedRowIndexes.reversed() {
             droppedImages.remove(at: index)
         }
+    }
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        let textField = (obj.object as? NSTextField)
+        
+        if textField == selectedDelaySecondsTextField {
+            let seconds = textField?.integerValue
+            
+            if let indexes = selectedImagesIndexSet {
+                
+                for index in indexes {
+                    droppedImages[index].delaySeconds = seconds!
+                }
+            }
+        
+        } else if textField == selectedDelayFramesTextField {
+            let frames = textField?.integerValue
+            
+            if let indexes = selectedImagesIndexSet {
+                
+                for index in indexes {
+                    droppedImages[index].delayFrames = frames!
+                }
+            }
+        }
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: - Private
+    
+    private func collectArguments() {
+        assemblyArguments.destinationImagePath = fileNameTextField.stringValue
+        
+        for droppedImage in droppedImages {
+            assemblyArguments.sourceImagesPaths.append(droppedImage.path)
+        }
+        
+        assemblyArguments.playback.numberOfLoops = numberOfLoopsTextField.integerValue
+
+        assemblyArguments.compression._7zipIterations = _7zipIterationsTextField.integerValue
+        assemblyArguments.compression.zopfliIterations = zopfliIterationsTextField.integerValue
+        
+        assemblyArguments.allFramesDelay.seconds = allFramesDelaySecondsTextField.integerValue
+        assemblyArguments.allFramesDelay.frames = allframesDelayFramesTextField.integerValue
+
+        assemblyArguments.selectedFramesDelay.seconds = selectedDelayFramesTextField.integerValue
+        assemblyArguments.selectedFramesDelay.frames = selectedDelaySecondsTextField.integerValue
+    }
+    
+    private func setupStatusView() {
+        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
+        statusViewController?.cancelHandler = {
+            self.stopAssemblingProcess()
+        }
+    }
+    
+    private func stopAssemblingProcess() {
+        statusViewController?.dismiss(nil)
+        process?.stop()
+    }
+    
+    private func showImageInFinderApp() {
+        let fileUrlPath = NSURL.fileURL(withPath: assemblyArguments.destinationImagePath)
+        NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
+    }
+    
+    private func showDropImagesHereLabelIfNeeded() {
+        
+        if droppedImages.count > 0 {
+            dropImagesHereLabel.isHidden = true
+        } else {
+            dropImagesHereLabel.isHidden = false
+        }
+    }
+    
+    private func defaultOutputImageName() -> String {
+        return "output.png"
+    }
+    
+    private func updateSelectedFramesDelayTextFields(enabled: Bool, indexSet: IndexSet?) {
+        selectedImagesIndexSet = indexSet
+        assemblyArguments.selectedFramesDelay.enabled = enabled
+        selectedDelaySecondsTextField.isEnabled = enabled
+        selectedDelayFramesTextField.isEnabled = enabled
     }
 }

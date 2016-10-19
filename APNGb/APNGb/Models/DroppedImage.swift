@@ -12,12 +12,18 @@ final class DroppedImage {
     
     var path: String
     var size: Int
-    var displayableFrameDelay: String
+    var delaySeconds = 1
+    var delayFrames = 10
+    var displayableFrameDelay: String {
+        get {
+            return "\(delaySeconds)/\(delayFrames)"
+        }
+    }
+    
     private(set) var name: String
     
     init(url: NSURL, size: Int) {
         self.size = size
-        self.displayableFrameDelay = DroppedImage.defaultDisplayableFrameDelay()
         
         if let lastPathComponent = url.lastPathComponent {
             self.name = lastPathComponent
@@ -30,9 +36,5 @@ final class DroppedImage {
         } else {
             self.path = ""
         }
-    }
-    
-    private static func defaultDisplayableFrameDelay() -> String {
-        return "1/10"
     }
 }

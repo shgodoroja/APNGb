@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DisassemblyArguments: CommandArguments {
+final class DisassemblyArguments: CommandArguments {
     
     var sourceImagePath = DisassemblyArguments.defaultArgumentValue()
     var destinationImageNamePrefix = DisassemblyArguments.defaultArgumentValue()

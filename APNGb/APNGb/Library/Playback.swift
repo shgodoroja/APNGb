@@ -8,9 +8,23 @@
 
 import Cocoa
 
-class Playback {
+final class Playback: CommandArguments {
     
     var playIndefinitely = true
     var numberOfLoops = 0
     var skipFirstFrame = false
+    
+    func commandArguments() -> [String] {
+        var arguments: [String] = []
+        
+        if playIndefinitely == false {
+            arguments.append("-l\(numberOfLoops)")
+        }
+        
+        if skipFirstFrame == true {
+            arguments.append("-f")
+        }
+        
+        return arguments
+    }
 }
