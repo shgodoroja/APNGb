@@ -38,6 +38,7 @@ TO DO
 ------
 * Add unit tests.
 * Improve UX design.
+* Add support for GIF.
 
 License
 ------
