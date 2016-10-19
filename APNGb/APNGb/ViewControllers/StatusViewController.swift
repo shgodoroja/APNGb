@@ -10,14 +10,10 @@ import Cocoa
 
 final class StatusViewController: NSViewController {
     
-    var cancelHandler: (()->())?
+    var cancelHandler: VoidHandler = nil
     
     @IBOutlet private var statusLabel: NSTextField!
-    @IBOutlet var progressIndicator: NSProgressIndicator!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet private var progressIndicator: NSProgressIndicator!
     
     override func viewWillAppear() {
         progressIndicator.startAnimation(nil)
