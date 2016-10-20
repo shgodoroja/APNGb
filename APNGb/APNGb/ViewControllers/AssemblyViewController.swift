@@ -82,7 +82,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             
             if let fileExtension = fileExtension {
                 
-                if assemblyArguments.allowedFileTypes.contains(fileExtension!) {
+                if assemblyArguments.allowedFileTypes.contains(fileExtension) {
                     let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
                     let droppedImage = DroppedImage(url: imageUrl,
                                                     size: imageSizeInKB)
