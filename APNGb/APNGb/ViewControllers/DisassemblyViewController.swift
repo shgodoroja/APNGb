@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class DisassemblyViewController: NSViewController, DragAndDropImageViewDelegate {
+final class DisassemblyViewController: NSViewController, DragAndDropImageViewDelegate, NSTextFieldDelegate {
     
     private var disassemblyArguments = DisassemblyArguments()
     private var process: ExecutableProcess?
@@ -38,7 +38,6 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     // MARK: IBActions
     
     @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
-        collectArguments()
         
         if disassemblyArguments.havePassedValidation() {
             self.presentViewControllerAsSheet(statusViewController!)
@@ -61,11 +60,16 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
         dropHintLabel.isHidden = true
     }
     
-    // MARK: - Private
+    // MARK: - NSTextFieldDelegate
     
-    private func collectArguments() {
-        disassemblyArguments.destinationImageNamePrefix = fileNameTextField.stringValue + defaultOutputFilenameExtension()
+    override func controlTextDidChange(_ obj: Notification) {
+        
+        if let textField = (obj.object as? NSTextField) {
+            disassemblyArguments.destinationImageNamePrefix = textField.stringValue
+        }
     }
+    
+    // MARK: - Private
     
     private func stopDisassemblingProcess() {
         statusViewController?.dismiss(nil)
@@ -81,14 +85,12 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
         
         if fileNameTextField.stringValue.characters.count == 0 {
             fileNameTextField.stringValue = prefix
+            disassemblyArguments.destinationImageNamePrefix = prefix
         }
     }
 
     private func defaultOutputFilenamePrefix() -> String {
-        return "apngframe"
+        return "frame"
     }
     
-    private func defaultOutputFilenameExtension() -> String {
-        return ".png"
-    }
 }

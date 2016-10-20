@@ -1146,6 +1146,9 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="G7N-NI-mjP" id="Ibq-Ue-3ww"/>
+                                </connections>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-vH-8vq">
                                 <rect key="frame" x="356" y="8" width="70" height="32"/>
