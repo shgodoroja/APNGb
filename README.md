@@ -1,6 +1,10 @@
-APNGb
+<center><img src="https://cloud.githubusercontent.com/assets/2619031/19563939/202b12aa-96e2-11e6-89a0-588232c0495b.png" alt=""></center>
+<center>APNGb</center>
 =====
-APNGb is a mac OS app which is built on the top of 2 executables created by Max Stepin: [APNG Assembler](http://apngasm.sourceforge.net) and [APNG Disassembler](http://apngdis.sourceforge.net).
+APNGb is a mac OS app which creates animated pngs from a series of png/tga images and disassembles an animated png to a series of
+png files. Assembling has optimization and compression capabilities, option to change frame delay for all or separately frames, playback options. See `Assembling feature` and `Disassembling feature` sections for more details.
+
+ **It's built on the top of 2 executables created by Max Stepin: [APNG Assembler](http://apngasm.sourceforge.net) and [APNG Disassembler](http://apngdis.sourceforge.net). Big credits to Max!**
 
 What is .apng ?
 ------
@@ -38,7 +42,8 @@ TO DO
 ------
 * Add unit tests.
 * Improve UX design.
-* Add support for GIF.
+* Convert GIF to APNG.
+* Optimize an apng file.
 
 License
 ------
