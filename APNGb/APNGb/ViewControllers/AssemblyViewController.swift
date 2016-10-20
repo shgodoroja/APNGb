@@ -48,10 +48,10 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        let rowIndexes = tableView.selectedRowIndexes
+        let selectedRowIndexes = tableView.selectedRowIndexes
         
-        if rowIndexes.count > 0 {
-            updateSelectedFramesDelayTextFields(enabled: true, indexSet: rowIndexes)
+        if selectedRowIndexes.count > 0 {
+            updateSelectedFramesDelayTextFields(enabled: true, indexSet: selectedRowIndexes)
         } else {
             updateSelectedFramesDelayTextFields(enabled: false, indexSet: nil)
         }
@@ -60,7 +60,17 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: - NSTableViewDataSource
     
     func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
-        return .copy
+        
+        let imageUrls = info.draggingPasteboard().readObjects(forClasses: [NSURL.self],
+                                                              options: [NSPasteboardURLReadingContentsConformToTypesKey : [String(kUTTypeImage)]])
+        if let urls = imageUrls {
+            
+            if urls.count > 0 {
+                return .copy
+            }
+        }
+        
+        return []
     }
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
@@ -68,10 +78,17 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         
         for imagePath in draggedImagesPaths {
             let imageUrl = NSURL(fileURLWithPath: imagePath)
-            let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
-            let droppedImage = DroppedImage(url: imageUrl,
-                                            size: imageSizeInKB)
-            droppedImages.append(droppedImage)
+            let fileExtension = imageUrl.lastPathComponent?.fileExtension()
+            
+            if let fileExtension = fileExtension {
+                
+                if assemblyArguments.allowedFileTypes.contains(fileExtension!) {
+                    let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
+                    let droppedImage = DroppedImage(url: imageUrl,
+                                                    size: imageSizeInKB)
+                    droppedImages.append(droppedImage)
+                }
+            }
         }
         
         tableView.reloadData()
@@ -211,13 +228,10 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
         
         assemblyArguments.playback.numberOfLoops = numberOfLoopsTextField.integerValue
-
         assemblyArguments.compression._7zipIterations = _7zipIterationsTextField.integerValue
         assemblyArguments.compression.zopfliIterations = zopfliIterationsTextField.integerValue
-        
         assemblyArguments.allFramesDelay.seconds = allFramesDelaySecondsTextField.integerValue
         assemblyArguments.allFramesDelay.frames = allframesDelayFramesTextField.integerValue
-
         assemblyArguments.selectedFramesDelay.seconds = selectedDelayFramesTextField.integerValue
         assemblyArguments.selectedFramesDelay.frames = selectedDelaySecondsTextField.integerValue
     }
