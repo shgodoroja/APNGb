@@ -12,6 +12,15 @@ extension String {
     
     static let empty = ""
     
+    func fileName() -> String {
+        
+        if let fileNameWithoutExtension = NSURL(fileURLWithPath: self).deletingPathExtension?.lastPathComponent {
+            return fileNameWithoutExtension
+        } else {
+            return String.empty
+        }
+    }
+    
     func fileExtension() -> String {
         
         if let fileExtension = NSURL(fileURLWithPath: self).pathExtension {

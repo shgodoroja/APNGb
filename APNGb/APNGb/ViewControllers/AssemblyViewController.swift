@@ -117,6 +117,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     @IBAction func startAssemblingProcess(_ sender: AnyObject) {
         collectArguments()
+        preProcessSetup()
         
         if assemblyArguments.havePassedValidation() {
             self.presentViewControllerAsSheet(statusViewController!)
@@ -213,6 +214,19 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
                     droppedImages[index].delayFrames = frames!
                 }
             }
+        } else if textField == allFramesDelaySecondsTextField {
+            let seconds = textField?.integerValue
+            
+            for droppedImage in droppedImages {
+                droppedImage.delaySeconds = seconds!
+            }
+            
+        } else if textField == allframesDelayFramesTextField {
+            let frames = textField?.integerValue
+            
+            for droppedImage in droppedImages {
+                droppedImage.delayFrames = frames!
+            }
         }
         
         tableView.reloadData()
@@ -222,11 +236,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private func collectArguments() {
         assemblyArguments.destinationImagePath = fileNameTextField.stringValue
-        
-        for droppedImage in droppedImages {
-            assemblyArguments.sourceImagesPaths.append(droppedImage.path)
-        }
-        
         assemblyArguments.playback.numberOfLoops = numberOfLoopsTextField.integerValue
         assemblyArguments.compression._7zipIterations = _7zipIterationsTextField.integerValue
         assemblyArguments.compression.zopfliIterations = zopfliIterationsTextField.integerValue
@@ -234,6 +243,85 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         assemblyArguments.allFramesDelay.frames = allframesDelayFramesTextField.integerValue
         assemblyArguments.selectedFramesDelay.seconds = selectedDelayFramesTextField.integerValue
         assemblyArguments.selectedFramesDelay.frames = selectedDelaySecondsTextField.integerValue
+    }
+    
+    private func preProcessSetup() {
+        let imageFolderUrl = createImageCopiesFolder()
+        
+        if let folderUrl = imageFolderUrl {
+            let imageNamePrefix = "apngb_frame"
+            var index = 0
+            copyImagesToFolder(withPath: folderUrl.path,
+                               imageNamePrefix: imageNamePrefix,
+                               andIndex: index)
+            index = resetIndex()
+            createImageMetadataFilesToFolder(withUrl: folderUrl,
+                                             imageNamePrefix: imageNamePrefix,
+                                             andIndex: index)
+            NSWorkspace.shared().open(folderUrl)
+        }
+    }
+    
+    func createImageCopiesFolder() -> URL? {
+        let imagesFolderName = "PngFiles"
+        let imagesFolderUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagesFolderName, isDirectory: true)
+        
+        if let folderUrl = imagesFolderUrl {
+            let folderWasRemoved = FileManager.default.removeItemIfExists(atPath: folderUrl.path)
+            
+            if folderWasRemoved {
+                do {
+                    try FileManager.default.createDirectory(at: folderUrl,
+                                                            withIntermediateDirectories: true,
+                                                            attributes: nil)
+                } catch let error {
+                    NSLog("\(#function): \(error)")
+                    return nil
+                }
+                
+                return folderUrl
+            }
+        }
+        
+        return nil
+    }
+    
+    private func copyImagesToFolder(withPath path: String, imageNamePrefix: String, andIndex index: Int) {
+        var index = index
+        
+        for droppedImage in droppedImages {
+            
+            do {
+                let newImageName = "\(imageNamePrefix)\(index).\(droppedImage.name.fileExtension())"
+                try FileManager.default.copyItem(atPath: droppedImage.path,
+                                                 toPath: path.appending("/\(newImageName)"))
+                if index == 0 {
+                    assemblyArguments.sourceImagePath = path.appending("/\(newImageName)")
+                }
+                
+            } catch let error {
+                NSLog("\(#function): \(error)")
+            }
+            
+            index += 1
+        }
+    }
+    
+    private func createImageMetadataFilesToFolder(withUrl url: URL, imageNamePrefix: String, andIndex index: Int) {
+        var index = index
+        
+        for droppedImage in droppedImages {
+            let textFileName = "\(imageNamePrefix)\(index)"
+            let filePath = url.appendingPathComponent("\(textFileName).txt").path
+            FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
+            FileManager.default.writeToFile(content: droppedImage.displayableFrameDelay,
+                                            filePath: filePath)
+            index += 1
+        }
+    }
+    
+    private func resetIndex() -> Int {
+        return 0
     }
     
     private func setupStatusView() {

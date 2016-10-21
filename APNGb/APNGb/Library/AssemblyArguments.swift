@@ -11,7 +11,7 @@ import Cocoa
 final class AssemblyArguments: CommandArguments {
     
     var destinationImagePath = AssemblyArguments.defaultArgumentValue()
-    var sourceImagesPaths: [String] = []
+    var sourceImagePath = AssemblyArguments.defaultArgumentValue()
 
     var playback: Playback
     var optimization: Optimization
@@ -43,8 +43,7 @@ final class AssemblyArguments: CommandArguments {
     }
     
     func commandArguments() -> [String] {
-        var arguments: [String] = [destinationImagePath]
-        arguments.append(contentsOf: sourceImagesPaths)
+        var arguments: [String] = [destinationImagePath, sourceImagePath]
         arguments.append(contentsOf: playback.commandArguments())
         arguments.append(contentsOf: optimization.commandArguments())
         arguments.append(contentsOf: compression.commandArguments())
