@@ -258,7 +258,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             createImageMetadataFilesToFolder(withUrl: folderUrl,
                                              imageNamePrefix: imageNamePrefix,
                                              andIndex: index)
-            NSWorkspace.shared().open(folderUrl)
         }
     }
     
