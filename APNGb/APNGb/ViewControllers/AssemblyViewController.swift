@@ -241,8 +241,8 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         assemblyArguments.compression.zopfliIterations = zopfliIterationsTextField.integerValue
         assemblyArguments.allFramesDelay.seconds = allFramesDelaySecondsTextField.integerValue
         assemblyArguments.allFramesDelay.frames = allframesDelayFramesTextField.integerValue
-        assemblyArguments.selectedFramesDelay.seconds = selectedDelayFramesTextField.integerValue
-        assemblyArguments.selectedFramesDelay.frames = selectedDelaySecondsTextField.integerValue
+        assemblyArguments.selectedFramesDelay.seconds = selectedDelaySecondsTextField.integerValue
+        assemblyArguments.selectedFramesDelay.frames = selectedDelayFramesTextField.integerValue
     }
     
     private func preProcessSetup() {
