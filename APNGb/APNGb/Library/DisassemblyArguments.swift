@@ -11,7 +11,25 @@ import Cocoa
 final class DisassemblyArguments: CommandArguments {
     
     var sourceImagePath = DisassemblyArguments.defaultArgumentValue()
-    var destinationImageNamePrefix = DisassemblyArguments.defaultArgumentValue()
+    var destinationImagesPath = DisassemblyArguments.defaultArgumentValue() {
+        
+        didSet {
+            
+            if destinationImagesPath.characters.count > 0 {
+                destinationImagesPath.append(String.slash)
+            }
+        }
+    }
+    
+    var destinationImagesNamePrefix = DisassemblyArguments.defaultDestinationImagesNamePrefix()
+    
+    class func defaultDestinationImagesNamePrefix() -> String {
+        return "frame"
+    }
+    
+    func destinationImagesFullPath() -> String {
+        return destinationImagesPath + destinationImagesNamePrefix
+    }
     
     func havePassedValidation() -> Bool {
         let arguments = commandArguments()
@@ -27,6 +45,6 @@ final class DisassemblyArguments: CommandArguments {
     }
     
     func commandArguments() -> [String] {
-        return [sourceImagePath, destinationImageNamePrefix]
+        return [sourceImagePath, destinationImagesPath, destinationImagesNamePrefix]
     }
 }

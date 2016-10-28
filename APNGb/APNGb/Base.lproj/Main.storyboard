@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11542"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -713,7 +715,7 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UdI-81-fac">
-                                <rect key="frame" x="10" y="15" width="297" height="22"/>
+                                <rect key="frame" x="10" y="15" width="307" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="1g4-Te-2wD"/>
                                 </constraints>
@@ -1093,10 +1095,10 @@ CA
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W8p-4V-3Mh">
-                                <rect key="frame" x="308" y="8" width="50" height="32"/>
+                                <rect key="frame" x="316" y="8" width="42" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="48p-cN-Uep"/>
-                                    <constraint firstAttribute="width" constant="38" id="Evh-Qb-6ze"/>
+                                    <constraint firstAttribute="width" constant="30" id="Evh-Qb-6ze"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tvf-sa-frw">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1113,7 +1115,7 @@ CA
                             <constraint firstItem="wKK-zp-Ipw" firstAttribute="leading" secondItem="W8p-4V-3Mh" secondAttribute="trailing" constant="10" id="Ihf-QH-EPB"/>
                             <constraint firstAttribute="bottom" secondItem="W8p-4V-3Mh" secondAttribute="bottom" constant="15" id="MYq-XH-VqW"/>
                             <constraint firstAttribute="trailing" secondItem="wKK-zp-Ipw" secondAttribute="trailing" constant="10" id="VQL-NI-ilG"/>
-                            <constraint firstItem="W8p-4V-3Mh" firstAttribute="leading" secondItem="UdI-81-fac" secondAttribute="trailing" constant="7" id="WKI-gp-J7Q"/>
+                            <constraint firstItem="W8p-4V-3Mh" firstAttribute="leading" secondItem="UdI-81-fac" secondAttribute="trailing" constant="5" id="WKI-gp-J7Q"/>
                             <constraint firstAttribute="bottom" secondItem="wKK-zp-Ipw" secondAttribute="bottom" constant="15" id="kIY-jY-dFs"/>
                         </constraints>
                     </view>
@@ -1138,16 +1140,16 @@ CA
         <scene sceneID="Hiy-e3-ciK">
             <objects>
                 <viewController id="G7N-NI-mjP" customClass="DisassemblyViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="I4c-Vu-esD">
+                    <view key="view" wantsLayer="YES" id="I4c-Vu-esD">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zBX-5a-8mL">
-                                <rect key="frame" x="10" y="15" width="337" height="22"/>
+                                <rect key="frame" x="10" y="10" width="307" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="EIy-nZ-OAb"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Output image name prefix" drawsBackground="YES" id="H3B-MP-mWx">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Output frame path" drawsBackground="YES" id="H3B-MP-mWx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1157,7 +1159,7 @@ CA
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-vH-8vq">
-                                <rect key="frame" x="356" y="8" width="70" height="32"/>
+                                <rect key="frame" x="356" y="3" width="70" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="YBY-Lk-jBk"/>
                                     <constraint firstAttribute="height" constant="21" id="dzg-dR-fcc"/>
@@ -1170,11 +1172,17 @@ CA
                                     <action selector="startDisassemblingProcess:" target="G7N-NI-mjP" id="jFd-P4-ZFT"/>
                                 </connections>
                             </button>
+                            <webView autoresizesSubviews="NO" focusRingType="none" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyU-1t-e5K" customClass="DragAndDropWebView" customModule="APNGb" customModuleProvider="target">
+                                <rect key="frame" x="5" y="42" width="420" height="403"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO" loadsImagesAutomatically="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hCw-dG-cAk">
-                                <rect key="frame" x="50" y="233" width="330" height="30"/>
+                                <rect key="frame" x="50" y="229" width="330" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="326" id="HBq-vR-ygm"/>
-                                    <constraint firstAttribute="height" constant="30" id="lCG-pX-dxN"/>
+                                    <constraint firstAttribute="width" constant="326" id="3pa-WH-U5a"/>
+                                    <constraint firstAttribute="height" constant="30" id="RLv-qN-5RX"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop image here" id="xTr-Ua-tTa">
                                     <font key="font" metaFont="system" size="22"/>
@@ -1182,27 +1190,39 @@ CA
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-Yn-eY2" customClass="DragAndDropImageView" customModule="APNGb" customModuleProvider="target">
-                                <rect key="frame" x="2" y="48" width="426" height="400"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="8ou-jU-c72"/>
-                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-Fn-tdY">
+                                <rect key="frame" x="316" y="3" width="42" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="AL6-ql-m0p"/>
+                                    <constraint firstAttribute="width" constant="30" id="egL-RC-0qD"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m9T-P5-Xrt">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showOpenPanel:" target="G7N-NI-mjP" id="3ha-Q0-bv6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="C8z-vH-8vq" firstAttribute="top" secondItem="tfc-Yn-eY2" secondAttribute="bottom" constant="15" id="03n-ht-zPu"/>
-                            <constraint firstItem="hCw-dG-cAk" firstAttribute="centerY" secondItem="tfc-Yn-eY2" secondAttribute="centerY" id="APC-H7-tcb"/>
-                            <constraint firstItem="tfc-Yn-eY2" firstAttribute="top" secondItem="I4c-Vu-esD" secondAttribute="top" constant="5" id="Ati-zP-Of3"/>
-                            <constraint firstAttribute="bottom" secondItem="zBX-5a-8mL" secondAttribute="bottom" constant="15" id="F23-yV-UIM"/>
-                            <constraint firstItem="tfc-Yn-eY2" firstAttribute="leading" secondItem="I4c-Vu-esD" secondAttribute="leading" constant="5" id="SbX-7t-Asw"/>
-                            <constraint firstItem="C8z-vH-8vq" firstAttribute="leading" secondItem="zBX-5a-8mL" secondAttribute="trailing" constant="15" id="UEp-2b-l9v"/>
+                            <constraint firstItem="hCw-dG-cAk" firstAttribute="centerY" secondItem="vyU-1t-e5K" secondAttribute="centerY" id="Cqm-GN-JOp"/>
+                            <constraint firstAttribute="bottom" secondItem="zBX-5a-8mL" secondAttribute="bottom" constant="10" id="F23-yV-UIM"/>
+                            <constraint firstItem="C8z-vH-8vq" firstAttribute="leading" secondItem="fyE-Fn-tdY" secondAttribute="trailing" constant="10" id="KjB-Ur-12b"/>
+                            <constraint firstItem="hCw-dG-cAk" firstAttribute="centerX" secondItem="vyU-1t-e5K" secondAttribute="centerX" id="TNu-Ue-Adi"/>
                             <constraint firstItem="zBX-5a-8mL" firstAttribute="leading" secondItem="I4c-Vu-esD" secondAttribute="leading" constant="10" id="Vzf-6w-pLB"/>
+                            <constraint firstAttribute="trailing" secondItem="vyU-1t-e5K" secondAttribute="trailing" constant="5" id="WBg-lK-qSO"/>
                             <constraint firstAttribute="trailing" secondItem="C8z-vH-8vq" secondAttribute="trailing" constant="10" id="bx1-ry-2X2"/>
-                            <constraint firstAttribute="trailing" secondItem="tfc-Yn-eY2" secondAttribute="trailing" constant="5" id="fhh-v6-2tw"/>
+                            <constraint firstItem="vyU-1t-e5K" firstAttribute="leading" secondItem="I4c-Vu-esD" secondAttribute="leading" constant="5" id="c8k-UC-7qJ"/>
+                            <constraint firstAttribute="bottom" secondItem="fyE-Fn-tdY" secondAttribute="bottom" constant="10" id="cDi-vh-hZH"/>
+                            <constraint firstItem="fyE-Fn-tdY" firstAttribute="leading" secondItem="zBX-5a-8mL" secondAttribute="trailing" constant="5" id="cum-zV-3j4"/>
                             <constraint firstItem="C8z-vH-8vq" firstAttribute="baseline" secondItem="zBX-5a-8mL" secondAttribute="baseline" id="jUa-7i-XgC"/>
-                            <constraint firstItem="hCw-dG-cAk" firstAttribute="centerX" secondItem="tfc-Yn-eY2" secondAttribute="centerX" id="z76-Gc-Gfv"/>
+                            <constraint firstItem="vyU-1t-e5K" firstAttribute="top" secondItem="I4c-Vu-esD" secondAttribute="top" constant="5" id="nqq-9r-Zsa"/>
+                            <constraint firstItem="zBX-5a-8mL" firstAttribute="top" secondItem="vyU-1t-e5K" secondAttribute="bottom" constant="10" id="yIi-gA-uwb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="destinationImageView" destination="tfc-Yn-eY2" id="fUs-Op-Th1"/>
+                        <outlet property="destinationWebView" destination="vyU-1t-e5K" id="ox3-P6-rnR"/>
                         <outlet property="dropHintLabel" destination="hCw-dG-cAk" id="hN6-T6-HGF"/>
                         <outlet property="fileNameTextField" destination="zBX-5a-8mL" id="gNO-nd-Shi"/>
                         <outlet property="startButton" destination="C8z-vH-8vq" id="4Lp-IQ-Uvh"/>

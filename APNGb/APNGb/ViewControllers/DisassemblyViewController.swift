@@ -8,31 +8,25 @@
 
 import Cocoa
 
-final class DisassemblyViewController: NSViewController, DragAndDropImageViewDelegate, NSTextFieldDelegate {
+final class DisassemblyViewController: NSViewController, DragAndDropImageDelegate, NSTextFieldDelegate {
     
     private var disassemblyArguments = DisassemblyArguments()
     private var process: ExecutableProcess?
     private var statusViewController: StatusViewController?
     
-    @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var startButton: NSButton!
+    @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var dropHintLabel: NSTextField!
-    @IBOutlet private var destinationImageView: DragAndDropImageView! {
+    @IBOutlet private var destinationWebView: DragAndDropWebView! {
         didSet {
-            destinationImageView.delegate = self
+            destinationWebView.delegate = self
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStatusView()
-    }
-    
-    private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
-        statusViewController?.cancelHandler = {
-            self.stopDisassemblingProcess()
-        }
+        configureStatusView()
+        configureWebView()
     }
     
     // MARK: IBActions
@@ -52,11 +46,26 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
         }
     }
     
+    @IBAction func showOpenPanel(_ sender: Any) {
+        let openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseFiles = false
+        openPanel.canChooseDirectories = true
+        openPanel.beginSheetModal(for: self.view.window!) { wasDirectoredSelected in
+            
+            if Bool(wasDirectoredSelected) {
+                let destinationFolder = openPanel.urls[0]
+                self.disassemblyArguments.destinationImagesPath = destinationFolder.path
+                self.disassemblyArguments.destinationImagesNamePrefix = DisassemblyArguments.defaultDestinationImagesNamePrefix()
+                self.fileNameTextField.stringValue = self.disassemblyArguments.destinationImagesFullPath()
+            }
+        }
+    }
+    
     // MARK: - DragAndDropImageViewDelegate
     
     func didDropImage(withPath path: String) {
         disassemblyArguments.sourceImagePath = path
-        setDefaultOutputFilenamePrefixIfNeeded(prefix: defaultOutputFilenamePrefix())
         dropHintLabel.isHidden = true
     }
     
@@ -65,11 +74,33 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     override func controlTextDidChange(_ obj: Notification) {
         
         if let textField = (obj.object as? NSTextField) {
-            disassemblyArguments.destinationImageNamePrefix = textField.stringValue
+            
+            if textField.stringValue.characters.count > 0 {
+                let pathComponents = textField.stringValue.components(separatedBy: String.slash)
+                
+                if let lastPathComponent = pathComponents.last {
+                    disassemblyArguments.destinationImagesNamePrefix = lastPathComponent
+                }
+                
+                let folderPath = URL(fileURLWithPath: textField.stringValue).deletingLastPathComponent().path
+                disassemblyArguments.destinationImagesPath = folderPath
+            }
         }
     }
     
     // MARK: - Private
+    
+    private func configureStatusView() {
+        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
+        statusViewController?.cancelHandler = {
+            self.stopDisassemblingProcess()
+        }
+    }
+    
+    private func configureWebView() {
+        destinationWebView.drawsBackground = false
+        destinationWebView.mainFrame.frameView.allowsScrolling = false
+    }
     
     private func stopDisassemblingProcess() {
         statusViewController?.dismiss(nil)
@@ -77,20 +108,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageViewDel
     }
     
     private func showImageFramesInFinderApp() {
-        let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.sourceImagePath)
-        NSWorkspace.shared().open(fileUrl.deletingLastPathComponent())
+        let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.destinationImagesPath)
+        NSWorkspace.shared().open(fileUrl)
     }
-    
-    private func setDefaultOutputFilenamePrefixIfNeeded(prefix: String) {
-        
-        if fileNameTextField.stringValue.characters.count == 0 {
-            fileNameTextField.stringValue = prefix
-            disassemblyArguments.destinationImageNamePrefix = prefix
-        }
-    }
-
-    private func defaultOutputFilenamePrefix() -> String {
-        return "frame"
-    }
-    
 }

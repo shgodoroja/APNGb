@@ -11,6 +11,7 @@ import Cocoa
 extension String {
     
     static let empty = ""
+    static let slash = "/"
     
     func fileName() -> String {
         

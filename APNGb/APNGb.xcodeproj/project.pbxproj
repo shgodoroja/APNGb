@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */; };
 		AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B42FD1DAFF044001E054A /* StatusViewController.swift */; };
 		AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94DF1DAEAD7D008DB042 /* apngasm */; };
-		AB2C94E21DAEAD7D008DB042 /* readme-asm.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E01DAEAD7D008DB042 /* readme-asm.txt */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
-		AB2C94E61DAEAD89008DB042 /* readme-dis.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E41DAEAD89008DB042 /* readme-dis.txt */; };
 		AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */; };
 		AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB431DB17BFF001F4DDD /* Playback.swift */; };
 		AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB451DB17D9E001F4DDD /* Optimization.swift */; };
@@ -32,7 +31,6 @@
 		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManager+Extension.swift */; };
 		ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* String+Extension.swift */; };
-		ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */; };
 		ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */; };
 		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
@@ -50,11 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropWebView.swift; path = CustomViews/DragAndDropWebView.swift; sourceTree = "<group>"; };
 		AB2B42FD1DAFF044001E054A /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewController.swift; path = ViewControllers/StatusViewController.swift; sourceTree = "<group>"; };
 		AB2C94DF1DAEAD7D008DB042 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngasm; path = APNGb/Executables/apngasm; sourceTree = SOURCE_ROOT; };
-		AB2C94E01DAEAD7D008DB042 /* readme-asm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "readme-asm.txt"; path = "APNGb/Executables/readme-asm.txt"; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
-		AB2C94E41DAEAD89008DB042 /* readme-dis.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "readme-dis.txt"; path = "APNGb/Executables/readme-dis.txt"; sourceTree = SOURCE_ROOT; };
 		AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyArguments.swift; path = Library/AssemblyArguments.swift; sourceTree = "<group>"; };
 		AB36BB431DB17BFF001F4DDD /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playback.swift; path = Library/Playback.swift; sourceTree = "<group>"; };
 		AB36BB451DB17D9E001F4DDD /* Optimization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optimization.swift; path = Library/Optimization.swift; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
 		AB9830391DB7B065009E0254 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FileManager+Extension.swift"; path = "Extensions/FileManager+Extension.swift"; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extensions/String+Extension.swift"; sourceTree = "<group>"; };
-		ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropImageView.swift; path = CustomViews/DragAndDropImageView.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
@@ -101,18 +97,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB2B42FA1DAFEA61001E054A /* Views */ = {
+		AB2B42FA1DAFEA61001E054A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				AB3DF2351D8DDE660048BE0A /* Main.storyboard */,
 			);
-			name = Views;
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		AB2C94E91DAEBD25008DB042 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				ABD8C36D1DB4DBC200C74183 /* DragAndDropImageView.swift */,
+				AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -196,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3DF2331D8DDE660048BE0A /* Assets.xcassets */,
-				AB2B42FA1DAFEA61001E054A /* Views */,
+				AB2B42FA1DAFEA61001E054A /* Storyboards */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -205,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				AB2C94DF1DAEAD7D008DB042 /* apngasm */,
-				AB2C94E01DAEAD7D008DB042 /* readme-asm.txt */,
 			);
 			name = Assembler;
 			sourceTree = "<group>";
@@ -214,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				AB2C94E31DAEAD89008DB042 /* apngdis */,
-				AB2C94E41DAEAD89008DB042 /* readme-dis.txt */,
 			);
 			name = Disassembler;
 			sourceTree = "<group>";
@@ -320,7 +314,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Godoroja Stefan";
 				TargetAttributes = {
 					AB3DF22B1D8DDE660048BE0A = {
@@ -360,12 +354,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2C94E21DAEAD7D008DB042 /* readme-asm.txt in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
 				AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */,
-				AB2C94E61DAEAD89008DB042 /* readme-dis.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +387,7 @@
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
 				AB98302A1DB7803A009E0254 /* Global.swift in Sources */,
-				ABD8C36E1DB4DBC200C74183 /* DragAndDropImageView.swift in Sources */,
+				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
 				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
@@ -457,6 +449,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -506,6 +499,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

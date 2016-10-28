@@ -175,9 +175,12 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseFiles = false
         openPanel.canChooseDirectories = true
-        openPanel.beginSheetModal(for: self.view.window!) { status in
-            let destinationFolder = openPanel.urls[0]
-            self.fileNameTextField.stringValue = destinationFolder.appendingPathComponent(self.defaultOutputImageName()).relativePath
+        openPanel.beginSheetModal(for: self.view.window!) { wasDirectoredSelected in
+            
+            if Bool(wasDirectoredSelected) {
+                let destinationFolder = openPanel.urls[0]
+                self.fileNameTextField.stringValue = destinationFolder.appendingPathComponent(self.defaultOutputImageName()).relativePath
+            }
         }
     }
     
