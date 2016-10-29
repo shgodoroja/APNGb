@@ -45,8 +45,8 @@ final class DragAndDropWebView: WebView {
         
         if let pasteboard = sender.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? NSArray,
             let imagePath = pasteboard[0] as? String {
-            let html = "<html><head><style type='text/css'>html,body {margin: 0;padding: 0;width: 100%;height: 100%;}html {display: table;}body {display: table-cell;vertical-align: middle;text-align: center;-webkit-text-size-adjust: none;}</style></head><body><img src=\"file://\(imagePath)\"></body></html>​"
-            mainFrame.loadHTMLString(html, baseURL: nil)
+            let imageHTML = "<!DOCTYPE html> <head> <style type=\"text/css\"> html { margin:0; padding:0; } body {margin: 0; padding:0;} img {position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-width:100%; max-height: 100%;} </style> </head> <body id=\"page\"> <img src=\"file://\(imagePath)\"> </body> </html>​"
+            mainFrame.loadHTMLString(imageHTML, baseURL: nil)
             delegate?.didDropImage(withPath: imagePath)
             return true
         } else {
