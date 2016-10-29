@@ -1024,7 +1024,7 @@ CA
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="" editable="NO" width="270" minWidth="10" maxWidth="3.4028234663852886e+38" id="Q7W-vq-Vsl">
+                                                <tableColumn identifier="name" editable="NO" width="270" minWidth="10" maxWidth="3.4028234663852886e+38" id="Q7W-vq-Vsl">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1037,7 +1037,7 @@ CA
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" editable="NO" width="70" minWidth="10" maxWidth="3.4028234663852886e+38" id="AjB-yx-sS8">
+                                                <tableColumn identifier="size" editable="NO" width="70" minWidth="10" maxWidth="3.4028234663852886e+38" id="AjB-yx-sS8">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Size">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1050,7 +1050,7 @@ CA
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
-                                                <tableColumn identifier="" editable="NO" width="69" minWidth="10" maxWidth="3.4028234663852886e+38" id="QeA-Z0-vNa">
+                                                <tableColumn identifier="delay" editable="NO" width="69" minWidth="10" maxWidth="3.4028234663852886e+38" id="QeA-Z0-vNa">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Delay, sec">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1133,7 +1133,7 @@ CA
                 </viewController>
                 <customObject id="fzl-6v-kKk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="419"/>
+            <point key="canvasLocation" x="746" y="393"/>
         </scene>
         <!--Disassembly View Controller-->
         <scene sceneID="Hiy-e3-ciK">

@@ -16,6 +16,10 @@ enum RadioButtonIdentifier: Int {
     case zlib = 0, _7zip = 1, zopfli = 2
 }
 
+enum DroppedImageTableViewColumnIdentifier: String {
+    case name = "name", size = "size", delay = "delay"
+}
+
 final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate {
     
     private var assemblyArguments = AssemblyArguments()
@@ -104,10 +108,10 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         let droppedImage = droppedImages[row]
         
-        if tableColumn?.title == "Name" {
+        if tableColumn?.identifier == DroppedImageTableViewColumnIdentifier.name.rawValue {
             return droppedImage.name
-        } else if tableColumn?.title == "Size" {
-            return "\(droppedImage.size) KB"
+        } else if tableColumn?.identifier == DroppedImageTableViewColumnIdentifier.size.rawValue {
+            return "\(droppedImage.size)" + String.space + String.kilobyteAbbreviation
         } else {
             return droppedImage.displayableFrameDelay
         }

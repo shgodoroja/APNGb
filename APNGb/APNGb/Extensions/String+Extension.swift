@@ -12,6 +12,8 @@ extension String {
     
     static let empty = ""
     static let slash = "/"
+    static let space = " "
+    static let kilobyteAbbreviation = "KB"
     
     func fileName() -> String {
         
