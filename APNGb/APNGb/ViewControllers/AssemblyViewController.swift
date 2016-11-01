@@ -128,6 +128,9 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             let command = Command(withExecutableName: .Assembly)
             command.arguments = assemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
+            process?.progressHandler = { outputString in
+                self.statusViewController?.updateStatusMessage(message: outputString)
+            }
             process?.terminationHandler = {
                 self.stopAssemblingProcess()
                 self.showImageInFinderApp()

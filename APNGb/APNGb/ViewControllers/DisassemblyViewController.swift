@@ -38,6 +38,9 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
             let command = Command(withExecutableName: .Disassembly)
             command.arguments = disassemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
+            process?.progressHandler = { outputString in
+                self.statusViewController?.updateStatusMessage(message: outputString)
+            }
             process?.terminationHandler = {
                 self.stopDisassemblingProcess()
                 self.showImageFramesInFinderApp()

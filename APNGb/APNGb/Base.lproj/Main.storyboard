@@ -1236,22 +1236,23 @@ CA
             <objects>
                 <viewController storyboardIdentifier="StatusViewController" id="a0M-5j-MCJ" customClass="StatusViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="flY-Bh-HBf">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="70"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-yx-djt">
-                                <rect key="frame" x="44" y="25" width="233" height="19"/>
+                                <rect key="frame" x="39" y="26" width="298" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="hxI-Hb-0EE"/>
+                                    <constraint firstAttribute="height" constant="19" id="EuH-uj-0V2"/>
+                                    <constraint firstAttribute="width" constant="294" id="bgc-LQ-4Ih"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="In progress..." id="juf-Lt-wuw">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="juf-Lt-wuw">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RNB-Kf-RVC">
-                                <rect key="frame" x="289" y="17" width="82" height="32"/>
+                                <rect key="frame" x="339" y="18" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="69a-uP-tzI"/>
                                     <constraint firstAttribute="height" constant="21" id="iVZ-Ym-aIN"/>
@@ -1268,7 +1269,7 @@ Gw
                                 </connections>
                             </button>
                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Qv8-ae-mCn">
-                                <rect key="frame" x="20" y="27" width="16" height="16"/>
+                                <rect key="frame" x="15" y="27" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="9rb-V5-OsV"/>
                                     <constraint firstAttribute="width" constant="16" id="wv3-1J-PSw"/>
@@ -1278,11 +1279,10 @@ Gw
                         <constraints>
                             <constraint firstItem="Qv8-ae-mCn" firstAttribute="centerY" secondItem="flY-Bh-HBf" secondAttribute="centerY" id="4fM-xf-LS4"/>
                             <constraint firstAttribute="trailing" secondItem="RNB-Kf-RVC" secondAttribute="trailing" constant="15" id="8vH-Qa-MqL"/>
-                            <constraint firstItem="sQO-yx-djt" firstAttribute="leading" secondItem="Qv8-ae-mCn" secondAttribute="trailing" constant="10" id="Uhc-Di-4GP"/>
-                            <constraint firstItem="sQO-yx-djt" firstAttribute="centerY" secondItem="flY-Bh-HBf" secondAttribute="centerY" id="XEt-sH-Tj1"/>
-                            <constraint firstItem="Qv8-ae-mCn" firstAttribute="leading" secondItem="flY-Bh-HBf" secondAttribute="leading" constant="20" id="hzp-LR-R5s"/>
+                            <constraint firstItem="sQO-yx-djt" firstAttribute="leading" secondItem="Qv8-ae-mCn" secondAttribute="trailing" constant="10" id="BgR-9W-zuc"/>
+                            <constraint firstItem="Qv8-ae-mCn" firstAttribute="leading" secondItem="flY-Bh-HBf" secondAttribute="leading" constant="15" id="hzp-LR-R5s"/>
                             <constraint firstItem="RNB-Kf-RVC" firstAttribute="centerY" secondItem="flY-Bh-HBf" secondAttribute="centerY" id="rjN-Lb-8eh"/>
-                            <constraint firstItem="RNB-Kf-RVC" firstAttribute="leading" secondItem="sQO-yx-djt" secondAttribute="trailing" constant="20" id="sqh-jo-6Xl"/>
+                            <constraint firstItem="sQO-yx-djt" firstAttribute="centerY" secondItem="flY-Bh-HBf" secondAttribute="centerY" id="wsN-M1-3WG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1292,7 +1292,7 @@ Gw
                 </viewController>
                 <customObject id="g3K-0Q-UIt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="48"/>
+            <point key="canvasLocation" x="746" y="62"/>
         </scene>
     </scenes>
 </document>

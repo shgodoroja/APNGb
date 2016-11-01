@@ -24,7 +24,9 @@ final class StatusViewController: NSViewController {
     // MARK: - Update UI
     
     func updateStatusMessage(message: String) {
-        statusLabel.stringValue = message
+        DispatchQueue.main.async(execute: {
+            self.statusLabel.stringValue = message
+        })
     }
     
     // MARK: - IBActions

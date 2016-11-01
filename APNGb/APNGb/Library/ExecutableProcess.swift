@@ -12,6 +12,7 @@ class ExecutableProcess: NSObject {
     
     var terminationHandler: VoidHandler
     var progressHandler: ((String) -> ())?
+    private var fileHandle: FileHandle?
     
     private var task = Process()
     
@@ -28,6 +29,15 @@ class ExecutableProcess: NSObject {
                 })
             }
         }
+        
+        let outputPipe = Pipe()
+        task.standardOutput = outputPipe
+        fileHandle = outputPipe.fileHandleForReading
+        fileHandle?.waitForDataInBackgroundAndNotify()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receivedData(notification:)),
+                                               name: NSNotification.Name.NSFileHandleDataAvailable,
+                                               object: nil)
     }
     
     func start() {
@@ -37,4 +47,21 @@ class ExecutableProcess: NSObject {
     func stop() {
         task.terminate()
     }
+    
+    func receivedData(notification : NSNotification) {
+
+        if let fileHandle = fileHandle {
+            let data = fileHandle.availableData
+            if data.count > 0 {
+                fileHandle.waitForDataInBackgroundAndNotify()
+                let outputString = String(data: data,
+                                            encoding: String.Encoding.ascii)
+                
+                if let outputString = outputString {
+                    self.progressHandler?(outputString)
+                }
+            }
+        }
+    }
 }
+
