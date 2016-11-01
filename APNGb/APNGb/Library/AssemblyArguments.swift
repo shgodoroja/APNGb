@@ -19,8 +19,6 @@ final class AssemblyArguments: CommandArguments {
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
     
-    let allowedFileTypes = ["png"]
-    
     init() {
         playback = Playback()
         optimization = Optimization()

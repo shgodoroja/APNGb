@@ -67,8 +67,8 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     
     // MARK: - DragAndDropImageViewDelegate
     
-    func didDropImage(withPath path: String) {
-        disassemblyArguments.sourceImagePath = path
+    func didDropImages(withPaths paths: [String]) {
+        disassemblyArguments.sourceImagePath = paths[0]
         dropHintLabel.isHidden = true
     }
     

@@ -1010,7 +1010,11 @@ CA
                                     </subviews>
                                 </view>
                             </box>
-                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZy-5Q-oUD">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-kG-h6F" customClass="DragAndDropView" customModule="APNGb" customModuleProvider="target">
+                                <rect key="frame" x="4" y="258" width="421" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <scrollView hidden="YES" wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZy-5Q-oUD">
                                 <rect key="frame" x="5" y="265" width="420" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="rVE-yO-sdT">
@@ -1084,15 +1088,6 @@ CA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bag-YP-hlO">
-                                <rect key="frame" x="50" y="313" width="330" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop images here" id="T3v-Si-pwn">
-                                    <font key="font" metaFont="system" size="22"/>
-                                    <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W8p-4V-3Mh">
                                 <rect key="frame" x="316" y="3" width="42" height="32"/>
                                 <constraints>
@@ -1107,6 +1102,15 @@ CA
                                     <action selector="showOpenPanel:" target="GTU-ZT-XQF" id="8pO-02-jdL"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bag-YP-hlO">
+                                <rect key="frame" x="50" y="314" width="330" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Drop images here" id="T3v-Si-pwn">
+                                    <font key="font" metaFont="system" size="22"/>
+                                    <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UdI-81-fac" firstAttribute="leading" secondItem="dOV-z9-6Fm" secondAttribute="leading" constant="10" id="0kq-K5-4kJ"/>
@@ -1122,18 +1126,20 @@ CA
                         <outlet property="_7zipIterationsTextField" destination="Ufs-on-7Vc" id="lPP-hM-MeO"/>
                         <outlet property="allFramesDelaySecondsTextField" destination="lqN-o3-fAX" id="5fg-4m-rBl"/>
                         <outlet property="allframesDelayFramesTextField" destination="tuM-rQ-Im4" id="Fyo-Yr-Xub"/>
+                        <outlet property="dragAndDropView" destination="cHU-kG-h6F" id="OgS-mT-qNP"/>
                         <outlet property="dropImagesHereLabel" destination="bag-YP-hlO" id="sLE-mT-6Zg"/>
                         <outlet property="fileNameTextField" destination="UdI-81-fac" id="TLb-Z1-m00"/>
                         <outlet property="numberOfLoopsTextField" destination="3RM-5T-Naw" id="OUj-t2-kkJ"/>
                         <outlet property="selectedDelayFramesTextField" destination="imO-UT-Adw" id="0dk-4Q-bxY"/>
                         <outlet property="selectedDelaySecondsTextField" destination="dgu-B9-PKs" id="iEb-Yu-sq1"/>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="rej-DQ-F0Y"/>
+                        <outlet property="tableViewScrollView" destination="XZy-5Q-oUD" id="DsF-dV-Dcv"/>
                         <outlet property="zopfliIterationsTextField" destination="74r-gB-By4" id="nEg-g6-DbQ"/>
                     </connections>
                 </viewController>
                 <customObject id="fzl-6v-kKk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="393"/>
+            <point key="canvasLocation" x="746" y="392.5"/>
         </scene>
         <!--Disassembly View Controller-->
         <scene sceneID="Hiy-e3-ciK">
@@ -1236,14 +1242,14 @@ CA
             <objects>
                 <viewController storyboardIdentifier="StatusViewController" id="a0M-5j-MCJ" customClass="StatusViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="flY-Bh-HBf">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="70"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-yx-djt">
-                                <rect key="frame" x="39" y="26" width="298" height="19"/>
+                                <rect key="frame" x="39" y="26" width="269" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="EuH-uj-0V2"/>
-                                    <constraint firstAttribute="width" constant="294" id="bgc-LQ-4Ih"/>
+                                    <constraint firstAttribute="width" constant="265" id="bgc-LQ-4Ih"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="juf-Lt-wuw">
                                     <font key="font" metaFont="system" size="14"/>
@@ -1252,7 +1258,7 @@ CA
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RNB-Kf-RVC">
-                                <rect key="frame" x="339" y="18" width="82" height="32"/>
+                                <rect key="frame" x="309" y="18" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="69a-uP-tzI"/>
                                     <constraint firstAttribute="height" constant="21" id="iVZ-Ym-aIN"/>
@@ -1292,7 +1298,7 @@ Gw
                 </viewController>
                 <customObject id="g3K-0Q-UIt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="62"/>
+            <point key="canvasLocation" x="746" y="74"/>
         </scene>
     </scenes>
 </document>

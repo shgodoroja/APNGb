@@ -20,7 +20,7 @@ enum DroppedImageTableViewColumnIdentifier: String {
     case name = "name", size = "size", delay = "delay"
 }
 
-final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate {
+final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropImageDelegate {
     
     private var assemblyArguments = AssemblyArguments()
     private var process: ExecutableProcess?
@@ -39,16 +39,22 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     @IBOutlet private var tableView: NSTableView!
     @IBOutlet private var dropImagesHereLabel: NSTextField!
     
+    @IBOutlet var tableViewScrollView: NSScrollView!
+    @IBOutlet var dragAndDropView: DragAndDropView! {
+        didSet {
+            dragAndDropView.delegate = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStatusView()
-        tableView.register(forDraggedTypes: [NSFilenamesPboardType])
     }
     
     // MARK: - NSTableView
     
     func tableView(_ tableView: NSTableView, didRemove rowView: NSTableRowView, forRow row: Int) {
-        showDropImagesHereLabelIfNeeded()
+        updateUI()
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
@@ -62,44 +68,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     // MARK: - NSTableViewDataSource
-    
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
-        
-        let imageUrls = info.draggingPasteboard().readObjects(forClasses: [NSURL.self],
-                                                              options: [NSPasteboardURLReadingContentsConformToTypesKey : [String(kUTTypeImage)]])
-        if let urls = imageUrls {
-            
-            if urls.count > 0 {
-                return .copy
-            }
-        }
-        
-        return []
-    }
-    
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
-        let draggedImagesPaths = info.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as! Array<String>
-        
-        for imagePath in draggedImagesPaths {
-            let imageUrl = NSURL(fileURLWithPath: imagePath)
-            let fileExtension = imageUrl.lastPathComponent?.fileExtension()
-            
-            if let fileExtension = fileExtension {
-                
-                if assemblyArguments.allowedFileTypes.contains(fileExtension) {
-                    let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
-                    let droppedImage = DroppedImage(url: imageUrl,
-                                                    size: imageSizeInKB)
-                    droppedImages.append(droppedImage)
-                }
-            }
-        }
-        
-        tableView.reloadData()
-        showDropImagesHereLabelIfNeeded()
-        
-        return true
-    }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return droppedImages.count
@@ -117,8 +85,23 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
     }
     
-    // MARK: IBActions
+    // MARK: DragAndDropImageDelegate
     
+    func didDropImages(withPaths paths: [String]) {
+        
+        for imagePath in paths {
+            let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
+            let droppedImage = DroppedImage(url: URL(fileURLWithPath: imagePath) as NSURL,
+                                            size: imageSizeInKB)
+            droppedImages.append(droppedImage)
+        }
+    
+        tableView.reloadData()
+        updateUI()
+    }
+
+    // MARK: IBActions
+
     @IBAction func startAssemblingProcess(_ sender: AnyObject) {
         collectArguments()
         preProcessSetup()
@@ -350,12 +333,26 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
     }
     
+    private func updateUI() {
+        showTableViewIfNeeded()
+        showDropImagesHereLabelIfNeeded()
+    }
+    
     private func showDropImagesHereLabelIfNeeded() {
         
         if droppedImages.count > 0 {
             dropImagesHereLabel.isHidden = true
         } else {
             dropImagesHereLabel.isHidden = false
+        }
+    }
+    
+    private func showTableViewIfNeeded() {
+        
+        if droppedImages.count > 0 {
+            tableViewScrollView.isHidden = false
+        } else {
+            tableViewScrollView.isHidden = true
         }
     }
     

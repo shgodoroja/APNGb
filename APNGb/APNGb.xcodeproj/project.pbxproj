@@ -11,6 +11,8 @@
 		AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B42FD1DAFF044001E054A /* StatusViewController.swift */; };
 		AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94DF1DAEAD7D008DB042 /* apngasm */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
+		AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */; };
+		AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */; };
 		AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */; };
 		AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB431DB17BFF001F4DDD /* Playback.swift */; };
 		AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB451DB17D9E001F4DDD /* Optimization.swift */; };
@@ -52,6 +54,8 @@
 		AB2B42FD1DAFF044001E054A /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewController.swift; path = ViewControllers/StatusViewController.swift; sourceTree = "<group>"; };
 		AB2C94DF1DAEAD7D008DB042 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngasm; path = APNGb/Executables/apngasm; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
+		AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropView.swift; path = CustomViews/DragAndDropView.swift; sourceTree = "<group>"; };
+		AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropValidator.swift; path = CustomViews/DragAndDropValidator.swift; sourceTree = "<group>"; };
 		AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyArguments.swift; path = Library/AssemblyArguments.swift; sourceTree = "<group>"; };
 		AB36BB431DB17BFF001F4DDD /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playback.swift; path = Library/Playback.swift; sourceTree = "<group>"; };
 		AB36BB451DB17D9E001F4DDD /* Optimization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optimization.swift; path = Library/Optimization.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		AB2C94E91DAEBD25008DB042 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */,
+				AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */,
 				AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */,
 			);
 			name = CustomViews;
@@ -379,12 +385,14 @@
 				AB98303A1DB7B065009E0254 /* FileManager+Extension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
+				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
 				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
+				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
 				AB98302A1DB7803A009E0254 /* Global.swift in Sources */,
 				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
