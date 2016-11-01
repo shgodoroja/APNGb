@@ -52,13 +52,18 @@ class ExecutableProcess: NSObject {
 
         if let fileHandle = fileHandle {
             let data = fileHandle.availableData
+            
             if data.count > 0 {
                 fileHandle.waitForDataInBackgroundAndNotify()
                 let outputString = String(data: data,
                                             encoding: String.Encoding.ascii)
+                let outputStrings = outputString?.components(separatedBy: CharacterSet.newlines)
                 
-                if let outputString = outputString {
-                    self.progressHandler?(outputString)
+                if let outputStrings = outputStrings {
+                    
+                    for output in outputStrings {
+                        self.progressHandler?(output)
+                    }
                 }
             }
         }
