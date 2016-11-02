@@ -12,8 +12,8 @@ class ExecutableProcess: NSObject {
     
     var terminationHandler: VoidHandler
     var progressHandler: ((String) -> ())?
-    private var fileHandle: FileHandle?
     
+    private var fileHandle: FileHandle?
     private var task = Process()
     
     init(withCommand command: Command) {

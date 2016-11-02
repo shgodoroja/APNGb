@@ -45,7 +45,6 @@ final class AssemblyArguments: CommandArguments {
         arguments.append(contentsOf: playback.commandArguments())
         arguments.append(contentsOf: optimization.commandArguments())
         arguments.append(contentsOf: compression.commandArguments())
-        arguments.append(contentsOf: allFramesDelay.commandArguments())
         
         return arguments
     }
