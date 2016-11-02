@@ -116,7 +116,12 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             }
             process?.terminationHandler = {
                 self.stopAssemblingProcess()
-                self.showImageInFinderApp()
+                
+                if self.statusViewController?.wasCanceled() == true {
+                    self.removeOutputImage()
+                } else {
+                    self.showImageInFinderApp()
+                }
             }
             process?.start()
         }
@@ -365,5 +370,10 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         assemblyArguments.selectedFramesDelay.enabled = enabled
         selectedDelaySecondsTextField.isEnabled = enabled
         selectedDelayFramesTextField.isEnabled = enabled
+    }
+    
+    private func removeOutputImage() {
+        let fileRemoved = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
+        NSLog("File was removed = \(fileRemoved)")
     }
 }

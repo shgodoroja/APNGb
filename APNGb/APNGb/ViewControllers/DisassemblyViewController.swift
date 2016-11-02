@@ -43,7 +43,12 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
             }
             process?.terminationHandler = {
                 self.stopDisassemblingProcess()
-                self.showImageFramesInFinderApp()
+                
+                if self.statusViewController?.wasCanceled() == true {
+                    self.removeOutputImages()
+                } else {
+                    self.showImageFramesInFinderApp()
+                }
             }
             process?.start()
         }
@@ -113,5 +118,9 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     private func showImageFramesInFinderApp() {
         let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.destinationImagesPath)
         NSWorkspace.shared().open(fileUrl)
+    }
+    
+    private func removeOutputImages() {
+        // TODO:
     }
 }
