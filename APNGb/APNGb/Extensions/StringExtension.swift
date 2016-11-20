@@ -1,5 +1,5 @@
 //
-//  String+Extension.swift
+//  StringExtension.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/20/16.

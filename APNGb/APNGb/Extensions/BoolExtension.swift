@@ -1,5 +1,5 @@
 //
-//  Bool+Extension.swift
+//  BoolExtension.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/17/16.

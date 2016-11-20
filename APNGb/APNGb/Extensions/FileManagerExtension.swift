@@ -1,5 +1,5 @@
 //
-//  FileManager+Extension.swift
+//  FileManagerExtension.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/19/16.

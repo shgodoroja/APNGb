@@ -30,13 +30,13 @@
 		AB98302A1DB7803A009E0254 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830291DB7803A009E0254 /* Global.swift */; };
 		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
 		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
-		AB98303A1DB7B065009E0254 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManager+Extension.swift */; };
+		AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManagerExtension.swift */; };
 		ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */; };
 		ABC011F81DE26EC6008BB3B8 /* apngopt in Resources */ = {isa = PBXBuildFile; fileRef = ABC011F71DE26EC6008BB3B8 /* apngopt */; };
 		ABC011FB1DE26F33008BB3B8 /* gif2apng in Resources */ = {isa = PBXBuildFile; fileRef = ABC011FA1DE26F33008BB3B8 /* gif2apng */; };
 		ABD65CF41DE1DF4800470879 /* ConvertGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */; };
-		ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* String+Extension.swift */; };
-		ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */; };
+		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
+		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
@@ -77,13 +77,13 @@
 		AB9830291DB7803A009E0254 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Utilities/Global.swift; sourceTree = "<group>"; };
 		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
 		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
-		AB9830391DB7B065009E0254 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FileManager+Extension.swift"; path = "Extensions/FileManager+Extension.swift"; sourceTree = "<group>"; };
+		AB9830391DB7B065009E0254 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Extensions/FileManagerExtension.swift; sourceTree = "<group>"; };
 		ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptimizerViewController.swift; path = ViewControllers/OptimizerViewController.swift; sourceTree = "<group>"; };
 		ABC011F71DE26EC6008BB3B8 /* apngopt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngopt; path = APNGb/Executables/apngopt; sourceTree = SOURCE_ROOT; };
 		ABC011FA1DE26F33008BB3B8 /* gif2apng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = gif2apng; path = APNGb/Executables/gif2apng; sourceTree = SOURCE_ROOT; };
 		ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertGifViewController.swift; path = ViewControllers/ConvertGifViewController.swift; sourceTree = "<group>"; };
-		ABD680761DB8EBB200A4735E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extensions/String+Extension.swift"; sourceTree = "<group>"; };
-		ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
+		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
+		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
@@ -281,9 +281,9 @@
 		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */,
-				AB9830391DB7B065009E0254 /* FileManager+Extension.swift */,
-				ABD680761DB8EBB200A4735E /* String+Extension.swift */,
+				ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */,
+				AB9830391DB7B065009E0254 /* FileManagerExtension.swift */,
+				ABD680761DB8EBB200A4735E /* StringExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
-				AB98303A1DB7B065009E0254 /* FileManager+Extension.swift in Sources */,
+				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
 				ABD65CF41DE1DF4800470879 /* ConvertGifViewController.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
@@ -419,13 +419,13 @@
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */,
-				ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */,
+				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
 				AB98302A1DB7803A009E0254 /* Global.swift in Sources */,
 				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
-				ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */,
+				ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
 				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
 				ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */,
