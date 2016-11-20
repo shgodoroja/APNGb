@@ -21,7 +21,6 @@
 		AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */; };
 		AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2331D8DDE660048BE0A /* Assets.xcassets */; };
 		AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2351D8DDE660048BE0A /* Main.storyboard */; };
-		AB3DF2421D8DDE660048BE0A /* APNGbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF2411D8DDE660048BE0A /* APNGbTests.swift */; };
 		AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
@@ -32,6 +31,7 @@
 		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
 		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManager+Extension.swift */; };
+		ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */; };
 		ABD65CF41DE1DF4800470879 /* ConvertGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */; };
 		ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* String+Extension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */; };
@@ -68,7 +68,6 @@
 		AB3DF2361D8DDE660048BE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB3DF2381D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APNGbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB3DF2411D8DDE660048BE0A /* APNGbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APNGbTests.swift; sourceTree = "<group>"; };
 		AB3DF2431D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
 		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
 		AB9830391DB7B065009E0254 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FileManager+Extension.swift"; path = "Extensions/FileManager+Extension.swift"; sourceTree = "<group>"; };
+		ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptimizerViewController.swift; path = ViewControllers/OptimizerViewController.swift; sourceTree = "<group>"; };
 		ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertGifViewController.swift; path = ViewControllers/ConvertGifViewController.swift; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extensions/String+Extension.swift"; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* Bool+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bool+Extension.swift"; path = "Extensions/Bool+Extension.swift"; sourceTree = "<group>"; };
@@ -171,7 +171,6 @@
 		AB3DF2401D8DDE660048BE0A /* APNGbTests */ = {
 			isa = PBXGroup;
 			children = (
-				AB3DF2411D8DDE660048BE0A /* APNGbTests.swift */,
 				AB3DF2431D8DDE660048BE0A /* Info.plist */,
 			);
 			path = APNGbTests;
@@ -185,6 +184,7 @@
 				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
 				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */,
+				ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -394,6 +394,7 @@
 				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
+				ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* String+Extension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
@@ -416,7 +417,6 @@
 			files = (
 				AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
 				AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
-				AB3DF2421D8DDE660048BE0A /* APNGbTests.swift in Sources */,
 				AB97CACE1DA1600300A6A272 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

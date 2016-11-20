@@ -9,10 +9,7 @@
 import Cocoa
 
 extension FileManager {
-    
-    /** 
-        Returns size of file in KBs
-     */
+        
     func sizeOfFile(atPath path: String) -> Int {
         
         do {
