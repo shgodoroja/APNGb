@@ -138,12 +138,10 @@
         <!--Main Tab View Controller-->
         <scene sceneID="V52-bY-Php">
             <objects>
-                <tabViewController selectedTabViewItemIndex="2" id="ydG-05-qJa" customClass="MainTabViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" id="ydG-05-qJa" customClass="MainTabViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem label="Assembly" identifier="" id="vQF-Ey-snh"/>
                         <tabViewItem label="Disassembly" identifier="" id="1VY-wb-hmO"/>
-                        <tabViewItem id="JDl-14-2hb"/>
-                        <tabViewItem id="6IC-CT-Nfd"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="0De-fO-MGI">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -154,8 +152,6 @@
                     <connections>
                         <segue destination="GTU-ZT-XQF" kind="relationship" relationship="tabItems" id="J2R-9f-OTr"/>
                         <segue destination="G7N-NI-mjP" kind="relationship" relationship="tabItems" id="Ck4-z7-0oM"/>
-                        <segue destination="Qy5-vl-xvS" kind="relationship" relationship="tabItems" id="wEP-cB-xEs"/>
-                        <segue destination="hRH-PA-5GJ" kind="relationship" relationship="tabItems" id="LUz-rr-LbP"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Rfr-VM-drz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
