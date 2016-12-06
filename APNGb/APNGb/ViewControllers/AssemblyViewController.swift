@@ -247,12 +247,12 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         let imageFolderUrl = createImageCopiesFolder()
         
         if let folderUrl = imageFolderUrl {
-            let imageNamePrefix = "apngb_frame"
+            let imageNamePrefix = "frame"
             var index = 0
             copyImagesToFolder(withPath: folderUrl.path,
                                imageNamePrefix: imageNamePrefix,
                                andIndex: index)
-            index = resetIndex()
+            reset(index: &index)
             createImageMetadataFilesToFolder(withUrl: folderUrl,
                                              imageNamePrefix: imageNamePrefix,
                                              andIndex: index)
@@ -260,7 +260,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func createImageCopiesFolder() -> URL? {
-        let imagesFolderName = "PngFiles"
+        let imagesFolderName = "APNGbImages"
         let imagesFolderUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagesFolderName, isDirectory: true)
         
         if let folderUrl = imagesFolderUrl {
@@ -311,14 +311,15 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             let textFileName = "\(imageNamePrefix)\(index)"
             let filePath = url.appendingPathComponent("\(textFileName).txt").path
             FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
-            FileManager.default.writeToFile(content: droppedImage.displayableFrameDelay,
+            let contentWithDelayValue = "delay=\(droppedImage.displayableFrameDelay)"
+            FileManager.default.writeToFile(content: contentWithDelayValue,
                                             filePath: filePath)
             index += 1
         }
     }
     
-    private func resetIndex() -> Int {
-        return 0
+    private func reset(index: inout Int) {
+        index = 0
     }
     
     private func setupStatusView() {
