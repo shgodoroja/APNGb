@@ -1180,13 +1180,13 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-yx-djt">
-                                <rect key="frame" x="39" y="26" width="269" height="19"/>
+                                <rect key="frame" x="39" y="10" width="269" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="EuH-uj-0V2"/>
+                                    <constraint firstAttribute="height" constant="50" id="EuH-uj-0V2"/>
                                     <constraint firstAttribute="width" constant="265" id="bgc-LQ-4Ih"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="juf-Lt-wuw">
-                                    <font key="font" metaFont="system" size="14"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="juf-Lt-wuw">
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
