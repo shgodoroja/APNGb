@@ -99,7 +99,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     // MARK: - Private
     
     private func configureStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
+        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboardViewIdentifier.Status) as! StatusViewController?
         statusViewController?.cancelHandler = {
             self.stopDisassemblingProcess()
         }

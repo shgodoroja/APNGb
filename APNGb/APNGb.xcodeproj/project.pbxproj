@@ -21,20 +21,20 @@
 		AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */; };
 		AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2331D8DDE660048BE0A /* Assets.xcassets */; };
 		AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2351D8DDE660048BE0A /* Main.storyboard */; };
+		AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */; };
+		AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */; };
+		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
 		AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
 		AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
-		AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
-		AB97CACE1DA1600300A6A272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC71DA1600300A6A272 /* MainViewController.swift */; };
-		AB98302A1DB7803A009E0254 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830291DB7803A009E0254 /* Global.swift */; };
 		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
 		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManagerExtension.swift */; };
-		ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */; };
-		ABC011F81DE26EC6008BB3B8 /* apngopt in Resources */ = {isa = PBXBuildFile; fileRef = ABC011F71DE26EC6008BB3B8 /* apngopt */; };
-		ABC011FB1DE26F33008BB3B8 /* gif2apng in Resources */ = {isa = PBXBuildFile; fileRef = ABC011FA1DE26F33008BB3B8 /* gif2apng */; };
-		ABD65CF41DE1DF4800470879 /* ConvertGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */; };
+		ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */; };
+		ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */; };
+		ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */; };
+		ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA2701DF77BC300A90962 /* NSViewExtension.swift */; };
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
@@ -71,17 +71,18 @@
 		AB3DF2381D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APNGbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3DF2431D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
+		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
+		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
 		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
-		AB97CAC71DA1600300A6A272 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
-		AB9830291DB7803A009E0254 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Utilities/Global.swift; sourceTree = "<group>"; };
 		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
 		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
 		AB9830391DB7B065009E0254 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Extensions/FileManagerExtension.swift; sourceTree = "<group>"; };
-		ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptimizerViewController.swift; path = ViewControllers/OptimizerViewController.swift; sourceTree = "<group>"; };
-		ABC011F71DE26EC6008BB3B8 /* apngopt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngopt; path = APNGb/Executables/apngopt; sourceTree = SOURCE_ROOT; };
-		ABC011FA1DE26F33008BB3B8 /* gif2apng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = gif2apng; path = APNGb/Executables/gif2apng; sourceTree = SOURCE_ROOT; };
-		ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertGifViewController.swift; path = ViewControllers/ConvertGifViewController.swift; sourceTree = "<group>"; };
+		ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewController.swift; path = ViewControllers/MainContainerViewController.swift; sourceTree = "<group>"; };
+		ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = ViewControllers/SideBarViewController.swift; sourceTree = "<group>"; };
+		ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewController.swift; path = ViewControllers/ChildContainerViewController.swift; sourceTree = "<group>"; };
+		ABABA2701DF77BC300A90962 /* NSViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewExtension.swift; path = Extensions/NSViewExtension.swift; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
@@ -183,12 +184,13 @@
 		AB3DF24C1D8E0D400048BE0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AB97CAC71DA1600300A6A272 /* MainViewController.swift */,
+				ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */,
+				ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */,
+				AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */,
+				ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */,
 				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
 				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
 				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
-				ABD65CF31DE1DF4800470879 /* ConvertGifViewController.swift */,
-				ABC011F41DE26CA8008BB3B8 /* OptimizerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -231,8 +233,6 @@
 			children = (
 				AB8F4A0A1DADA0CA0002C73D /* Assembler */,
 				AB8F4A0B1DADA0DA0002C73D /* Disassembler */,
-				ABC011F61DE26EBC008BB3B8 /* Optimizer */,
-				ABC011F91DE26F19008BB3B8 /* Gif2Apng */,
 			);
 			name = Executables;
 			path = Scripts;
@@ -249,7 +249,7 @@
 		AB98302B1DB78048009E0254 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				AB9830291DB7803A009E0254 /* Global.swift */,
+				AB7B53CB1DF865E6005C8539 /* Closure.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -262,28 +262,14 @@
 			name = DisassemblyArguments;
 			sourceTree = "<group>";
 		};
-		ABC011F61DE26EBC008BB3B8 /* Optimizer */ = {
-			isa = PBXGroup;
-			children = (
-				ABC011F71DE26EC6008BB3B8 /* apngopt */,
-			);
-			name = Optimizer;
-			sourceTree = "<group>";
-		};
-		ABC011F91DE26F19008BB3B8 /* Gif2Apng */ = {
-			isa = PBXGroup;
-			children = (
-				ABC011FA1DE26F33008BB3B8 /* gif2apng */,
-			);
-			name = Gif2Apng;
-			sourceTree = "<group>";
-		};
 		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */,
 				AB9830391DB7B065009E0254 /* FileManagerExtension.swift */,
 				ABD680761DB8EBB200A4735E /* StringExtension.swift */,
+				ABABA2701DF77BC300A90962 /* NSViewExtension.swift */,
+				AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -385,9 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC011F81DE26EC6008BB3B8 /* apngopt in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
-				ABC011FB1DE26F33008BB3B8 /* gif2apng in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
 				AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */,
@@ -409,29 +393,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
+				ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */,
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
-				ABD65CF41DE1DF4800470879 /* ConvertGifViewController.swift in Sources */,
+				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
+				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
 				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
-				ABC011F51DE26CA8008BB3B8 /* OptimizerViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
-				AB98302A1DB7803A009E0254 /* Global.swift in Sources */,
+				ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */,
 				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
 				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
 				ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */,
-				AB97CACD1DA1600300A6A272 /* MainViewController.swift in Sources */,
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
+				AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */,
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
+				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
+				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +428,6 @@
 			files = (
 				AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
 				AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
-				AB97CACE1DA1600300A6A272 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

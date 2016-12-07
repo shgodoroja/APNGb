@@ -323,7 +323,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboarId.statusView) as! StatusViewController?
+        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboardViewIdentifier.Status) as! StatusViewController?
         statusViewController?.cancelHandler = {
             self.stopAssemblingProcess()
         }
