@@ -28,7 +28,6 @@ class SideBarViewController: NSViewController, SideBarItemGroupDelegate {
     }
 
     private func applyStyle() {
-        self.preferredContentSize = MainContainerSubviewSize.SideBar
         self.view.backgroundColor = NSColor(colorLiteralRed: 233/255, green: 70/255, blue: 43/255, alpha: 1.0)
     }
     

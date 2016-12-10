@@ -24,9 +24,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private var assemblyArguments = AssemblyArguments()
     private var process: ExecutableProcess?
-    private var statusViewController: StatusViewController?
+    
     private var droppedImages: [DroppedImage] = []
     private var selectedImagesIndexSet: IndexSet?
+
+    private var statusViewController: StatusViewController?
     
     @IBOutlet private var fileNameTextField: NSTextField!
     @IBOutlet private var numberOfLoopsTextField: NSTextField!
@@ -36,11 +38,10 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     @IBOutlet private var allframesDelayFramesTextField: NSTextField!
     @IBOutlet private var selectedDelaySecondsTextField: NSTextField!
     @IBOutlet private var selectedDelayFramesTextField: NSTextField!
-    @IBOutlet private var tableView: NSTableView!
-    @IBOutlet private var dropImagesHereLabel: NSTextField!
     
-    @IBOutlet var tableViewScrollView: NSScrollView!
-    @IBOutlet var dragAndDropView: DragAndDropView! {
+    @IBOutlet private var tableView: NSTableView!
+    @IBOutlet private var tableViewScrollView: NSScrollView!
+    @IBOutlet private var dragAndDropView: DragAndDropView! {
         didSet {
             dragAndDropView.delegate = self
         }
@@ -48,7 +49,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStatusView()
+        self.setupStatusView()
     }
     
     // MARK: - NSTableView
@@ -323,7 +324,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboardViewIdentifier.Status) as! StatusViewController?
+        statusViewController = storyboard?.instantiateController(withIdentifier: ViewControllerId.Status.storyboardVersion()) as! StatusViewController?
         statusViewController?.cancelHandler = {
             self.stopAssemblingProcess()
         }
@@ -341,17 +342,17 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private func updateUI() {
         showTableViewIfNeeded()
-        showDropImagesHereLabelIfNeeded()
+        //showDropHintViewIfNeeded()
     }
     
-    private func showDropImagesHereLabelIfNeeded() {
-        
-        if droppedImages.count > 0 {
-            dropImagesHereLabel.isHidden = true
-        } else {
-            dropImagesHereLabel.isHidden = false
-        }
-    }
+//    private func showDropHintViewIfNeeded() {
+//        
+//        if droppedImages.count > 0 {
+//            dropHintViewController?.view.isHidden = true
+//        } else {
+//            dropHintViewController?.view.isHidden = false
+//        }
+//    }
     
     private func showTableViewIfNeeded() {
         
@@ -372,9 +373,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         selectedDelaySecondsTextField.isEnabled = enabled
         selectedDelayFramesTextField.isEnabled = enabled
     }
-    
+
     private func removeOutputImage() {
         let fileRemoved = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
         NSLog("File was removed = \(fileRemoved)")
     }
+    
+//    private func configureDropHintView() {
+//        dropHintViewController?.hintMessage = "Drop images here"
+//    }
 }

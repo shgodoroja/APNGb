@@ -24,6 +24,13 @@
 		AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */; };
 		AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */; };
 		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
+		AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */; };
+		AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */; };
+		AB7B53D71DF9BDDE005C8539 /* BottomToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */; };
+		AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */; };
+		AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */; };
+		AB8CFEC21DFB536200691ECC /* AssemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEC11DFB536200691ECC /* AssemblyPreferencesViewController.swift */; };
+		AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */; };
 		AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
@@ -38,6 +45,9 @@
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* DroppedImage.swift */; };
+		ABF362AD1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */; };
+		ABF362B01DFC4AD000F8903A /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362AF1DFC4AD000F8903A /* ViewControllerId.swift */; };
+		ABF362B21DFC916700F8903A /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362B11DFC916700F8903A /* ViewSize.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +84,13 @@
 		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
 		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
 		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
+		AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesContainerViewController.swift; path = ViewControllers/PreferencesContainerViewController.swift; sourceTree = "<group>"; };
+		AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropHintViewController.swift; path = ViewControllers/DropHintViewController.swift; sourceTree = "<group>"; };
+		AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomToolbarViewController.swift; path = ViewControllers/BottomToolbarViewController.swift; sourceTree = "<group>"; };
+		AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewLayoutCareTaker.swift; path = Layout/MainContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
+		AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewLayoutCareTaker.swift; path = Layout/ChildContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
+		AB8CFEC11DFB536200691ECC /* AssemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyPreferencesViewController.swift; path = ViewControllers/AssemblyPreferencesViewController.swift; sourceTree = "<group>"; };
+		AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyPreferencesViewController.swift; path = ViewControllers/DisassemblyPreferencesViewController.swift; sourceTree = "<group>"; };
 		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
 		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
@@ -86,6 +103,9 @@
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* DroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DroppedImage.swift; path = Models/DroppedImage.swift; sourceTree = "<group>"; };
+		ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewLayoutCareTaker.swift; path = Layout/PreferencesViewLayoutCareTaker.swift; sourceTree = "<group>"; };
+		ABF362AF1DFC4AD000F8903A /* ViewControllerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerId.swift; path = ViewControllers/ViewControllerId.swift; sourceTree = "<group>"; };
+		ABF362B11DFC916700F8903A /* ViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSize.swift; path = ViewControllers/ViewSize.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,13 +204,13 @@
 		AB3DF24C1D8E0D400048BE0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */,
-				ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */,
-				AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */,
-				ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */,
-				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
-				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
-				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
+				ABF362AF1DFC4AD000F8903A /* ViewControllerId.swift */,
+				ABF362B11DFC916700F8903A /* ViewSize.swift */,
+				ABF362AE1DFC4A9300F8903A /* MainContainer */,
+				AB7B53D31DF8D91E005C8539 /* PreferencesPane */,
+				AB7B53CD1DF86717005C8539 /* SideBar */,
+				AB7B53CE1DF86728005C8539 /* ChildContainer */,
+				AB7B53D01DF867B7005C8539 /* Loose */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -210,6 +230,55 @@
 				AB2B42FA1DAFEA61001E054A /* Storyboards */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB7B53CD1DF86717005C8539 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */,
+				ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */,
+			);
+			name = SideBar;
+			sourceTree = "<group>";
+		};
+		AB7B53CE1DF86728005C8539 /* ChildContainer */ = {
+			isa = PBXGroup;
+			children = (
+				ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */,
+				AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */,
+				AB7B53CF1DF86732005C8539 /* ChildViewControllers */,
+			);
+			name = ChildContainer;
+			sourceTree = "<group>";
+		};
+		AB7B53CF1DF86732005C8539 /* ChildViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
+				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
+			);
+			name = ChildViewControllers;
+			sourceTree = "<group>";
+		};
+		AB7B53D01DF867B7005C8539 /* Loose */ = {
+			isa = PBXGroup;
+			children = (
+				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
+				AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */,
+				AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */,
+			);
+			name = Loose;
+			sourceTree = "<group>";
+		};
+		AB7B53D31DF8D91E005C8539 /* PreferencesPane */ = {
+			isa = PBXGroup;
+			children = (
+				AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */,
+				ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */,
+				AB8CFEC11DFB536200691ECC /* AssemblyPreferencesViewController.swift */,
+				AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */,
+			);
+			name = PreferencesPane;
 			sourceTree = "<group>";
 		};
 		AB8F4A0A1DADA0CA0002C73D /* Assembler */ = {
@@ -272,6 +341,15 @@
 				AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		ABF362AE1DFC4A9300F8903A /* MainContainer */ = {
+			isa = PBXGroup;
+			children = (
+				ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */,
+				AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */,
+			);
+			name = MainContainer;
 			sourceTree = "<group>";
 		};
 		ABF4090D1DA9B92700B0D373 /* Library */ = {
@@ -393,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
+				AB7B53D71DF9BDDE005C8539 /* BottomToolbarViewController.swift in Sources */,
 				ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */,
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
@@ -402,23 +481,32 @@
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
 				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
+				ABF362B21DFC916700F8903A /* ViewSize.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
+				AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
 				ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */,
 				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
+				AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */,
+				AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */,
+				ABF362AD1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift in Sources */,
+				AB8CFEC21DFB536200691ECC /* AssemblyPreferencesViewController.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
 				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
 				ABD8C3741DB58A2400C74183 /* DroppedImage.swift in Sources */,
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
+				AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */,
 				AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */,
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
 				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
+				ABF362B01DFC4AD000F8903A /* ViewControllerId.swift in Sources */,
 				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
+				AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

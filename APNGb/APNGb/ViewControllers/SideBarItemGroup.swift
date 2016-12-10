@@ -43,8 +43,6 @@ class SideBarItemGroup: NSObject {
         if index < items.count {
             let item = items[index]
             item.state = NSOnState
-            
-            self.didClickOn(item: item)
         }
     }
     

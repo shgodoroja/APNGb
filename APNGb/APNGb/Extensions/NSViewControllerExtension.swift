@@ -19,4 +19,17 @@ extension NSViewController {
         }
         
     }
+    
+    func showChildViewController(withIdentifier identifier: String) {
+        let loadedController = storyboard?.instantiateController(withIdentifier: identifier)
+        
+        if loadedController is NSViewController {
+            let childViewController = loadedController as! NSViewController
+            
+            self.removeChildViewControllers()
+            childViewController.view.frame = self.view.frame
+            self.addChildViewController(childViewController)
+            self.view.addSubview(childViewController.view)
+        }
+    }
 }

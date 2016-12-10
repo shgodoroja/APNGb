@@ -14,9 +14,6 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     private var process: ExecutableProcess?
     private var statusViewController: StatusViewController?
     
-    @IBOutlet private var startButton: NSButton!
-    @IBOutlet private var fileNameTextField: NSTextField!
-    @IBOutlet private var dropHintLabel: NSTextField!
     @IBOutlet private var destinationWebView: DragAndDropWebView! {
         didSet {
             destinationWebView.delegate = self
@@ -65,7 +62,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
                 let destinationFolder = openPanel.urls[0]
                 self.disassemblyArguments.destinationImagesPath = destinationFolder.path
                 self.disassemblyArguments.destinationImagesNamePrefix = DisassemblyArguments.defaultDestinationImagesNamePrefix()
-                self.fileNameTextField.stringValue = self.disassemblyArguments.destinationImagesFullPath()
+                //self.fileNameTextField.stringValue = self.disassemblyArguments.destinationImagesFullPath()
             }
         }
     }
@@ -74,8 +71,12 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     
     func didDropImages(withPaths paths: [String]) {
         disassemblyArguments.sourceImagePath = paths[0]
-        dropHintLabel.isHidden = true
     }
+    
+//    private func removeDropHintView() {
+//        dropHintViewController?.removeFromParentViewController()
+//        dropHintViewController?.view.removeFromSuperview()
+//    }
     
     // MARK: - NSTextFieldDelegate
     
@@ -99,7 +100,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     // MARK: - Private
     
     private func configureStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: StoryboardViewIdentifier.Status) as! StatusViewController?
+        statusViewController = storyboard?.instantiateController(withIdentifier: ViewControllerId.Status.storyboardVersion()) as! StatusViewController?
         statusViewController?.cancelHandler = {
             self.stopDisassemblingProcess()
         }
@@ -109,6 +110,10 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
         destinationWebView.drawsBackground = false
         destinationWebView.mainFrame.frameView.allowsScrolling = false
     }
+
+//    private func configureDropHintView() {
+//        dropHintViewController?.hintMessage = "Drop image here"
+//    }
     
     private func stopDisassemblingProcess() {
         statusViewController?.dismiss(nil)
