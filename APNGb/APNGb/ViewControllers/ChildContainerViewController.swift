@@ -65,6 +65,8 @@ class ChildContainerViewController: NSViewController {
                 }
             }
             
+            dropHintViewController?.hintMessage = self.hintMessageForViewController(withIdentifier: ViewControllerId.Assembly)
+            
         case ViewControllerId.Disassembly:
             let disassemblyViewController = self.showChildViewController(withIdentifier: ViewControllerId.Disassembly.storyboardVersion())
             
@@ -77,9 +79,26 @@ class ChildContainerViewController: NSViewController {
                                                        andSiblingView: bottomToolbarViewController?.view)
                 }
             }
+            
+            dropHintViewController?.hintMessage = self.hintMessageForViewController(withIdentifier: ViewControllerId.Disassembly)
 
         default:
             NSLog("\(#function): Unexpected case")
         }
     }
+    
+    // MARK: Private
+    
+    private func hintMessageForViewController(withIdentifier identifier: ViewControllerId) -> String {
+        
+        switch identifier {
+        case .Assembly:
+            return "Drop frames here"
+        case .Disassembly:
+            return "Drop animated image here"
+        default:
+            return String.empty
+        }
+    }
+    
 }
