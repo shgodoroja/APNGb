@@ -29,7 +29,7 @@ class PreferencesContainerViewController: NSViewController {
         
         switch identifier  {
         case ViewControllerId.Assembly:
-            let assemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.AssemblyPreferences.storyboardVersion())
+            assemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.AssemblyPreferences.storyboardVersion()) as! AssemblyPreferencesViewController?
             
             if let view = assemblyPreferencesViewController?.view {
                 
@@ -42,7 +42,7 @@ class PreferencesContainerViewController: NSViewController {
             }
             
         case ViewControllerId.Disassembly:
-            let disassemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.DisassemblyPreferences.storyboardVersion())
+            disassemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.DisassemblyPreferences.storyboardVersion()) as! DisassemblyPreferencesViewController?
             
             if let view = disassemblyPreferencesViewController?.view {
                 

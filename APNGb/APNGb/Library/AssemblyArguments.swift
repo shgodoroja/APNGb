@@ -24,7 +24,8 @@ final class AssemblyArguments: CommandArguments {
         optimization = Optimization()
         compression = Compression()
         allFramesDelay = FrameDelay()
-        selectedFramesDelay = FrameDelay(withCategory: .Selected, andState: false)
+        selectedFramesDelay = FrameDelay(withCategory: .Selected,
+                                         andState: false)
     }
     
     func havePassedValidation() -> Bool {

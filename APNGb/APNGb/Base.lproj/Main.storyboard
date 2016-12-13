@@ -676,6 +676,9 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Iib-ur-p6k"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qC5-VL-WRB">
                                 <rect key="frame" x="18" y="431" width="41" height="17"/>
@@ -700,7 +703,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="GTU-ZT-XQF" id="5Md-op-g0W"/>
+                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="DSy-I3-vya"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-c9-mSf">
@@ -726,7 +729,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="GTU-ZT-XQF" id="Nn0-Kp-ltE"/>
+                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="3Bx-bw-zdh"/>
                                 </connections>
                             </button>
                             <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="CDa-o5-Jc8">
@@ -740,7 +743,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="GTU-ZT-XQF" id="eRd-o5-5pw"/>
+                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="LaF-oq-YXJ"/>
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QKH-XM-Opc">
@@ -790,7 +793,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="GTU-ZT-XQF" id="BMY-EF-Vb7"/>
+                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="T0u-vW-oxB"/>
                                 </connections>
                             </button>
                             <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="tf3-XW-e1k">
@@ -804,7 +807,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="GTU-ZT-XQF" id="6Wc-ND-HNb"/>
+                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="TQE-rF-WO9"/>
                                 </connections>
                             </button>
                             <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uNs-Cs-xTX">
@@ -818,7 +821,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="GTU-ZT-XQF" id="Xho-dZ-O16"/>
+                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="Gn0-kE-pR7"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Kb-rC-sOa">
@@ -833,6 +836,9 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="kdW-v7-K6C"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SMA-V1-eRU">
                                 <rect key="frame" x="123" y="225" width="61" height="17"/>
@@ -858,6 +864,9 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Wx5-AV-gJH"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="twQ-WR-tz1">
                                 <rect key="frame" x="123" y="202" width="61" height="17"/>
@@ -914,7 +923,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="GTU-ZT-XQF" id="wtp-7j-WdA"/>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="gMh-IU-7of"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oAP-B7-Ptt">
@@ -972,7 +981,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="GTU-ZT-XQF" id="mjA-yN-23G"/>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Og0-s4-vLF"/>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GcD-QE-a0a">
@@ -988,7 +997,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="GTU-ZT-XQF" id="VNE-Jx-A0n"/>
+                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Vry-Mh-mEI"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-Kg-vXX">
@@ -1083,6 +1092,21 @@ CA
                             <constraint firstItem="5Ly-p6-gQq" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="zOw-Ap-w6b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allFramesDelaySecondsTextField" destination="F1L-kD-cB4" id="hJK-Bj-DW9"/>
+                        <outlet property="allframesDelayFramesTextField" destination="cAT-Tq-88C" id="9Ac-fE-eRs"/>
+                        <outlet property="colorTypeCheckbox" destination="CDa-o5-Jc8" id="xK1-DF-ewY"/>
+                        <outlet property="numberOfLoopsTextField" destination="qbk-2d-aaJ" id="nxR-rH-bwP"/>
+                        <outlet property="paletteCheckbox" destination="1bE-j0-HhI" id="pP7-zW-Gci"/>
+                        <outlet property="selectedDelayFramesTextField" destination="GcD-QE-a0a" id="Hpe-ew-87J"/>
+                        <outlet property="selectedDelaySecondsTextField" destination="7Vd-m8-hAX" id="QiZ-r5-hx7"/>
+                        <outlet property="sevenZipIterationsTextField" destination="8Kb-rC-sOa" id="VtE-wP-s6k"/>
+                        <outlet property="sevenZipRadioButton" destination="tf3-XW-e1k" id="Dn2-xl-ZRo"/>
+                        <outlet property="skipFirstFrameCheckbox" destination="RNG-ie-ewT" id="MyJ-If-Z0k"/>
+                        <outlet property="zlibRadioButton" destination="8UL-U1-pKi" id="S88-cm-lkk"/>
+                        <outlet property="zopfliIterationsTextField" destination="MLR-aL-Wwk" id="pmd-e7-IoS"/>
+                        <outlet property="zopfliRadioButton" destination="uNs-Cs-xTX" id="CZU-Hm-Rnf"/>
+                    </connections>
                 </viewController>
                 <customObject id="bs1-pM-iUu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1136,6 +1160,9 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="SSY-0t-4qx" id="E9n-pT-MKL"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lV9-3g-REv">
                                 <rect key="frame" x="18" y="402" width="69" height="17"/>
@@ -1160,6 +1187,9 @@ CA
                             <constraint firstItem="Qaj-Qf-dvh" firstAttribute="leading" secondItem="CL2-Cm-lS4" secondAttribute="leading" constant="5" id="jOi-Wb-kJI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="frameNamePrefixeTextField" destination="5Fm-1O-cLd" id="2ee-TE-7HN"/>
+                    </connections>
                 </viewController>
                 <customObject id="uIQ-k3-48Y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

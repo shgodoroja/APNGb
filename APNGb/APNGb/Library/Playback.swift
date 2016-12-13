@@ -10,14 +10,13 @@ import Cocoa
 
 final class Playback: CommandArguments {
     
-    var playIndefinitely = true
     var numberOfLoops = 0
     var skipFirstFrame = false
     
     func commandArguments() -> [String] {
         var arguments: [String] = []
         
-        if playIndefinitely == false {
+        if numberOfLoops > 0 {
             arguments.append("-l\(numberOfLoops)")
         }
         

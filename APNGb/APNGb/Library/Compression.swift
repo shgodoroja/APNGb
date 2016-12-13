@@ -10,10 +10,40 @@ import Cocoa
 
 final class Compression: CommandArguments {
     
-    var enableZlib = false
-    var enable7zip = true
-    var _7zipIterations = 15
-    var enableZopfli = false
+    var enableZlib = false {
+        
+        didSet {
+            
+            if enableZlib == true {
+                enable7zip = false
+                enableZopfli = false
+            }
+        }
+    }
+    
+    var enable7zip = true {
+        
+        didSet {
+            
+            if enable7zip == true {
+                enableZlib = false
+                enableZopfli = false
+            }
+        }
+    }
+    
+    var enableZopfli = false {
+        
+        didSet {
+            
+            if enableZopfli == true {
+                enable7zip = false
+                enableZlib = false
+            }
+        }
+    }
+    
+    var sevenZipIterations = 15
     var zopfliIterations = 15
     
     func commandArguments() -> [String] {
@@ -25,7 +55,7 @@ final class Compression: CommandArguments {
         
         if enable7zip == true {
             arguments.append("-z1")
-            arguments.append("-i\(_7zipIterations)")
+            arguments.append("-i\(sevenZipIterations)")
         }
         
         if enableZopfli == true {

@@ -8,14 +8,6 @@
 
 import Cocoa
 
-enum CheckboxIdentifier: Int {
-    case play = 0, skip = 1, palette = 2, color = 3
-}
-
-enum RadioButtonIdentifier: Int {
-    case zlib = 0, _7zip = 1, zopfli = 2
-}
-
 enum DroppedImageTableViewColumnIdentifier: String {
     case name = "name", size = "size", delay = "delay"
 }
@@ -25,27 +17,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var assemblyArguments = AssemblyArguments()
     private var process: ExecutableProcess?
     
-    private var droppedImages: [DroppedImage] = []
+    private var animationFrames: [AnimationFrame] = []
     private var selectedImagesIndexSet: IndexSet?
 
     private var statusViewController: StatusViewController?
     
-    @IBOutlet private var fileNameTextField: NSTextField!
-    @IBOutlet private var numberOfLoopsTextField: NSTextField!
-    @IBOutlet private var _7zipIterationsTextField: NSTextField!
-    @IBOutlet private var zopfliIterationsTextField: NSTextField!
-    @IBOutlet private var allFramesDelaySecondsTextField: NSTextField!
-    @IBOutlet private var allframesDelayFramesTextField: NSTextField!
-    @IBOutlet private var selectedDelaySecondsTextField: NSTextField!
-    @IBOutlet private var selectedDelayFramesTextField: NSTextField!
-    
     @IBOutlet private var tableView: NSTableView!
     @IBOutlet private var tableViewScrollView: NSScrollView!
-    @IBOutlet private var dragAndDropView: DragAndDropView! {
-        didSet {
-            dragAndDropView.delegate = self
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +49,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: - NSTableViewDataSource
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return droppedImages.count
+        return animationFrames.count
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        let droppedImage = droppedImages[row]
+        let droppedImage = animationFrames[row]
         
         if tableColumn?.identifier == DroppedImageTableViewColumnIdentifier.name.rawValue {
             return droppedImage.name
@@ -92,9 +70,9 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         
         for imagePath in paths {
             let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
-            let droppedImage = DroppedImage(url: URL(fileURLWithPath: imagePath) as NSURL,
+            let droppedImage = AnimationFrame(url: URL(fileURLWithPath: imagePath) as NSURL,
                                             size: imageSizeInKB)
-            droppedImages.append(droppedImage)
+            animationFrames.append(droppedImage)
         }
     
         tableView.reloadData()
@@ -104,7 +82,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: IBActions
 
     @IBAction func startAssemblingProcess(_ sender: AnyObject) {
-        collectArguments()
+        //collectArguments()
         preProcessSetup()
         
         if assemblyArguments.havePassedValidation() {
@@ -128,58 +106,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
     }
     
-    @IBAction func didSelectRadioButton(_ sender: NSButton) {
-        assemblyArguments.compression.enable7zip = false
-        _7zipIterationsTextField.isEnabled = false
-        assemblyArguments.compression.enableZopfli = false
-        zopfliIterationsTextField.isEnabled = false
-        assemblyArguments.compression.enableZlib = false
-        
-        switch sender.tag {
-        case RadioButtonIdentifier.zlib.rawValue:
-            assemblyArguments.compression.enableZlib = Bool(sender.state)
-        case RadioButtonIdentifier._7zip.rawValue:
-            assemblyArguments.compression.enable7zip = Bool(sender.state)
-            _7zipIterationsTextField.isEnabled = true
-        case RadioButtonIdentifier.zopfli.rawValue:
-            assemblyArguments.compression.enableZopfli = Bool(sender.state)
-            zopfliIterationsTextField.isEnabled = true
-        default:
-            print("\(#function): unhandled case")
-        }
-    }
-    
-    @IBAction func didSelectCheckbox(_ sender: NSButton) {
-        
-        switch sender.tag {
-        case CheckboxIdentifier.play.rawValue:
-            assemblyArguments.playback.playIndefinitely = Bool(sender.state)
-            numberOfLoopsTextField.isEnabled = !(Bool(sender.state))
-        case CheckboxIdentifier.skip.rawValue:
-            assemblyArguments.playback.skipFirstFrame = Bool(sender.state)
-        case CheckboxIdentifier.palette.rawValue:
-            assemblyArguments.optimization.enablePalette = Bool(sender.state)
-        case CheckboxIdentifier.color.rawValue:
-            assemblyArguments.optimization.enableColorType = Bool(sender.state)
-        default:
-            print("\(#function): unhandled case")
-        }
-    }
-    
-    @IBAction func showOpenPanel(_ sender: AnyObject) {
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.beginSheetModal(for: self.view.window!) { wasDirectoredSelected in
-            
-            if Bool(wasDirectoredSelected) {
-                let destinationFolder = openPanel.urls[0]
-                self.fileNameTextField.stringValue = destinationFolder.appendingPathComponent(self.defaultOutputImageName()).relativePath
-            }
-        }
-    }
-    
     func delete(_ sender: NSMenuItem) {
         let selectedRowIndexes = tableView.selectedRowIndexes
         tableView.beginUpdates()
@@ -187,62 +113,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         tableView.endUpdates()
         
         for index in selectedRowIndexes.reversed() {
-            droppedImages.remove(at: index)
+            animationFrames.remove(at: index)
         }
-    }
-    
-    override func controlTextDidChange(_ obj: Notification) {
-        let textField = (obj.object as? NSTextField)
-        
-        if textField == selectedDelaySecondsTextField {
-            let seconds = textField?.integerValue
-            
-            if let indexes = selectedImagesIndexSet {
-                
-                for index in indexes {
-                    droppedImages[index].delaySeconds = seconds!
-                }
-            }
-        
-        } else if textField == selectedDelayFramesTextField {
-            let frames = textField?.integerValue
-            
-            if let indexes = selectedImagesIndexSet {
-                
-                for index in indexes {
-                    droppedImages[index].delayFrames = frames!
-                }
-            }
-        } else if textField == allFramesDelaySecondsTextField {
-            let seconds = textField?.integerValue
-            
-            for droppedImage in droppedImages {
-                droppedImage.delaySeconds = seconds!
-            }
-            
-        } else if textField == allframesDelayFramesTextField {
-            let frames = textField?.integerValue
-            
-            for droppedImage in droppedImages {
-                droppedImage.delayFrames = frames!
-            }
-        }
-        
-        tableView.reloadData()
     }
     
     // MARK: - Private
-    
-    private func collectArguments() {
-        assemblyArguments.destinationImagePath = fileNameTextField.stringValue
-        assemblyArguments.playback.numberOfLoops = numberOfLoopsTextField.integerValue
-        assemblyArguments.compression._7zipIterations = _7zipIterationsTextField.integerValue
-        assemblyArguments.compression.zopfliIterations = zopfliIterationsTextField.integerValue
-        assemblyArguments.allFramesDelay.seconds = allFramesDelaySecondsTextField.integerValue
-        assemblyArguments.allFramesDelay.frames = allframesDelayFramesTextField.integerValue
-        assemblyArguments.selectedFramesDelay.seconds = selectedDelaySecondsTextField.integerValue
-        assemblyArguments.selectedFramesDelay.frames = selectedDelayFramesTextField.integerValue
-    }
     
     private func preProcessSetup() {
         let imageFolderUrl = createImageCopiesFolder()
@@ -287,7 +162,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private func copyImagesToFolder(withPath path: String, imageNamePrefix: String, andIndex index: Int) {
         var index = index
         
-        for droppedImage in droppedImages {
+        for droppedImage in animationFrames {
             
             do {
                 let newImageName = "\(imageNamePrefix)\(index).\(droppedImage.name.fileExtension())"
@@ -308,7 +183,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private func createImageMetadataFilesToFolder(withUrl url: URL, imageNamePrefix: String, andIndex index: Int) {
         var index = index
         
-        for droppedImage in droppedImages {
+        for droppedImage in animationFrames {
             let textFileName = "\(imageNamePrefix)\(index)"
             let filePath = url.appendingPathComponent("\(textFileName).txt").path
             FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
@@ -356,7 +231,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private func showTableViewIfNeeded() {
         
-        if droppedImages.count > 0 {
+        if animationFrames.count > 0 {
             tableViewScrollView.isHidden = false
         } else {
             tableViewScrollView.isHidden = true
@@ -370,13 +245,12 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private func updateSelectedFramesDelayTextFields(enabled: Bool, indexSet: IndexSet?) {
         selectedImagesIndexSet = indexSet
         assemblyArguments.selectedFramesDelay.enabled = enabled
-        selectedDelaySecondsTextField.isEnabled = enabled
-        selectedDelayFramesTextField.isEnabled = enabled
+        //selectedDelaySecondsTextField.isEnabled = enabled
+        //selectedDelayFramesTextField.isEnabled = enabled
     }
 
     private func removeOutputImage() {
-        let fileRemoved = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
-        NSLog("File was removed = \(fileRemoved)")
+        _ = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
     }
     
 //    private func configureDropHintView() {

@@ -1,5 +1,5 @@
 //
-//  DroppedImage.swift
+//  AnimationFrame.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/18/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class DroppedImage {
+final class AnimationFrame {
     
     var path: String
     var size: Int
@@ -28,13 +28,13 @@ final class DroppedImage {
         if let lastPathComponent = url.lastPathComponent {
             self.name = lastPathComponent
         } else {
-            self.name = ""
+            self.name = String.empty
         }
         
         if let urlAsPath = url.path {
             self.path = urlAsPath
         } else {
-            self.path = ""
+            self.path = String.empty
         }
     }
 }
