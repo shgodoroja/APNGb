@@ -677,7 +677,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Iib-ur-p6k"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.playback.numberOfLoops" id="v5r-Z2-RbI">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qC5-VL-WRB">
@@ -703,7 +707,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="DSy-I3-vya"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.playback.skipFirstFrame" id="iuB-Vp-goO"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-c9-mSf">
@@ -729,7 +733,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="3Bx-bw-zdh"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.optimization.enablePalette" id="V5C-6X-iwT"/>
                                 </connections>
                             </button>
                             <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="CDa-o5-Jc8">
@@ -743,7 +747,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectCheckbox:" target="gUx-HD-ku2" id="LaF-oq-YXJ"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.optimization.enableColorType" id="HsS-Rj-Ry7"/>
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="QKH-XM-Opc">
@@ -793,7 +797,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="T0u-vW-oxB"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZlib" id="Mcw-QB-YNz"/>
                                 </connections>
                             </button>
                             <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="tf3-XW-e1k">
@@ -807,7 +811,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="TQE-rF-WO9"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enable7zip" id="a87-YM-JTr"/>
                                 </connections>
                             </button>
                             <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uNs-Cs-xTX">
@@ -821,7 +825,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="didSelectRadioButton:" target="gUx-HD-ku2" id="Gn0-kE-pR7"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZopfli" id="k7d-Uh-xfJ"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Kb-rC-sOa">
@@ -837,7 +841,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="kdW-v7-K6C"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.sevenZipIterations" id="slb-dc-J3y">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SMA-V1-eRU">
@@ -865,7 +873,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Wx5-AV-gJH"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.zopfliIterations" id="o4i-j2-etN">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="twQ-WR-tz1">
@@ -907,7 +919,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="GTU-ZT-XQF" id="Buw-dv-uV5"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.allFramesDelay.seconds" id="z1X-1e-cct">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cAT-Tq-88C">
@@ -923,7 +939,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="gMh-IU-7of"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.allFramesDelay.frames" id="XMB-gs-RFl">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oAP-B7-Ptt">
@@ -981,7 +1001,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Og0-s4-vLF"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.selectedFramesDelay.seconds" id="OPk-6t-rQP">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GcD-QE-a0a">
@@ -997,7 +1021,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <outlet property="delegate" destination="gUx-HD-ku2" id="Vry-Mh-mEI"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.selectedFramesDelay.frames" id="STh-w2-Trb">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-Kg-vXX">
@@ -1109,6 +1137,7 @@ CA
                     </connections>
                 </viewController>
                 <customObject id="bs1-pM-iUu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="1NZ-Gt-Ydk"/>
             </objects>
             <point key="canvasLocation" x="1634" y="-450.5"/>
         </scene>
@@ -1160,6 +1189,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="SSY-0t-4qx" name="value" keyPath="self.disassemblyArguments.frameNamePrefix" id="1HL-PG-Fo0">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                     <outlet property="delegate" destination="SSY-0t-4qx" id="E9n-pT-MKL"/>
                                 </connections>
                             </textField>

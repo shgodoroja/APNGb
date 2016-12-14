@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class DisassemblyArguments: CommandArgumenting {
+final class DisassemblyArguments: NSObject, CommandArgumenting {
     
     var frameNamePrefix = String.empty
     

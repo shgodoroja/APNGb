@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class AssemblyArguments: CommandArgumenting {
+final class AssemblyArguments: NSObject, CommandArgumenting {
     
     var destinationImagePath = String.empty
     var sourceImagePath = String.empty
@@ -19,7 +19,7 @@ final class AssemblyArguments: CommandArgumenting {
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
     
-    init() {
+    override init() {
         playback = Playback()
         optimization = Optimization()
         compression = Compression()

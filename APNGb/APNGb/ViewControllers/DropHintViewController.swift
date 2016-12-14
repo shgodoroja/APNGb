@@ -8,6 +8,10 @@
 
 import Cocoa
 
+protocol Droppable {
+    func contentWasDropped()
+}
+
 final class DropHintViewController: NSViewController {
 
     var hintMessage = String.empty {

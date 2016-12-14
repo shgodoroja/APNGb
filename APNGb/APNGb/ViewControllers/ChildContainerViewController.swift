@@ -11,8 +11,9 @@ import Cocoa
 class ChildContainerViewController: NSViewController {
     
     private var viewLayoutCareTaker: ChildContainerViewLayoutCareTaker
-    private var bottomToolbarViewController: BottomToolbarViewController?
+    private var statusViewController: StatusViewController?
     private var dropHintViewController: DropHintViewController?
+    private var bottomToolbarViewController: BottomToolbarViewController?
     
     required init?(coder: NSCoder) {
         viewLayoutCareTaker = ChildContainerViewLayoutCareTaker()
@@ -21,30 +22,9 @@ class ChildContainerViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bottomToolbarViewController = showChildViewController(withIdentifier: ViewControllerId.BottomToolbar.storyboardVersion()) as! BottomToolbarViewController?
-        
-        if let view = bottomToolbarViewController?.view {
-            
-            if let superview = view.superview {
-                viewLayoutCareTaker.updateLayoutOf(view,
-                                                   withIdentifier: ViewControllerId.BottomToolbar,
-                                                   superview: superview,
-                                                   andSiblingView: nil)
-            }
-        }
-        
-        dropHintViewController = showChildViewController(withIdentifier: ViewControllerId.DropHint.storyboardVersion()) as! DropHintViewController?
-        
-        if let view = dropHintViewController?.view {
-            
-            if let superview = view.superview {
-                viewLayoutCareTaker.updateLayoutOf(view,
-                                                   withIdentifier: ViewControllerId.DropHint,
-                                                   superview: superview,
-                                                   andSiblingView: bottomToolbarViewController?.view)
-            }
-        }
+        self.initStatusViewController()
+        self.showBottomToolbarViewController()
+        self.addDropHintViewController()
     }
     
     func addChildViewController(withIndentifier identifier: ViewControllerId) {
@@ -67,6 +47,9 @@ class ChildContainerViewController: NSViewController {
             
             dropHintViewController?.hintMessage = self.hintMessageForViewController(withIdentifier: ViewControllerId.Assembly)
             
+            //self.delegate = assemblyViewController
+            
+            
         case ViewControllerId.Disassembly:
             let disassemblyViewController = self.showChildViewController(withIdentifier: ViewControllerId.Disassembly.storyboardVersion())
             
@@ -81,6 +64,9 @@ class ChildContainerViewController: NSViewController {
             }
             
             dropHintViewController?.hintMessage = self.hintMessageForViewController(withIdentifier: ViewControllerId.Disassembly)
+            
+            //self.delegate = disassemblyViewController
+
 
         default:
             NSLog("\(#function): Unexpected case")
@@ -101,4 +87,47 @@ class ChildContainerViewController: NSViewController {
         }
     }
     
+    private func initStatusViewController() {
+        
+        if statusViewController == nil {
+            statusViewController = storyboard?.instantiateController(withIdentifier: ViewControllerId.Status.storyboardVersion()) as! StatusViewController?
+            statusViewController?.cancelHandler = {
+                //self.stopDisassemblingProcess()
+            }
+        }
+    }
+    
+    private func addDropHintViewController() {
+        
+        if dropHintViewController == nil {
+            dropHintViewController = showChildViewController(withIdentifier: ViewControllerId.DropHint.storyboardVersion()) as! DropHintViewController?
+            
+            if let view = dropHintViewController?.view {
+                
+                if let superview = view.superview {
+                    viewLayoutCareTaker.updateLayoutOf(view,
+                                                       withIdentifier: ViewControllerId.DropHint,
+                                                       superview: superview,
+                                                       andSiblingView: bottomToolbarViewController?.view)
+                }
+            }
+        }
+    }
+    
+    private func showBottomToolbarViewController() {
+        
+        if bottomToolbarViewController == nil {
+            bottomToolbarViewController = showChildViewController(withIdentifier: ViewControllerId.BottomToolbar.storyboardVersion()) as! BottomToolbarViewController?
+            
+            if let view = bottomToolbarViewController?.view {
+                
+                if let superview = view.superview {
+                    viewLayoutCareTaker.updateLayoutOf(view,
+                                                       withIdentifier: ViewControllerId.BottomToolbar,
+                                                       superview: superview,
+                                                       andSiblingView: nil)
+                }
+            }
+        }
+    }
 }

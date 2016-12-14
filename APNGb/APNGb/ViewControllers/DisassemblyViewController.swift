@@ -8,11 +8,12 @@
 
 import Cocoa
 
-final class DisassemblyViewController: NSViewController, DragAndDropImageDelegate, NSTextFieldDelegate {
+final class DisassemblyViewController: NSViewController, NSTextFieldDelegate, DragAndDropImageDelegate {
+    
+    var delegate: Droppable?
     
     private var disassemblyArguments = DisassemblyArguments()
     private var process: ExecutableProcess?
-    private var statusViewController: StatusViewController?
     
     @IBOutlet private var destinationWebView: DragAndDropWebView! {
         didSet {
@@ -22,7 +23,6 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureStatusView()
         configureWebView()
     }
     
@@ -31,98 +31,49 @@ final class DisassemblyViewController: NSViewController, DragAndDropImageDelegat
     @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
         
         if disassemblyArguments.havePassedValidation() {
-            self.presentViewControllerAsSheet(statusViewController!)
+            //self.presentViewControllerAsSheet(statusViewController!)
             let command = Command(withExecutableName: .Disassembly)
             command.arguments = disassemblyArguments.commandArguments()
+            
             process = ExecutableProcess(withCommand: command)
             process?.progressHandler = { outputString in
-                self.statusViewController?.updateStatusMessage(message: outputString)
+                //self.statusViewController?.updateStatusMessage(message: outputString)
             }
             process?.terminationHandler = {
                 self.stopDisassemblingProcess()
                 
-                if self.statusViewController?.wasCanceled() == true {
+                //if self.statusViewController?.wasCanceled() == true {
                     self.removeOutputImages()
-                } else {
+                //} else {
                     self.showImageFramesInFinderApp()
-                }
+                //}
             }
             process?.start()
         }
     }
     
-    @IBAction func showOpenPanel(_ sender: Any) {
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.beginSheetModal(for: self.view.window!) { wasDirectoredSelected in
-            
-            if Bool(wasDirectoredSelected) {
-                let destinationFolder = openPanel.urls[0]
-                self.disassemblyArguments.destinationImagesPath = destinationFolder.path
-                self.disassemblyArguments.destinationImagesNamePrefix = DisassemblyArguments.defaultDestinationImagesNamePrefix()
-                //self.fileNameTextField.stringValue = self.disassemblyArguments.destinationImagesFullPath()
-            }
-        }
-    }
     
     // MARK: - DragAndDropImageViewDelegate
     
     func didDropImages(withPaths paths: [String]) {
-        disassemblyArguments.sourceImagePath = paths[0]
-    }
-    
-//    private func removeDropHintView() {
-//        dropHintViewController?.removeFromParentViewController()
-//        dropHintViewController?.view.removeFromSuperview()
-//    }
-    
-    // MARK: - NSTextFieldDelegate
-    
-    override func controlTextDidChange(_ obj: Notification) {
-        
-        if let textField = (obj.object as? NSTextField) {
-            
-            if textField.stringValue.characters.count > 0 {
-                let pathComponents = textField.stringValue.components(separatedBy: String.slash)
-                
-                if let lastPathComponent = pathComponents.last {
-                    disassemblyArguments.destinationImagesNamePrefix = lastPathComponent
-                }
-                
-                let folderPath = URL(fileURLWithPath: textField.stringValue).deletingLastPathComponent().path
-                disassemblyArguments.destinationImagesPath = folderPath
-            }
-        }
+        self.delegate?.contentWasDropped()
     }
     
     // MARK: - Private
-    
-    private func configureStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: ViewControllerId.Status.storyboardVersion()) as! StatusViewController?
-        statusViewController?.cancelHandler = {
-            self.stopDisassemblingProcess()
-        }
-    }
     
     private func configureWebView() {
         destinationWebView.drawsBackground = false
         destinationWebView.mainFrame.frameView.allowsScrolling = false
     }
-
-//    private func configureDropHintView() {
-//        dropHintViewController?.hintMessage = "Drop image here"
-//    }
     
     private func stopDisassemblingProcess() {
-        statusViewController?.dismiss(nil)
+        //statusViewController?.dismiss(nil)
         process?.stop()
     }
     
     private func showImageFramesInFinderApp() {
-        let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.destinationImagesPath)
-        NSWorkspace.shared().open(fileUrl)
+        //let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.destinationImagesPath)
+        //NSWorkspace.shared().open(fileUrl)
     }
     
     private func removeOutputImages() {
