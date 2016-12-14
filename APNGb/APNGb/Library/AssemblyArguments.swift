@@ -8,10 +8,10 @@
 
 import Cocoa
 
-final class AssemblyArguments: CommandArguments {
+final class AssemblyArguments: CommandArgumenting {
     
-    var destinationImagePath = AssemblyArguments.defaultArgumentValue()
-    var sourceImagePath = AssemblyArguments.defaultArgumentValue()
+    var destinationImagePath = String.empty
+    var sourceImagePath = String.empty
 
     var playback: Playback
     var optimization: Optimization
@@ -33,7 +33,7 @@ final class AssemblyArguments: CommandArguments {
         
         for argument in arguments {
             
-            if argument == AssemblyArguments.defaultArgumentValue() {
+            if argument == String.empty {
                 return false
             }
         }

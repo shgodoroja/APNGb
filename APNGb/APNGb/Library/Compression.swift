@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class Compression: CommandArguments {
+final class Compression: CommandArgumenting {
     
     var enableZlib = false {
         

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class Playback: CommandArguments {
+final class Playback: CommandArgumenting {
     
     var numberOfLoops = 0
     var skipFirstFrame = false

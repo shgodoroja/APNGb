@@ -12,7 +12,7 @@ enum FrameDelayCategory {
     case All, Selected
 }
 
-final class FrameDelay: CommandArguments {
+final class FrameDelay: CommandArgumenting {
     
     var category: FrameDelayCategory
     var enabled: Bool

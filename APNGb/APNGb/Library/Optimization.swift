@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class Optimization: CommandArguments {
+final class Optimization: CommandArgumenting {
     
     var enablePalette = true
     var enableColorType = true

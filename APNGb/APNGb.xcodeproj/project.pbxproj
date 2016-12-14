@@ -36,7 +36,6 @@
 		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
 		AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
 		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
-		AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830371DB7A844009E0254 /* CommandArguments.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManagerExtension.swift */; };
 		ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */; };
 		ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */; };
@@ -94,7 +93,6 @@
 		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
 		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
 		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
-		AB9830371DB7A844009E0254 /* CommandArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandArguments.swift; path = Library/CommandArguments.swift; sourceTree = "<group>"; };
 		AB9830391DB7B065009E0254 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Extensions/FileManagerExtension.swift; sourceTree = "<group>"; };
 		ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewController.swift; path = ViewControllers/MainContainerViewController.swift; sourceTree = "<group>"; };
 		ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = ViewControllers/SideBarViewController.swift; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 			children = (
 				ABF409161DAAF35000B0D373 /* Command.swift */,
 				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
-				AB9830371DB7A844009E0254 /* CommandArguments.swift */,
 				AB36BB421DB17BC2001F4DDD /* AssemblyArguments */,
 				AB9830311DB79C14009E0254 /* DisassemblyArguments */,
 			);
@@ -480,7 +477,6 @@
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
-				AB9830381DB7A844009E0254 /* CommandArguments.swift in Sources */,
 				ABF362B21DFC916700F8903A /* ViewSize.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Cocoa
 
+/// Keeps dimension values of all views from the application.
 struct ViewSize {
     
     static let windowHeight: CGFloat = 425.0
@@ -16,6 +17,7 @@ struct ViewSize {
 
 extension ViewSize {
     
+    /// Store side bar view dimension properties.
     struct SideBar {
         
         static let width: CGFloat = 60.0
@@ -24,6 +26,7 @@ extension ViewSize {
 
 extension ViewSize {
     
+    /// Store child container view dimension properties.
     struct ChildContainer {
         
         static let width: CGFloat = 425.0
@@ -32,6 +35,7 @@ extension ViewSize {
 
 extension ViewSize {
     
+    /// Store preferences view dimension properties.
     struct Preferences {
         
         static let width: CGFloat = 220.0
@@ -40,6 +44,7 @@ extension ViewSize {
 
 extension ViewSize {
     
+    /// Store bottom toolbar view dimension properties.
     struct BottomToolbar {
         
         static let height: CGFloat = 45.0

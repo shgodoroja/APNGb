@@ -6,6 +6,19 @@
 //  Copyright © 2016 Godoroja Stefan. All rights reserved.
 //
 
+/// Maps identifiers for all view controllers from the application.
+///
+/// - Assembly: AssemblyViewController identifier
+/// - Disassembly: DisassemblyViewController identifier
+/// - Status: StatusViewController identifier
+/// - Preferences: PreferencesContainerViewController identifier
+/// - DropHint: DropHintViewController identifier
+/// - BottomToolbar: BottomToolbarViewController identifier
+/// - ChildContainer: ChildContainerViewController identifier
+/// - SideBar: SideBarViewController identifier
+/// - AssemblyPreferences: AssemblyPreferencesViewController identifier
+/// - DisassemblyPreferences: DisassemblyPreferencesViewController identifier
+/// - Unknown: Default value if view controller doesn't have an identifier.
 enum ViewControllerId: Int {
     case Assembly
     case Disassembly
@@ -22,10 +35,17 @@ enum ViewControllerId: Int {
 
 extension ViewControllerId {
     
-    init(fromRawValue: Int) {
-        self = ViewControllerId(rawValue: fromRawValue) ?? .Unknown
+    /// Custom initalizer.
+    ///
+    /// - Parameter rawValue: Int value used to identify a view controller.
+    init(fromRawValue rawValue: Int) {
+        self = ViewControllerId(rawValue: rawValue) ?? .Unknown
     }
     
+    /// Identifies view controller storyboard id.
+    ///
+    /// - Returns: Storyboard identifier if view controller
+    ///  has a valid identifier, else returns an empty string.
     func storyboardVersion() -> String {
         switch self {
         case .Assembly:

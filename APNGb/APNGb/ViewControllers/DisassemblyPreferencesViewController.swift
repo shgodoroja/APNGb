@@ -37,7 +37,11 @@ class DisassemblyPreferencesViewController: NSViewController {
             
             switch textField.tag {
             case Identifier.TextField.frameName.rawValue:
-                NSLog("\(#function): unhandled case")
+                
+                if let frameNamePrefix = textFieldStringValue {
+                    disassemblyArguments.frameNamePrefix = frameNamePrefix
+                }
+                
             default:
                 NSLog("\(#function): unhandled case")
             }
