@@ -9,6 +9,8 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+    
+    @IBOutlet private var actionToolbar: TopActionToolbar!
 
     override func windowDidLoad() {
         super.windowDidLoad()

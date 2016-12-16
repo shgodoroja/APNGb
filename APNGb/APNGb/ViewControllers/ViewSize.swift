@@ -12,6 +12,7 @@ import Cocoa
 struct ViewSize {
     
     static let windowHeight: CGFloat = 425.0
+    static let windowWidth: CGFloat = 705.0
     static let splitViewSeparatorWidth: CGFloat = 1.0
 }
 

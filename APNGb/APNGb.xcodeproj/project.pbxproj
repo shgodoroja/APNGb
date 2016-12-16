@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
-		AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B42FD1DAFF044001E054A /* StatusViewController.swift */; };
+		AB2B42FE1DAFF044001E054A /* TopActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B42FD1DAFF044001E054A /* TopActionToolbar.swift */; };
 		AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94DF1DAEAD7D008DB042 /* apngasm */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
 		AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */; };
@@ -64,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
-		AB2B42FD1DAFF044001E054A /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewController.swift; path = ViewControllers/StatusViewController.swift; sourceTree = "<group>"; };
+		AB2B42FD1DAFF044001E054A /* TopActionToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopActionToolbar.swift; path = ViewControllers/TopActionToolbar.swift; sourceTree = "<group>"; };
 		AB2C94DF1DAEAD7D008DB042 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngasm; path = APNGb/Executables/apngasm; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
 		AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropView.swift; path = CustomViews/DragAndDropView.swift; sourceTree = "<group>"; };
@@ -180,6 +180,7 @@
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
 				AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */,
+				AB2B42FD1DAFF044001E054A /* TopActionToolbar.swift */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
 				AB98302B1DB78048009E0254 /* Utilities */,
 				ABF4090D1DA9B92700B0D373 /* Library */,
@@ -265,7 +266,6 @@
 		AB7B53D01DF867B7005C8539 /* Loose */ = {
 			isa = PBXGroup;
 			children = (
-				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */,
 			);
 			name = Loose;
@@ -473,7 +473,7 @@
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
 				ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */,
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
-				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
+				AB2B42FE1DAFF044001E054A /* TopActionToolbar.swift in Sources */,
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
 				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
