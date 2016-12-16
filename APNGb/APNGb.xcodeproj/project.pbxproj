@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */; };
+		AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
 		AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B42FD1DAFF044001E054A /* StatusViewController.swift */; };
 		AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94DF1DAEAD7D008DB042 /* apngasm */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
@@ -26,7 +26,6 @@
 		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
 		AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */; };
 		AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */; };
-		AB7B53D71DF9BDDE005C8539 /* BottomToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */; };
 		AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */; };
 		AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */; };
 		AB8CFEC21DFB536200691ECC /* AssemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEC11DFB536200691ECC /* AssemblyPreferencesViewController.swift */; };
@@ -49,6 +48,8 @@
 		ABF362B21DFC916700F8903A /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362B11DFC916700F8903A /* ViewSize.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
+		ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF443FC1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift */; };
+		ABF444011E032FAD00751DB6 /* AssemblyFrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF444001E032FAD00751DB6 /* AssemblyFrameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropWebView.swift; path = CustomViews/DragAndDropWebView.swift; sourceTree = "<group>"; };
+		AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
 		AB2B42FD1DAFF044001E054A /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewController.swift; path = ViewControllers/StatusViewController.swift; sourceTree = "<group>"; };
 		AB2C94DF1DAEAD7D008DB042 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngasm; path = APNGb/Executables/apngasm; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
@@ -85,7 +86,6 @@
 		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
 		AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesContainerViewController.swift; path = ViewControllers/PreferencesContainerViewController.swift; sourceTree = "<group>"; };
 		AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropHintViewController.swift; path = ViewControllers/DropHintViewController.swift; sourceTree = "<group>"; };
-		AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomToolbarViewController.swift; path = ViewControllers/BottomToolbarViewController.swift; sourceTree = "<group>"; };
 		AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewLayoutCareTaker.swift; path = Layout/MainContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewLayoutCareTaker.swift; path = Layout/ChildContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		AB8CFEC11DFB536200691ECC /* AssemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyPreferencesViewController.swift; path = ViewControllers/AssemblyPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		ABF362B11DFC916700F8903A /* ViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSize.swift; path = ViewControllers/ViewSize.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
+		ABF443FC1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewLayoutCareTaker.swift; path = Layout/ChildViewLayoutCareTaker.swift; sourceTree = "<group>"; };
+		ABF444001E032FAD00751DB6 /* AssemblyFrameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyFrameCell.swift; path = Cells/AssemblyFrameCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +139,8 @@
 		AB2C94E91DAEBD25008DB042 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */,
 				AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */,
-				AB1906341DC17CBF0044E19F /* DragAndDropWebView.swift */,
+				AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -178,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */,
+				AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */,
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
 				AB98302B1DB78048009E0254 /* Utilities */,
 				ABF4090D1DA9B92700B0D373 /* Library */,
@@ -254,6 +256,8 @@
 			children = (
 				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
 				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
+				ABF443FC1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift */,
+				ABF444001E032FAD00751DB6 /* AssemblyFrameCell.swift */,
 			);
 			name = ChildViewControllers;
 			sourceTree = "<group>";
@@ -263,7 +267,6 @@
 			children = (
 				AB2B42FD1DAFF044001E054A /* StatusViewController.swift */,
 				AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */,
-				AB7B53D61DF9BDDE005C8539 /* BottomToolbarViewController.swift */,
 			);
 			name = Loose;
 			sourceTree = "<group>";
@@ -468,11 +471,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
-				AB7B53D71DF9BDDE005C8539 /* BottomToolbarViewController.swift in Sources */,
 				ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */,
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* StatusViewController.swift in Sources */,
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
+				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
@@ -482,11 +485,11 @@
 				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
+				ABF444011E032FAD00751DB6 /* AssemblyFrameCell.swift in Sources */,
 				AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
 				ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */,
-				AB1906351DC17CBF0044E19F /* DragAndDropWebView.swift in Sources */,
 				AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */,
 				AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */,
@@ -501,6 +504,7 @@
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
 				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
 				ABF362B01DFC4AD000F8903A /* ViewControllerId.swift in Sources */,
+				ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */,
 				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
 				AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */,
 			);

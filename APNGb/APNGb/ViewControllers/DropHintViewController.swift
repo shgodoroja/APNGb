@@ -8,12 +8,10 @@
 
 import Cocoa
 
-protocol Droppable {
-    func contentWasDropped()
-}
-
 final class DropHintViewController: NSViewController {
 
+    @IBOutlet private var hintLabel: NSTextField!
+    
     var hintMessage = String.empty {
         
         didSet {
@@ -21,9 +19,18 @@ final class DropHintViewController: NSViewController {
         }
     }
     
-    @IBOutlet private var hintLabel: NSTextField!
-    
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        self.disableDraggingForAllViews()        
+    }
+    
+    // MARK: Private
+    
+    private func disableDraggingForAllViews() {
+        self.view.unregisterDraggedTypes()
+        
+        for view in self.view.subviews {
+            view.unregisterDraggedTypes()
+        }
     }
 }

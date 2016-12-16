@@ -10,10 +10,8 @@
 ///
 /// - Assembly: AssemblyViewController identifier
 /// - Disassembly: DisassemblyViewController identifier
-/// - Status: StatusViewController identifier
 /// - Preferences: PreferencesContainerViewController identifier
 /// - DropHint: DropHintViewController identifier
-/// - BottomToolbar: BottomToolbarViewController identifier
 /// - ChildContainer: ChildContainerViewController identifier
 /// - SideBar: SideBarViewController identifier
 /// - AssemblyPreferences: AssemblyPreferencesViewController identifier
@@ -22,10 +20,8 @@
 enum ViewControllerId: Int {
     case Assembly
     case Disassembly
-    case Status
     case Preferences
     case DropHint
-    case BottomToolbar
     case ChildContainer
     case SideBar
     case AssemblyPreferences
@@ -52,14 +48,10 @@ extension ViewControllerId {
             return "assembly.view"
         case .Disassembly:
             return "disassembly.view"
-        case .Status:
-            return "status.view"
         case .Preferences:
             return "preferences.view"
         case .DropHint:
             return "drophint.view"
-        case .BottomToolbar:
-            return "bottomtoolbar.view"
         case .ChildContainer:
             return "childcontainer.view"
         case .AssemblyPreferences:

@@ -7,23 +7,53 @@
 //
 
 import Cocoa
+import WebKit
 
-final class DisassemblyViewController: NSViewController, NSTextFieldDelegate, DragAndDropImageDelegate {
-    
-    var delegate: Droppable?
+final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
     private var disassemblyArguments = DisassemblyArguments()
     private var process: ExecutableProcess?
+    private var dropHintViewController: DropHintViewController?
+    private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
-    @IBOutlet private var destinationWebView: DragAndDropWebView! {
-        didSet {
-            destinationWebView.delegate = self
-        }
+    @IBOutlet private var destinationWebView: WebView!
+    
+    required init?(coder: NSCoder) {
+        viewLayoutCareTaker = ChildViewLayoutCareTaker()
+        super.init(coder: coder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureWebView()
+        self.addDropHintViewController()
+        self.configureWebView()
+        
+        destinationWebView.isHidden = true
+                
+        let v = self.view as? DragAndDropView
+        
+        if let v = v {
+            v.delegate = self
+        }
+    }
+    
+    private func addDropHintViewController() {
+        
+        if dropHintViewController == nil {
+            dropHintViewController = showChildViewController(withIdentifier: ViewControllerId.DropHint.storyboardVersion()) as! DropHintViewController?
+            
+            if let view = dropHintViewController?.view {
+                
+                if let superview = view.superview {
+                    viewLayoutCareTaker.updateLayoutOf(view,
+                                                       withIdentifier: ViewControllerId.DropHint,
+                                                       superview: superview,
+                                                       andSiblingView: nil)
+                }
+            }
+            
+            dropHintViewController?.hintMessage = "Drop animated image here"
+        }
     }
     
     // MARK: IBActions
@@ -55,8 +85,13 @@ final class DisassemblyViewController: NSViewController, NSTextFieldDelegate, Dr
     
     // MARK: - DragAndDropImageViewDelegate
     
-    func didDropImages(withPaths paths: [String]) {
-        self.delegate?.contentWasDropped()
+    func didDropFiles(withPaths paths: [String]) {
+        destinationWebView.isHidden = false
+
+        
+        let imageHTML = "<!DOCTYPE html> <head> <style type=\"text/css\"> html { margin:0; padding:0; } body {margin: 0; padding:0;} img {position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-width:100%; max-height: 100%;} </style> </head> <body id=\"page\"> <img src=\"file://\(paths[0])\"> </body> </html>​"
+        destinationWebView.mainFrame.loadHTMLString(imageHTML, baseURL: nil)
+        dropHintViewController?.view.isHidden = true
     }
     
     // MARK: - Private

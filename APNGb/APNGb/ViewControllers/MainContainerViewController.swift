@@ -14,7 +14,7 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
     private var sideBarViewController: SideBarViewController?
     private var childContainerViewController: ChildContainerViewController?
     private var preferencesContainerViewController: PreferencesContainerViewController?
-
+    
     required init?(coder: NSCoder) {
         viewLayoutCareTaker = MainContainerViewLayoutCareTaker()
         super.init(coder: coder)
@@ -43,6 +43,7 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
         
         for childViewController in self.childViewControllers {
             
+            // Find SideBar VC
             if childViewController is SideBarViewController {
                 sideBarViewController = childViewController as? SideBarViewController
                 
@@ -56,7 +57,10 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
                     }
                 }
                 
-            } else if childViewController is ChildContainerViewController {
+                sideBarViewController?.delegate = self
+            }
+            // Find Child Container VC
+            else if childViewController is ChildContainerViewController {
                 childContainerViewController = childViewController as? ChildContainerViewController
                 
                 if let view = childContainerViewController?.view {
@@ -69,7 +73,9 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
                     }
                 }
                 
-            } else if childViewController is PreferencesContainerViewController {
+            }
+            // Find Preferences VC
+            else if childViewController is PreferencesContainerViewController {
                 preferencesContainerViewController = childViewController as? PreferencesContainerViewController
                 
                 if let view = preferencesContainerViewController?.view {
@@ -82,8 +88,6 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
                     }
                 }
             }
-
-            sideBarViewController?.delegate = self
         }
     }
 }

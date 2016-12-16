@@ -10,8 +10,6 @@ import Cocoa
 
 final class AnimationFrame {
     
-    var path: String
-    var size: Int
     var delaySeconds = 1
     var delayFrames = 10
     var displayableFrameDelay: String {
@@ -20,6 +18,8 @@ final class AnimationFrame {
         }
     }
     
+    private(set) var path: String
+    private(set) var size: Int
     private(set) var name: String
     
     init(url: NSURL, size: Int) {

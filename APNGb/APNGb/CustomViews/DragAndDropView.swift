@@ -8,12 +8,16 @@
 
 import Cocoa
 
+protocol DragAndDropDelegate {
+    func didDropFiles(withPaths paths: [String])
+}
+
 final class DragAndDropView: NSView {
     
-    var delegate: DragAndDropImageDelegate?
+    var delegate: DragAndDropDelegate?
+    var allowedFileTypes: [String] = ["png", "apng"]
     
     private var validator: DragAndDropValidator
-    private let allowedFileTypes = ["png"]
     
     required init?(coder: NSCoder) {
         validator = DragAndDropValidator(withAllowedFileTypes: allowedFileTypes)
@@ -32,8 +36,8 @@ final class DragAndDropView: NSView {
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        let imagesPaths = validator.draggingResult(sender)
-        delegate?.didDropImages(withPaths: imagesPaths)
+        let paths = validator.draggingResult(sender)
+        delegate?.didDropFiles(withPaths: paths)
         
         return true
     }

@@ -8,26 +8,52 @@
 
 import Cocoa
 
-enum DroppedImageTableViewColumnIdentifier: String {
-    case name = "name", size = "size", delay = "delay"
-}
-
-final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropImageDelegate {
+final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropDelegate {
     
     private var assemblyArguments = AssemblyArguments()
     private var process: ExecutableProcess?
-    
     private var animationFrames: [AnimationFrame] = []
-    private var selectedImagesIndexSet: IndexSet?
-
-    private var statusViewController: StatusViewController?
+    private var dropHintViewController: DropHintViewController?
+    private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
     @IBOutlet private var tableView: NSTableView!
-    @IBOutlet private var tableViewScrollView: NSScrollView!
+    
+    required init?(coder: NSCoder) {
+        viewLayoutCareTaker = ChildViewLayoutCareTaker()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupStatusView()
+        
+        self.tableView.unregisterDraggedTypes()
+        self.addDropHintViewController()
+        
+        let v = self.view as? DragAndDropView
+        
+        if let v = v {
+            v.delegate = self
+        }
+    }
+    
+    private func addDropHintViewController() {
+        
+        if dropHintViewController == nil {
+            dropHintViewController = showChildViewController(withIdentifier: ViewControllerId.DropHint.storyboardVersion()) as! DropHintViewController?
+            
+            if let view = dropHintViewController?.view {
+                
+                if let superview = view.superview {
+                    viewLayoutCareTaker.updateLayoutOf(view,
+                                                       withIdentifier: ViewControllerId.DropHint,
+                                                       superview: superview,
+                                                       andSiblingView: nil)
+                }
+            }
+            
+            dropHintViewController?.hintMessage = "Drop frames here"
+            //dropHintViewController.view.delegate
+        }
     }
     
     // MARK: - NSTableView
@@ -40,9 +66,9 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         let selectedRowIndexes = tableView.selectedRowIndexes
         
         if selectedRowIndexes.count > 0 {
-            updateSelectedFramesDelayTextFields(enabled: true, indexSet: selectedRowIndexes)
+            //updateSelectedFramesDelayTextFields(enabled: true, indexSet: selectedRowIndexes)
         } else {
-            updateSelectedFramesDelayTextFields(enabled: false, indexSet: nil)
+            //updateSelectedFramesDelayTextFields(enabled: false, indexSet: nil)
         }
     }
     
@@ -52,29 +78,36 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         return animationFrames.count
     }
     
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        let droppedImage = animationFrames[row]
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cellView = tableView.make(withIdentifier: "assembly.frame.cell",
+                                      owner: self) as! AssemblyFrameCell
+
+        let frame = animationFrames[row]
+        cellView.imageView!.image = NSImage(contentsOf: NSURL(fileURLWithPath: frame.path) as URL)
+        cellView.nameTextField.stringValue = frame.name
+        cellView.sizeTextField.stringValue = "Size: \(frame.size) \(String.kilobyteAbbreviation)"
+        cellView.delayTextField.stringValue = "Delay: \(frame.displayableFrameDelay)"
+        cellView.backgroundColor = NSColor.white
         
-        if tableColumn?.identifier == DroppedImageTableViewColumnIdentifier.name.rawValue {
-            return droppedImage.name
-        } else if tableColumn?.identifier == DroppedImageTableViewColumnIdentifier.size.rawValue {
-            return "\(droppedImage.size)" + String.space + String.kilobyteAbbreviation
-        } else {
-            return droppedImage.displayableFrameDelay
-        }
+        return cellView
     }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 60
+    }
+    
     
     // MARK: DragAndDropImageDelegate
     
-    func didDropImages(withPaths paths: [String]) {
+    func didDropFiles(withPaths paths: [String]) {
         
         for imagePath in paths {
             let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
             let droppedImage = AnimationFrame(url: URL(fileURLWithPath: imagePath) as NSURL,
-                                            size: imageSizeInKB)
+                                              size: imageSizeInKB)
             animationFrames.append(droppedImage)
         }
-    
+        
         tableView.reloadData()
         updateUI()
     }
@@ -86,21 +119,21 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         preProcessSetup()
         
         if assemblyArguments.havePassedValidation() {
-            self.presentViewControllerAsSheet(statusViewController!)
+            //self.presentViewControllerAsSheet(statusViewController!)
             let command = Command(withExecutableName: .Assembly)
             command.arguments = assemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
             process?.progressHandler = { outputString in
-                self.statusViewController?.updateStatusMessage(message: outputString)
+                //self.statusViewController?.updateStatusMessage(message: outputString)
             }
             process?.terminationHandler = {
                 self.stopAssemblingProcess()
                 
-                if self.statusViewController?.wasCanceled() == true {
+                //if self.statusViewController?.wasCanceled() == true {
                     self.removeOutputImage()
-                } else {
+               // } else {
                     self.showImageInFinderApp()
-                }
+               // }
             }
             process?.start()
         }
@@ -198,15 +231,8 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         index = 0
     }
     
-    private func setupStatusView() {
-        statusViewController = storyboard?.instantiateController(withIdentifier: ViewControllerId.Status.storyboardVersion()) as! StatusViewController?
-        statusViewController?.cancelHandler = {
-            self.stopAssemblingProcess()
-        }
-    }
-    
     private func stopAssemblingProcess() {
-        statusViewController?.dismiss(nil)
+        //statusViewController?.dismiss(nil)
         process?.stop()
     }
     
@@ -217,43 +243,18 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private func updateUI() {
         showTableViewIfNeeded()
-        //showDropHintViewIfNeeded()
     }
-    
-//    private func showDropHintViewIfNeeded() {
-//        
-//        if droppedImages.count > 0 {
-//            dropHintViewController?.view.isHidden = true
-//        } else {
-//            dropHintViewController?.view.isHidden = false
-//        }
-//    }
-    
+
     private func showTableViewIfNeeded() {
         
         if animationFrames.count > 0 {
-            tableViewScrollView.isHidden = false
+            tableView.isHidden = false
         } else {
-            tableViewScrollView.isHidden = true
+            tableView.isHidden = true
         }
     }
     
-    private func defaultOutputImageName() -> String {
-        return "output.png"
-    }
-    
-    private func updateSelectedFramesDelayTextFields(enabled: Bool, indexSet: IndexSet?) {
-        selectedImagesIndexSet = indexSet
-        assemblyArguments.selectedFramesDelay.enabled = enabled
-        //selectedDelaySecondsTextField.isEnabled = enabled
-        //selectedDelayFramesTextField.isEnabled = enabled
-    }
-
     private func removeOutputImage() {
         _ = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
     }
-    
-//    private func configureDropHintView() {
-//        dropHintViewController?.hintMessage = "Drop images here"
-//    }
 }

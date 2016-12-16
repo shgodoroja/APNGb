@@ -60,6 +60,10 @@ struct DragAndDropValidator {
         return []
     }
     
+    /// Checks if dropped image is of necessary extension.
+    ///
+    /// - Parameter drag: Information about drag session.
+    /// - Returns: `true` if image extension is legal, else returns `false`.
     func isImageTypeAllowed(drag: NSDraggingInfo) -> Bool {
         
         if let droppedImagesPaths = drag.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? Array<String> {

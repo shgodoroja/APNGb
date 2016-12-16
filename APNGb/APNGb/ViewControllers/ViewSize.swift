@@ -41,12 +41,3 @@ extension ViewSize {
         static let width: CGFloat = 220.0
     }
 }
-
-extension ViewSize {
-    
-    /// Store bottom toolbar view dimension properties.
-    struct BottomToolbar {
-        
-        static let height: CGFloat = 45.0
-    }
-}
