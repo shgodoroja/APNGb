@@ -17,7 +17,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
     @IBOutlet private var tableView: NSTableView!
-    @IBOutlet var tableViewContainer: NSScrollView!
+    @IBOutlet private var tableViewContainer: NSScrollView!
     
     required init?(coder: NSCoder) {
         viewLayoutCareTaker = ChildViewLayoutCareTaker()
@@ -27,7 +27,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDropHintViewController()
-        tableView.unregisterDraggedTypes()
+        self.configureTableView()
         (self.view as? DragAndDropView)?.delegate = self
     }
     
@@ -248,6 +248,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         } else {
             tableViewContainer.isHidden = true
         }
+    }
+    
+    private func configureTableView() {
+        tableView.unregisterDraggedTypes()
+        tableViewContainer.isHidden = true
     }
     
     private func removeOutputImage() {

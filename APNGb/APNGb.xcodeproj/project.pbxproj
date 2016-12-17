@@ -47,6 +47,7 @@
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* AnimationFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */; };
+		ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */; };
 		ABF362AD1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
@@ -107,6 +108,7 @@
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationFrame.swift; path = Models/AnimationFrame.swift; sourceTree = "<group>"; };
+		ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropWebView.swift; path = CustomViews/DragAndDropWebView.swift; sourceTree = "<group>"; };
 		ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewLayoutCareTaker.swift; path = Layout/PreferencesViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
@@ -190,13 +192,13 @@
 			name = WindowControllers;
 			sourceTree = "<group>";
 		};
-		AB0FD0841E04B9A70023E528 /* ViewControllers */ = {
+		AB0FD0841E04B9A70023E528 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */,
 				AB0FD0801E04B93D0023E528 /* ViewSize.swift */,
 			);
-			name = ViewControllers;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		AB2B42FA1DAFEA61001E054A /* Storyboards */ = {
@@ -212,6 +214,7 @@
 			children = (
 				AB2B42FD1DAFF044001E054A /* TopActionToolbar.swift */,
 				AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */,
+				ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */,
 				AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */,
 			);
 			name = CustomViews;
@@ -389,7 +392,7 @@
 			children = (
 				AB0FD07D1E04B8F70023E528 /* Theme.swift */,
 				AB7B53CB1DF865E6005C8539 /* Closure.swift */,
-				AB0FD0841E04B9A70023E528 /* ViewControllers */,
+				AB0FD0841E04B9A70023E528 /* ViewController */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				AB2B42FE1DAFF044001E054A /* TopActionToolbar.swift in Sources */,
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
+				ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */,
 				AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */,
 				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
