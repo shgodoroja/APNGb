@@ -14,10 +14,8 @@ final class AssemblyFrameRowView: NSTableRowView {
         
         if self.selectionHighlightStyle != .none {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
-            NSColor(calibratedWhite: 0.65,
-                    alpha: 1).setStroke()
-            NSColor(calibratedWhite: 0.82,
-                    alpha: 1).setFill()
+            Theme.Color.assemblyFrameCellBorderColor.setStroke()
+            Theme.Color.assemblyFrameCellBackgroundColor.setFill()
             let selectionPath = NSBezierPath.init(roundedRect: selectionRect,
                                                   xRadius: 0,
                                                   yRadius: 0)
