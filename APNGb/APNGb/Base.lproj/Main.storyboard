@@ -76,7 +76,7 @@
                 </viewController>
                 <customObject id="Acb-Qb-Zyr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367.5" y="-324"/>
+            <point key="canvasLocation" x="371" y="-325"/>
         </scene>
         <!--Child Container View Controller-->
         <scene sceneID="N0A-0z-kMy">
@@ -86,10 +86,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="462" height="483"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
+                    <connections>
+                        <segue destination="G7N-NI-mjP" kind="custom" identifier="show.disassembly.view" id="CRo-AX-VTX"/>
+                        <segue destination="GTU-ZT-XQF" kind="custom" identifier="show.assembly.view" id="qoe-pZ-xIw"/>
+                    </connections>
                 </viewController>
                 <customObject id="SUz-8s-iy2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="-325"/>
+            <point key="canvasLocation" x="772" y="-326"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="4ME-E9-zpU">
@@ -673,11 +677,12 @@ CA
                     <connections>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="rej-DQ-F0Y"/>
                         <outlet property="tableViewContainer" destination="XZy-5Q-oUD" id="pb4-7b-TdK"/>
+                        <segue destination="fHl-gE-Vab" kind="custom" identifier="show.drophint.view" id="emm-ZJ-pz5"/>
                     </connections>
                 </viewController>
                 <customObject id="fzl-6v-kKk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="250"/>
+            <point key="canvasLocation" x="1053" y="291"/>
         </scene>
         <!--Drop Hint View Controller-->
         <scene sceneID="KaW-aB-SGJ">
@@ -719,7 +724,7 @@ CA
                 </viewController>
                 <customObject id="ZxJ-aw-P6y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="250.5"/>
+            <point key="canvasLocation" x="742" y="904"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="Sna-Zk-Kuc">
@@ -1227,8 +1232,8 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                     <connections>
-                        <segue destination="gUx-HD-ku2" kind="custom" id="PY5-dX-E3n"/>
-                        <segue destination="SSY-0t-4qx" kind="custom" id="YWQ-9k-Egr"/>
+                        <segue destination="gUx-HD-ku2" kind="custom" identifier="show.assemblypreferences.view" id="PY5-dX-E3n"/>
+                        <segue destination="SSY-0t-4qx" kind="custom" identifier="show.disassemblypreferences.view" id="YWQ-9k-Egr"/>
                     </connections>
                 </viewController>
                 <customObject id="h5u-Ac-QUU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1329,11 +1334,12 @@ CA
                     </view>
                     <connections>
                         <outlet property="destinationWebView" destination="vyU-1t-e5K" id="31X-GG-dch"/>
+                        <segue destination="fHl-gE-Vab" kind="custom" identifier="show.drophint.view" id="IXB-S3-5gF"/>
                     </connections>
                 </viewController>
                 <customObject id="WWv-IQ-OUY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="252"/>
+            <point key="canvasLocation" x="423" y="293"/>
         </scene>
     </scenes>
     <resources>
@@ -1344,4 +1350,7 @@ CA
         <image name="start" width="18" height="18"/>
         <image name="stop" width="17" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="emm-ZJ-pz5"/>
+    </inferredMetricsTieBreakers>
 </document>
