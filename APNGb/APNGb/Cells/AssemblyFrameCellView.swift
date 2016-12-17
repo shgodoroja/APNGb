@@ -1,5 +1,5 @@
 //
-//  AssemblyFrameCell.swift
+//  AssemblyFrameCellView.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 12/15/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AssemblyFrameCell: NSTableCellView {
+final class AssemblyFrameCellView: NSTableCellView {
 
     @IBOutlet var nameTextField: NSTextField!
     @IBOutlet var sizeTextField: NSTextField!

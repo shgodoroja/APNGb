@@ -28,7 +28,7 @@ class SideBarViewController: NSViewController, SideBarItemGroupDelegate {
     }
 
     private func applyStyle() {
-        self.view.backgroundColor = NSColor(colorLiteralRed: 233/255, green: 70/255, blue: 43/255, alpha: 1.0)
+        self.view.backgroundColor = Theme.Color.sidebarBackground
     }
     
     private func setupSideBar() {

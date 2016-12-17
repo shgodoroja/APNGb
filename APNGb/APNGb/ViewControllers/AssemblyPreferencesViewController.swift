@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AssemblyPreferencesViewController: NSViewController {
+final class AssemblyPreferencesViewController: NSViewController {
     
     private dynamic var assemblyArguments = AssemblyArguments()
     
@@ -36,5 +36,9 @@ class AssemblyPreferencesViewController: NSViewController {
     private func updateRadioButtonAssociatedTextFields() {
         sevenZipIterationsTextField.isEnabled = assemblyArguments.compression.enable7zip
         zopfliIterationsTextField.isEnabled = assemblyArguments.compression.enableZopfli
+    }
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = Theme.Color.preferencesPane
     }
 }

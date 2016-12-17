@@ -40,30 +40,30 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53k-AH-Ztp">
-                                <rect key="frame" x="59" y="424" width="40" height="40"/>
+                                <rect key="frame" x="64" y="434" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="1gg-fq-dF4"/>
-                                    <constraint firstAttribute="height" constant="40" id="Rsj-6B-ILO"/>
+                                    <constraint firstAttribute="width" constant="30" id="1gg-fq-dF4"/>
+                                    <constraint firstAttribute="height" constant="30" id="Rsj-6B-ILO"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="assembly-off" imagePosition="only" alignment="center" alternateImage="assembly-on" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
+                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="assembly-default" imagePosition="only" alignment="center" alternateImage="assembly-selected" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-6J-5YB">
-                                <rect key="frame" x="59" y="374" width="40" height="40"/>
+                                <rect key="frame" x="64" y="399" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BDv-t1-gX1"/>
-                                    <constraint firstAttribute="width" constant="40" id="aru-wQ-SLQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="BDv-t1-gX1"/>
+                                    <constraint firstAttribute="width" constant="30" id="aru-wQ-SLQ"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="disassembly-off" imagePosition="only" alignment="center" alternateImage="disassembly-on" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
+                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="only" alignment="center" alternateImage="disassembly-selected" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="DTA-6J-5YB" firstAttribute="top" secondItem="53k-AH-Ztp" secondAttribute="bottom" constant="10" id="ANp-9D-Fil"/>
+                            <constraint firstItem="DTA-6J-5YB" firstAttribute="top" secondItem="53k-AH-Ztp" secondAttribute="bottom" constant="5" id="ANp-9D-Fil"/>
                             <constraint firstItem="53k-AH-Ztp" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="Cg9-zb-Nv9"/>
                             <constraint firstItem="53k-AH-Ztp" firstAttribute="top" secondItem="5Ol-V9-YJy" secondAttribute="top" constant="20" id="NEb-um-cdF"/>
                             <constraint firstItem="DTA-6J-5YB" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="c9s-ea-yzm"/>
@@ -571,11 +571,11 @@ CA
                                     <rect key="frame" x="0.0" y="0.0" width="420" height="397"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" rowSizeStyle="automatic" viewBased="YES" id="I3p-KA-ejx">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="I3p-KA-ejx">
                                             <rect key="frame" x="0.0" y="0.0" width="420" height="397"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn identifier="name" editable="NO" width="417" minWidth="10" maxWidth="3.4028234663852886e+38" id="Q7W-vq-Vsl">
@@ -591,7 +591,7 @@ CA
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="assembly.frame.cell" id="cpy-ri-QHO" customClass="AssemblyFrameCell" customModule="APNGb" customModuleProvider="target">
+                                                        <tableCellView identifier="assembly.frame.cell" id="cpy-ri-QHO" customClass="AssemblyFrameCellView" customModule="APNGb" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="417" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -672,6 +672,7 @@ CA
                     </view>
                     <connections>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="rej-DQ-F0Y"/>
+                        <outlet property="tableViewContainer" destination="XZy-5Q-oUD" id="pb4-7b-TdK"/>
                     </connections>
                 </viewController>
                 <customObject id="fzl-6v-kKk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1308,7 +1309,7 @@ CA
         <scene sceneID="Hiy-e3-ciK">
             <objects>
                 <viewController storyboardIdentifier="disassembly.view" id="G7N-NI-mjP" customClass="DisassemblyViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="I4c-Vu-esD" customClass="DragAndDropView" customModule="APNGb" customModuleProvider="target">
+                    <view key="view" wantsLayer="YES" id="I4c-Vu-esD">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="405"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -1336,10 +1337,10 @@ CA
         </scene>
     </scenes>
     <resources>
-        <image name="assembly-off" width="30" height="30"/>
-        <image name="assembly-on" width="30" height="30"/>
-        <image name="disassembly-off" width="32" height="32"/>
-        <image name="disassembly-on" width="32" height="32"/>
+        <image name="assembly-default" width="25" height="25"/>
+        <image name="assembly-selected" width="25" height="25"/>
+        <image name="disassembly-default" width="25" height="25"/>
+        <image name="disassembly-selected" width="25" height="25"/>
         <image name="start" width="18" height="18"/>
         <image name="stop" width="17" height="17"/>
     </resources>

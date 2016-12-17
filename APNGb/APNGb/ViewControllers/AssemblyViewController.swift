@@ -17,6 +17,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
     @IBOutlet private var tableView: NSTableView!
+    @IBOutlet var tableViewContainer: NSScrollView!
     
     required init?(coder: NSCoder) {
         viewLayoutCareTaker = ChildViewLayoutCareTaker()
@@ -25,15 +26,9 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.unregisterDraggedTypes()
         self.addDropHintViewController()
-        
-        let v = self.view as? DragAndDropView
-        
-        if let v = v {
-            v.delegate = self
-        }
+        tableView.unregisterDraggedTypes()
+        (self.view as? DragAndDropView)?.delegate = self
     }
     
     private func addDropHintViewController() {
@@ -52,7 +47,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             }
             
             dropHintViewController?.hintMessage = "Drop frames here"
-            //dropHintViewController.view.delegate
         }
     }
     
@@ -80,22 +74,24 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cellView = tableView.make(withIdentifier: "assembly.frame.cell",
-                                      owner: self) as! AssemblyFrameCell
+                                      owner: self) as! AssemblyFrameCellView
 
         let frame = animationFrames[row]
         cellView.imageView!.image = NSImage(contentsOf: NSURL(fileURLWithPath: frame.path) as URL)
         cellView.nameTextField.stringValue = frame.name
         cellView.sizeTextField.stringValue = "Size: \(frame.size) \(String.kilobyteAbbreviation)"
         cellView.delayTextField.stringValue = "Delay: \(frame.displayableFrameDelay)"
-        cellView.backgroundColor = NSColor.white
-        
+
         return cellView
+    }
+    
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        return AssemblyFrameRowView()
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 60
     }
-    
     
     // MARK: DragAndDropImageDelegate
     
@@ -108,7 +104,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             animationFrames.append(droppedImage)
         }
         
-        tableView.reloadData()
         updateUI()
     }
 
@@ -243,14 +238,15 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     private func updateUI() {
         showTableViewIfNeeded()
+        tableView.reloadData()
     }
 
     private func showTableViewIfNeeded() {
         
         if animationFrames.count > 0 {
-            tableView.isHidden = false
+            tableViewContainer.isHidden = false
         } else {
-            tableView.isHidden = true
+            tableViewContainer.isHidden = true
         }
     }
     

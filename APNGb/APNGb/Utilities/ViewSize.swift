@@ -12,7 +12,7 @@ import Cocoa
 struct ViewSize {
     
     static let windowHeight: CGFloat = 425.0
-    static let windowWidth: CGFloat = 705.0
+    static let windowWidth: CGFloat = 695.0
     static let splitViewSeparatorWidth: CGFloat = 1.0
 }
 
@@ -21,7 +21,7 @@ extension ViewSize {
     /// Store side bar view dimension properties.
     struct SideBar {
         
-        static let width: CGFloat = 60.0
+        static let width: CGFloat = 50.0
     }
 }
 

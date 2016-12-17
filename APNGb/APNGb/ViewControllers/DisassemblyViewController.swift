@@ -27,14 +27,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
         super.viewDidLoad()
         self.addDropHintViewController()
         self.configureWebView()
-        
-        destinationWebView.isHidden = true
-                
-        let v = self.view as? DragAndDropView
-        
-        if let v = v {
-            v.delegate = self
-        }
+        (self.view as? DragAndDropView)?.delegate = self
     }
     
     private func addDropHintViewController() {
@@ -88,10 +81,8 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     func didDropFiles(withPaths paths: [String]) {
         destinationWebView.isHidden = false
 
-        
         let imageHTML = "<!DOCTYPE html> <head> <style type=\"text/css\"> html { margin:0; padding:0; } body {margin: 0; padding:0;} img {position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-width:100%; max-height: 100%;} </style> </head> <body id=\"page\"> <img src=\"file://\(paths[0])\"> </body> </html>​"
         destinationWebView.mainFrame.loadHTMLString(imageHTML, baseURL: nil)
-        dropHintViewController?.view.isHidden = true
     }
     
     // MARK: - Private

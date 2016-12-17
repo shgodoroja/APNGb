@@ -9,7 +9,7 @@
 import Cocoa
 
 final class DropHintViewController: NSViewController {
-
+    
     @IBOutlet private var hintLabel: NSTextField!
     
     var hintMessage = String.empty {
@@ -21,7 +21,7 @@ final class DropHintViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.disableDraggingForAllViews()        
+        self.disableDraggingForAllViews()
     }
     
     // MARK: Private
