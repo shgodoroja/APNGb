@@ -17,12 +17,22 @@ class SideBarViewController: NSViewController, Clickable {
     @IBOutlet private var assemblyItemButton: NSButton!
     @IBOutlet private var disassemblyItemButton: NSButton!
     
+    // MARK: - ViewController life-cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyStyle()
         self.setupSideBar()
     }
-
+    
+    // MARK: - Clickable
+    
+    func didClickOnItem(atIndex index: Int) {
+        delegate?.didClickOnItem(atIndex: index)
+    }
+    
+    // MARK: - Private
+    
     private func applyStyle() {
         self.view.backgroundColor = Theme.Color.sidebarBackground
     }
@@ -34,11 +44,5 @@ class SideBarViewController: NSViewController, Clickable {
         sideBarItemGroup?.addItem(item: disassemblyItemButton)
         sideBarItemGroup?.setDefaultSelectedItem(atIndex: 0)
         sideBarItemGroup?.setup()
-    }
-    
-    // MARK:
-    
-    func didClickOnItem(atIndex index: Int) {
-        delegate?.didClickOnItem(atIndex: index)
     }
 }

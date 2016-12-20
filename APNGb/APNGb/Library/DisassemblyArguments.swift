@@ -33,5 +33,4 @@ final class DisassemblyArguments: NSObject, CommandArgumentable {
         return [sourceAnimationImagePath, framesNamePrefix]
     }
     
-    }
 }

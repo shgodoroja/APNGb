@@ -16,11 +16,7 @@ class SideBarItemGroup: NSObject {
     
     var delegate: Clickable?
     
-    private var items: [NSButton]
-    
-    override init() {
-        items = []
-    }
+    private var items: [NSButton] = []
     
     func addItem(item: NSButton) {
         items.append(item)
