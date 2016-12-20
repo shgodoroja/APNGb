@@ -8,13 +8,9 @@
 
 import Cocoa
 
-protocol SideBarViewControllerDelegate: Clickable {
-    
-}
+class SideBarViewController: NSViewController, Clickable {
 
-class SideBarViewController: NSViewController, SideBarItemGroupDelegate {
-
-    var delegate: SideBarViewControllerDelegate?
+    var delegate: Clickable?
     
     private var sideBarItemGroup: SideBarItemGroup?
     

@@ -12,13 +12,9 @@ protocol Clickable {
     func didClickOnItem(atIndex index: Int)
 }
 
-protocol SideBarItemGroupDelegate: Clickable {
-
-}
-
 class SideBarItemGroup: NSObject {
     
-    var delegate: SideBarItemGroupDelegate?
+    var delegate: Clickable?
     
     private var items: [NSButton]
     

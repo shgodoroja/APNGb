@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class MainContainerViewController: NSSplitViewController, SideBarViewControllerDelegate  {
+final class MainContainerViewController: NSSplitViewController, Clickable  {
     
     private var assemblyArguments = AssemblyArguments()
     private var disassemblyArguments = DisassemblyArguments()
