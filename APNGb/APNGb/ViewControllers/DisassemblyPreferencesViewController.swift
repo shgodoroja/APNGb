@@ -10,9 +10,7 @@ import Cocoa
 
 final class DisassemblyPreferencesViewController: NSViewController {
     
-    private dynamic var disassemblyArguments = DisassemblyArguments()
-    
-    @IBOutlet private var frameNamePrefixeTextField: NSTextField!
+    dynamic var disassemblyArguments: DisassemblyArguments!
     
     override func viewDidLoad() {
         self.view.backgroundColor = Theme.Color.preferencesPane

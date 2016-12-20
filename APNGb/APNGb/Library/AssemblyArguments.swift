@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class AssemblyArguments: NSObject, CommandArgumenting {
+final class AssemblyArguments: NSObject, CommandArgumentable {
     
     var destinationImagePath = String.empty
     var sourceImagePath = String.empty
@@ -27,6 +27,8 @@ final class AssemblyArguments: NSObject, CommandArgumenting {
         selectedFramesDelay = FrameDelay(withCategory: .Selected,
                                          andState: false)
     }
+    
+    // MARK: CommandArgumentable
     
     func havePassedValidation() -> Bool {
         let arguments = commandArguments()

@@ -10,13 +10,29 @@ import Cocoa
 
 /// Store UNIX executables names.
 enum ExecutableName: String {
+    case None = ""
     case Assembly = "apngasm"
     case Disassembly = "apngdis"
 }
 
+protocol ExecutableNameProtocol {
+    
+    /// Identifies command associated executable name.
+    ///
+    /// - Returns: UNIX executable name.
+    func commandExecutableName() -> ExecutableName
+}
+
+extension ExecutableNameProtocol {
+    
+    func commandExecutableName() -> ExecutableName {
+        return ExecutableName.None
+    }
+}
+
 /// Specifies a set of methods used by command instance's client
 /// to get it's arguments or information about them.
-protocol CommandArgumenting {
+protocol CommandArgumentable {
     
     /// Check if arguments have passed validation.
     ///
@@ -29,7 +45,7 @@ protocol CommandArgumenting {
     func commandArguments() -> [String]
 }
 
-extension CommandArgumenting {
+extension CommandArgumentable {
     
     func havePassedValidation() -> Bool {
         return false

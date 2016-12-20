@@ -8,10 +8,11 @@
 
 import Cocoa
 
-class ExecutableProcess: NSObject {
+final class ExecutableProcess: NSObject {
     
-    var terminationHandler: VoidHandler
+    var initialHandler: VoidHandler
     var progressHandler: ((String) -> ())?
+    var terminationHandler: VoidHandler
     
     private var fileHandle: FileHandle?
     private var task = Process()
@@ -41,6 +42,11 @@ class ExecutableProcess: NSObject {
     }
     
     func start() {
+        
+        if let handler = self.initialHandler {
+            handler()
+        }
+        
         task.launch()
     }
     

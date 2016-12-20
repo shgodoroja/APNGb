@@ -195,8 +195,8 @@
 		AB0FD0841E04B9A70023E528 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */,
 				AB0FD0801E04B93D0023E528 /* ViewSize.swift */,
+				AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";

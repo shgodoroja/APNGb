@@ -1271,12 +1271,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="SSY-0t-4qx" name="value" keyPath="self.disassemblyArguments.frameNamePrefix" id="1HL-PG-Fo0">
+                                    <binding destination="SSY-0t-4qx" name="value" keyPath="self.disassemblyArguments.framesNamePrefix" id="6am-d3-IlP">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                         </dictionary>
                                     </binding>
-                                    <outlet property="delegate" destination="SSY-0t-4qx" id="E9n-pT-MKL"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lV9-3g-REv">
@@ -1302,11 +1301,9 @@ CA
                             <constraint firstItem="Qaj-Qf-dvh" firstAttribute="leading" secondItem="CL2-Cm-lS4" secondAttribute="leading" constant="5" id="jOi-Wb-kJI"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="frameNamePrefixeTextField" destination="5Fm-1O-cLd" id="2ee-TE-7HN"/>
-                    </connections>
                 </viewController>
                 <customObject id="uIQ-k3-48Y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="r0u-xU-lea"/>
             </objects>
             <point key="canvasLocation" x="1628" y="-56"/>
         </scene>

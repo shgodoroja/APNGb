@@ -10,7 +10,8 @@ import Cocoa
 
 final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropDelegate {
     
-    private var assemblyArguments = AssemblyArguments()
+    var assemblyArguments: AssemblyArguments!
+    
     private var process: ExecutableProcess?
     private var animationFrames: [AnimationFrame] = []
     private var dropHintViewController: DropHintViewController?
@@ -122,7 +123,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
                 //self.statusViewController?.updateStatusMessage(message: outputString)
             }
             process?.terminationHandler = {
-                self.stopAssemblingProcess()
+                //self.stopAssemblingProcess()
                 
                 //if self.statusViewController?.wasCanceled() == true {
                     self.removeOutputImage()
@@ -226,14 +227,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         index = 0
     }
     
-    private func stopAssemblingProcess() {
-        //statusViewController?.dismiss(nil)
-        process?.stop()
-    }
-    
     private func showImageInFinderApp() {
         let fileUrlPath = NSURL.fileURL(withPath: assemblyArguments.destinationImagePath)
         NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
+    }
+    
+    private func removeOutputImage() {
+        _ = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
     }
     
     private func updateUI() {
@@ -253,9 +253,5 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private func configureTableView() {
         tableView.unregisterDraggedTypes()
         tableViewContainer.isHidden = true
-    }
-    
-    private func removeOutputImage() {
-        _ = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
     }
 }

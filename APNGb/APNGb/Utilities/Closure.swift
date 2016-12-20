@@ -9,7 +9,3 @@
 import Cocoa
 
 typealias VoidHandler = (()->())?
-
-class Closure {
-    
-}

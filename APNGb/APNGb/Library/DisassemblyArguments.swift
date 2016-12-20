@@ -8,9 +8,13 @@
 
 import Cocoa
 
-final class DisassemblyArguments: NSObject, CommandArgumenting {
+final class DisassemblyArguments: NSObject, CommandArgumentable {
     
-    var frameNamePrefix = String.empty
+    var framesNamePrefix = "frame"
+    var sourceAnimationImagePath = String.empty
+    var saveFramesPath = String.empty
+    
+    // MARK: - CommandArgumenting
     
     func havePassedValidation() -> Bool {
         let arguments = commandArguments()
@@ -26,12 +30,8 @@ final class DisassemblyArguments: NSObject, CommandArgumenting {
     }
     
     func commandArguments() -> [String] {
-        return [frameNamePrefix]
+        return [sourceAnimationImagePath, framesNamePrefix]
     }
     
-    // MARK: Private
-    
-    private class func defaultFrameNamePrefix() -> String {
-        return "frame"
     }
 }

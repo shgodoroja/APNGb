@@ -10,6 +10,9 @@ import Cocoa
 
 class ChildContainerViewController: NSViewController {
     
+    var assemblyArguments: AssemblyArguments!
+    var disassemblyArguments: DisassemblyArguments!
+    
     private var viewLayoutCareTaker: ChildContainerViewLayoutCareTaker
     
     required init?(coder: NSCoder) {
@@ -23,8 +26,13 @@ class ChildContainerViewController: NSViewController {
     
     func addChildViewController(withIndentifier identifier: ViewControllerId) {
         self.removeChildViewControllers()
-        
         let childViewController = self.showChildViewController(withIdentifier: identifier.storyboardVersion())
+       
+        if let viewController = childViewController as? AssemblyViewController {
+            viewController.assemblyArguments = assemblyArguments
+        } else if let viewController = childViewController as? DisassemblyViewController {
+            viewController.disassemblyArguments = disassemblyArguments
+        }
         
         if let view = childViewController?.view {
             

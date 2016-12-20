@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class Compression: NSObject, CommandArgumenting {
+final class Compression: NSObject, CommandArgumentable {
     
     var enableZlib = false {
         

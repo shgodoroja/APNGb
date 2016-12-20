@@ -10,8 +10,10 @@ import Cocoa
 
 class PreferencesContainerViewController: NSViewController {
     
-    private var viewLayoutCareTaker: PreferencesViewLayoutCareTaker
+    var assemblyArguments: AssemblyArguments!
+    var disassemblyArguments: DisassemblyArguments!
     
+    private var viewLayoutCareTaker: PreferencesViewLayoutCareTaker
     private var assemblyPreferencesViewController: AssemblyPreferencesViewController?
     private var disassemblyPreferencesViewController: DisassemblyPreferencesViewController?
     
@@ -30,6 +32,7 @@ class PreferencesContainerViewController: NSViewController {
         switch identifier  {
         case ViewControllerId.Assembly:
             assemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.AssemblyPreferences.storyboardVersion()) as! AssemblyPreferencesViewController?
+            assemblyPreferencesViewController?.assemblyArguments = assemblyArguments
             
             if let view = assemblyPreferencesViewController?.view {
                 
@@ -43,6 +46,7 @@ class PreferencesContainerViewController: NSViewController {
             
         case ViewControllerId.Disassembly:
             disassemblyPreferencesViewController = self.showChildViewController(withIdentifier: ViewControllerId.DisassemblyPreferences.storyboardVersion()) as! DisassemblyPreferencesViewController?
+            disassemblyPreferencesViewController?.disassemblyArguments = disassemblyArguments
             
             if let view = disassemblyPreferencesViewController?.view {
                 

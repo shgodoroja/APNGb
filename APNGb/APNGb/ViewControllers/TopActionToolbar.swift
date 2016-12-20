@@ -14,7 +14,10 @@ enum ProgressStatus {
 
 final class TopActionToolbar: NSToolbar {
     
-    var cancelHandler: VoidHandler = nil
+    var onStartHandler: VoidHandler?
+    var onProgressHandler: VoidHandler?
+    var onStopHandler: VoidHandler?
+    var onFinishHandler: VoidHandler?
     
     private var progressStatus: ProgressStatus = .Normal
     
@@ -34,16 +37,6 @@ final class TopActionToolbar: NSToolbar {
         })
     }
     
-    // MARK: - Getters
-    func actionWasCanceled() -> Bool {
-        
-        if progressStatus == .Canceled {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     // MARK: - IBActions
     
     @IBAction func onStartStopButtomPress(sender: NSButton) {
@@ -54,8 +47,8 @@ final class TopActionToolbar: NSToolbar {
             progressIndicator.stopAnimation(nil)
             progressStatus = .Canceled
             
-            if let handler = cancelHandler {
-                handler()
+            if let handler = onFinishHandler {
+                handler?()
             }
             
         } else {
@@ -63,6 +56,9 @@ final class TopActionToolbar: NSToolbar {
             progressIndicator.startAnimation(nil)
             progressStatus = .Normal
             
+            if let handler = onStartHandler {
+                handler?()
+            }
         }
     }
 }

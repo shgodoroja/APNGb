@@ -11,7 +11,8 @@ import WebKit
 
 final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
-    private var disassemblyArguments = DisassemblyArguments()
+    var disassemblyArguments: DisassemblyArguments!
+    
     private var process: ExecutableProcess?
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
@@ -73,7 +74,6 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
             process?.start()
         }
     }
-    
     
     // MARK: - DragAndDropImageViewDelegate
     

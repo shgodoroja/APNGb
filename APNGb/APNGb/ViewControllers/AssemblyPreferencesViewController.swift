@@ -10,7 +10,7 @@ import Cocoa
 
 final class AssemblyPreferencesViewController: NSViewController {
     
-    private dynamic var assemblyArguments = AssemblyArguments()
+    dynamic var assemblyArguments: AssemblyArguments!
     
     // Checkboxes
     @IBOutlet private var skipFirstFrameCheckbox: NSButton!

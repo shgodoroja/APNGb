@@ -8,7 +8,10 @@
 
 import Cocoa
 
-class MainContainerViewController: NSSplitViewController, SideBarViewControllerDelegate  {
+final class MainContainerViewController: NSSplitViewController, SideBarViewControllerDelegate  {
+    
+    private var assemblyArguments = AssemblyArguments()
+    private var disassemblyArguments = DisassemblyArguments()
     
     private var viewLayoutCareTaker: MainContainerViewLayoutCareTaker
     private var sideBarViewController: SideBarViewController?
@@ -62,6 +65,8 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
             // Find Child Container VC
             else if childViewController is ChildContainerViewController {
                 childContainerViewController = childViewController as? ChildContainerViewController
+                childContainerViewController?.assemblyArguments = assemblyArguments
+                childContainerViewController?.disassemblyArguments = disassemblyArguments
                 
                 if let view = childContainerViewController?.view {
                     
@@ -77,6 +82,8 @@ class MainContainerViewController: NSSplitViewController, SideBarViewControllerD
             // Find Preferences VC
             else if childViewController is PreferencesContainerViewController {
                 preferencesContainerViewController = childViewController as? PreferencesContainerViewController
+                preferencesContainerViewController?.assemblyArguments = assemblyArguments
+                preferencesContainerViewController?.disassemblyArguments = disassemblyArguments
                 
                 if let view = preferencesContainerViewController?.view {
                     
