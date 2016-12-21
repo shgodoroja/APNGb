@@ -9,25 +9,18 @@
 import Cocoa
 
 /// Store UNIX executables names.
-enum ExecutableName: String {
-    case None = ""
-    case Assembly = "apngasm"
-    case Disassembly = "apngdis"
+enum CommandExecutable: String {
+    case none = ""
+    case assembly = "apngasm"
+    case disassembly = "apngdis"
 }
 
-protocol ExecutableNameProtocol {
+protocol CommandExecutableProtocol {
     
     /// Identifies command associated executable name.
     ///
     /// - Returns: UNIX executable name.
-    func commandExecutableName() -> ExecutableName
-}
-
-extension ExecutableNameProtocol {
-    
-    func commandExecutableName() -> ExecutableName {
-        return ExecutableName.None
-    }
+    func commandExecutable() -> CommandExecutable
 }
 
 /// Specifies a set of methods used by command instance's client
@@ -65,7 +58,7 @@ class Command: NSObject {
     /// Custom initializer.
     ///
     /// - Parameter name: Name of UNIX executable.
-    init(withExecutableName name: ExecutableName) {
-        self.name = name.rawValue
+    init(withExecutable executable: CommandExecutable) {
+        self.name = executable.rawValue
     }
 }

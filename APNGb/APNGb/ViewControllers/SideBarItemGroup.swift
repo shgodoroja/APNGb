@@ -38,6 +38,8 @@ class SideBarItemGroup: NSObject {
         }
     }
     
+    // MARK: Private
+    
     @objc
     private func didClickOn(item: NSButton) {
         let selectedItemIndex = items.index(of: item)

@@ -116,7 +116,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         
         if assemblyArguments.havePassedValidation() {
             //self.presentViewControllerAsSheet(statusViewController!)
-            let command = Command(withExecutableName: .Assembly)
+            let command = Command(withExecutable: .assembly)
             command.arguments = assemblyArguments.commandArguments()
             process = ExecutableProcess(withCommand: command)
             process?.progressHandler = { outputString in

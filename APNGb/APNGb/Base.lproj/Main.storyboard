@@ -104,7 +104,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="439"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <toolbar key="toolbar" implicitIdentifier="B1D0AC73-D56C-4A71-9CC0-896AA1796082" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="hUX-qP-2UX" customClass="TopActionToolbar" customModule="APNGb" customModuleProvider="target">
+                        <toolbar key="toolbar" implicitIdentifier="B1D0AC73-D56C-4A71-9CC0-896AA1796082" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="hUX-qP-2UX" customClass="ActionToolbar" customModule="APNGb" customModuleProvider="target">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="KIA-6c-Vb2"/>
                                 <toolbarItem implicitItemIdentifier="5DCF712E-B595-4694-BA7B-D875FEC81947" label="" paletteLabel="" image="stop" selectable="YES" id="Jlk-iw-VBs">

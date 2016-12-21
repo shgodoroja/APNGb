@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class AssemblyArguments: NSObject, CommandArgumentable {
+final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableProtocol {
     
     var destinationImagePath = String.empty
     var sourceImagePath = String.empty
@@ -50,5 +50,11 @@ final class AssemblyArguments: NSObject, CommandArgumentable {
         arguments.append(contentsOf: compression.commandArguments())
         
         return arguments
+    }
+    
+    // MARK: CommandExecutableProtocol 
+    
+    func commandExecutable() -> CommandExecutable {
+        return .assembly
     }
 }

@@ -1,5 +1,5 @@
 //
-//  TopActionToolbar.swift
+//  ActionToolbar.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/13/16.
@@ -9,17 +9,20 @@
 import Cocoa
 
 enum ProgressStatus {
-    case Normal, Canceled
+    case None, Success, Canceled
 }
 
-final class TopActionToolbar: NSToolbar {
+protocol ActionToolbarDelegate {
     
-    var onStartHandler: VoidHandler?
-    var onProgressHandler: VoidHandler?
-    var onStopHandler: VoidHandler?
-    var onFinishHandler: VoidHandler?
+    func actionWillStart()
+    func actionWillStop()
+}
+
+final class ActionToolbar: NSToolbar {
     
-    private var progressStatus: ProgressStatus = .Normal
+    var actionDelegate: ActionToolbarDelegate?
+    
+    private var progressStatus: ProgressStatus = .None
     
     @IBOutlet private var progressIndicator: NSProgressIndicator!
     @IBOutlet private var loggingLabel: NSTextField!
@@ -37,6 +40,14 @@ final class TopActionToolbar: NSToolbar {
         })
     }
     
+    func jobIsDone() {
+        progressIndicator.isHidden = true
+        progressIndicator.stopAnimation(nil)
+        loggingLabel.stringValue = String.empty
+        progressStatus = .Success
+        startStopButton.state = NSOnState
+    }
+    
     // MARK: - IBActions
     
     @IBAction func onStartStopButtomPress(sender: NSButton) {
@@ -45,20 +56,15 @@ final class TopActionToolbar: NSToolbar {
         if previousState == NSOnState {
             progressIndicator.isHidden = true
             progressIndicator.stopAnimation(nil)
+            loggingLabel.stringValue = String.empty
             progressStatus = .Canceled
-            
-            if let handler = onFinishHandler {
-                handler?()
-            }
-            
+            actionDelegate?.actionWillStop()
         } else {
             progressIndicator.isHidden = false
             progressIndicator.startAnimation(nil)
-            progressStatus = .Normal
-            
-            if let handler = onStartHandler {
-                handler?()
-            }
+            loggingLabel.stringValue = String.empty
+            progressStatus = .None
+            actionDelegate?.actionWillStart()
         }
     }
 }

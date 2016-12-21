@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class ExecutableProcess: NSObject {
+class ExecutableProcess: NSObject {
     
     var initialHandler: VoidHandler
     var progressHandler: ((String) -> ())?

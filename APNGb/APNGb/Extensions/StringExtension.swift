@@ -10,6 +10,7 @@ import Cocoa
 
 extension String {
     
+    static let dot = "."
     static let empty = ""
     static let slash = "/"
     static let space = " "

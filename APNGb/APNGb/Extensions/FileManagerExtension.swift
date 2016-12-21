@@ -9,6 +9,8 @@
 import Cocoa
 
 extension FileManager {
+    
+    static let txtExtension = "txt"
         
     func sizeOfFile(atPath path: String) -> Int {
         

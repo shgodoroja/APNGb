@@ -8,15 +8,15 @@
 
 import Cocoa
 
-final class MainContainerViewController: NSSplitViewController, Clickable  {
+final class MainContainerViewController: NSSplitViewController, Clickable, CommandArgumentable, CommandExecutableProtocol {
     
     private var assemblyArguments = AssemblyArguments()
     private var disassemblyArguments = DisassemblyArguments()
-    
     private var viewLayoutCareTaker: MainContainerViewLayoutCareTaker
     private var sideBarViewController: SideBarViewController?
     private var childContainerViewController: ChildContainerViewController?
     private var preferencesContainerViewController: PreferencesContainerViewController?
+    private var selectedViewControllerId: ViewControllerId = .Unknown
     
     required init?(coder: NSCoder) {
         viewLayoutCareTaker = MainContainerViewLayoutCareTaker()
@@ -29,11 +29,48 @@ final class MainContainerViewController: NSSplitViewController, Clickable  {
         self.presentInitialChildViewControllers()
     }
     
+    // MARK: ExecutableNameProtocol
+    
+    func commandExecutable() -> CommandExecutable {
+        
+        if selectedViewControllerId == .Assembly {
+            return assemblyArguments.commandExecutable()
+        } else if selectedViewControllerId == .Disassembly {
+            return disassemblyArguments.commandExecutable()
+        } else {
+            return .none
+        }
+    }
+    
+    // MARK: CommandArgumentable
+    
+    func commandArguments() -> [String] {
+        
+        if selectedViewControllerId == .Assembly {
+            return assemblyArguments.commandArguments()
+        } else if selectedViewControllerId == .Disassembly {
+            return disassemblyArguments.commandArguments()
+        } else {
+            return []
+        }
+    }
+    
+    func havePassedValidation() -> Bool {
+        if selectedViewControllerId == .Assembly {
+            return assemblyArguments.havePassedValidation()
+        } else if selectedViewControllerId == .Disassembly {
+            return disassemblyArguments.havePassedValidation()
+        } else {
+            return false
+        }
+    }
+    
     // MARK: SideBarViewControllerDelegate
     
     func didClickOnItem(atIndex index: Int) {
-        childContainerViewController?.addChildViewController(withIndentifier: ViewControllerId(fromRawValue: index))
-        preferencesContainerViewController?.addChildViewController(withIndentifier: ViewControllerId(fromRawValue: index))
+        selectedViewControllerId = ViewControllerId(fromRawValue: index)
+        childContainerViewController?.addChildViewController(withIndentifier: selectedViewControllerId)
+        preferencesContainerViewController?.addChildViewController(withIndentifier: selectedViewControllerId)
     }
     
     // MARK: Private

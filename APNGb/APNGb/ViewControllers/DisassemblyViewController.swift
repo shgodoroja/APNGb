@@ -13,7 +13,6 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
     var disassemblyArguments: DisassemblyArguments!
     
-    private var process: ExecutableProcess?
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
@@ -30,6 +29,23 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
         self.configureWebView()
     }
     
+    // MARK: - DragAndDropImageViewDelegate
+    
+    func didDropFiles(withPaths paths: [String]) {
+        dropHintViewController?.view.isHidden = true
+        disassemblyArguments.sourceAnimationImagePath = paths[0]
+    }
+    
+    // MARK: - Private
+    
+    private func configureWebView() {
+        destinationWebView.delegate = self
+        destinationWebView.drawsBackground = false
+        destinationWebView.mainFrame.frameView.allowsScrolling = false
+    }
+    
+    // MARK: - Child view controllers presentation
+    
     private func addDropHintViewController() {
         
         if dropHintViewController == nil {
@@ -45,61 +61,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
                 }
             }
             
-            dropHintViewController?.hintMessage = "Drop animated image here"
+            dropHintViewController?.hintMessage = Resource.String.dropAnimatedImageHere
         }
-    }
-    
-    // MARK: IBActions
-    
-    @IBAction func startDisassemblingProcess(_ sender: AnyObject) {
-        
-        if disassemblyArguments.havePassedValidation() {
-            //self.presentViewControllerAsSheet(statusViewController!)
-            let command = Command(withExecutableName: .Disassembly)
-            command.arguments = disassemblyArguments.commandArguments()
-            
-            process = ExecutableProcess(withCommand: command)
-            process?.progressHandler = { outputString in
-                //self.statusViewController?.updateStatusMessage(message: outputString)
-            }
-            process?.terminationHandler = {
-                self.stopDisassemblingProcess()
-                
-                //if self.statusViewController?.wasCanceled() == true {
-                    self.removeOutputImages()
-                //} else {
-                    self.showImageFramesInFinderApp()
-                //}
-            }
-            process?.start()
-        }
-    }
-    
-    // MARK: - DragAndDropImageViewDelegate
-    
-    func didDropFiles(withPaths paths: [String]) {
-        dropHintViewController?.view.isHidden = true
-    }
-    
-    // MARK: - Private
-    
-    private func configureWebView() {
-        destinationWebView.delegate = self
-        destinationWebView.drawsBackground = false
-        destinationWebView.mainFrame.frameView.allowsScrolling = false
-    }
-    
-    private func stopDisassemblingProcess() {
-        //statusViewController?.dismiss(nil)
-        process?.stop()
-    }
-    
-    private func showImageFramesInFinderApp() {
-        //let fileUrl = NSURL.fileURL(withPath: disassemblyArguments.destinationImagesPath)
-        //NSWorkspace.shared().open(fileUrl)
-    }
-    
-    private func removeOutputImages() {
-        // TODO:
     }
 }
