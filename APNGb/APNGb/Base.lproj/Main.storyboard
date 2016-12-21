@@ -104,7 +104,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="439"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <toolbar key="toolbar" implicitIdentifier="B1D0AC73-D56C-4A71-9CC0-896AA1796082" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="hUX-qP-2UX" customClass="ActionToolbar" customModule="APNGb" customModuleProvider="target">
+                        <toolbar key="toolbar" implicitIdentifier="B1D0AC73-D56C-4A71-9CC0-896AA1796082" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="hUX-qP-2UX" customClass="ActionToolbar" customModule="APNGb" customModuleProvider="target">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="KIA-6c-Vb2"/>
                                 <toolbarItem implicitItemIdentifier="5DCF712E-B595-4694-BA7B-D875FEC81947" label="" paletteLabel="" image="stop" selectable="YES" id="Jlk-iw-VBs">
@@ -123,29 +123,33 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="D632D03D-12EE-4C43-B4A4-3A5C6DE4DED1" label="Custom View" paletteLabel="Custom View" tag="-1" id="lzZ-dQ-l9O">
+                                <toolbarItem implicitItemIdentifier="D632D03D-12EE-4C43-B4A4-3A5C6DE4DED1" label="" paletteLabel="" tag="-1" id="lzZ-dQ-l9O">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="300" height="27"/>
-                                    <size key="maxSize" width="400" height="96"/>
+                                    <size key="minSize" width="300" height="25"/>
+                                    <size key="maxSize" width="300" height="25"/>
                                     <customView key="view" id="oZ1-PZ-6SD">
-                                        <rect key="frame" x="0.0" y="14" width="400" height="27"/>
+                                        <rect key="frame" x="0.0" y="14" width="350" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-Df-yay">
-                                                <rect key="frame" x="0.0" y="0.0" width="400" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-Df-yay">
+                                                <rect key="frame" x="0.0" y="-2" width="350" height="25"/>
                                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bnG-Un-wN3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="smallSystem"/>
                                                 </buttonCell>
                                             </button>
-                                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-l2-d2S">
-                                                <rect key="frame" x="10" y="5" width="16" height="16"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-l2-d2S">
+                                                <rect key="frame" x="10" y="3" width="16" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="RH1-pI-Bou"/>
+                                                    <constraint firstAttribute="width" constant="16" id="fNk-38-lnV"/>
+                                                </constraints>
                                             </progressIndicator>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4z-Fn-2UU">
-                                                <rect key="frame" x="29" y="6" width="368" height="14"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4z-Fn-2UU">
+                                                <rect key="frame" x="29" y="4" width="320" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="Dog-XK-SVf"/>
+                                                </constraints>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="PAQ-Nr-GAX">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -153,6 +157,17 @@
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="5Md-Df-yay" secondAttribute="bottom" id="0BW-Zt-e7c"/>
+                                            <constraint firstItem="5Md-Df-yay" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" id="3E2-7j-iIa"/>
+                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" constant="1.5" id="4pa-aa-tl3"/>
+                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="leading" secondItem="IDY-l2-d2S" secondAttribute="trailing" constant="5" id="Pen-vg-lQt"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Md-Df-yay" secondAttribute="trailing" id="R8W-ng-cRK"/>
+                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" constant="10" id="Vuq-Q0-c2T"/>
+                                            <constraint firstItem="5Md-Df-yay" firstAttribute="top" secondItem="oZ1-PZ-6SD" secondAttribute="top" constant="3" id="ffX-LQ-wb5"/>
+                                            <constraint firstAttribute="trailing" secondItem="S4z-Fn-2UU" secondAttribute="trailing" constant="3" id="i8a-Z9-21M"/>
+                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" constant="1.5" id="qPF-dS-fa7"/>
+                                        </constraints>
                                     </customView>
                                 </toolbarItem>
                             </allowedToolbarItems>
