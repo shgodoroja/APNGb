@@ -14,8 +14,8 @@ enum ProgressStatus {
 
 protocol ActionToolbarDelegate {
     
-    func actionWillStart()
-    func actionWillStop()
+    func actionWillStart() -> Bool
+    func actionWillStop() -> Bool
 }
 
 final class ActionToolbar: NSToolbar {
@@ -30,6 +30,7 @@ final class ActionToolbar: NSToolbar {
     
     override func awakeFromNib() {
         progressIndicator.isHidden = true
+        loggingLabel.stringValue = Resource.String.defaultToolbarLoggingMessage
     }
     
     // MARK: - Update UI
@@ -40,31 +41,43 @@ final class ActionToolbar: NSToolbar {
         })
     }
     
-    func jobIsDone() {
-        progressIndicator.isHidden = true
-        progressIndicator.stopAnimation(nil)
-        loggingLabel.stringValue = String.empty
+    func taskDone() {
+        self.setInProgressMode(false)
         progressStatus = .Success
         startStopButton.state = NSOnState
+        loggingLabel.stringValue = Resource.String.defaultToolbarLoggingMessage
     }
     
     // MARK: - IBActions
     
     @IBAction func onStartStopButtomPress(sender: NSButton) {
-        let previousState = sender.state
         
-        if previousState == NSOnState {
-            progressIndicator.isHidden = true
-            progressIndicator.stopAnimation(nil)
-            loggingLabel.stringValue = String.empty
-            progressStatus = .Canceled
-            actionDelegate?.actionWillStop()
+        if sender.state == NSOnState {
+            
+            if actionDelegate?.actionWillStop() == true {
+                self.setInProgressMode(false)
+                progressStatus = .Canceled
+                loggingLabel.stringValue = Resource.String.defaultToolbarLoggingMessage
+            }
+            
         } else {
-            progressIndicator.isHidden = false
+            
+            if actionDelegate?.actionWillStart() == true {
+                self.setInProgressMode(true)
+                progressStatus = .None
+            }
+        }
+    }
+    
+    // MARK: Private
+    
+    private func setInProgressMode(_ inProgressMode: Bool) {
+        progressIndicator.isHidden = inProgressMode ? false : true
+        
+        if inProgressMode {
             progressIndicator.startAnimation(nil)
-            loggingLabel.stringValue = String.empty
-            progressStatus = .None
-            actionDelegate?.actionWillStart()
+        } else {
+            progressIndicator.stopAnimation(nil)
         }
     }
 }

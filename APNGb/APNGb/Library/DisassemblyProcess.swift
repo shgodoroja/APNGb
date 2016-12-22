@@ -52,7 +52,11 @@ class DisassemblyProcess: ExecutableProcess {
                                                                       ignoringFiles: [self.workingAnimationFile])
                                 }
                                 
-                                DirectoryManager.shared.cleanupWorkingDirectory(forCommandExecutable: .disassembly)
+                                self.cleanup()
         })
+    }
+    
+    override func cleanup() {
+         DirectoryManager.shared.cleanupWorkingDirectory(forCommandExecutable: .disassembly)
     }
 }

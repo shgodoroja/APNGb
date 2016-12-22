@@ -13,6 +13,7 @@ class ExecutableProcess: NSObject {
     var initialHandler: VoidHandler
     var progressHandler: ((String) -> ())?
     var terminationHandler: VoidHandler
+    var cancelled = false
     
     private var fileHandle: FileHandle?
     private var task = Process()
@@ -54,7 +55,13 @@ class ExecutableProcess: NSObject {
         task.terminate()
     }
     
-    func receivedData(notification : NSNotification) {
+    func cleanup() {
+        assertionFailure("\(#function) must be implemented in subclass")
+    }
+    
+    // MARK: - Private
+    
+    @objc private func receivedData(notification : NSNotification) {
         
         if let fileHandle = fileHandle {
             let data = fileHandle.availableData

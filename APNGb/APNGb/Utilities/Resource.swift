@@ -13,6 +13,7 @@ struct Resource {
     struct String {
         static let dropAnimatedImageHere = "Drop animated image here"
         static let selectFolderToSaveFrames = "Select directory where animation frames will be saved"
+        static let defaultToolbarLoggingMessage = "Idle..."
     }
     
     struct Directory {

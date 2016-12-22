@@ -126,7 +126,7 @@
                                 <toolbarItem implicitItemIdentifier="D632D03D-12EE-4C43-B4A4-3A5C6DE4DED1" label="" paletteLabel="" tag="-1" id="lzZ-dQ-l9O">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="300" height="25"/>
-                                    <size key="maxSize" width="300" height="25"/>
+                                    <size key="maxSize" width="350" height="25"/>
                                     <customView key="view" id="oZ1-PZ-6SD">
                                         <rect key="frame" x="0.0" y="14" width="350" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -180,7 +180,7 @@
                             <connections>
                                 <outlet property="loggingLabel" destination="S4z-Fn-2UU" id="IYt-66-FPy"/>
                                 <outlet property="progressIndicator" destination="IDY-l2-d2S" id="g8V-Zg-yBv"/>
-                                <outlet property="startStopButton" destination="5Md-Df-yay" id="FfS-rE-0u3"/>
+                                <outlet property="startStopButton" destination="B9Q-ns-ZwB" id="r6C-Hs-1l2"/>
                             </connections>
                         </toolbar>
                     </window>

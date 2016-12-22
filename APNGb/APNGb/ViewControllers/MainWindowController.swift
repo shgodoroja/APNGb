@@ -22,12 +22,12 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
     
     // MARK: ActionToolbarDelegate
     
-    func actionWillStart() {
+    func actionWillStart() -> Bool {
         let executable = (self.contentViewController as? CommandExecutableProtocol)?.commandExecutable()
         let arguments = (self.contentViewController as? CommandArgumentable)?.commandArguments()
         let argumentsPassedValidation = (self.contentViewController as? CommandArgumentable)?.havePassedValidation()
         
-        if argumentsPassedValidation! {
+        if argumentsPassedValidation == true {
             let command = Command(withExecutable: executable!)
             command.arguments = arguments
             
@@ -36,17 +36,32 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
                 self.actionToolbar.updateLogMessage(message: output)
             }
             process?.terminationHandler = {
-                self.actionToolbar.jobIsDone()
-                (self.process as? DisassemblyProcess)?.showFrom(window: self.window!)
+                self.actionToolbar.taskDone()
+                
+                if self.process?.cancelled == false {
+                    (self.process as? DisassemblyProcess)?.showFrom(window: self.window!)
+                } else {
+                    self.process?.cancelled = false
+                    self.process?.cleanup()
+                }
             }
+            
             process?.start()
+            
+            return true
+            
         } else {
-            self.actionToolbar.jobIsDone()
+            self.actionToolbar.taskDone()
+            
+            return false
         }
     }
     
-    func actionWillStop() {
+    func actionWillStop() -> Bool {
+        process?.cancelled = true
         process?.stop()
+        
+        return true
     }
     
     // MARK: Private
