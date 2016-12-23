@@ -13,7 +13,13 @@ final class Optimization: NSObject, CommandArgumentable {
     var enablePalette = true
     var enableColorType = true
     
-    func commandArguments() -> [String] {
+    // MARK: - CommandArgumentable
+    
+    func havePassedValidation() -> Bool {
+        return true
+    }
+    
+    func commandArguments() -> ([String], Any?) {
         var arguments: [String] = []
         
         if enablePalette == true {
@@ -24,7 +30,7 @@ final class Optimization: NSObject, CommandArgumentable {
             arguments.append("-kc")
         }
         
-        return arguments
+        return (arguments, nil)
     }
     
 }

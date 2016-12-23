@@ -10,13 +10,13 @@ import Cocoa
 
 final class DisassemblyArguments: NSObject, CommandArgumentable, CommandExecutableProtocol {
     
-    var framesNamePrefix = "frame"
     var sourceAnimationImagePath = String.empty
+    var framesNamePrefix = "frame"
     
     // MARK: - CommandArgumenting
     
     func havePassedValidation() -> Bool {
-        let arguments = commandArguments()
+        let arguments = commandArguments().0
         
         for argument in arguments {
             
@@ -28,8 +28,8 @@ final class DisassemblyArguments: NSObject, CommandArgumentable, CommandExecutab
         return true
     }
     
-    func commandArguments() -> [String] {
-        return [sourceAnimationImagePath, framesNamePrefix]
+    func commandArguments() -> ([String], Any?) {
+        return ([sourceAnimationImagePath, framesNamePrefix], nil)
     }
     
     // MARK: CommandExecutableProtocol

@@ -46,7 +46,13 @@ final class Compression: NSObject, CommandArgumentable {
     var sevenZipIterations = 15
     var zopfliIterations = 15
     
-    func commandArguments() -> [String] {
+    // MARK: - CommandArgumentable
+    
+    func havePassedValidation() -> Bool {
+        return true
+    }
+    
+    func commandArguments() -> ([String], Any?) {
         var arguments: [String] = []
         
         if enableZlib == true {
@@ -63,6 +69,6 @@ final class Compression: NSObject, CommandArgumentable {
             arguments.append("-i\(zopfliIterations)")
         }
         
-        return arguments
+        return (arguments, nil)
     }
 }

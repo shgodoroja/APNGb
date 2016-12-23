@@ -10,15 +10,15 @@ import Cocoa
 
 final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableProtocol {
     
-    var destinationImagePath = String.empty
-    var sourceImagePath = String.empty
-
+    var animationFrames: [AnimationFrame] = []
+    var frameNamePrefix = "apng-frame"
+    
     var playback: Playback
     var optimization: Optimization
     var compression: Compression
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
-    
+        
     override init() {
         playback = Playback()
         optimization = Optimization()
@@ -31,7 +31,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
     // MARK: CommandArgumentable
     
     func havePassedValidation() -> Bool {
-        let arguments = commandArguments()
+        let arguments = commandArguments().0
         
         for argument in arguments {
             
@@ -43,13 +43,13 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
         return true
     }
     
-    func commandArguments() -> [String] {
-        var arguments: [String] = [destinationImagePath, sourceImagePath]
-        arguments.append(contentsOf: playback.commandArguments())
-        arguments.append(contentsOf: optimization.commandArguments())
-        arguments.append(contentsOf: compression.commandArguments())
+    func commandArguments() -> ([String], Any?) {
+        var arguments: [String] = [frameNamePrefix]
+        arguments.append(contentsOf: playback.commandArguments().0)
+        arguments.append(contentsOf: optimization.commandArguments().0)
+        arguments.append(contentsOf: compression.commandArguments().0)
         
-        return arguments
+        return (arguments, animationFrames)
     }
     
     // MARK: CommandExecutableProtocol 

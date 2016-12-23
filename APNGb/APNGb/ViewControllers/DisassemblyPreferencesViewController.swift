@@ -10,7 +10,7 @@ import Cocoa
 
 final class DisassemblyPreferencesViewController: NSViewController {
     
-    dynamic var disassemblyArguments: DisassemblyArguments!
+    dynamic var disassemblyArguments: DisassemblyArguments?
     
     override func viewDidLoad() {
         self.view.backgroundColor = Theme.Color.preferencesPane

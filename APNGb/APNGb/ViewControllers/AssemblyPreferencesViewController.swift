@@ -10,7 +10,7 @@ import Cocoa
 
 final class AssemblyPreferencesViewController: NSViewController {
     
-    dynamic var assemblyArguments: AssemblyArguments!
+    dynamic var assemblyArguments: AssemblyArguments?
     
     // Checkboxes
     @IBOutlet private var skipFirstFrameCheckbox: NSButton!
@@ -32,11 +32,6 @@ final class AssemblyPreferencesViewController: NSViewController {
     @IBOutlet private var selectedDelayFramesTextField: NSTextField!
     
     // MARK: Private
-    
-    private func updateRadioButtonAssociatedTextFields() {
-        sevenZipIterationsTextField.isEnabled = assemblyArguments.compression.enable7zip
-        zopfliIterationsTextField.isEnabled = assemblyArguments.compression.enableZopfli
-    }
     
     override func viewDidLoad() {
         self.view.backgroundColor = Theme.Color.preferencesPane

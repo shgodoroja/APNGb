@@ -22,7 +22,10 @@ class DirectoryManager {
         }
     }
     
-    func moveFiles(forCommandExecutable executable: CommandExecutable, toPath destinationUrl: URL, ignoringFiles fileNames: [String]) {
+    func moveFiles(forCommandExecutable executable: CommandExecutable,
+                   toPath destinationUrl: URL,
+                   withNames fileNames: [String],
+                   toIgnore ignore: Bool) {
         
         let directoryUrl = self.workingDirectoryUrl(forCommandExecutable: executable)
         
@@ -34,7 +37,7 @@ class DirectoryManager {
                 let fileName = fileUrl.lastPathComponent
                 let fileExtension = fileUrl.pathExtension
                 
-                if fileNames.contains(fileName) == false && fileExtension != FileManager.txtExtension {
+                if fileNames.contains(fileName) == ignore && fileExtension != FileExtension.txt {
                     let updatedDestinationUrl = destinationUrl.appendingPathComponent(fileName)
                     try _ = FileManager.default.replaceItemAt(updatedDestinationUrl,
                                                               withItemAt: fileUrl)
@@ -46,12 +49,12 @@ class DirectoryManager {
         }
     }
     
-    func copyFilesInWorkingDirectory(forCommandExecutable executable: CommandExecutable, atPaths sourceUrls: [URL], toPath destinationUrl: URL) {
+    func copyFilesInWorkingDirectory(forCommandExecutable executable: CommandExecutable, atPaths sourceUrls: [URL], toPath destinationUrls: [URL]) {
+        let bound = sourceUrls.count
         
-        for url in sourceUrls {
-            let fileUrl = URL(fileURLWithPath: url.path)
-            copyFile(atPath: fileUrl,
-                     toPath: destinationUrl)
+        for index in stride(from: 0, to: bound, by: 1) {
+            copyFile(atPath: sourceUrls[index],
+                     toPath: destinationUrls[index])
         }
     }
     

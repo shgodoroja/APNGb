@@ -44,18 +44,19 @@ final class MainContainerViewController: NSSplitViewController, Clickable, Comma
     
     // MARK: CommandArgumentable
     
-    func commandArguments() -> [String] {
+    func commandArguments() -> ([String], Any?) {
         
         if selectedViewControllerId == .Assembly {
             return assemblyArguments.commandArguments()
         } else if selectedViewControllerId == .Disassembly {
             return disassemblyArguments.commandArguments()
         } else {
-            return []
+            return ([], nil)
         }
     }
     
     func havePassedValidation() -> Bool {
+        
         if selectedViewControllerId == .Assembly {
             return assemblyArguments.havePassedValidation()
         } else if selectedViewControllerId == .Disassembly {

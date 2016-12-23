@@ -8,23 +8,27 @@
 
 import Cocoa
 
-class DisassemblyProcess: ExecutableProcess {
+final class DisassemblyProcess: ExecutableProcess {
     
-    private let workingAnimationFile = "WorkingAnimationFile77.png"
+    private let workingAnimatedImageName = "workingAnimatedImage.png"
     
-    override init(withCommand command: Command) {
+    override init(withCommand command: Command, andAdditionalData additionalData: Any? = nil) {
         DirectoryManager.shared.createWorkingDirectory(forCommandExecutable: .disassembly)
 
         if let animatedImagePath = command.arguments?[0] {
             let animatedImageUrl = URL(fileURLWithPath: animatedImagePath)
-            let newAnimatedImageUrl = DirectoryManager.shared.createUrlForFile(withName: workingAnimationFile,
+            let animatedImageNewUrl = DirectoryManager.shared.createUrlForFile(withName: workingAnimatedImageName,
                                                                                forCommandExecutable: .disassembly)
-            
-            if let newAnimatedImageUrl = newAnimatedImageUrl {
+
+            if let animatedImageNewUrl = animatedImageNewUrl {
+                // Update argument value which holds path to animated image. This is required because animated image
+                // will be copied to a temporary folder, where frames will also reside.
+                command.arguments?[0] = animatedImageNewUrl.path
+                
                 DirectoryManager.shared.copyFilesInWorkingDirectory(forCommandExecutable: .disassembly,
                                                                     atPaths: [animatedImageUrl],
-                                                                    toPath: newAnimatedImageUrl)
-                command.arguments?[0] = newAnimatedImageUrl.path
+                                                                    toPath: [animatedImageNewUrl])
+                
             } else {
                 debugPrint("\(#function): Animated image url from temporary directory is nil. Disassemblig will fail.")
             }
@@ -36,27 +40,19 @@ class DisassemblyProcess: ExecutableProcess {
         super.init(withCommand: command)
     }
     
-    func showFrom(window: NSWindow) {
-        let openPanel = NSOpenPanel()
-        openPanel.message = Resource.String.selectFolderToSaveFrames
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.allowsMultipleSelection = false
-        openPanel.beginSheetModal(for: window,
-                              completionHandler: { response in
-                                
-                                if response == NSFileHandlingPanelOKButton {
-                                    let destinationDirectoryUrl = openPanel.urls[0]
-                                    DirectoryManager.shared.moveFiles(forCommandExecutable: .disassembly,
-                                                                      toPath: destinationDirectoryUrl,
-                                                                      ignoringFiles: [self.workingAnimationFile])
-                                }
-                                
-                                self.cleanup()
-        })
-    }
-    
     override func cleanup() {
          DirectoryManager.shared.cleanupWorkingDirectory(forCommandExecutable: .disassembly)
+    }
+    
+    override func didFinishedWithSuccess(success: Bool, url: URL?) {
+        
+        if success {
+            DirectoryManager.shared.moveFiles(forCommandExecutable: .disassembly,
+                                              toPath: url!,
+                                              withNames: [self.workingAnimatedImageName],
+                                              toIgnore: false)
+        }
+        
+        self.cleanup()
     }
 }

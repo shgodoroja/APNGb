@@ -10,8 +10,8 @@ import Cocoa
 
 class ChildContainerViewController: NSViewController {
     
-    var assemblyArguments: AssemblyArguments!
-    var disassemblyArguments: DisassemblyArguments!
+    var assemblyArguments: AssemblyArguments?
+    var disassemblyArguments: DisassemblyArguments?
     
     private var viewLayoutCareTaker: ChildContainerViewLayoutCareTaker
     

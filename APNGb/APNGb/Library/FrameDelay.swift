@@ -24,13 +24,19 @@ final class FrameDelay: NSObject, CommandArgumentable {
         self.enabled = state
     }
     
-    func commandArguments() -> [String] {
+    // MARK: - CommandArgumentable
+    
+    func havePassedValidation() -> Bool {
+        return true
+    }
+    
+    func commandArguments() -> ([String], Any?) {
         var arguments: [String] = []
         
         if enabled {
             arguments.append("\(seconds) \(frames)")
         }
         
-        return arguments
+        return (arguments, nil)
     }
 }

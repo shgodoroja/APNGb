@@ -13,4 +13,12 @@ final class AssemblyFrameCellView: NSTableCellView {
     @IBOutlet var nameTextField: NSTextField!
     @IBOutlet var sizeTextField: NSTextField!
     @IBOutlet var delayTextField: NSTextField!
+    
+    static func height() -> CGFloat {
+        return 60.0
+    }
+    
+    static func identifier() -> String {
+        return "assembly.frame.cell"
+    }
 }

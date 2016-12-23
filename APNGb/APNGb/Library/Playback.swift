@@ -13,7 +13,13 @@ final class Playback: NSObject, CommandArgumentable {
     var numberOfLoops = 0
     var skipFirstFrame = false
     
-    func commandArguments() -> [String] {
+    // MARK: - CommandArgumentable
+    
+    func havePassedValidation() -> Bool {
+        return true
+    }
+    
+    func commandArguments() -> ([String], Any?) {
         var arguments: [String] = []
         
         if numberOfLoops > 0 {
@@ -24,6 +30,6 @@ final class Playback: NSObject, CommandArgumentable {
             arguments.append("-f")
         }
         
-        return arguments
+        return (arguments, nil)
     }
 }

@@ -10,8 +10,8 @@ import Cocoa
 
 class PreferencesContainerViewController: NSViewController {
     
-    var assemblyArguments: AssemblyArguments!
-    var disassemblyArguments: DisassemblyArguments!
+    var assemblyArguments: AssemblyArguments?
+    var disassemblyArguments: DisassemblyArguments?
     
     private var viewLayoutCareTaker: PreferencesViewLayoutCareTaker
     private var assemblyPreferencesViewController: AssemblyPreferencesViewController?

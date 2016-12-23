@@ -10,10 +10,8 @@ import Cocoa
 
 final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropDelegate {
     
-    var assemblyArguments: AssemblyArguments!
+    var assemblyArguments: AssemblyArguments?
     
-    private var process: ExecutableProcess?
-    private var animationFrames: [AnimationFrame] = []
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
@@ -47,7 +45,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
                 }
             }
             
-            dropHintViewController?.hintMessage = "Drop frames here"
+            dropHintViewController?.hintMessage = Resource.String.dropFramesHere
         }
     }
     
@@ -70,19 +68,27 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: - NSTableViewDataSource
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return animationFrames.count
+        
+        if let assemblyArguments = assemblyArguments {
+            return assemblyArguments.animationFrames.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView = tableView.make(withIdentifier: "assembly.frame.cell",
+        let cellView = tableView.make(withIdentifier: AssemblyFrameCellView.identifier(),
                                       owner: self) as! AssemblyFrameCellView
-
-        let frame = animationFrames[row]
-        cellView.imageView!.image = NSImage(contentsOf: NSURL(fileURLWithPath: frame.path) as URL)
-        cellView.nameTextField.stringValue = frame.name
-        cellView.sizeTextField.stringValue = "Size: \(frame.size) \(String.kilobyteAbbreviation)"
-        cellView.delayTextField.stringValue = "Delay: \(frame.displayableFrameDelay)"
-
+        
+        let imageFrame = assemblyArguments?.animationFrames[row]
+        
+        if let imageFrame = imageFrame {
+            cellView.imageView!.image = NSImage(contentsOf: NSURL(fileURLWithPath: imageFrame.path) as URL)
+            cellView.nameTextField.stringValue = imageFrame.name
+            cellView.sizeTextField.stringValue = "\(Resource.String.size)\(String.colon) \(imageFrame.size) \(String.kilobyteAbbreviation)"
+            cellView.delayTextField.stringValue = "\(Resource.String.delay)\(String.colon) \(imageFrame.displayableFrameDelay)"
+        }
+        
         return cellView
     }
     
@@ -90,11 +96,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         return AssemblyFrameRowView()
     }
     
+    // MARK: - NSTableViewDelegate
+    
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 60
+        return AssemblyFrameCellView.height()
     }
     
-    // MARK: DragAndDropImageDelegate
+    // MARK: - DragAndDropImageDelegate
     
     func didDropFiles(withPaths paths: [String]) {
         
@@ -102,139 +110,26 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
             let droppedImage = AnimationFrame(url: URL(fileURLWithPath: imagePath) as NSURL,
                                               size: imageSizeInKB)
-            animationFrames.append(droppedImage)
+            assemblyArguments?.animationFrames.append(droppedImage)
         }
         
         updateUI()
     }
 
-    // MARK: IBActions
-
-    @IBAction func startAssemblingProcess(_ sender: AnyObject) {
-        //collectArguments()
-        preProcessSetup()
-        
-        if assemblyArguments.havePassedValidation() {
-            //self.presentViewControllerAsSheet(statusViewController!)
-            let command = Command(withExecutable: .assembly)
-            command.arguments = assemblyArguments.commandArguments()
-            process = ExecutableProcess(withCommand: command)
-            process?.progressHandler = { outputString in
-                //self.statusViewController?.updateStatusMessage(message: outputString)
-            }
-            process?.terminationHandler = {
-                //self.stopAssemblingProcess()
-                
-                //if self.statusViewController?.wasCanceled() == true {
-                    self.removeOutputImage()
-               // } else {
-                    self.showImageInFinderApp()
-               // }
-            }
-            process?.start()
-        }
-    }
+    // MARK: - Delete event
     
     func delete(_ sender: NSMenuItem) {
         let selectedRowIndexes = tableView.selectedRowIndexes
         tableView.beginUpdates()
-        tableView.removeRows(at: selectedRowIndexes, withAnimation: .slideDown)
+        tableView.removeRows(at: selectedRowIndexes, withAnimation: .effectFade)
         tableView.endUpdates()
         
         for index in selectedRowIndexes.reversed() {
-            animationFrames.remove(at: index)
+            assemblyArguments?.animationFrames.remove(at: index)
         }
     }
     
     // MARK: - Private
-    
-    private func preProcessSetup() {
-        let imageFolderUrl = createImageCopiesFolder()
-        
-        if let folderUrl = imageFolderUrl {
-            let imageNamePrefix = "frame"
-            var index = 0
-            copyImagesToFolder(withPath: folderUrl.path,
-                               imageNamePrefix: imageNamePrefix,
-                               andIndex: index)
-            reset(index: &index)
-            createImageMetadataFilesToFolder(withUrl: folderUrl,
-                                             imageNamePrefix: imageNamePrefix,
-                                             andIndex: index)
-        }
-    }
-    
-    func createImageCopiesFolder() -> URL? {
-        let imagesFolderName = "APNGbImages"
-        let imagesFolderUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(imagesFolderName, isDirectory: true)
-        
-        if let folderUrl = imagesFolderUrl {
-            let folderWasRemoved = FileManager.default.removeItemIfExists(atPath: folderUrl.path)
-            
-            if folderWasRemoved {
-                do {
-                    try FileManager.default.createDirectory(at: folderUrl,
-                                                            withIntermediateDirectories: true,
-                                                            attributes: nil)
-                } catch let error {
-                    NSLog("\(#function): \(error)")
-                    return nil
-                }
-                
-                return folderUrl
-            }
-        }
-        
-        return nil
-    }
-    
-    private func copyImagesToFolder(withPath path: String, imageNamePrefix: String, andIndex index: Int) {
-        var index = index
-        
-        for droppedImage in animationFrames {
-            
-            do {
-                let newImageName = "\(imageNamePrefix)\(index).\(droppedImage.name.fileExtension())"
-                try FileManager.default.copyItem(atPath: droppedImage.path,
-                                                 toPath: path.appending("/\(newImageName)"))
-                if index == 0 {
-                    assemblyArguments.sourceImagePath = path.appending("/\(newImageName)")
-                }
-                
-            } catch let error {
-                NSLog("\(#function): \(error)")
-            }
-            
-            index += 1
-        }
-    }
-    
-    private func createImageMetadataFilesToFolder(withUrl url: URL, imageNamePrefix: String, andIndex index: Int) {
-        var index = index
-        
-        for droppedImage in animationFrames {
-            let textFileName = "\(imageNamePrefix)\(index)"
-            let filePath = url.appendingPathComponent("\(textFileName).txt").path
-            FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
-            let contentWithDelayValue = "delay=\(droppedImage.displayableFrameDelay)"
-            FileManager.default.writeToFile(content: contentWithDelayValue,
-                                            filePath: filePath)
-            index += 1
-        }
-    }
-    
-    private func reset(index: inout Int) {
-        index = 0
-    }
-    
-    private func showImageInFinderApp() {
-        let fileUrlPath = NSURL.fileURL(withPath: assemblyArguments.destinationImagePath)
-        NSWorkspace.shared().open(fileUrlPath.deletingLastPathComponent())
-    }
-    
-    private func removeOutputImage() {
-        _ = FileManager.default.removeItemIfExists(atPath: self.assemblyArguments.destinationImagePath)
-    }
     
     private func updateUI() {
         showTableViewIfNeeded()
@@ -243,7 +138,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
 
     private func showTableViewIfNeeded() {
         
-        if animationFrames.count > 0 {
+        guard let count = assemblyArguments?.animationFrames.count
+            else {
+                tableViewContainer.isHidden = true
+                return
+        }
+        
+        if count > 0 {
             tableViewContainer.isHidden = false
         } else {
             tableViewContainer.isHidden = true

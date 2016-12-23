@@ -32,21 +32,10 @@ protocol CommandArgumentable {
     /// - Returns: `true` if arguments passed validation, else returns `false`.
     func havePassedValidation() -> Bool
     
-    /// Provide all command's arguments to the client.
+    /// Provide command's arguments and additional data.
     ///
-    /// - Returns: An array of arguments.
-    func commandArguments() -> [String]
-}
-
-extension CommandArgumentable {
-    
-    func havePassedValidation() -> Bool {
-        return false
-    }
-    
-    func commandArguments() -> [String] {
-        return []
-    }
+    /// - Returns: Tuple containing a list of arguments and additional data instance.
+    func commandArguments() -> ([String], Any?)
 }
 
 /// Describes a Terminal command.

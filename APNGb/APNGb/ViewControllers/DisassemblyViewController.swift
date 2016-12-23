@@ -11,7 +11,7 @@ import WebKit
 
 final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
-    var disassemblyArguments: DisassemblyArguments!
+    var disassemblyArguments: DisassemblyArguments?
     
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
@@ -33,7 +33,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
     func didDropFiles(withPaths paths: [String]) {
         dropHintViewController?.view.isHidden = true
-        disassemblyArguments.sourceAnimationImagePath = paths[0]
+        disassemblyArguments?.sourceAnimationImagePath = paths[0]
     }
     
     // MARK: - Private

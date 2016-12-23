@@ -8,10 +8,15 @@
 
 import Cocoa
 
+struct FileExtension {
+    
+    static let txt = "txt"
+    static let png = "png"
+    static let apng = "apng"
+}
+
 extension FileManager {
     
-    static let txtExtension = "txt"
-        
     func sizeOfFile(atPath path: String) -> Int {
         
         do {

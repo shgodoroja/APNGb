@@ -23,38 +23,55 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
     // MARK: ActionToolbarDelegate
     
     func actionWillStart() -> Bool {
-        let executable = (self.contentViewController as? CommandExecutableProtocol)?.commandExecutable()
-        let arguments = (self.contentViewController as? CommandArgumentable)?.commandArguments()
-        let argumentsPassedValidation = (self.contentViewController as? CommandArgumentable)?.havePassedValidation()
         
-        if argumentsPassedValidation == true {
-            let command = Command(withExecutable: executable!)
-            command.arguments = arguments
+        if let content = self.contentViewController as? MainContainerViewController {
+            let executable = content.commandExecutable()
+            let arguments = content.commandArguments().0
+            let additionalData = content.commandArguments().1
             
-            process = DisassemblyProcess(withCommand: command)
-            process?.progressHandler = { output in
-                self.actionToolbar.updateLogMessage(message: output)
-            }
-            process?.terminationHandler = {
-                self.actionToolbar.taskDone()
+            if content.havePassedValidation() {
+                let command = Command(withExecutable: executable)
+                command.arguments = arguments
                 
-                if self.process?.cancelled == false {
-                    (self.process as? DisassemblyProcess)?.showFrom(window: self.window!)
-                } else {
-                    self.process?.cancelled = false
-                    self.process?.cleanup()
+                process = ExecutableProcessFactory.createProcess(identifiedBy: executable,
+                                                                 and: command,
+                                                                 withData: additionalData)
+                process?.progressHandler = { output in
+                    debugPrint(output)
+                    self.actionToolbar.updateLogMessage(message: output)
                 }
+                process?.terminationHandler = {
+                    self.actionToolbar.taskDone()
+                    
+                    if self.process?.cancelled == false {
+                        
+                        let onOkButtonPressedHandler = { url in
+                            self.process?.didFinishedWithSuccess(success: true,
+                                                                 url: url)
+                        }
+                        let onCancelButtonPressedHandler = {
+                            self.process?.didFinishedWithSuccess(success: false,
+                                                                 url: nil)
+                        }
+                        
+                        let hintMessage = self.hintMessageForProcess(process: self.process)
+                        self.showSaveToDirectoryPanel(hintMessage: hintMessage,
+                                                      onOkButtonPressed: onOkButtonPressedHandler,
+                                                      onCancelButtonPressed: onCancelButtonPressedHandler)
+                    } else {
+                        self.process?.cancelled = false
+                        self.process?.cleanup()
+                    }
+                }
+                process?.start()
+                
+                return true
+            } else {
+                self.actionToolbar.taskDone()
             }
-            
-            process?.start()
-            
-            return true
-            
-        } else {
-            self.actionToolbar.taskDone()
-            
-            return false
         }
+        
+        return false
     }
     
     func actionWillStop() -> Bool {
@@ -72,5 +89,36 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
     
     private func setupActionBar() {
         actionToolbar.actionDelegate = self
+    }
+    
+    private func showSaveToDirectoryPanel(hintMessage: String,
+                                          onOkButtonPressed: @escaping (URL?) -> ()?,
+                                          onCancelButtonPressed: @escaping () -> ()?) {
+        let openPanel = NSOpenPanel()
+        openPanel.message = hintMessage
+        openPanel.canChooseFiles = false
+        openPanel.canChooseDirectories = true
+        openPanel.allowsMultipleSelection = false
+        openPanel.beginSheetModal(for: self.window!,
+                                  completionHandler: { response in
+                                    
+                                    if response == NSFileHandlingPanelOKButton {
+                                        let destinationDirectoryUrl = openPanel.urls[0]
+                                        onOkButtonPressed(destinationDirectoryUrl)
+                                    } else {
+                                        onCancelButtonPressed()
+                                    }
+        })
+    }
+    
+    private func hintMessageForProcess(process: ExecutableProcess?) -> String {
+        
+        if process is AssemblyProcess {
+            return Resource.String.selectFolderToSaveAnimatedImage
+        } else if process is DisassemblyProcess {
+            return Resource.String.selectFolderToSaveFrames
+        } else {
+            return String.empty
+        }
     }
 }

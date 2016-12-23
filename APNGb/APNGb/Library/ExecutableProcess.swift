@@ -8,6 +8,22 @@
 
 import Cocoa
 
+struct ExecutableProcessFactory {
+    
+    static func createProcess(identifiedBy executable: CommandExecutable,
+                               and command: Command,
+                               withData additionalData: Any?) -> ExecutableProcess? {
+        switch executable {
+        case .assembly:
+            return AssemblyProcess(withCommand: command, andAdditionalData: additionalData)
+        case .disassembly:
+            return DisassemblyProcess(withCommand: command)
+        default:
+            return nil
+        }
+    }
+}
+
 class ExecutableProcess: NSObject {
     
     var initialHandler: VoidHandler
@@ -18,7 +34,7 @@ class ExecutableProcess: NSObject {
     private var fileHandle: FileHandle?
     private var task = Process()
     
-    init(withCommand command: Command) {
+    init(withCommand command: Command, andAdditionalData additionalData: Any? = nil)  {
         super.init()
         
         task.launchPath = Bundle.main.path(forResource: command.name, ofType: nil)
@@ -56,6 +72,10 @@ class ExecutableProcess: NSObject {
     }
     
     func cleanup() {
+        assertionFailure("\(#function) must be implemented in subclass")
+    }
+    
+    func didFinishedWithSuccess(success: Bool, url: URL?) {
         assertionFailure("\(#function) must be implemented in subclass")
     }
     
