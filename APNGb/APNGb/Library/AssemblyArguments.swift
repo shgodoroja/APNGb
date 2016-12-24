@@ -10,14 +10,26 @@ import Cocoa
 
 final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableProtocol {
     
-    var animationFrames: [AnimationFrame] = []
     var frameNamePrefix = "apng-frame"
-    
     var playback: Playback
     var optimization: Optimization
     var compression: Compression
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
+    
+    var animationFrames = [AnimationFrame]() {
+        
+        didSet {
+            
+            if animationFrames.count == 0 {
+                animatedImagePath = String.empty
+            } else {
+                animatedImagePath = "url-path"
+            }
+        }
+    }
+    
+    private var animatedImagePath = String.empty
         
     override init() {
         playback = Playback()
@@ -44,7 +56,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
     }
     
     func commandArguments() -> ([String], Any?) {
-        var arguments: [String] = [frameNamePrefix]
+        var arguments: [String] = [animatedImagePath, frameNamePrefix]
         arguments.append(contentsOf: playback.commandArguments().0)
         arguments.append(contentsOf: optimization.commandArguments().0)
         arguments.append(contentsOf: compression.commandArguments().0)

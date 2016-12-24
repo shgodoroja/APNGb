@@ -17,8 +17,7 @@ final class AssemblyProcess: ExecutableProcess {
         let animatedImageNewUrl = DirectoryManager.shared.createUrlForFile(withName: generatedAnimatedImageName,
                                                                            forCommandExecutable: .assembly)
         if let animatedImageNewUrl = animatedImageNewUrl {
-            // Insert path to temporary folder where animated image created from frames will reside.
-            command.arguments?.insert(animatedImageNewUrl.path, at: 0)
+            command.arguments?[0] = animatedImageNewUrl.path
             
             // Copy frames in assembly folder.
             var sourceUrls: [URL] = []
