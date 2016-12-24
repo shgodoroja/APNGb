@@ -11,7 +11,7 @@ import Cocoa
 /// Keeps dimension values of all views from the application.
 struct ViewSize {
     
-    static let windowHeight: CGFloat = 425.0
+    static let windowHeight: CGFloat = 475.0
     static let windowWidth: CGFloat = 695.0
     static let splitViewSeparatorWidth: CGFloat = 1.0
 }
@@ -39,6 +39,6 @@ extension ViewSize {
     /// Store preferences view dimension properties.
     struct Preferences {
         
-        static let width: CGFloat = 220.0
+        static let width: CGFloat = 200.0
     }
 }
