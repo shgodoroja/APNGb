@@ -25,6 +25,8 @@
 		AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */; };
 		AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2331D8DDE660048BE0A /* Assets.xcassets */; };
 		AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2351D8DDE660048BE0A /* Main.storyboard */; };
+		AB702A5C1E0F1FA2003E8FD5 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */; };
+		AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5E1E0F283F003E8FD5 /* Strip.swift */; };
 		AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */; };
 		AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */; };
 		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
@@ -92,6 +94,8 @@
 		AB3DF2381D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APNGbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3DF2431D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Argument.swift; path = Library/Argument.swift; sourceTree = "<group>"; };
+		AB702A5E1E0F283F003E8FD5 /* Strip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strip.swift; path = Library/Strip.swift; sourceTree = "<group>"; };
 		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
 		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
 		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				AB36BB451DB17D9E001F4DDD /* Optimization.swift */,
 				AB36BB471DB17E24001F4DDD /* Compression.swift */,
 				AB36BB491DB183E3001F4DDD /* FrameDelay.swift */,
+				AB702A5E1E0F283F003E8FD5 /* Strip.swift */,
 			);
 			name = AssemblyArguments;
 			sourceTree = "<group>";
@@ -311,6 +316,16 @@
 				AB2B42FA1DAFEA61001E054A /* Storyboards */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB702A5D1E0F1FAA003E8FD5 /* Process */ = {
+			isa = PBXGroup;
+			children = (
+				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
+				ABB54AAF1E09951A00779F50 /* AssemblyProcess.swift */,
+				ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */,
+			);
+			name = Process;
 			sourceTree = "<group>";
 		};
 		AB7B53CD1DF86717005C8539 /* SideBar */ = {
@@ -440,9 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				ABF409161DAAF35000B0D373 /* Command.swift */,
-				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
-				ABB54AAF1E09951A00779F50 /* AssemblyProcess.swift */,
-				ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */,
+				AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */,
+				AB702A5D1E0F1FAA003E8FD5 /* Process */,
 				AB36BB421DB17BC2001F4DDD /* AssemblyArguments */,
 				AB9830311DB79C14009E0254 /* DisassemblyArguments */,
 			);
@@ -591,6 +605,7 @@
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
 				ABB54AAC1E0988DF00779F50 /* Resource.swift in Sources */,
 				AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */,
+				AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */,
 				ABB54AB01E09951A00779F50 /* AssemblyProcess.swift in Sources */,
 				AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */,
 				AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */,
@@ -598,6 +613,7 @@
 				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
 				ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */,
 				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
+				AB702A5C1E0F1FA2003E8FD5 /* Argument.swift in Sources */,
 				AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,11 +23,11 @@ final class Optimization: NSObject, CommandArgumentable {
         var arguments: [String] = []
         
         if enablePalette == true {
-            arguments.append("-kp")
+            arguments.append(Argument.enablePalette)
         }
         
         if enableColorType == true {
-            arguments.append("-kc")
+            arguments.append(Argument.enableColorType)
         }
         
         return (arguments, nil)

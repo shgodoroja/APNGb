@@ -56,17 +56,17 @@ final class Compression: NSObject, CommandArgumentable {
         var arguments: [String] = []
         
         if enableZlib == true {
-            arguments.append("-z0")
+            arguments.append(Argument.enableZlib)
         }
         
         if enable7zip == true {
-            arguments.append("-z1")
-            arguments.append("-i\(sevenZipIterations)")
+            arguments.append(Argument.enable7zip)
+            arguments.append(Argument.iteration + "\(sevenZipIterations)")
         }
         
         if enableZopfli == true {
-            arguments.append("-z2")
-            arguments.append("-i\(zopfliIterations)")
+            arguments.append(Argument.enableZopfli)
+            arguments.append(Argument.iteration + "\(zopfliIterations)")
         }
         
         return (arguments, nil)

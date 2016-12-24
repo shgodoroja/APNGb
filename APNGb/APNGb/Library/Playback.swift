@@ -23,11 +23,11 @@ final class Playback: NSObject, CommandArgumentable {
         var arguments: [String] = []
         
         if numberOfLoops > 0 {
-            arguments.append("-l\(numberOfLoops)")
+            arguments.append(Argument.numberOfLoops + "\(numberOfLoops)")
         }
         
         if skipFirstFrame == true {
-            arguments.append("-f")
+            arguments.append(Argument.skipFirstFrame)
         }
         
         return (arguments, nil)
