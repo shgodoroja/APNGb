@@ -37,7 +37,17 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
                                                                  and: command,
                                                                  withData: additionalData)
                 process?.progressHandler = { output in
+                #if DEBUG
                     debugPrint(output)
+                #endif
+
+                    // weak approach, must be refactored
+                    let errorHasOccured = output.lowercased().contains("error")
+                    
+                    if errorHasOccured {
+                        self.process?.cancelled = true
+                    }
+                    
                     self.actionToolbar.updateLogMessage(message: output)
                 }
                 process?.terminationHandler = {

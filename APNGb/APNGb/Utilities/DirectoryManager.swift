@@ -91,7 +91,9 @@ class DirectoryManager {
                     try FileManager.default.createDirectory(at: directoryUrl,
                                                             withIntermediateDirectories: true,
                                                             attributes: nil)
-                    NSWorkspace.shared().open(directoryUrl)
+                    #if DEBUG
+                        NSWorkspace.shared().open(directoryUrl)
+                    #endif
                 } catch let error {
                     NSLog("\(#function): \(error)")
                 }
