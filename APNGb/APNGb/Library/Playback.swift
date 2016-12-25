@@ -13,6 +13,13 @@ final class Playback: NSObject, CommandArgumentable {
     var numberOfLoops = 0
     var skipFirstFrame = false
     
+    override func setNilValueForKey(_ key: String) {
+        
+        if key == #keyPath(Playback.numberOfLoops) {
+            numberOfLoops = 0
+        }
+    }
+    
     // MARK: - CommandArgumentable
     
     func havePassedValidation() -> Bool {

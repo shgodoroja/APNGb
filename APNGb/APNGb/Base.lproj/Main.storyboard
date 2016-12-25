@@ -768,7 +768,7 @@ CA
                                     <constraint firstAttribute="width" constant="36" id="HVW-qt-SVu"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="lCK-rk-GNL">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="j6m-3O-g4X"/>
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="j6m-3O-g4X"/>
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -894,7 +894,7 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZlib" id="Mcw-QB-YNz"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZlib" id="sEl-Yr-Oce"/>
                                 </connections>
                             </button>
                             <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="tf3-XW-e1k">
@@ -922,7 +922,11 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZopfli" id="k7d-Uh-xfJ"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZopfli" id="NV9-ro-qKP">
+                                        <dictionary key="options">
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Kb-rC-sOa">
@@ -938,6 +942,20 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZopfli" previousBinding="1O1-pm-bnd" id="XJN-TH-r3G">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                            <integer key="NSNullPlaceholder" value="-1"/>
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enableZlib" id="1O1-pm-bnd">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.sevenZipIterations" id="slb-dc-J3y">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
@@ -970,6 +988,20 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZlib" previousBinding="VMx-rk-MgB" id="DRg-6u-b5I">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                            <integer key="NSNullPlaceholder" value="-1"/>
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enable7zip" id="VMx-rk-MgB">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.zopfliIterations" id="o4i-j2-etN">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
@@ -1167,23 +1199,6 @@ CA
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8rD-fo-YIg">
-                                <rect key="frame" x="20" y="6" width="99" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="2T5-Gn-uQu"/>
-                                    <constraint firstAttribute="height" constant="20" id="qP3-QP-fWh"/>
-                                </constraints>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="None" drawsBackground="YES" numberOfVisibleItems="3" id="EOV-bj-WeH">
-                                    <font key="font" metaFont="system" size="12"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>None</string>
-                                        <string>Horizontal</string>
-                                        <string>Vertical</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                            </comboBox>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zY8-Nf-LDh">
                                 <rect key="frame" x="126" y="9" width="30" height="20"/>
                                 <constraints>
@@ -1195,7 +1210,28 @@ CA
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.strip.numberOfFrames" id="Loq-jM-Uyz"/>
+                                </connections>
                             </textField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eMY-M9-z0G">
+                                <rect key="frame" x="18" y="6" width="101" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="jMG-eK-ZTC"/>
+                                    <constraint firstAttribute="height" constant="21" id="quQ-d2-1Bi"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VjK-v3-D27" id="2tf-Fb-eWo">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="12" name=".AppleSystemUIFont"/>
+                                    <menu key="menu" id="sak-1S-b5r">
+                                        <items>
+                                            <menuItem title="None" state="on" id="VjK-v3-D27"/>
+                                            <menuItem title="Vertical" id="Duq-bc-y4u"/>
+                                            <menuItem title="Horizontal" id="fip-xh-GMR"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstItem="uNs-Cs-xTX" firstAttribute="top" secondItem="tf3-XW-e1k" secondAttribute="bottom" constant="8" id="0eS-Ln-rEf"/>
@@ -1232,7 +1268,6 @@ CA
                             <constraint firstItem="UO4-E9-kC0" firstAttribute="top" secondItem="cAT-Tq-88C" secondAttribute="bottom" constant="10" id="Ous-eZ-GeN"/>
                             <constraint firstItem="Nww-oh-luT" firstAttribute="top" secondItem="WDY-oz-fi4" secondAttribute="bottom" constant="5" id="PdG-cu-5YM"/>
                             <constraint firstItem="WDY-oz-fi4" firstAttribute="top" secondItem="MLR-aL-Wwk" secondAttribute="bottom" constant="10" id="Pkj-Lc-XvF"/>
-                            <constraint firstItem="8rD-fo-YIg" firstAttribute="top" secondItem="a9o-lR-j5U" secondAttribute="bottom" constant="10" id="Q8e-QG-tyU"/>
                             <constraint firstAttribute="trailing" secondItem="WDY-oz-fi4" secondAttribute="trailing" id="QKn-87-1SX"/>
                             <constraint firstItem="QKH-XM-Opc" firstAttribute="top" secondItem="RNG-ie-ewT" secondAttribute="bottom" constant="10" id="R4q-4D-0b7"/>
                             <constraint firstItem="mRZ-Fs-8NM" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="RNI-Gt-fsp"/>
@@ -1240,22 +1275,23 @@ CA
                             <constraint firstItem="5Ly-p6-gQq" firstAttribute="top" secondItem="Nww-oh-luT" secondAttribute="bottom" constant="13" id="SAs-1O-JvF"/>
                             <constraint firstItem="GcD-QE-a0a" firstAttribute="top" secondItem="wve-QA-H0J" secondAttribute="bottom" constant="10" id="SWL-wA-glC"/>
                             <constraint firstItem="ARI-CI-QJs" firstAttribute="top" secondItem="CDa-o5-Jc8" secondAttribute="bottom" constant="10" id="T7K-pe-j9p"/>
+                            <constraint firstItem="zY8-Nf-LDh" firstAttribute="leading" secondItem="eMY-M9-z0G" secondAttribute="trailing" constant="10" id="Ugs-bH-RDU"/>
                             <constraint firstItem="7Vd-m8-hAX" firstAttribute="top" secondItem="wve-QA-H0J" secondAttribute="bottom" constant="10" id="VUC-CQ-xGi"/>
                             <constraint firstItem="vp5-GI-7Dd" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="5" id="VkZ-aG-BfM"/>
                             <constraint firstItem="MLR-aL-Wwk" firstAttribute="top" secondItem="8Kb-rC-sOa" secondAttribute="bottom" constant="1" id="Y7g-u2-OOT"/>
                             <constraint firstAttribute="trailing" secondItem="ARI-CI-QJs" secondAttribute="trailing" id="Y9M-fc-OmD"/>
                             <constraint firstItem="8Kb-rC-sOa" firstAttribute="leading" secondItem="tf3-XW-e1k" secondAttribute="trailing" constant="19" id="Z0x-s2-vAj"/>
                             <constraint firstItem="RNG-ie-ewT" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="ZKK-Zu-YqW"/>
-                            <constraint firstItem="8rD-fo-YIg" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="ZRL-29-NQ3"/>
                             <constraint firstItem="RNG-ie-ewT" firstAttribute="top" secondItem="Cfn-c9-mSf" secondAttribute="bottom" constant="5" id="Zd1-bz-uIE"/>
-                            <constraint firstItem="zY8-Nf-LDh" firstAttribute="leading" secondItem="8rD-fo-YIg" secondAttribute="trailing" constant="10" id="ZgM-lM-oEl"/>
                             <constraint firstItem="CDa-o5-Jc8" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="ZgN-lw-3Tp"/>
                             <constraint firstItem="CDa-o5-Jc8" firstAttribute="top" secondItem="1bE-j0-HhI" secondAttribute="bottom" constant="8" id="azB-yk-3Yy"/>
                             <constraint firstItem="Cfn-c9-mSf" firstAttribute="top" secondItem="qbk-2d-aaJ" secondAttribute="bottom" constant="5" id="b9g-EN-y84"/>
                             <constraint firstItem="SMA-V1-eRU" firstAttribute="top" secondItem="ARI-CI-QJs" secondAttribute="bottom" constant="56" id="bQp-qn-h5i"/>
                             <constraint firstItem="Cfn-c9-mSf" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="62" id="bpJ-TA-n3p"/>
                             <constraint firstItem="Zka-Kg-vXX" firstAttribute="top" secondItem="wve-QA-H0J" secondAttribute="bottom" constant="11" id="cmj-Rp-hIW"/>
+                            <constraint firstItem="eMY-M9-z0G" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="dEn-cD-Hdi"/>
                             <constraint firstItem="cAT-Tq-88C" firstAttribute="top" secondItem="WDY-oz-fi4" secondAttribute="bottom" constant="31" id="fzC-Ss-xIz"/>
+                            <constraint firstItem="eMY-M9-z0G" firstAttribute="top" secondItem="a9o-lR-j5U" secondAttribute="bottom" constant="10" id="gf8-pb-2fK"/>
                             <constraint firstItem="7Vd-m8-hAX" firstAttribute="leading" secondItem="mRZ-Fs-8NM" secondAttribute="trailing" constant="10" id="hA2-RB-6Rj"/>
                             <constraint firstItem="twQ-WR-tz1" firstAttribute="leading" secondItem="MLR-aL-Wwk" secondAttribute="trailing" constant="5" id="hKp-FI-AYF"/>
                             <constraint firstItem="WDY-oz-fi4" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" id="iM4-lN-pt3"/>

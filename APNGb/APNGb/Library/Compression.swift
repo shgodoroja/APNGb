@@ -46,6 +46,17 @@ final class Compression: NSObject, CommandArgumentable {
     var sevenZipIterations = 15
     var zopfliIterations = 15
     
+    override func setNilValueForKey(_ key: String) {
+        
+        if key == #keyPath(Compression.sevenZipIterations) {
+            sevenZipIterations = 0
+        }
+        
+        if key == #keyPath(Compression.zopfliIterations) {
+            zopfliIterations = 0
+        }
+    }
+    
     // MARK: - CommandArgumentable
     
     func havePassedValidation() -> Bool {

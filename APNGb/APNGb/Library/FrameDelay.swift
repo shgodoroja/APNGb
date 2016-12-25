@@ -24,6 +24,17 @@ final class FrameDelay: NSObject, CommandArgumentable {
         self.enabled = state
     }
     
+    override func setNilValueForKey(_ key: String) {
+        
+        if key == #keyPath(FrameDelay.seconds) {
+            seconds = 0
+        }
+        
+        if key == #keyPath(FrameDelay.frames) {
+            frames = 0
+        }
+    }
+    
     // MARK: - CommandArgumentable
     
     func havePassedValidation() -> Bool {

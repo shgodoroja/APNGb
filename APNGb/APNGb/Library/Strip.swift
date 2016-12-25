@@ -17,13 +17,20 @@ enum StripOrientation  {
 final class Strip: NSObject, CommandArgumentable  {
     
     var orientation = StripOrientation.none
-    var value = 0
+    var numberOfFrames = 0
+    
+    override func setNilValueForKey(_ key: String) {
+        
+        if key == #keyPath(Strip.numberOfFrames) {
+            
+        }
+    }
     
     // MARK: - CommandArgumentable
     
     func havePassedValidation() -> Bool {
         
-        if value == 0 {
+        if numberOfFrames == 0 {
             return false
         }
         
@@ -39,9 +46,9 @@ final class Strip: NSObject, CommandArgumentable  {
         
         switch orientation {
         case .horizontal:
-            arguments.append(Argument.horizontalStrip + "\(value)")
+            arguments.append(Argument.horizontalStrip + "\(numberOfFrames)")
         case .vertical:
-            arguments.append(Argument.verticalStrip + "\(value)")
+            arguments.append(Argument.verticalStrip + "\(numberOfFrames)")
         default:
             debugPrint("\(#function): unhandled case")
         }
