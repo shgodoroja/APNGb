@@ -10,7 +10,7 @@ import Cocoa
 
 final class DisassemblyArguments: NSObject, CommandArgumentable, CommandExecutableProtocol {
     
-    var sourceAnimationImagePath = String.empty
+    var animatedImagePath = String.empty
     var framesNamePrefix = "frame"
     
     // MARK: - CommandArgumenting
@@ -29,7 +29,7 @@ final class DisassemblyArguments: NSObject, CommandArgumentable, CommandExecutab
     }
     
     func commandArguments() -> ([String], Any?) {
-        return ([sourceAnimationImagePath, framesNamePrefix], nil)
+        return ([animatedImagePath, framesNamePrefix], nil)
     }
     
     // MARK: CommandExecutableProtocol

@@ -33,7 +33,7 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
     func didDropFiles(withPaths paths: [String]) {
         dropHintViewController?.view.isHidden = true
-        disassemblyArguments?.sourceAnimationImagePath = paths[0]
+        disassemblyArguments?.animatedImagePath = paths[0]
     }
     
     // MARK: - Private
