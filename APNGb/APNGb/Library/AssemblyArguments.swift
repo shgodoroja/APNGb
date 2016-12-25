@@ -16,6 +16,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
     var compression: Compression
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
+    var strip: Strip
     
     var animationFrames = [AnimationFrame]() {
         
@@ -38,6 +39,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
         allFramesDelay = FrameDelay()
         selectedFramesDelay = FrameDelay(withCategory: .Selected,
                                          andState: false)
+        strip = Strip()
     }
     
     // MARK: CommandArgumentable
@@ -60,6 +62,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
         arguments.append(contentsOf: playback.commandArguments().0)
         arguments.append(contentsOf: optimization.commandArguments().0)
         arguments.append(contentsOf: compression.commandArguments().0)
+        arguments.append(contentsOf: strip.commandArguments().0)
         
         return (arguments, animationFrames)
     }
