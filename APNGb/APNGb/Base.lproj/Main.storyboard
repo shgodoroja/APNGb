@@ -1173,11 +1173,12 @@ CA
                                     <constraint firstAttribute="width" constant="96" id="2T5-Gn-uQu"/>
                                     <constraint firstAttribute="height" constant="20" id="qP3-QP-fWh"/>
                                 </constraints>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="EOV-bj-WeH">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="None" drawsBackground="YES" numberOfVisibleItems="3" id="EOV-bj-WeH">
                                     <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
+                                        <string>None</string>
                                         <string>Horizontal</string>
                                         <string>Vertical</string>
                                     </objectValues>
@@ -1189,7 +1190,7 @@ CA
                                     <constraint firstAttribute="height" constant="20" id="BQJ-kd-9IB"/>
                                     <constraint firstAttribute="width" constant="30" id="QhY-nY-Nce"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="hyD-Z0-Utv">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" placeholderString="" drawsBackground="YES" id="hyD-Z0-Utv">
                                     <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1335,7 +1336,7 @@ CA
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="CLu-Cr-w3T"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QHw-BZ-PG5">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="QHw-BZ-PG5">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
