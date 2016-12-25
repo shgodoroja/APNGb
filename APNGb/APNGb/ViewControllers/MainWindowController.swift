@@ -41,7 +41,7 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
                     debugPrint(output)
                 #endif
 
-                    // weak approach, must be refactored
+                    // TODO: weak approach, must be refactored
                     let errorHasOccured = output.lowercased().contains("error")
                     
                     if errorHasOccured {
