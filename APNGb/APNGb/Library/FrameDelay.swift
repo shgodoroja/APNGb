@@ -27,11 +27,11 @@ final class FrameDelay: NSObject, CommandArgumentable {
     override func setNilValueForKey(_ key: String) {
         
         if key == #keyPath(FrameDelay.seconds) {
-            seconds = 0
+            seconds = 1
         }
         
         if key == #keyPath(FrameDelay.frames) {
-            frames = 0
+            frames = 10
         }
     }
     

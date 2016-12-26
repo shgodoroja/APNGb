@@ -10,51 +10,55 @@ import Cocoa
 
 final class Compression: NSObject, CommandArgumentable {
     
-    var enableZlib = false {
-        
-        didSet {
-            
-            if enableZlib == true {
-                enable7zip = false
-                enableZopfli = false
-            }
-        }
-    }
-    
-    var enable7zip = true {
-        
-        didSet {
-            
-            if enable7zip == true {
-                enableZlib = false
-                enableZopfli = false
-            }
-        }
-    }
-    
-    var enableZopfli = false {
-        
-        didSet {
-            
-            if enableZopfli == true {
-                enable7zip = false
-                enableZlib = false
-            }
-        }
-    }
-    
+    var enableZlib = false
+    var enable7zip = true
+    var enableZopfli = false
     var sevenZipIterations = 15
     var zopfliIterations = 15
     
     override func setNilValueForKey(_ key: String) {
         
         if key == #keyPath(Compression.sevenZipIterations) {
-            sevenZipIterations = 0
+            sevenZipIterations = 15
         }
         
         if key == #keyPath(Compression.zopfliIterations) {
-            zopfliIterations = 0
+            zopfliIterations = 15
         }
+    }
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        
+        if key == #keyPath(Compression.enableZlib) {
+            
+            if let value = value as? Bool {
+                
+                if value == true {
+                    enable7zip = false
+                    enableZopfli = false
+                }
+            }
+            
+        } else if key == #keyPath(Compression.enable7zip) {
+            
+            if let value = value as? Bool {
+                
+                if value == true {
+                    enableZlib = false
+                    enableZopfli = false
+                }
+            }
+        } else if key == #keyPath(Compression.enableZopfli) {
+            
+            if let value = value as? Bool {
+                
+                if value == true {
+                    enable7zip = false
+                    enableZlib = false
+                }
+            }
+        }
+        
     }
     
     // MARK: - CommandArgumentable

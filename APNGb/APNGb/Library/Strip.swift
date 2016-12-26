@@ -8,21 +8,15 @@
 
 import Cocoa
 
-enum StripOrientation  {
-    case vertical
-    case horizontal
-    case none
-}
-
 final class Strip: NSObject, CommandArgumentable  {
-    
-    var orientation = StripOrientation.none
+
+    var orientation = StripOrientation.none.rawValue
     var numberOfFrames = 0
     
     override func setNilValueForKey(_ key: String) {
         
         if key == #keyPath(Strip.numberOfFrames) {
-            
+            numberOfFrames = 0
         }
     }
     
@@ -34,7 +28,7 @@ final class Strip: NSObject, CommandArgumentable  {
             return false
         }
         
-        if orientation == .none {
+        if orientation == StripOrientation.none.rawValue {
             return false
         }
         
@@ -42,17 +36,9 @@ final class Strip: NSObject, CommandArgumentable  {
     }
     
     func commandArguments() -> ([String], Any?) {
-        var arguments: [String] = []
-        
-        switch orientation {
-        case .horizontal:
-            arguments.append(Argument.horizontalStrip + "\(numberOfFrames)")
-        case .vertical:
-            arguments.append(Argument.verticalStrip + "\(numberOfFrames)")
-        default:
-            debugPrint("\(#function): unhandled case")
-        }
-        
+        var arguments = [String]()
+        arguments.append(StripOrientation.argumentValue(for: orientation) + "\(numberOfFrames)")
+
         return (arguments, nil)
     }
 }

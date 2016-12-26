@@ -741,10 +741,10 @@ CA
             </objects>
             <point key="canvasLocation" x="742" y="904"/>
         </scene>
-        <!--Preferences-->
+        <!--AssemblyPreferencesViewController-->
         <scene sceneID="Sna-Zk-Kuc">
             <objects>
-                <viewController title="Preferences" storyboardIdentifier="assemblypreferences.view" id="gUx-HD-ku2" customClass="AssemblyPreferencesViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AssemblyPreferencesViewController" storyboardIdentifier="assemblypreferences.view" id="gUx-HD-ku2" customClass="AssemblyPreferencesViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="SHh-vz-mls">
                         <rect key="frame" x="0.0" y="0.0" width="268" height="475"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -903,7 +903,7 @@ CA
                                     <constraint firstAttribute="height" constant="16" id="MkX-N4-mir"/>
                                     <constraint firstAttribute="width" constant="45" id="vbC-RM-BGw"/>
                                 </constraints>
-                                <buttonCell key="cell" type="radio" title="7zip" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="v9w-sj-VTL">
+                                <buttonCell key="cell" type="radio" title="7zip" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="v9w-sj-VTL">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
@@ -942,17 +942,17 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enableZlib" id="1O1-pm-bnd">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZopfli" previousBinding="1O1-pm-bnd" id="XJN-TH-r3G">
                                         <dictionary key="options">
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enableZlib" id="1O1-pm-bnd">
-                                        <dictionary key="options">
                                             <string key="NSValueTransformerName">NSNegateBoolean</string>
                                         </dictionary>
                                     </binding>
@@ -981,24 +981,24 @@ CA
                                     <constraint firstAttribute="height" constant="20" id="0Xc-d0-5YY"/>
                                     <constraint firstAttribute="width" constant="36" id="H52-qY-isn"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="15" drawsBackground="YES" id="SBD-wD-aEQ">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="15" drawsBackground="YES" id="SBD-wD-aEQ">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="jZg-hH-bcJ"/>
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enable7zip" id="VMx-rk-MgB">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZlib" previousBinding="VMx-rk-MgB" id="DRg-6u-b5I">
                                         <dictionary key="options">
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enable7zip" id="VMx-rk-MgB">
-                                        <dictionary key="options">
                                             <string key="NSValueTransformerName">NSNegateBoolean</string>
                                         </dictionary>
                                     </binding>
@@ -1206,7 +1206,7 @@ CA
                                     <constraint firstAttribute="width" constant="30" id="QhY-nY-Nce"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" placeholderString="" drawsBackground="YES" id="hyD-Z0-Utv">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1231,6 +1231,10 @@ CA
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <binding destination="gUx-HD-ku2" name="selectedValue" keyPath="self.assemblyArguments.strip.orientation" previousBinding="aPm-QE-XKa" id="4fn-Lq-ZyF"/>
+                                    <binding destination="gUx-HD-ku2" name="content" keyPath="self.stripPopUpDataSource.orientations" id="aPm-QE-XKa"/>
+                                </connections>
                             </popUpButton>
                         </subviews>
                         <constraints>
@@ -1309,21 +1313,6 @@ CA
                             <constraint firstItem="5Ly-p6-gQq" firstAttribute="leading" secondItem="SHh-vz-mls" secondAttribute="leading" constant="20" id="zOw-Ap-w6b"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="allFramesDelaySecondsTextField" destination="F1L-kD-cB4" id="hJK-Bj-DW9"/>
-                        <outlet property="allframesDelayFramesTextField" destination="cAT-Tq-88C" id="9Ac-fE-eRs"/>
-                        <outlet property="colorTypeCheckbox" destination="CDa-o5-Jc8" id="xK1-DF-ewY"/>
-                        <outlet property="numberOfLoopsTextField" destination="qbk-2d-aaJ" id="nxR-rH-bwP"/>
-                        <outlet property="paletteCheckbox" destination="1bE-j0-HhI" id="pP7-zW-Gci"/>
-                        <outlet property="selectedDelayFramesTextField" destination="GcD-QE-a0a" id="Hpe-ew-87J"/>
-                        <outlet property="selectedDelaySecondsTextField" destination="7Vd-m8-hAX" id="QiZ-r5-hx7"/>
-                        <outlet property="sevenZipIterationsTextField" destination="8Kb-rC-sOa" id="VtE-wP-s6k"/>
-                        <outlet property="sevenZipRadioButton" destination="tf3-XW-e1k" id="Dn2-xl-ZRo"/>
-                        <outlet property="skipFirstFrameCheckbox" destination="RNG-ie-ewT" id="MyJ-If-Z0k"/>
-                        <outlet property="zlibRadioButton" destination="8UL-U1-pKi" id="S88-cm-lkk"/>
-                        <outlet property="zopfliIterationsTextField" destination="MLR-aL-Wwk" id="pmd-e7-IoS"/>
-                        <outlet property="zopfliRadioButton" destination="uNs-Cs-xTX" id="CZU-Hm-Rnf"/>
-                    </connections>
                 </viewController>
                 <customObject id="bs1-pM-iUu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="1NZ-Gt-Ydk"/>

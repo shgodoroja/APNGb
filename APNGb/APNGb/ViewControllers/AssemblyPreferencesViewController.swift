@@ -11,27 +11,12 @@ import Cocoa
 final class AssemblyPreferencesViewController: NSViewController {
     
     dynamic var assemblyArguments: AssemblyArguments?
+    dynamic var stripPopUpDataSource: StripPopUpDataSource
     
-    // Checkboxes
-    @IBOutlet private var skipFirstFrameCheckbox: NSButton!
-    @IBOutlet private var paletteCheckbox: NSButton!
-    @IBOutlet private var colorTypeCheckbox: NSButton!
-    
-    // RadioButtons
-    @IBOutlet private var zlibRadioButton: NSButton!
-    @IBOutlet private var sevenZipRadioButton: NSButton!
-    @IBOutlet private var zopfliRadioButton: NSButton!
-    
-    // TextFields
-    @IBOutlet private var numberOfLoopsTextField: NSTextField!
-    @IBOutlet private var sevenZipIterationsTextField: NSTextField!
-    @IBOutlet private var zopfliIterationsTextField: NSTextField!
-    @IBOutlet private var allFramesDelaySecondsTextField: NSTextField!
-    @IBOutlet private var allframesDelayFramesTextField: NSTextField!
-    @IBOutlet private var selectedDelaySecondsTextField: NSTextField!
-    @IBOutlet private var selectedDelayFramesTextField: NSTextField!
-    
-    // MARK: Private
+    required init?(coder: NSCoder) {
+        stripPopUpDataSource = StripPopUpDataSource()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         self.view.backgroundColor = Theme.Color.preferencesPane
