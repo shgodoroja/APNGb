@@ -762,6 +762,7 @@
 				DEVELOPMENT_TEAM = Q453Q9XLFV;
 				INFOPLIST_FILE = APNGb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-DDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -778,6 +779,7 @@
 				DEVELOPMENT_TEAM = Q453Q9XLFV;
 				INFOPLIST_FILE = APNGb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
