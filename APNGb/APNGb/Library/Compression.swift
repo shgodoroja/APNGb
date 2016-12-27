@@ -27,38 +27,23 @@ final class Compression: NSObject, CommandArgumentable {
         }
     }
     
+    // MARK: - KVO
+    
     override func setValue(_ value: Any?, forKey key: String) {
         
         if key == #keyPath(Compression.enableZlib) {
-            
-            if let value = value as? Bool {
-                
-                if value == true {
-                    enable7zip = false
-                    enableZopfli = false
-                }
-            }
+            self.updateValue(value, forKeys: [#keyPath(Compression.enable7zip),
+                                              #keyPath(Compression.enableZopfli)])
             
         } else if key == #keyPath(Compression.enable7zip) {
-            
-            if let value = value as? Bool {
-                
-                if value == true {
-                    enableZlib = false
-                    enableZopfli = false
-                }
-            }
+            self.updateValue(value, forKeys: [#keyPath(Compression.enableZlib),
+                                              #keyPath(Compression.enableZopfli)])
         } else if key == #keyPath(Compression.enableZopfli) {
-            
-            if let value = value as? Bool {
-                
-                if value == true {
-                    enable7zip = false
-                    enableZlib = false
-                }
-            }
+            self.updateValue(value, forKeys: [#keyPath(Compression.enableZlib),
+                                              #keyPath(Compression.enable7zip)])
         }
         
+        super.setValue(value, forKey: key)
     }
     
     // MARK: - CommandArgumentable
@@ -85,5 +70,20 @@ final class Compression: NSObject, CommandArgumentable {
         }
         
         return (arguments, nil)
+    }
+    
+    // MARK: - Private
+    
+    private func updateValue(_ value: Any?, forKeys keys: [String]) {
+        
+        if let value = value as? Bool {
+            
+            if value == true {
+                
+                for key in keys {
+                    self.setValue(false, forKey:  key)
+                }
+            }
+        }
     }
 }

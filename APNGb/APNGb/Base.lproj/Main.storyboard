@@ -825,7 +825,7 @@ CA
                                     <constraint firstAttribute="width" constant="61" id="CVk-Le-4Yi"/>
                                     <constraint firstAttribute="height" constant="14" id="qH1-sP-vV7"/>
                                 </constraints>
-                                <buttonCell key="cell" type="check" title="Palette" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ML8-bB-xFx">
+                                <buttonCell key="cell" type="check" title="Palette" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ML8-bB-xFx">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
@@ -839,7 +839,7 @@ CA
                                     <constraint firstAttribute="width" constant="81" id="B4w-Wy-kpd"/>
                                     <constraint firstAttribute="height" constant="14" id="Hdh-h0-UIQ"/>
                                 </constraints>
-                                <buttonCell key="cell" type="check" title="Color type" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mW7-p3-fzf">
+                                <buttonCell key="cell" type="check" title="Color type" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mW7-p3-fzf">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
@@ -894,7 +894,12 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZlib" id="sEl-Yr-Oce"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZlib" id="OEJ-zf-zx9">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="tf3-XW-e1k">
@@ -908,7 +913,12 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enable7zip" id="a87-YM-JTr"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enable7zip" id="E6T-kO-TCQ">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uNs-Cs-xTX">
@@ -922,8 +932,9 @@ CA
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZopfli" id="NV9-ro-qKP">
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.enableZopfli" id="GqD-Zm-YQ1">
                                         <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
                                             <bool key="NSConditionallySetsEnabled" value="NO"/>
                                         </dictionary>
                                     </binding>
@@ -942,20 +953,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enableZlib" id="1O1-pm-bnd">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZopfli" previousBinding="1O1-pm-bnd" id="XJN-TH-r3G">
-                                        <dictionary key="options">
-                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                            <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enable7zip" id="bdA-sb-r2O"/>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.sevenZipIterations" id="slb-dc-J3y">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
@@ -988,20 +986,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enable7zip" id="VMx-rk-MgB">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="gUx-HD-ku2" name="enabled2" keyPath="self.assemblyArguments.compression.enableZlib" previousBinding="VMx-rk-MgB" id="DRg-6u-b5I">
-                                        <dictionary key="options">
-                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                            <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.compression.enableZopfli" id="akE-3s-YRT"/>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.compression.zopfliIterations" id="o4i-j2-etN">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
