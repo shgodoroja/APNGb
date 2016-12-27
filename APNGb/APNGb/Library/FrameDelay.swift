@@ -21,7 +21,12 @@ final class FrameDelay: NSObject, CommandArgumentable {
     
     init(withCategory category: FrameDelayCategory = .All, andState state: Bool = true) {
         self.category = category
-        self.enabled = state
+        
+        if category == .Selected {
+            self.enabled = false
+        } else {
+            self.enabled = state
+        }
     }
     
     override func setNilValueForKey(_ key: String) {

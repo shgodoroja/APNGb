@@ -56,12 +56,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        let selectedRowIndexes = tableView.selectedRowIndexes
         
-        if selectedRowIndexes.count > 0 {
-            //updateSelectedFramesDelayTextFields(enabled: true, indexSet: selectedRowIndexes)
+        if tableView.selectedRowIndexes.count > 0 {
+            assemblyArguments?.selectedFramesDelay.setValue(true, forKey: #keyPath(FrameDelay.enabled))
         } else {
-            //updateSelectedFramesDelayTextFields(enabled: false, indexSet: nil)
+            assemblyArguments?.selectedFramesDelay.setValue(false, forKey: #keyPath(FrameDelay.enabled))
         }
     }
     

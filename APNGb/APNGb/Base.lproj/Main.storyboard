@@ -1133,6 +1133,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.selectedFramesDelay.enabled" id="nqc-cN-LH3"/>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.selectedFramesDelay.seconds" id="OPk-6t-rQP">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
@@ -1153,6 +1154,7 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <binding destination="gUx-HD-ku2" name="enabled" keyPath="self.assemblyArguments.selectedFramesDelay.enabled" id="njz-N1-GHu"/>
                                     <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.selectedFramesDelay.frames" id="STh-w2-Trb">
                                         <dictionary key="options">
                                             <bool key="NSContinuouslyUpdatesValue" value="YES"/>
