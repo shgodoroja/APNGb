@@ -636,7 +636,7 @@ CA
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="HwE-wr-1K2">
                                                                         <font key="font" metaFont="smallSystem"/>
-                                                                        <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
@@ -645,7 +645,7 @@ CA
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="6Qb-hc-qtr">
                                                                         <font key="font" metaFont="smallSystem"/>
-                                                                        <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>

@@ -17,7 +17,6 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
     var allFramesDelay: FrameDelay
     var selectedFramesDelay: FrameDelay
     var strip: Strip
-    
     var animationFrames = [AnimationFrame]() {
         
         didSet {
