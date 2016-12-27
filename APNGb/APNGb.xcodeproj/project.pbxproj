@@ -51,6 +51,7 @@
 		ABB54AB21E09954000779F50 /* DisassemblyProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */; };
 		ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */; };
 		ABB75E601E114B13006CEC4B /* AssemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */; };
+		ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABB75E611E11F250006CEC4B /* Credits.rtf */; };
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* AnimationFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */; };
@@ -119,6 +120,7 @@
 		ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyProcess.swift; path = Library/DisassemblyProcess.swift; sourceTree = "<group>"; };
 		ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectoryManager.swift; path = Utilities/DirectoryManager.swift; sourceTree = "<group>"; };
 		ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyPreferencesViewController.swift; path = ViewControllers/AssemblyPreferencesViewController.swift; sourceTree = "<group>"; };
+		ABB75E611E11F250006CEC4B /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = Resources/Credits.rtf; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationFrame.swift; path = Models/AnimationFrame.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		AB3DF24E1D8E0D590048BE0A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ABB75E611E11F250006CEC4B /* Credits.rtf */,
 				AB3DF2331D8DDE660048BE0A /* Assets.xcassets */,
 				AB2B42FA1DAFEA61001E054A /* Storyboards */,
 			);
@@ -559,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
