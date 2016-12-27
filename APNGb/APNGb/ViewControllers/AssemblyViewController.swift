@@ -119,13 +119,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     func delete(_ sender: NSMenuItem) {
         let selectedRowIndexes = tableView.selectedRowIndexes
-        tableView.beginUpdates()
-        tableView.removeRows(at: selectedRowIndexes, withAnimation: .effectFade)
-        tableView.endUpdates()
-        
         for index in selectedRowIndexes.reversed() {
             assemblyArguments?.animationFrames.remove(at: index)
         }
+        
+        tableView.reloadData()
     }
     
     // MARK: - Private
