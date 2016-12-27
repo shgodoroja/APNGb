@@ -132,23 +132,26 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-Df-yay">
-                                                <rect key="frame" x="0.0" y="-2" width="450" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="UnA-rb-uRr"/>
+                                                </constraints>
                                                 <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bnG-Un-wN3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="smallSystem"/>
                                                 </buttonCell>
                                             </button>
                                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="IDY-l2-d2S">
-                                                <rect key="frame" x="10" y="3" width="16" height="16"/>
+                                                <rect key="frame" x="10" y="5" width="16" height="16"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="RH1-pI-Bou"/>
-                                                    <constraint firstAttribute="width" constant="16" id="fNk-38-lnV"/>
+                                                    <constraint firstAttribute="height" constant="16" id="N5M-Yv-Oel"/>
+                                                    <constraint firstAttribute="width" constant="16" id="YIs-nj-Aq3"/>
                                                 </constraints>
                                             </progressIndicator>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4z-Fn-2UU">
-                                                <rect key="frame" x="29" y="4" width="418" height="14"/>
+                                                <rect key="frame" x="29" y="6" width="418" height="14"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="14" id="Dog-XK-SVf"/>
+                                                    <constraint firstAttribute="height" constant="14" id="Ld7-r1-xUe"/>
                                                 </constraints>
                                                 <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" id="PAQ-Nr-GAX">
                                                     <font key="font" metaFont="smallSystem"/>
@@ -158,15 +161,14 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="5Md-Df-yay" secondAttribute="bottom" id="0BW-Zt-e7c"/>
-                                            <constraint firstItem="5Md-Df-yay" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" id="3E2-7j-iIa"/>
-                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" constant="1.5" id="4pa-aa-tl3"/>
-                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="leading" secondItem="IDY-l2-d2S" secondAttribute="trailing" constant="5" id="Pen-vg-lQt"/>
-                                            <constraint firstAttribute="trailing" secondItem="5Md-Df-yay" secondAttribute="trailing" id="R8W-ng-cRK"/>
-                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" constant="10" id="Vuq-Q0-c2T"/>
-                                            <constraint firstItem="5Md-Df-yay" firstAttribute="top" secondItem="oZ1-PZ-6SD" secondAttribute="top" constant="3" id="ffX-LQ-wb5"/>
-                                            <constraint firstAttribute="trailing" secondItem="S4z-Fn-2UU" secondAttribute="trailing" constant="5" id="i8a-Z9-21M"/>
-                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" constant="1.5" id="qPF-dS-fa7"/>
+                                            <constraint firstItem="5Md-Df-yay" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" id="DCV-py-TFt"/>
+                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" constant="10" id="EKO-7z-6Xi"/>
+                                            <constraint firstItem="5Md-Df-yay" firstAttribute="leading" secondItem="oZ1-PZ-6SD" secondAttribute="leading" id="Fzk-9L-FOz"/>
+                                            <constraint firstAttribute="trailing" secondItem="S4z-Fn-2UU" secondAttribute="trailing" constant="5" id="TdH-fT-SRj"/>
+                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="leading" secondItem="IDY-l2-d2S" secondAttribute="trailing" constant="5" id="ZQc-zg-eCe"/>
+                                            <constraint firstItem="IDY-l2-d2S" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" id="kBI-d6-kJB"/>
+                                            <constraint firstItem="S4z-Fn-2UU" firstAttribute="centerY" secondItem="oZ1-PZ-6SD" secondAttribute="centerY" id="oYo-gc-y5c"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Md-Df-yay" secondAttribute="trailing" id="yTe-hM-tfZ"/>
                                         </constraints>
                                     </customView>
                                 </toolbarItem>
