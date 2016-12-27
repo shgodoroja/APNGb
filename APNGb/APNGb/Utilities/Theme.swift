@@ -17,7 +17,7 @@ struct Theme {
     private static let selectedCellBorderColor = NSColor(colorLiteralRed: 22 / 255,
                                                          green: 127 / 255,
                                                          blue: 249 / 255,
-                                                         alpha: 1.0)
+                                                         alpha: 0.3)
     private static let selectedCellBackgroundColor = selectedCellBorderColor
     
     struct Color {
