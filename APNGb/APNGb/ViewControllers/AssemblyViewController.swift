@@ -15,6 +15,8 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
+    private let animationFrameType = "AnimationFrame"
+    
     @IBOutlet private var tableView: NSTableView!
     @IBOutlet private var tableViewContainer: NSScrollView!
     
@@ -27,7 +29,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         super.viewDidLoad()
         self.addDropHintViewController()
         self.configureTableView()
-        (self.view as? DragAndDropView)?.delegate = self
+        self.setDragAndDropDelegate()
     }
     
     private func addDropHintViewController() {
@@ -118,14 +120,69 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: - Delete event
     
     func delete(_ sender: NSMenuItem) {
-        let selectedRowIndexes = tableView.selectedRowIndexes
-        for index in selectedRowIndexes.reversed() {
+        let selectedRowIndexes = tableView.selectedRowIndexes.reversed()
+        for index in selectedRowIndexes {
             assemblyArguments?.animationFrames.remove(at: index)
         }
         
         tableView.reloadData()
     }
     
+    
+    func tableView(_ tableView: NSTableView, writeRowsWith rowIndexes: IndexSet, to pboard: NSPasteboard) -> Bool {
+        let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes)
+        pboard.declareTypes([animationFrameType], owner: self)
+        pboard.setData(data, forType: animationFrameType)
+        
+        return true
+    }
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+        
+        if dropOperation == .above {
+            return .move
+        } else {
+            return []
+        }
+    }
+    
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+        
+        let pasteboard = info.draggingPasteboard()
+        let data = pasteboard.data(forType: animationFrameType)
+        
+        if let data = data {
+            
+            if let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: data) as? IndexSet {
+                
+                // Allow to drop only one row at a time. 
+                if rowIndexes.count == 1 {
+                    
+                    if let dragRow = rowIndexes.first {
+                        var rowIndex = 0
+                        
+                        if dragRow < row {
+                            rowIndex = (row - 1)
+                        } else {
+                            rowIndex = row
+                        }
+                        
+                        let draggedObject = assemblyArguments?.animationFrames[dragRow]
+                        assemblyArguments?.animationFrames.remove(at: dragRow)
+                        assemblyArguments?.animationFrames.insert(draggedObject!, at: row)
+                        tableView.noteNumberOfRowsChanged()
+                        tableView.moveRow(at: dragRow,
+                                          to: rowIndex)
+                    }
+                } else {
+                    return false
+                }
+            }
+        }
+        
+        return true
+    }
+
     // MARK: - Private
     
     private func updateUI() {
@@ -135,21 +192,29 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
 
     private func showTableViewIfNeeded() {
         
-        guard let count = assemblyArguments?.animationFrames.count
-            else {
+        if let count = assemblyArguments?.animationFrames.count {
+            
+            if count > 0 {
+                tableViewContainer.isHidden = false
+            } else {
                 tableViewContainer.isHidden = true
-                return
-        }
-        
-        if count > 0 {
-            tableViewContainer.isHidden = false
+            }
+            
         } else {
             tableViewContainer.isHidden = true
         }
     }
     
     private func configureTableView() {
-        tableView.unregisterDraggedTypes()
+        tableView.register(forDraggedTypes: [animationFrameType])
         tableViewContainer.isHidden = true
+    }
+    
+    private func setDragAndDropDelegate() {
+        if let dragAndDropView = self.view as? DragAndDropView {
+            dragAndDropView.delegate = self
+        } else {
+            debugPrint("\(#function): View Controller's view is not a DragAndDropView subclass. Drag & Drop will fail.")
+        }
     }
 }
