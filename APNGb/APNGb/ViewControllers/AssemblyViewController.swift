@@ -108,17 +108,8 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     
     // MARK: - NSTableView
     
-    func tableView(_ tableView: NSTableView, didRemove rowView: NSTableRowView, forRow row: Int) {
-        updateUI()
-    }
-    
     func tableViewSelectionDidChange(_ notification: Notification) {
-        
-        if tableView.selectedRowIndexes.count > 0 {
-            assemblyArguments?.selectedFramesDelay.setValue(true, forKey: #keyPath(FrameDelay.enabled))
-        } else {
-            assemblyArguments?.selectedFramesDelay.setValue(false, forKey: #keyPath(FrameDelay.enabled))
-        }
+        self.updateSelectedFramesDelayFieldsAvailability()
     }
     
     // MARK: - NSTableViewDataSource
@@ -216,7 +207,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             assemblyArguments?.animationFrames.append(droppedImage)
         }
         
-        updateUI()
+       self.updateUI()
     }
 
     // MARK: - Delete event
@@ -227,7 +218,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
             assemblyArguments?.animationFrames.remove(at: index)
         }
         
-        tableView.reloadData()
+        self.updateUI()
     }
     
     // MARK: - Private
@@ -235,6 +226,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private func updateUI() {
         showTableViewIfNeeded()
         tableView.reloadData()
+        self.updateSelectedFramesDelayFieldsAvailability()
     }
 
     private func showTableViewIfNeeded() {
@@ -269,5 +261,14 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         let frame = assemblyArguments?.animationFrames[soureIndex]
         assemblyArguments?.animationFrames.remove(at: soureIndex)
         assemblyArguments?.animationFrames.insert(frame!, at: destinationIndex)
+    }
+    
+    private func updateSelectedFramesDelayFieldsAvailability() {
+        
+        if tableView.selectedRowIndexes.count > 0 {
+            assemblyArguments?.selectedFramesDelay.setValue(true, forKey: #keyPath(FrameDelay.enabled))
+        } else {
+            assemblyArguments?.selectedFramesDelay.setValue(false, forKey: #keyPath(FrameDelay.enabled))
+        }
     }
 }
