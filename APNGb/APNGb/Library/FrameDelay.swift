@@ -12,12 +12,27 @@ enum FrameDelayCategory {
     case All, Selected
 }
 
+enum NotificationIdentifier: String {
+    case didChangeAllFramesDelay = "didChangeAllFramesDelay"
+    case didChangeSelectedFramesDelay = "didChangeSelectedFramesDelay"
+}
+
 final class FrameDelay: NSObject, CommandArgumentable {
     
     var category: FrameDelayCategory
     var enabled: Bool
-    var seconds = 1
-    var frames = 10
+    var seconds = 1 {
+        
+        didSet {
+            self.notifyObservers()
+        }
+    }
+    var frames = 10 {
+        
+        didSet {
+            self.notifyObservers()
+        }
+    }
     
     init(withCategory category: FrameDelayCategory = .All, andState state: Bool = true) {
         self.category = category
@@ -55,4 +70,18 @@ final class FrameDelay: NSObject, CommandArgumentable {
         
         return (arguments, nil)
     }
+    
+    // MARK: - Private
+    
+    private func notifyObservers() {
+        
+        if self.category == .Selected {
+            NotificationCenter.default.post(name: NSNotification.Name(NotificationIdentifier.didChangeSelectedFramesDelay.rawValue),
+                                            object: nil)
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name(NotificationIdentifier.didChangeAllFramesDelay.rawValue),
+                                            object: nil)
+        }
+    }
+    
 }

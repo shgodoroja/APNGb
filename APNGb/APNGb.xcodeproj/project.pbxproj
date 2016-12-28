@@ -52,6 +52,7 @@
 		ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */; };
 		ABB75E601E114B13006CEC4B /* AssemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */; };
 		ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABB75E611E11F250006CEC4B /* Credits.rtf */; };
+		ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */; };
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
 		ABD8C3741DB58A2400C74183 /* AnimationFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */; };
@@ -121,6 +122,7 @@
 		ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectoryManager.swift; path = Utilities/DirectoryManager.swift; sourceTree = "<group>"; };
 		ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyPreferencesViewController.swift; path = ViewControllers/AssemblyPreferencesViewController.swift; sourceTree = "<group>"; };
 		ABB75E611E11F250006CEC4B /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = Resources/Credits.rtf; sourceTree = "<group>"; };
+		ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSTableViewExtension.swift; path = Extensions/NSTableViewExtension.swift; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationFrame.swift; path = Models/AnimationFrame.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				ABD680761DB8EBB200A4735E /* StringExtension.swift */,
 				ABABA2701DF77BC300A90962 /* NSViewExtension.swift */,
 				AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */,
+				ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
 				ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */,
 				AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */,
+				ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */,
 				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,

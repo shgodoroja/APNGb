@@ -25,11 +25,61 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         super.init(coder: coder)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addDropHintViewController()
         self.configureTableView()
         self.setDragAndDropDelegate()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateAllFramesDelay(sender:)),
+                                               name: NSNotification.Name(NotificationIdentifier.didChangeAllFramesDelay.rawValue),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateSelectedFramesDelay(sender:)),
+                                               name: NSNotification.Name(NotificationIdentifier.didChangeSelectedFramesDelay.rawValue),
+                                               object: nil)
+    }
+    
+    @objc private func updateAllFramesDelay(sender: Notification) {
+        let allFramesDelay = assemblyArguments?.allFramesDelay
+        let frames = assemblyArguments?.animationFrames
+        
+        if let allFramesDelay = allFramesDelay {
+        
+            if let frames = frames {
+                
+                for frame in frames {
+                    frame.delayFrames = allFramesDelay.frames
+                    frame.delaySeconds = allFramesDelay.seconds
+                }
+            }
+        }
+
+        tableView.reloadDataKeepingSelection()
+    }
+    
+    @objc private func updateSelectedFramesDelay(sender: Notification) {
+        let selectedFramesDelay = assemblyArguments?.selectedFramesDelay
+        let frames = assemblyArguments?.animationFrames
+        
+        if let selectedFramesDelay = selectedFramesDelay {
+            
+            if let frames = frames {
+                
+                for index in tableView.selectedRowIndexes {
+                    let frame = frames[index]
+                    frame.delayFrames = selectedFramesDelay.frames
+                    frame.delaySeconds = selectedFramesDelay.seconds
+                }
+            }
+        }
+        
+        tableView.reloadDataKeepingSelection()
     }
     
     private func addDropHintViewController() {
@@ -97,6 +147,53 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         return AssemblyFrameRowView()
     }
     
+    func tableView(_ tableView: NSTableView, writeRowsWith rowIndexes: IndexSet, to pboard: NSPasteboard) -> Bool {
+        let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes)
+        pboard.declareTypes([animationFrameType], owner: self)
+        pboard.setData(data, forType: animationFrameType)
+        
+        return true
+    }
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+        
+        if dropOperation == .above {
+            return .move
+        } else {
+            return []
+        }
+    }
+    
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+        let pasteboard = info.draggingPasteboard()
+        let pasteboardData = pasteboard.data(forType: animationFrameType)
+        
+        if let pasteboardData = pasteboardData {
+            
+            if let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: pasteboardData) as? IndexSet {
+                var oldIndex = 0
+                var newIndex = 0
+                
+                for rowIndex in rowIndexes {
+                    
+                    if rowIndex < row {
+                        self.replaceAnimationFrame(atIndex: (rowIndex + oldIndex),
+                                                   toIndex: (row - 1))
+                        tableView.moveRow(at: rowIndex + oldIndex, to: row - 1)
+                        oldIndex -= 1
+                    } else {
+                        self.replaceAnimationFrame(atIndex: rowIndex,
+                                                   toIndex: (row + newIndex))
+                        tableView.moveRow(at: rowIndex, to: row + newIndex)
+                        newIndex += 1
+                    }
+                }
+            }
+        }
+        
+        return true
+    }
+    
     // MARK: - NSTableViewDelegate
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -128,50 +225,6 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         tableView.reloadData()
     }
     
-    
-    func tableView(_ tableView: NSTableView, writeRowsWith rowIndexes: IndexSet, to pboard: NSPasteboard) -> Bool {
-        let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes)
-        pboard.declareTypes([animationFrameType], owner: self)
-        pboard.setData(data, forType: animationFrameType)
-        
-        return true
-    }
-    
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
-        
-        if dropOperation == .above {
-            return .move
-        } else {
-            return []
-        }
-    }
-    
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
-        let pasteboard = info.draggingPasteboard()
-        let pasteboardData = pasteboard.data(forType: animationFrameType)
-        
-        if let pasteboardData = pasteboardData {
-            
-            if let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: pasteboardData) as? IndexSet {
-                var oldIndex = 0
-                var newIndex = 0
-                
-                for rowIndex in rowIndexes {
-                    
-                    if rowIndex < row {
-                        tableView.moveRow(at: rowIndex + oldIndex, to: row - 1)
-                        oldIndex -= 1
-                    } else {
-                        tableView.moveRow(at: rowIndex, to: row + newIndex)
-                        newIndex += 1
-                    }
-                }
-            }
-        }
-        
-        return true
-    }
-
     // MARK: - Private
     
     private func updateUI() {
@@ -205,5 +258,11 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         } else {
             debugPrint("\(#function): View Controller's view is not a DragAndDropView subclass. Drag & Drop will fail.")
         }
+    }
+    
+    private func replaceAnimationFrame(atIndex soureIndex: Int, toIndex destinationIndex: Int) {
+        let frame = assemblyArguments?.animationFrames[soureIndex]
+        assemblyArguments?.animationFrames.remove(at: soureIndex)
+        assemblyArguments?.animationFrames.insert(frame!, at: destinationIndex)
     }
 }
