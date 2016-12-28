@@ -1,6 +1,29 @@
+========================================================
+
+APNG Assembler 2.91
+Creates APNG animation from PNG/TGA image sequence.
+http://apngasm.sourceforge.net/
+
+Copyright (c) 2010-2016 Max Stepin
+maxst@users.sourceforge.net
+
+License: zlib license
+
+
+APNG Disassembler 2.8
+Deconstructs APNG files into individual frames.
+http://apngdis.sourceforge.net/
+
+Copyright (c) 2010-2015 Max Stepin
+maxst@users.sourceforge.net
+
+License: zlib license
+
+===========================================================
+
 MIT License
 
-Copyright (c) 2016 Ștefan
+Copyright (c) 2016 Ștefan Godoroja
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
