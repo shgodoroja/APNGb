@@ -147,35 +147,24 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
-        
         let pasteboard = info.draggingPasteboard()
-        let data = pasteboard.data(forType: animationFrameType)
+        let pasteboardData = pasteboard.data(forType: animationFrameType)
         
-        if let data = data {
+        if let pasteboardData = pasteboardData {
             
-            if let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: data) as? IndexSet {
+            if let rowIndexes = NSKeyedUnarchiver.unarchiveObject(with: pasteboardData) as? IndexSet {
+                var oldIndex = 0
+                var newIndex = 0
                 
-                // Allow to drop only one row at a time. 
-                if rowIndexes.count == 1 {
+                for rowIndex in rowIndexes {
                     
-                    if let dragRow = rowIndexes.first {
-                        var rowIndex = 0
-                        
-                        if dragRow < row {
-                            rowIndex = (row - 1)
-                        } else {
-                            rowIndex = row
-                        }
-                        
-                        let draggedObject = assemblyArguments?.animationFrames[dragRow]
-                        assemblyArguments?.animationFrames.remove(at: dragRow)
-                        assemblyArguments?.animationFrames.insert(draggedObject!, at: row)
-                        tableView.noteNumberOfRowsChanged()
-                        tableView.moveRow(at: dragRow,
-                                          to: rowIndex)
+                    if rowIndex < row {
+                        tableView.moveRow(at: rowIndex + oldIndex, to: row - 1)
+                        oldIndex -= 1
+                    } else {
+                        tableView.moveRow(at: rowIndex, to: row + newIndex)
+                        newIndex += 1
                     }
-                } else {
-                    return false
                 }
             }
         }
