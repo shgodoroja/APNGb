@@ -8,6 +8,12 @@
 
 import Cocoa
 
+/// Makes type to reset it's valuee to initial.
+protocol Reseatable {
+    
+    func reset()
+}
+
 /// Store UNIX executables names.
 enum CommandExecutable: String {
     case none = ""

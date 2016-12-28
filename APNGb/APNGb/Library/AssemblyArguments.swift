@@ -41,7 +41,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
         strip = Strip()
     }
     
-    // MARK: CommandArgumentable
+    // MARK: - CommandArgumentable
     
     func havePassedValidation() -> Bool {
         let arguments = commandArguments().0
@@ -66,7 +66,7 @@ final class AssemblyArguments: NSObject, CommandArgumentable, CommandExecutableP
         return (arguments, animationFrames)
     }
     
-    // MARK: CommandExecutableProtocol 
+    // MARK: - CommandExecutableProtocol
     
     func commandExecutable() -> CommandExecutable {
         return .assembly
