@@ -1210,7 +1210,11 @@ CA
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.strip.numberOfFrames" id="Loq-jM-Uyz"/>
+                                    <binding destination="gUx-HD-ku2" name="value" keyPath="self.assemblyArguments.strip.numberOfFrames" id="wxu-bs-5GY">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eMY-M9-z0G">

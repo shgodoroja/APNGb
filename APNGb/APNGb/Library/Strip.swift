@@ -37,7 +37,10 @@ final class Strip: NSObject, CommandArgumentable  {
     
     func commandArguments() -> ([String], Any?) {
         var arguments = [String]()
-        arguments.append(StripOrientation.argumentValue(for: orientation) + "\(numberOfFrames)")
+        
+        if numberOfFrames > 0 {
+            arguments.append(StripOrientation.argumentValue(for: orientation) + "\(numberOfFrames)")
+        }
 
         return (arguments, nil)
     }
