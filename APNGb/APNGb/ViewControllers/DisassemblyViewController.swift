@@ -11,7 +11,12 @@ import WebKit
 
 final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     
-    var disassemblyArguments: DisassemblyArguments?
+    var disassemblyArguments: DisassemblyArguments? {
+        
+        didSet {
+            self.updateUI()
+        }
+    }
     
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
@@ -32,8 +37,8 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
     // MARK: - DragAndDropImageViewDelegate
     
     func didDropFiles(withPaths paths: [String]) {
-        dropHintViewController?.view.isHidden = true
         disassemblyArguments?.animatedImagePath = paths[0]
+        self.updateUI()
     }
     
     // MARK: - Private
@@ -42,6 +47,16 @@ final class DisassemblyViewController: NSViewController, DragAndDropDelegate {
         destinationWebView.delegate = self
         destinationWebView.drawsBackground = false
         destinationWebView.mainFrame.frameView.allowsScrolling = false
+    }
+    
+    private func updateUI() {
+        
+        if disassemblyArguments?.isAnimatedImagePathValid() == true {
+            dropHintViewController?.view.isHidden = true
+            destinationWebView.loadImage(path: disassemblyArguments!.animatedImagePath)
+        } else {
+            dropHintViewController?.view.isHidden = false
+        }
     }
     
     // MARK: - Child view controllers presentation

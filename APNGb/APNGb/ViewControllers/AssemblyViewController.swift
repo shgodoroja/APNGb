@@ -10,7 +10,12 @@ import Cocoa
 
 final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, DragAndDropDelegate {
     
-    var assemblyArguments: AssemblyArguments?
+    var assemblyArguments: AssemblyArguments? {
+        
+        didSet {
+            self.updateUI()
+        }
+    }
     
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker

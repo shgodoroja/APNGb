@@ -13,6 +13,15 @@ final class DisassemblyArguments: NSObject, CommandArgumentable, CommandExecutab
     var animatedImagePath = String.empty
     var framesNamePrefix = "frame"
     
+    func isAnimatedImagePathValid() -> Bool {
+        
+        if animatedImagePath == String.empty {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     // MARK: - CommandArgumenting
     
     func havePassedValidation() -> Bool {
