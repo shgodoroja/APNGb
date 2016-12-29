@@ -1,8 +1,7 @@
 ![header-logo](https://cloud.githubusercontent.com/assets/2619031/21511755/0dcd98dc-cca5-11e6-86bf-d5b07a477523.png)
 
-<p align="center">
-  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/StefanGodoroja)
-</p>
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/StefanGodoroja)
 
 APNGb 2.0
 =====
