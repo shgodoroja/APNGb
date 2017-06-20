@@ -24,7 +24,7 @@ struct Theme {
         
         static let sidebarBackground = Theme.workingPaneColor
         static let preferencesPane = Theme.workingPaneColor
-        static let assemblyFrameCellBorderColor = Theme.selectedCellBorderColor
-        static let assemblyFrameCellBackgroundColor = Theme.selectedCellBackgroundColor
+        static let frameRowViewBorderColor = Theme.selectedCellBorderColor
+        static let frameRowViewBackgroundColor = Theme.selectedCellBackgroundColor
     }
 }

@@ -8,15 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
-		AB04AD041E046A58002D2B40 /* AssemblyFrameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04AD031E046A58002D2B40 /* AssemblyFrameRowView.swift */; };
+		AB04AD041E046A58002D2B40 /* FrameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04AD031E046A58002D2B40 /* FrameRowView.swift */; };
 		AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07D1E04B8F70023E528 /* Theme.swift */; };
 		AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */; };
 		AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD0801E04B93D0023E528 /* ViewSize.swift */; };
+		AB1900881E2E3EBB000E2ADE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1900871E2E3EBB000E2ADE /* Background.swift */; };
+		AB19008E1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */; };
+		AB1900901E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */; };
+		AB1900921E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */; };
+		AB1CEE711E3A59F100072537 /* AnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CEE701E3A59F100072537 /* AnimatedImage.swift */; };
+		AB247E2D1E279F7500B7BA0B /* ReordableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E2C1E279F7500B7BA0B /* ReordableTableView.swift */; };
+		AB247E301E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E2F1E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift */; };
+		AB247E321E27DE5B00B7BA0B /* FrameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E311E27DE5B00B7BA0B /* FrameListViewController.swift */; };
+		AB247E341E281FE000B7BA0B /* FrameListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E331E281FE000B7BA0B /* FrameListTableViewDataSource.swift */; };
 		AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94DF1DAEAD7D008DB042 /* apngasm */; };
 		AB2C94E51DAEAD89008DB042 /* apngdis in Resources */ = {isa = PBXBuildFile; fileRef = AB2C94E31DAEAD89008DB042 /* apngdis */; };
 		AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */; };
 		AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */; };
-		AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */; };
+		AB36BB411DB17AA3001F4DDD /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB401DB17AA3001F4DDD /* Path.swift */; };
 		AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB431DB17BFF001F4DDD /* Playback.swift */; };
 		AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB451DB17D9E001F4DDD /* Optimization.swift */; };
 		AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36BB471DB17E24001F4DDD /* Compression.swift */; };
@@ -24,67 +33,91 @@
 		AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3DF22F1D8DDE660048BE0A /* AppDelegate.swift */; };
 		AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2331D8DDE660048BE0A /* Assets.xcassets */; };
 		AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3DF2351D8DDE660048BE0A /* Main.storyboard */; };
+		AB4B66681E2845F100FB979E /* PreferencesSectionHeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */; };
+		AB4B666A1E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */; };
+		AB4B666E1E28505600FB979E /* PreferencesCheckboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */; };
+		AB4B66701E28520D00FB979E /* PreferencesRadioCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */; };
+		AB4B66721E28550E00FB979E /* PreferencesDelayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */; };
+		AB4B66741E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */; };
+		AB4B66761E2856E900FB979E /* PreferencesColorPickerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */; };
+		AB63E5A51E2CE486008B0B18 /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5A41E2CE486008B0B18 /* BaseTableCellView.swift */; };
+		AB63E5A71E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */; };
+		AB63E5A91E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */; };
+		AB63E5AB1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */; };
+		AB63E5AD1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */; };
+		AB63E5AF1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */; };
+		AB63E5B11E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */; };
+		AB63E5B31E2D15C7008B0B18 /* PreferencesTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5B21E2D15C7008B0B18 /* PreferencesTextField.swift */; };
 		AB702A5C1E0F1FA2003E8FD5 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */; };
 		AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5E1E0F283F003E8FD5 /* Strip.swift */; };
-		AB702A6D1E112246003E8FD5 /* StripPopUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A6C1E112246003E8FD5 /* StripPopUpDataSource.swift */; };
 		AB702A6F1E112272003E8FD5 /* ActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A6E1E112272003E8FD5 /* ActionToolbar.swift */; };
 		AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */; };
 		AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */; };
 		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
-		AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */; };
 		AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */; };
 		AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */; };
 		AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */; };
-		AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */; };
-		AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
-		AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
-		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
-		AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
-		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
+		AB97CACB1DA1600300A6A272 /* PlayAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* PlayAnimationViewController.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManagerExtension.swift */; };
 		ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */; };
 		ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */; };
 		ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */; };
 		ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA2701DF77BC300A90962 /* NSViewExtension.swift */; };
+		ABB3FDAB1E28EB2500CAD483 /* PreferencesPaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FDAA1E28EB2500CAD483 /* PreferencesPaneViewController.swift */; };
+		ABB3FDB41E2913A800CAD483 /* PreferencesSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FDB31E2913A800CAD483 /* PreferencesSectionHeader.swift */; };
+		ABB3FDB81E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FDB71E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift */; };
+		ABB3FDBA1E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FDB91E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift */; };
+		ABB3FDBC1E2975D000CAD483 /* NSTableCellViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FDBB1E2975D000CAD483 /* NSTableCellViewExtension.swift */; };
 		ABB54AAC1E0988DF00779F50 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AAB1E0988DF00779F50 /* Resource.swift */; };
 		ABB54AB01E09951A00779F50 /* AssemblyProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AAF1E09951A00779F50 /* AssemblyProcess.swift */; };
 		ABB54AB21E09954000779F50 /* DisassemblyProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */; };
 		ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */; };
-		ABB75E601E114B13006CEC4B /* AssemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */; };
 		ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABB75E611E11F250006CEC4B /* Credits.rtf */; };
 		ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */; };
+		ABBFF1081E26F5690054677B /* apngopt in Resources */ = {isa = PBXBuildFile; fileRef = ABBFF1071E26F5690054677B /* apngopt */; };
+		ABBFF10C1E26F8B00054677B /* apng2gif in Resources */ = {isa = PBXBuildFile; fileRef = ABBFF10B1E26F8B00054677B /* apng2gif */; };
+		ABBFF10E1E26F8B60054677B /* gif2apng in Resources */ = {isa = PBXBuildFile; fileRef = ABBFF10D1E26F8B60054677B /* gif2apng */; };
+		ABC999531E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */; };
+		ABD238F71E2A419A008E9016 /* PreferencesCheckboxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */; };
+		ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */; };
+		ABD238FD1E2A465D008E9016 /* PreferencesRadioCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */; };
+		ABD238FF1E2A47CF008E9016 /* PreferencesRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */; };
+		ABD239011E2A4817008E9016 /* PreferencesDelayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */; };
+		ABD239031E2A4847008E9016 /* PreferencesDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239021E2A4847008E9016 /* PreferencesDelay.swift */; };
+		ABD239051E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */; };
+		ABD239071E2A4889008E9016 /* PreferencesComboWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */; };
+		ABD239091E2A48AB008E9016 /* PreferencesColorPickerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */; };
+		ABD2390B1E2A4959008E9016 /* PreferencesColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2390A1E2A4959008E9016 /* PreferencesColorPicker.swift */; };
 		ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD680761DB8EBB200A4735E /* StringExtension.swift */; };
 		ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */; };
-		ABD8C3741DB58A2400C74183 /* AnimationFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */; };
+		ABD8C3741DB58A2400C74183 /* AnimatedImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C3731DB58A2400C74183 /* AnimatedImageFrame.swift */; };
+		ABE17F741E2EEEF1008AC636 /* IntegerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE17F731E2EEEF1008AC636 /* IntegerFormatter.swift */; };
 		ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */; };
-		ABF362AD1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */; };
 		ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */; };
 		ABF409171DAAF35000B0D373 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF409161DAAF35000B0D373 /* Command.swift */; };
 		ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF443FC1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift */; };
-		ABF444011E032FAD00751DB6 /* AssemblyFrameCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF444001E032FAD00751DB6 /* AssemblyFrameCellView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AB3DF23E1D8DDE660048BE0A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB3DF2241D8DDE660048BE0A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB3DF22B1D8DDE660048BE0A;
-			remoteInfo = APNGb;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
-		AB04AD031E046A58002D2B40 /* AssemblyFrameRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyFrameRowView.swift; path = Cells/AssemblyFrameRowView.swift; sourceTree = "<group>"; };
+		AB04AD031E046A58002D2B40 /* FrameRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameRowView.swift; path = Cells/FrameRowView.swift; sourceTree = "<group>"; };
 		AB0FD07D1E04B8F70023E528 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Utilities/Theme.swift; sourceTree = "<group>"; };
 		AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerId.swift; path = Utilities/ViewControllerId.swift; sourceTree = "<group>"; };
 		AB0FD0801E04B93D0023E528 /* ViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSize.swift; path = Utilities/ViewSize.swift; sourceTree = "<group>"; };
+		AB1900871E2E3EBB000E2ADE /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Library/Background.swift; sourceTree = "<group>"; };
+		AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldWithStepperCellView.xib; path = Xibs/PreferencesTextFieldWithStepperCellView.xib; sourceTree = "<group>"; };
+		AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithStepperCellView.swift; path = Cells/PreferencesTextFieldWithStepperCellView.swift; sourceTree = "<group>"; };
+		AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithStepper.swift; path = Models/PreferencesTextFieldWithStepper.swift; sourceTree = "<group>"; };
+		AB1CEE701E3A59F100072537 /* AnimatedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedImage.swift; path = Models/AnimatedImage.swift; sourceTree = "<group>"; };
+		AB247E2C1E279F7500B7BA0B /* ReordableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReordableTableView.swift; path = CustomViews/ReordableTableView.swift; sourceTree = "<group>"; };
+		AB247E2F1E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameListTableViewDelegate.swift; path = ViewControllers/FrameListViewController/FrameListTableViewDelegate.swift; sourceTree = "<group>"; };
+		AB247E311E27DE5B00B7BA0B /* FrameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameListViewController.swift; path = ViewControllers/FrameListViewController/FrameListViewController.swift; sourceTree = "<group>"; };
+		AB247E331E281FE000B7BA0B /* FrameListTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameListTableViewDataSource.swift; path = ViewControllers/FrameListViewController/FrameListTableViewDataSource.swift; sourceTree = "<group>"; };
 		AB2C94DF1DAEAD7D008DB042 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngasm; path = APNGb/Executables/apngasm; sourceTree = SOURCE_ROOT; };
 		AB2C94E31DAEAD89008DB042 /* apngdis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngdis; path = APNGb/Executables/apngdis; sourceTree = SOURCE_ROOT; };
 		AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropView.swift; path = CustomViews/DragAndDropView.swift; sourceTree = "<group>"; };
 		AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropValidator.swift; path = CustomViews/DragAndDropValidator.swift; sourceTree = "<group>"; };
-		AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyArguments.swift; path = Library/AssemblyArguments.swift; sourceTree = "<group>"; };
+		AB36BB401DB17AA3001F4DDD /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Path.swift; path = Library/Path.swift; sourceTree = "<group>"; };
 		AB36BB431DB17BFF001F4DDD /* Playback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playback.swift; path = Library/Playback.swift; sourceTree = "<group>"; };
 		AB36BB451DB17D9E001F4DDD /* Optimization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optimization.swift; path = Library/Optimization.swift; sourceTree = "<group>"; };
 		AB36BB471DB17E24001F4DDD /* Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compression.swift; path = Library/Compression.swift; sourceTree = "<group>"; };
@@ -94,44 +127,69 @@
 		AB3DF2331D8DDE660048BE0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB3DF2361D8DDE660048BE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB3DF2381D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APNGbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB3DF2431D8DDE660048BE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesSectionHeaderCellView.xib; path = Xibs/PreferencesSectionHeaderCellView.xib; sourceTree = "<group>"; };
+		AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldWithHintCellView.xib; path = Xibs/PreferencesTextFieldWithHintCellView.xib; sourceTree = "<group>"; };
+		AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesCheckboxCellView.xib; path = Xibs/PreferencesCheckboxCellView.xib; sourceTree = "<group>"; };
+		AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesRadioCellView.xib; path = Xibs/PreferencesRadioCellView.xib; sourceTree = "<group>"; };
+		AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesDelayCellView.xib; path = Xibs/PreferencesDelayCellView.xib; sourceTree = "<group>"; };
+		AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesComboWithTextFieldCellView.xib; path = Xibs/PreferencesComboWithTextFieldCellView.xib; sourceTree = "<group>"; };
+		AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesColorPickerCellView.xib; path = Xibs/PreferencesColorPickerCellView.xib; sourceTree = "<group>"; };
+		AB63E5A41E2CE486008B0B18 /* BaseTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableCellView.swift; path = Cells/BaseTableCellView.swift; sourceTree = "<group>"; };
+		AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioWithTextFieldCellView.swift; path = Cells/PreferencesRadioWithTextFieldCellView.swift; sourceTree = "<group>"; };
+		AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesRadioWithTextFieldCellView.xib; path = Xibs/PreferencesRadioWithTextFieldCellView.xib; sourceTree = "<group>"; };
+		AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioWithTextField.swift; path = Cells/PreferencesRadioWithTextField.swift; sourceTree = "<group>"; };
+		AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldCellView.swift; path = Cells/PreferencesTextFieldCellView.swift; sourceTree = "<group>"; };
+		AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldCellView.xib; path = Xibs/PreferencesTextFieldCellView.xib; sourceTree = "<group>"; };
+		AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithHint.swift; path = Models/PreferencesTextFieldWithHint.swift; sourceTree = "<group>"; };
+		AB63E5B21E2D15C7008B0B18 /* PreferencesTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextField.swift; path = Models/PreferencesTextField.swift; sourceTree = "<group>"; };
 		AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Argument.swift; path = Library/Argument.swift; sourceTree = "<group>"; };
 		AB702A5E1E0F283F003E8FD5 /* Strip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strip.swift; path = Library/Strip.swift; sourceTree = "<group>"; };
-		AB702A6C1E112246003E8FD5 /* StripPopUpDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StripPopUpDataSource.swift; path = DataSource/StripPopUpDataSource.swift; sourceTree = "<group>"; };
 		AB702A6E1E112272003E8FD5 /* ActionToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionToolbar.swift; path = CustomViews/ActionToolbar.swift; sourceTree = "<group>"; };
 		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
 		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
 		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
-		AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesContainerViewController.swift; path = ViewControllers/PreferencesContainerViewController.swift; sourceTree = "<group>"; };
 		AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropHintViewController.swift; path = ViewControllers/DropHintViewController.swift; sourceTree = "<group>"; };
 		AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewLayoutCareTaker.swift; path = Layout/MainContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewLayoutCareTaker.swift; path = Layout/ChildContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
-		AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyPreferencesViewController.swift; path = ViewControllers/DisassemblyPreferencesViewController.swift; sourceTree = "<group>"; };
-		AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyViewController.swift; path = ViewControllers/AssemblyViewController.swift; sourceTree = "<group>"; };
-		AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyViewController.swift; path = ViewControllers/DisassemblyViewController.swift; sourceTree = "<group>"; };
-		AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyArguments.swift; path = Library/DisassemblyArguments.swift; sourceTree = "<group>"; };
+		AB97CAC61DA1600300A6A272 /* PlayAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayAnimationViewController.swift; path = ViewControllers/PlayAnimationViewController.swift; sourceTree = "<group>"; };
 		AB9830391DB7B065009E0254 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtension.swift; path = Extensions/FileManagerExtension.swift; sourceTree = "<group>"; };
 		ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewController.swift; path = ViewControllers/MainContainerViewController.swift; sourceTree = "<group>"; };
 		ABABA26C1DF77A3600A90962 /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarViewController.swift; path = ViewControllers/SideBarViewController.swift; sourceTree = "<group>"; };
 		ABABA26E1DF77A8300A90962 /* ChildContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewController.swift; path = ViewControllers/ChildContainerViewController.swift; sourceTree = "<group>"; };
 		ABABA2701DF77BC300A90962 /* NSViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewExtension.swift; path = Extensions/NSViewExtension.swift; sourceTree = "<group>"; };
+		ABB3FDAA1E28EB2500CAD483 /* PreferencesPaneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPaneViewController.swift; path = ViewControllers/PreferencesPaneViewController/PreferencesPaneViewController.swift; sourceTree = "<group>"; };
+		ABB3FDB31E2913A800CAD483 /* PreferencesSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesSectionHeader.swift; path = Models/PreferencesSectionHeader.swift; sourceTree = "<group>"; };
+		ABB3FDB71E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithHintCellView.swift; path = Cells/PreferencesTextFieldWithHintCellView.swift; sourceTree = "<group>"; };
+		ABB3FDB91E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesSectionHeaderCellView.swift; path = Cells/PreferencesSectionHeaderCellView.swift; sourceTree = "<group>"; };
+		ABB3FDBB1E2975D000CAD483 /* NSTableCellViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSTableCellViewExtension.swift; path = Extensions/NSTableCellViewExtension.swift; sourceTree = "<group>"; };
 		ABB54AAB1E0988DF00779F50 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Utilities/Resource.swift; sourceTree = "<group>"; };
 		ABB54AAF1E09951A00779F50 /* AssemblyProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyProcess.swift; path = Library/AssemblyProcess.swift; sourceTree = "<group>"; };
 		ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisassemblyProcess.swift; path = Library/DisassemblyProcess.swift; sourceTree = "<group>"; };
 		ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectoryManager.swift; path = Utilities/DirectoryManager.swift; sourceTree = "<group>"; };
-		ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyPreferencesViewController.swift; path = ViewControllers/AssemblyPreferencesViewController.swift; sourceTree = "<group>"; };
 		ABB75E611E11F250006CEC4B /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = Resources/Credits.rtf; sourceTree = "<group>"; };
 		ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSTableViewExtension.swift; path = Extensions/NSTableViewExtension.swift; sourceTree = "<group>"; };
+		ABBFF1071E26F5690054677B /* apngopt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apngopt; path = APNGb/Executables/apngopt; sourceTree = SOURCE_ROOT; };
+		ABBFF10B1E26F8B00054677B /* apng2gif */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = apng2gif; path = APNGb/Executables/apng2gif; sourceTree = SOURCE_ROOT; };
+		ABBFF10D1E26F8B60054677B /* gif2apng */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = gif2apng; path = APNGb/Executables/gif2apng; sourceTree = SOURCE_ROOT; };
+		ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPaneTableViewDataProvider.swift; path = ViewControllers/PreferencesPaneViewController/PreferencesPaneTableViewDataProvider.swift; sourceTree = "<group>"; };
+		ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesCheckboxCellView.swift; path = Cells/PreferencesCheckboxCellView.swift; sourceTree = "<group>"; };
+		ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesCheckbox.swift; path = Models/PreferencesCheckbox.swift; sourceTree = "<group>"; };
+		ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioCellView.swift; path = Cells/PreferencesRadioCellView.swift; sourceTree = "<group>"; };
+		ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadio.swift; path = Models/PreferencesRadio.swift; sourceTree = "<group>"; };
+		ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesDelayCellView.swift; path = Cells/PreferencesDelayCellView.swift; sourceTree = "<group>"; };
+		ABD239021E2A4847008E9016 /* PreferencesDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesDelay.swift; path = Models/PreferencesDelay.swift; sourceTree = "<group>"; };
+		ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesComboWithTextFieldCellView.swift; path = Cells/PreferencesComboWithTextFieldCellView.swift; sourceTree = "<group>"; };
+		ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesComboWithTextField.swift; path = Models/PreferencesComboWithTextField.swift; sourceTree = "<group>"; };
+		ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesColorPickerCellView.swift; path = Cells/PreferencesColorPickerCellView.swift; sourceTree = "<group>"; };
+		ABD2390A1E2A4959008E9016 /* PreferencesColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesColorPicker.swift; path = Models/PreferencesColorPicker.swift; sourceTree = "<group>"; };
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
-		ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationFrame.swift; path = Models/AnimationFrame.swift; sourceTree = "<group>"; };
+		ABD8C3731DB58A2400C74183 /* AnimatedImageFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedImageFrame.swift; path = Models/AnimatedImageFrame.swift; sourceTree = "<group>"; };
+		ABE17F731E2EEEF1008AC636 /* IntegerFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerFormatter.swift; path = Formatters/IntegerFormatter.swift; sourceTree = "<group>"; };
 		ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropWebView.swift; path = CustomViews/DragAndDropWebView.swift; sourceTree = "<group>"; };
-		ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewLayoutCareTaker.swift; path = Layout/PreferencesViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableProcess.swift; path = Library/ExecutableProcess.swift; sourceTree = "<group>"; };
 		ABF409161DAAF35000B0D373 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Library/Command.swift; sourceTree = "<group>"; };
 		ABF443FC1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewLayoutCareTaker.swift; path = Layout/ChildViewLayoutCareTaker.swift; sourceTree = "<group>"; };
-		ABF444001E032FAD00751DB6 /* AssemblyFrameCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyFrameCellView.swift; path = Cells/AssemblyFrameCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,25 +200,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB3DF23A1D8DDE660048BE0A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB04ACFD1E044932002D2B40 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				ABF444001E032FAD00751DB6 /* AssemblyFrameCellView.swift */,
-				AB04AD031E046A58002D2B40 /* AssemblyFrameRowView.swift */,
-			);
-			name = TableViewCell;
-			sourceTree = "<group>";
-		};
 		AB04ACFE1E04493D002D2B40 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,24 +217,6 @@
 				AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */,
 			);
 			name = Layout;
-			sourceTree = "<group>";
-		};
-		AB04AD001E0450C7002D2B40 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				ABF362AC1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift */,
-			);
-			name = Layout;
-			sourceTree = "<group>";
-		};
-		AB04AD011E0450D0002D2B40 /* Childs */ = {
-			isa = PBXGroup;
-			children = (
-				ABB75E5F1E114B13006CEC4B /* AssemblyPreferencesViewController.swift */,
-				AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */,
-				AB702A6B1E112205003E8FD5 /* SubviewsDataSource */,
-			);
-			name = Childs;
 			sourceTree = "<group>";
 		};
 		AB04AD021E0450DF002D2B40 /* Layout */ = {
@@ -220,6 +244,51 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		AB1CEE6C1E3A58A900072537 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABD8C3731DB58A2400C74183 /* AnimatedImageFrame.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AB1CEE6D1E3A58B600072537 /* RowView */ = {
+			isa = PBXGroup;
+			children = (
+				AB04AD031E046A58002D2B40 /* FrameRowView.swift */,
+			);
+			name = RowView;
+			sourceTree = "<group>";
+		};
+		AB1CEE6E1E3A59AA00072537 /* PlayAnimationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CAC61DA1600300A6A272 /* PlayAnimationViewController.swift */,
+				AB1CEE6F1E3A59B300072537 /* Models */,
+			);
+			name = PlayAnimationViewController;
+			sourceTree = "<group>";
+		};
+		AB1CEE6F1E3A59B300072537 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CEE701E3A59F100072537 /* AnimatedImage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AB247E2E1E27DC4200B7BA0B /* FrameListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB247E311E27DE5B00B7BA0B /* FrameListViewController.swift */,
+				AB247E2F1E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift */,
+				AB247E331E281FE000B7BA0B /* FrameListTableViewDataSource.swift */,
+				AB1CEE6D1E3A58B600072537 /* RowView */,
+				AB1CEE6C1E3A58A900072537 /* Models */,
+			);
+			name = FrameListViewController;
+			sourceTree = "<group>";
+		};
 		AB2B42FA1DAFEA61001E054A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,30 +302,18 @@
 			children = (
 				AB702A6E1E112272003E8FD5 /* ActionToolbar.swift */,
 				AB2D0AB81DC929C600F3B425 /* DragAndDropView.swift */,
+				AB247E2C1E279F7500B7BA0B /* ReordableTableView.swift */,
 				ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */,
 				AB2D0ABA1DC95A7500F3B425 /* DragAndDropValidator.swift */,
+				ABB3FDB01E290A2600CAD483 /* Cells */,
 			);
 			name = CustomViews;
-			sourceTree = "<group>";
-		};
-		AB36BB421DB17BC2001F4DDD /* AssemblyArguments */ = {
-			isa = PBXGroup;
-			children = (
-				AB36BB401DB17AA3001F4DDD /* AssemblyArguments.swift */,
-				AB36BB431DB17BFF001F4DDD /* Playback.swift */,
-				AB36BB451DB17D9E001F4DDD /* Optimization.swift */,
-				AB36BB471DB17E24001F4DDD /* Compression.swift */,
-				AB36BB491DB183E3001F4DDD /* FrameDelay.swift */,
-				AB702A5E1E0F283F003E8FD5 /* Strip.swift */,
-			);
-			name = AssemblyArguments;
 			sourceTree = "<group>";
 		};
 		AB3DF2231D8DDE660048BE0A = {
 			isa = PBXGroup;
 			children = (
 				AB3DF22E1D8DDE660048BE0A /* APNGb */,
-				AB3DF2401D8DDE660048BE0A /* APNGbTests */,
 				AB3DF22D1D8DDE660048BE0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				AB3DF22C1D8DDE660048BE0A /* APNGb.app */,
-				AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,22 +334,14 @@
 				AB3DF24C1D8E0D400048BE0A /* ViewControllers */,
 				AB98302B1DB78048009E0254 /* Utilities */,
 				ABF4090D1DA9B92700B0D373 /* Library */,
-				AB9830261DB69069009E0254 /* Models */,
 				AB2C94E91DAEBD25008DB042 /* CustomViews */,
 				ABD8C36F1DB52CE000C74183 /* Extensions */,
+				ABE17F721E2EEAED008AC636 /* Formatters */,
 				AB97CB561DA3093D00A6A272 /* Executables */,
 				AB3DF24E1D8E0D590048BE0A /* Resources */,
 				AB3DF24D1D8E0D4C0048BE0A /* Others */,
 			);
 			path = APNGb;
-			sourceTree = "<group>";
-		};
-		AB3DF2401D8DDE660048BE0A /* APNGbTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB3DF2431D8DDE660048BE0A /* Info.plist */,
-			);
-			path = APNGbTests;
 			sourceTree = "<group>";
 		};
 		AB3DF24C1D8E0D400048BE0A /* ViewControllers */ = {
@@ -319,11 +367,53 @@
 		AB3DF24E1D8E0D590048BE0A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ABB75E611E11F250006CEC4B /* Credits.rtf */,
-				AB3DF2331D8DDE660048BE0A /* Assets.xcassets */,
+				AB4B66661E28455600FB979E /* Documents */,
+				AB4B66651E28454600FB979E /* Graphics */,
+				AB4B66641E28453B00FB979E /* Xibs */,
 				AB2B42FA1DAFEA61001E054A /* Storyboards */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB4B66641E28453B00FB979E /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				ABB3FDA71E28E4F100CAD483 /* PreferencesCellViews */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
+		AB4B66651E28454600FB979E /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				AB3DF2331D8DDE660048BE0A /* Assets.xcassets */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		AB4B66661E28455600FB979E /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				ABB75E611E11F250006CEC4B /* Credits.rtf */,
+			);
+			name = Documents;
+			sourceTree = "<group>";
+		};
+		AB63E5A31E2CE45E008B0B18 /* PreferencesPaneCells */ = {
+			isa = PBXGroup;
+			children = (
+				ABB3FDB91E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift */,
+				ABB3FDB71E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift */,
+				ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */,
+				ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */,
+				AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */,
+				ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */,
+				ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */,
+				ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */,
+				AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */,
+				AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */,
+			);
+			name = PreferencesPaneCells;
 			sourceTree = "<group>";
 		};
 		AB702A5D1E0F1FAA003E8FD5 /* Process */ = {
@@ -334,14 +424,6 @@
 				ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */,
 			);
 			name = Process;
-			sourceTree = "<group>";
-		};
-		AB702A6B1E112205003E8FD5 /* SubviewsDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				AB702A6C1E112246003E8FD5 /* StripPopUpDataSource.swift */,
-			);
-			name = SubviewsDataSource;
 			sourceTree = "<group>";
 		};
 		AB7B53CD1DF86717005C8539 /* SideBar */ = {
@@ -366,10 +448,9 @@
 		AB7B53CF1DF86732005C8539 /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */,
-				AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */,
+				AB1CEE6E1E3A59AA00072537 /* PlayAnimationViewController */,
+				AB247E2E1E27DC4200B7BA0B /* FrameListViewController */,
 				AB04ACFE1E04493D002D2B40 /* Layout */,
-				AB04ACFD1E044932002D2B40 /* TableViewCell */,
 			);
 			name = ChildViewControllers;
 			sourceTree = "<group>";
@@ -385,9 +466,10 @@
 		AB7B53D31DF8D91E005C8539 /* PreferencesPane */ = {
 			isa = PBXGroup;
 			children = (
-				AB7B53D11DF88A2E005C8539 /* PreferencesContainerViewController.swift */,
-				AB04AD011E0450D0002D2B40 /* Childs */,
-				AB04AD001E0450C7002D2B40 /* Layout */,
+				ABB3FDAA1E28EB2500CAD483 /* PreferencesPaneViewController.swift */,
+				ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */,
+				ABB3FDB11E29134900CAD483 /* PreferencesConfigurations */,
+				ABB3FDB21E29135200CAD483 /* PreferencesOptions */,
 			);
 			name = PreferencesPane;
 			sourceTree = "<group>";
@@ -413,17 +495,12 @@
 			children = (
 				AB8F4A0A1DADA0CA0002C73D /* Assembler */,
 				AB8F4A0B1DADA0DA0002C73D /* Disassembler */,
+				ABBFF1061E26F50D0054677B /* Optimizer */,
+				ABBFF10A1E26F87F0054677B /* ApngToGif */,
+				ABBFF1091E26F56C0054677B /* GifToApng */,
 			);
 			name = Executables;
 			path = Scripts;
-			sourceTree = "<group>";
-		};
-		AB9830261DB69069009E0254 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				ABD8C3731DB58A2400C74183 /* AnimationFrame.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		AB98302B1DB78048009E0254 /* Utilities */ = {
@@ -438,12 +515,92 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		AB9830311DB79C14009E0254 /* DisassemblyArguments */ = {
+		ABB3FDA71E28E4F100CAD483 /* PreferencesCellViews */ = {
 			isa = PBXGroup;
 			children = (
-				AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */,
+				AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */,
+				AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */,
+				AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */,
+				AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */,
+				AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */,
+				AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */,
+				AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */,
+				AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */,
+				AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */,
+				AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */,
 			);
-			name = DisassemblyArguments;
+			name = PreferencesCellViews;
+			sourceTree = "<group>";
+		};
+		ABB3FDB01E290A2600CAD483 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB63E5A41E2CE486008B0B18 /* BaseTableCellView.swift */,
+				AB63E5A31E2CE45E008B0B18 /* PreferencesPaneCells */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		ABB3FDB11E29134900CAD483 /* PreferencesConfigurations */ = {
+			isa = PBXGroup;
+			children = (
+				ABB3FDB31E2913A800CAD483 /* PreferencesSectionHeader.swift */,
+			);
+			name = PreferencesConfigurations;
+			sourceTree = "<group>";
+		};
+		ABB3FDB21E29135200CAD483 /* PreferencesOptions */ = {
+			isa = PBXGroup;
+			children = (
+				AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */,
+				ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */,
+				ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */,
+				AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */,
+				ABD239021E2A4847008E9016 /* PreferencesDelay.swift */,
+				ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */,
+				ABD2390A1E2A4959008E9016 /* PreferencesColorPicker.swift */,
+				AB63E5B21E2D15C7008B0B18 /* PreferencesTextField.swift */,
+				AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */,
+			);
+			name = PreferencesOptions;
+			sourceTree = "<group>";
+		};
+		ABBFF1061E26F50D0054677B /* Optimizer */ = {
+			isa = PBXGroup;
+			children = (
+				ABBFF1071E26F5690054677B /* apngopt */,
+			);
+			name = Optimizer;
+			sourceTree = "<group>";
+		};
+		ABBFF1091E26F56C0054677B /* GifToApng */ = {
+			isa = PBXGroup;
+			children = (
+				ABBFF10D1E26F8B60054677B /* gif2apng */,
+			);
+			name = GifToApng;
+			sourceTree = "<group>";
+		};
+		ABBFF10A1E26F87F0054677B /* ApngToGif */ = {
+			isa = PBXGroup;
+			children = (
+				ABBFF10B1E26F8B00054677B /* apng2gif */,
+			);
+			name = ApngToGif;
+			sourceTree = "<group>";
+		};
+		ABC999541E2D8CEA0034A90A /* Arguments */ = {
+			isa = PBXGroup;
+			children = (
+				AB36BB431DB17BFF001F4DDD /* Playback.swift */,
+				AB36BB451DB17D9E001F4DDD /* Optimization.swift */,
+				AB36BB471DB17E24001F4DDD /* Compression.swift */,
+				AB36BB491DB183E3001F4DDD /* FrameDelay.swift */,
+				AB702A5E1E0F283F003E8FD5 /* Strip.swift */,
+				AB36BB401DB17AA3001F4DDD /* Path.swift */,
+				AB1900871E2E3EBB000E2ADE /* Background.swift */,
+			);
+			name = Arguments;
 			sourceTree = "<group>";
 		};
 		ABD8C36F1DB52CE000C74183 /* Extensions */ = {
@@ -455,8 +612,17 @@
 				ABABA2701DF77BC300A90962 /* NSViewExtension.swift */,
 				AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */,
 				ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */,
+				ABB3FDBB1E2975D000CAD483 /* NSTableCellViewExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		ABE17F721E2EEAED008AC636 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				ABE17F731E2EEEF1008AC636 /* IntegerFormatter.swift */,
+			);
+			name = Formatters;
 			sourceTree = "<group>";
 		};
 		ABF362AE1DFC4A9300F8903A /* MainContainer */ = {
@@ -474,8 +640,7 @@
 				ABF409161DAAF35000B0D373 /* Command.swift */,
 				AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */,
 				AB702A5D1E0F1FAA003E8FD5 /* Process */,
-				AB36BB421DB17BC2001F4DDD /* AssemblyArguments */,
-				AB9830311DB79C14009E0254 /* DisassemblyArguments */,
+				ABC999541E2D8CEA0034A90A /* Arguments */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -500,24 +665,6 @@
 			productReference = AB3DF22C1D8DDE660048BE0A /* APNGb.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB3DF23C1D8DDE660048BE0A /* APNGbTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB3DF2491D8DDE660048BE0A /* Build configuration list for PBXNativeTarget "APNGbTests" */;
-			buildPhases = (
-				AB3DF2391D8DDE660048BE0A /* Sources */,
-				AB3DF23A1D8DDE660048BE0A /* Frameworks */,
-				AB3DF23B1D8DDE660048BE0A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB3DF23F1D8DDE660048BE0A /* PBXTargetDependency */,
-			);
-			name = APNGbTests;
-			productName = APNGbTests;
-			productReference = AB3DF23D1D8DDE660048BE0A /* APNGbTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -532,12 +679,6 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Q453Q9XLFV;
 						ProvisioningStyle = Automatic;
-					};
-					AB3DF23C1D8DDE660048BE0A = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Q453Q9XLFV;
-						ProvisioningStyle = Automatic;
-						TestTargetID = AB3DF22B1D8DDE660048BE0A;
 					};
 				};
 			};
@@ -555,7 +696,6 @@
 			projectRoot = "";
 			targets = (
 				AB3DF22B1D8DDE660048BE0A /* APNGb */,
-				AB3DF23C1D8DDE660048BE0A /* APNGbTests */,
 			);
 		};
 /* End PBXProject section */
@@ -565,18 +705,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBFF1081E26F5690054677B /* apngopt in Resources */,
+				AB63E5A91E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib in Resources */,
+				AB4B66761E2856E900FB979E /* PreferencesColorPickerCellView.xib in Resources */,
 				ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */,
+				AB4B66681E2845F100FB979E /* PreferencesSectionHeaderCellView.xib in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
+				ABBFF10C1E26F8B00054677B /* apng2gif in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
+				AB4B66701E28520D00FB979E /* PreferencesRadioCellView.xib in Resources */,
+				AB4B66721E28550E00FB979E /* PreferencesDelayCellView.xib in Resources */,
+				AB4B666A1E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib in Resources */,
+				AB4B666E1E28505600FB979E /* PreferencesCheckboxCellView.xib in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
+				ABBFF10E1E26F8B60054677B /* gif2apng in Resources */,
+				AB63E5AF1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib in Resources */,
+				AB19008E1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib in Resources */,
+				AB4B66741E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib in Resources */,
 				AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB3DF23B1D8DDE660048BE0A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,75 +733,81 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1CEE711E3A59F100072537 /* AnimatedImage.swift in Sources */,
+				AB63E5A51E2CE486008B0B18 /* BaseTableCellView.swift in Sources */,
+				AB247E321E27DE5B00B7BA0B /* FrameListViewController.swift in Sources */,
 				AB36BB461DB17D9E001F4DDD /* Optimization.swift in Sources */,
 				ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */,
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
 				ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */,
+				AB63E5AB1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift in Sources */,
 				AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */,
 				ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */,
+				ABB3FDB41E2913A800CAD483 /* PreferencesSectionHeader.swift in Sources */,
 				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
+				ABD238FF1E2A47CF008E9016 /* PreferencesRadio.swift in Sources */,
+				AB63E5B31E2D15C7008B0B18 /* PreferencesTextField.swift in Sources */,
+				AB247E301E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift in Sources */,
+				ABD239011E2A4817008E9016 /* PreferencesDelayCellView.swift in Sources */,
+				ABD239091E2A48AB008E9016 /* PreferencesColorPickerCellView.swift in Sources */,
 				ABB54AB21E09954000779F50 /* DisassemblyProcess.swift in Sources */,
+				ABB3FDBA1E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift in Sources */,
+				ABD238FD1E2A465D008E9016 /* PreferencesRadioCellView.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
-				AB04AD041E046A58002D2B40 /* AssemblyFrameRowView.swift in Sources */,
-				AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
+				AB04AD041E046A58002D2B40 /* FrameRowView.swift in Sources */,
 				AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
-				AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
+				AB97CACB1DA1600300A6A272 /* PlayAnimationViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
+				AB63E5A71E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
-				ABF444011E032FAD00751DB6 /* AssemblyFrameCellView.swift in Sources */,
+				ABD239071E2A4889008E9016 /* PreferencesComboWithTextField.swift in Sources */,
+				ABB3FDBC1E2975D000CAD483 /* NSTableCellViewExtension.swift in Sources */,
+				ABC999531E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift in Sources */,
 				AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */,
-				ABB75E601E114B13006CEC4B /* AssemblyPreferencesViewController.swift in Sources */,
+				AB63E5AD1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift in Sources */,
+				AB1900901E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
-				AB36BB411DB17AA3001F4DDD /* AssemblyArguments.swift in Sources */,
+				AB36BB411DB17AA3001F4DDD /* Path.swift in Sources */,
 				ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */,
 				AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */,
 				ABD8C3711DB52D3E00C74183 /* BoolExtension.swift in Sources */,
-				AB7B53D21DF88A2E005C8539 /* PreferencesContainerViewController.swift in Sources */,
-				ABF362AD1DFC32F200F8903A /* PreferencesViewLayoutCareTaker.swift in Sources */,
-				AB702A6D1E112246003E8FD5 /* StripPopUpDataSource.swift in Sources */,
+				ABB3FDAB1E28EB2500CAD483 /* PreferencesPaneViewController.swift in Sources */,
+				ABD238F71E2A419A008E9016 /* PreferencesCheckboxCellView.swift in Sources */,
+				AB247E2D1E279F7500B7BA0B /* ReordableTableView.swift in Sources */,
+				ABB3FDB81E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift in Sources */,
+				AB63E5B11E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift in Sources */,
+				ABD239051E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift in Sources */,
+				ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */,
+				AB1900921E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift in Sources */,
+				ABD2390B1E2A4959008E9016 /* PreferencesColorPicker.swift in Sources */,
 				ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
-				AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */,
-				ABD8C3741DB58A2400C74183 /* AnimationFrame.swift in Sources */,
+				ABD8C3741DB58A2400C74183 /* AnimatedImageFrame.swift in Sources */,
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
 				ABB54AAC1E0988DF00779F50 /* Resource.swift in Sources */,
 				AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */,
 				AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */,
 				ABB54AB01E09951A00779F50 /* AssemblyProcess.swift in Sources */,
-				AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */,
 				AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */,
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
+				ABD239031E2A4847008E9016 /* PreferencesDelay.swift in Sources */,
 				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
 				ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */,
 				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
 				AB702A5C1E0F1FA2003E8FD5 /* Argument.swift in Sources */,
 				AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */,
 				AB702A6F1E112272003E8FD5 /* ActionToolbar.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB3DF2391D8DDE660048BE0A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
-				AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
+				AB1900881E2E3EBB000E2ADE /* Background.swift in Sources */,
+				AB247E341E281FE000B7BA0B /* FrameListTableViewDataSource.swift in Sources */,
+				ABE17F741E2EEEF1008AC636 /* IntegerFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB3DF23F1D8DDE660048BE0A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB3DF22B1D8DDE660048BE0A /* APNGb */;
-			targetProxy = AB3DF23E1D8DDE660048BE0A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB3DF2351D8DDE660048BE0A /* Main.storyboard */ = {
@@ -795,38 +947,6 @@
 			};
 			name = Release;
 		};
-		AB3DF24A1D8DDE660048BE0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q453Q9XLFV;
-				INFOPLIST_FILE = APNGbTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGbTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APNGb.app/Contents/MacOS/APNGb";
-			};
-			name = Debug;
-		};
-		AB3DF24B1D8DDE660048BE0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q453Q9XLFV;
-				INFOPLIST_FILE = APNGbTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGbTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APNGb.app/Contents/MacOS/APNGb";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -844,15 +964,6 @@
 			buildConfigurations = (
 				AB3DF2471D8DDE660048BE0A /* Debug */,
 				AB3DF2481D8DDE660048BE0A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB3DF2491D8DDE660048BE0A /* Build configuration list for PBXNativeTarget "APNGbTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB3DF24A1D8DDE660048BE0A /* Debug */,
-				AB3DF24B1D8DDE660048BE0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

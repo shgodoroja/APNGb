@@ -13,21 +13,14 @@ final class Playback: NSObject, CommandArgumentable {
     var numberOfLoops = 0
     var skipFirstFrame = false
     
-    override func setNilValueForKey(_ key: String) {
-        
-        if key == #keyPath(Playback.numberOfLoops) {
-            numberOfLoops = 0
-        }
-    }
-    
     // MARK: - CommandArgumentable
     
-    func havePassedValidation() -> Bool {
+    func validated() -> Bool {
         return true
     }
     
-    func commandArguments() -> ([String], Any?) {
-        var arguments: [String] = []
+    func arguments() -> [String] {
+        var arguments = [String]()
         
         if numberOfLoops > 0 {
             arguments.append(Argument.numberOfLoops + "\(numberOfLoops)")
@@ -37,6 +30,6 @@ final class Playback: NSObject, CommandArgumentable {
             arguments.append(Argument.skipFirstFrame)
         }
         
-        return (arguments, nil)
+        return arguments
     }
 }

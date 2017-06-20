@@ -11,11 +11,10 @@ import Cocoa
 struct ExecutableProcessFactory {
     
     static func createProcess(identifiedBy executable: CommandExecutable,
-                               and command: Command,
-                               withData additionalData: Any?) -> ExecutableProcess? {
+                              and command: Command) -> ExecutableProcess? {
         switch executable {
         case .assembly:
-            return AssemblyProcess(withCommand: command, andAdditionalData: additionalData)
+            return AssemblyProcess(withCommand: command)
         case .disassembly:
             return DisassemblyProcess(withCommand: command)
         default:
@@ -34,7 +33,7 @@ class ExecutableProcess: NSObject {
     private var fileHandle: FileHandle?
     private var task = Process()
     
-    init(withCommand command: Command, andAdditionalData additionalData: Any? = nil)  {
+    init(withCommand command: Command)  {
         super.init()
         
         task.launchPath = Bundle.main.path(forResource: command.name, ofType: nil)

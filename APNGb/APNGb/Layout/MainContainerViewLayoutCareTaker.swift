@@ -39,7 +39,7 @@ class MainContainerViewLayoutCareTaker: ViewLayoutCareTaker {
                 view.leftAnchor.constraint(equalTo: sibling.rightAnchor, constant: ViewSize.splitViewSeparatorWidth).isActive = true
             }
             
-        case .Preferences:
+        case .PreferencesPane:
             view.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
             view.heightAnchor.constraint(equalToConstant: ViewSize.windowHeight).isActive = true
             view.widthAnchor.constraint(equalToConstant: ViewSize.Preferences.width).isActive = true

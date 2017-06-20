@@ -15,12 +15,12 @@ final class Optimization: NSObject, CommandArgumentable {
     
     // MARK: - CommandArgumentable
     
-    func havePassedValidation() -> Bool {
+    func validated() -> Bool {
         return true
     }
     
-    func commandArguments() -> ([String], Any?) {
-        var arguments: [String] = []
+    func arguments() -> [String] {
+        var arguments = [String]()
         
         if enablePalette == true {
             arguments.append(Argument.enablePalette)
@@ -30,7 +30,6 @@ final class Optimization: NSObject, CommandArgumentable {
             arguments.append(Argument.enableColorType)
         }
         
-        return (arguments, nil)
+        return arguments
     }
-    
 }

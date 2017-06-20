@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="preferences.sectionheader.cellview" id="YgX-Qw-j9b" customClass="PreferencesSectionHeaderCellView" customModule="APNGbPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="26"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2ai-iH-IM4">
+                    <rect key="frame" x="3" y="5" width="32" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="AUG-f6-7H9"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="Fx4-Mg-wtO">
+                        <font key="font" metaFont="systemBold" size="12"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="YgX-Qw-j9b" name="value" keyPath="objectValue.title" id="gDP-ny-FVP"/>
+                    </connections>
+                </textField>
+                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="9Rd-Y3-L1O">
+                    <rect key="frame" x="38" y="11" width="267" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="aGL-TN-YGR"/>
+                    </constraints>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="9Rd-Y3-L1O" firstAttribute="centerY" secondItem="YgX-Qw-j9b" secondAttribute="centerY" id="BWP-Ng-a5f"/>
+                <constraint firstItem="2ai-iH-IM4" firstAttribute="leading" secondItem="YgX-Qw-j9b" secondAttribute="leading" constant="5" id="ClM-vW-VaF"/>
+                <constraint firstItem="9Rd-Y3-L1O" firstAttribute="leading" secondItem="2ai-iH-IM4" secondAttribute="trailing" constant="5" id="NUF-2C-hnR"/>
+                <constraint firstAttribute="trailing" secondItem="9Rd-Y3-L1O" secondAttribute="trailing" id="W1f-AE-dHq"/>
+                <constraint firstItem="2ai-iH-IM4" firstAttribute="top" secondItem="YgX-Qw-j9b" secondAttribute="top" constant="5" id="tSg-Uz-seM"/>
+                <constraint firstAttribute="bottom" secondItem="2ai-iH-IM4" secondAttribute="bottom" constant="5" id="w6J-pT-IAN"/>
+            </constraints>
+            <point key="canvasLocation" x="51.5" y="-1"/>
+        </tableCellView>
+    </objects>
+</document>

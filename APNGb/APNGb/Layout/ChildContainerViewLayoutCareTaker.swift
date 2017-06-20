@@ -18,12 +18,12 @@ class ChildContainerViewLayoutCareTaker: ViewLayoutCareTaker {
                         andSiblingView sibling: NSView?) {
         
         switch identifier {
-        case .Assembly,
-             .Disassembly:
+        case .FrameList,
+             .PlayAnimation:
             view.topAnchor.constraint(equalTo: superview.topAnchor, constant: marginOffset).isActive = true
-                view.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: marginOffset).isActive = true
-                view.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: -marginOffset).isActive = true
-                view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -marginOffset).isActive = true
+            view.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: marginOffset).isActive = true
+            view.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: -marginOffset).isActive = true
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -marginOffset).isActive = true
         default:
             assertionFailure("\(#function): View constraints weren't updated because case wasn't handled")
         }

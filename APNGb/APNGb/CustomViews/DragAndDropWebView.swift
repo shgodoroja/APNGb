@@ -11,12 +11,17 @@ import WebKit
 final class DragAndDropWebView: WebView {
     
     var delegate: DragAndDropDelegate?
-    
+    var allowedFileTypes = [String]() {
+        
+        didSet {
+            validator.allowedFileTypes = allowedFileTypes
+        }
+    }
+ 
     private var validator: DragAndDropValidator
-    private let allowedFileTypes = [FileExtension.png, FileExtension.apng]
     
     required init?(coder: NSCoder) {
-        validator = DragAndDropValidator(withAllowedFileTypes: allowedFileTypes)
+        validator = DragAndDropValidator()
         super.init(coder: coder)
     }
     

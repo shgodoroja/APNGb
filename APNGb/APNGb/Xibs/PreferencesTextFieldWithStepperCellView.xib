@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="preferences.sliderwithstepper.cellview" id="bWJ-vZ-ZNf" customClass="PreferencesTextFieldWithStepperCellView" customModule="APNGbPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="8av-XZ-Vsf">
+                    <rect key="frame" x="19" y="6" width="33" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="Lop-VZ-tLh"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="a0U-7M-tUq"/>
+                    </constraints>
+                    <buttonCell key="cell" type="radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lOi-yG-m8L">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="bWJ-vZ-ZNf" name="value" keyPath="objectValue.selected" id="sA7-z6-uhs"/>
+                        <binding destination="bWJ-vZ-ZNf" name="title" keyPath="objectValue.title" id="On7-y5-9n1"/>
+                    </connections>
+                </button>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R1L-JN-rbd">
+                    <rect key="frame" x="89" y="2" width="19" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="YbL-Nu-MpU"/>
+                        <constraint firstAttribute="width" constant="13" id="opp-4U-gO3"/>
+                    </constraints>
+                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="yc3-UK-uDT"/>
+                    <connections>
+                        <binding destination="bWJ-vZ-ZNf" name="maxValue" keyPath="objectValue.stepperMaxValue" id="j5b-wH-bs6"/>
+                        <binding destination="bWJ-vZ-ZNf" name="minValue" keyPath="objectValue.stepperMinValue" previousBinding="j5b-wH-bs6" id="SJy-Xs-VRo"/>
+                        <binding destination="bWJ-vZ-ZNf" name="enabled" keyPath="objectValue.selected" id="brE-Rw-IEi"/>
+                        <binding destination="bWJ-vZ-ZNf" name="value" keyPath="objectValue.value" previousBinding="SJy-Xs-VRo" id="O39-f8-gT0"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svk-yD-r1O">
+                    <rect key="frame" x="55" y="5" width="35" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="7lp-5y-4D3"/>
+                        <constraint firstAttribute="width" constant="35" id="Ntu-ni-CVK"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="128" drawsBackground="YES" id="lnY-6g-8Me">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="UaP-Bb-IBR" customClass="IntegerFormatter" customModule="APNGbPro" customModuleProvider="target"/>
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="bWJ-vZ-ZNf" name="enabled" keyPath="objectValue.selected" id="x9I-Oc-Hac"/>
+                        <binding destination="bWJ-vZ-ZNf" name="value" keyPath="objectValue.value" id="Avk-cn-xX1">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="svk-yD-r1O" firstAttribute="leading" secondItem="8av-XZ-Vsf" secondAttribute="trailing" constant="5" id="Kj2-JI-fVo"/>
+                <constraint firstItem="8av-XZ-Vsf" firstAttribute="centerY" secondItem="bWJ-vZ-ZNf" secondAttribute="centerY" id="MPr-qH-CRZ"/>
+                <constraint firstItem="svk-yD-r1O" firstAttribute="centerY" secondItem="bWJ-vZ-ZNf" secondAttribute="centerY" id="WYb-0P-SYx"/>
+                <constraint firstItem="R1L-JN-rbd" firstAttribute="centerY" secondItem="bWJ-vZ-ZNf" secondAttribute="centerY" constant="-1" id="dyy-HV-xFB"/>
+                <constraint firstItem="8av-XZ-Vsf" firstAttribute="leading" secondItem="bWJ-vZ-ZNf" secondAttribute="leading" constant="20" id="nmU-Vm-phz"/>
+                <constraint firstItem="R1L-JN-rbd" firstAttribute="leading" secondItem="svk-yD-r1O" secondAttribute="trailing" constant="2" id="op1-h9-2uK"/>
+            </constraints>
+            <point key="canvasLocation" x="100.5" y="111"/>
+        </tableCellView>
+    </objects>
+</document>

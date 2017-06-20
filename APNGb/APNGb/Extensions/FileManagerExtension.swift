@@ -13,6 +13,7 @@ struct FileExtension {
     static let txt = "txt"
     static let png = "png"
     static let apng = "apng"
+    static let gif = "gif"
 }
 
 extension FileManager {

@@ -16,44 +16,14 @@ final class Compression: NSObject, CommandArgumentable {
     var sevenZipIterations = 15
     var zopfliIterations = 15
     
-    override func setNilValueForKey(_ key: String) {
-        
-        if key == #keyPath(Compression.sevenZipIterations) {
-            sevenZipIterations = 15
-        }
-        
-        if key == #keyPath(Compression.zopfliIterations) {
-            zopfliIterations = 15
-        }
-    }
-    
-    // MARK: - KVO
-    
-    override func setValue(_ value: Any?, forKey key: String) {
-        
-        if key == #keyPath(Compression.enableZlib) {
-            self.updateValue(value, forKeys: [#keyPath(Compression.enable7zip),
-                                              #keyPath(Compression.enableZopfli)])
-            
-        } else if key == #keyPath(Compression.enable7zip) {
-            self.updateValue(value, forKeys: [#keyPath(Compression.enableZlib),
-                                              #keyPath(Compression.enableZopfli)])
-        } else if key == #keyPath(Compression.enableZopfli) {
-            self.updateValue(value, forKeys: [#keyPath(Compression.enableZlib),
-                                              #keyPath(Compression.enable7zip)])
-        }
-        
-        super.setValue(value, forKey: key)
-    }
-    
     // MARK: - CommandArgumentable
     
-    func havePassedValidation() -> Bool {
+    func validated() -> Bool {
         return true
     }
     
-    func commandArguments() -> ([String], Any?) {
-        var arguments: [String] = []
+    func arguments() -> [String] {
+        var arguments = [String]()
         
         if enableZlib == true {
             arguments.append(Argument.enableZlib)
@@ -69,21 +39,6 @@ final class Compression: NSObject, CommandArgumentable {
             arguments.append(Argument.iteration + "\(zopfliIterations)")
         }
         
-        return (arguments, nil)
-    }
-    
-    // MARK: - Private
-    
-    private func updateValue(_ value: Any?, forKeys keys: [String]) {
-        
-        if let value = value as? Bool {
-            
-            if value == true {
-                
-                for key in keys {
-                    self.setValue(false, forKey:  key)
-                }
-            }
-        }
+        return arguments
     }
 }

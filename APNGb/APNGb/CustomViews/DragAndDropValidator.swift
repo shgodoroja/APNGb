@@ -11,11 +11,7 @@ import Cocoa
 struct DragAndDropValidator {
     
     var imageTypeIsValid = false
-    var allowedFileTypes: [String] = []
-    
-    init(withAllowedFileTypes fileTypes: [String]) {
-        self.allowedFileTypes = fileTypes
-    }
+    var allowedFileTypes = [String]()
     
     mutating func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         

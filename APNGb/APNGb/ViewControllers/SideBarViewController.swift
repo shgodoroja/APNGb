@@ -8,16 +8,18 @@
 
 import Cocoa
 
-class SideBarViewController: NSViewController, Clickable {
+class SideBarViewController: NSViewController, ScenePresentable {
 
-    var delegate: Clickable?
+    var delegate: ScenePresentable?
     
     private var sideBarItemGroup: SideBarItemGroup?
     
     @IBOutlet private var assemblyItemButton: NSButton!
     @IBOutlet private var disassemblyItemButton: NSButton!
+    @IBOutlet private var optimizeItemButton: NSButton!
+    @IBOutlet private var convertItemButton: NSButton!
     
-    // MARK: - ViewController life-cycle
+    // MARK: - Life-cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,10 @@ class SideBarViewController: NSViewController, Clickable {
         self.setupSideBar()
     }
     
-    // MARK: - Clickable
-    
-    func didClickOnItem(atIndex index: Int) {
-        delegate?.didClickOnItem(atIndex: index)
+    // MARK: - ScenePresentable
+
+    func presentScene(withIdentifier identifier: MainScene) {
+        delegate?.presentScene(withIdentifier: identifier)
     }
     
     // MARK: - Private
@@ -42,7 +44,8 @@ class SideBarViewController: NSViewController, Clickable {
         sideBarItemGroup?.delegate = self
         sideBarItemGroup?.addItem(item: assemblyItemButton)
         sideBarItemGroup?.addItem(item: disassemblyItemButton)
-        sideBarItemGroup?.setDefaultSelectedItem(atIndex: 0)
-        sideBarItemGroup?.setup()
+        sideBarItemGroup?.addItem(item: optimizeItemButton)
+        sideBarItemGroup?.addItem(item: convertItemButton)
+        sideBarItemGroup?.selectItem(item: assemblyItemButton)
     }
 }

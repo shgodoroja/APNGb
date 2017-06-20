@@ -20,4 +20,77 @@ struct Argument {
     static let iteration = "-i"
     static let horizontalStrip = "-hs"
     static let verticalStrip = "-vs"
+    static let transparency = "-t"
+    static let backgroundColor = "-b"
 }
+
+class ArgumentTransformer {
+    
+    func arguments(fromParameters params: [ParameterProtocol]) -> [String] {
+        var arguments = [String]()
+        
+        for param in params {
+            let value = param.getValue()
+            
+            switch param.getIdentifier() {
+                
+            case .playbackLoop:
+                
+                if let value = value {
+                    let argument = Argument.numberOfLoops + value
+                    arguments.append(argument)
+                }
+                
+            case .playbackSkipFirstFrame:
+                
+                if value != nil {
+                    arguments.append(Argument.skipFirstFrame)
+                }
+                
+            case .optimizationPalette:
+                
+                if value != nil {
+                    arguments.append(Argument.enablePalette)
+                }
+                
+            case .optimizationColorType:
+                
+                if value != nil {
+                    arguments.append(Argument.enableColorType)
+                }
+                
+            case .compressionZlib:
+                
+                if value != nil {
+                    arguments.append(Argument.enableZlib)
+                }
+                
+            case .compression7Zip:
+                
+                if value != nil {
+                    arguments.append(Argument.enable7zip)
+                }
+                
+            case .compressionZopfli:
+                
+                if value != nil {
+                    arguments.append(Argument.enableZopfli)
+                }
+                
+            case .compression7ZipIterations,
+                 .compressionZopfliIterations:
+                
+                if value != nil {
+                    arguments.append(Argument.iteration)
+                }
+                
+            default:
+                debugPrint("Unhandled case")
+            }
+            
+        }
+        
+        return arguments
+    }
+}
+

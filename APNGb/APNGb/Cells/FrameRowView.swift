@@ -1,5 +1,5 @@
 //
-//  AssemblyFrameRowView.swift
+//  FrameRowView.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 12/16/16.
@@ -8,19 +8,23 @@
 
 import Cocoa
 
-final class AssemblyFrameRowView: NSTableRowView {
+final class FrameRowView: NSTableRowView {
 
     override func drawSelection(in dirtyRect: NSRect) {
         
         if self.selectionHighlightStyle != .none {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
-            Theme.Color.assemblyFrameCellBorderColor.setStroke()
-            Theme.Color.assemblyFrameCellBackgroundColor.setFill()
+            Theme.Color.frameRowViewBorderColor.setStroke()
+            Theme.Color.frameRowViewBackgroundColor.setFill()
             let selectionPath = NSBezierPath.init(roundedRect: selectionRect,
                                                   xRadius: 0,
                                                   yRadius: 0)
             selectionPath.fill()
             selectionPath.stroke()
         }
+    }
+    
+    static func height() -> CGFloat {
+        return 60.0
     }
 }

@@ -15,12 +15,17 @@ protocol DragAndDropDelegate {
 final class DragAndDropView: NSView {
     
     var delegate: DragAndDropDelegate?
-    var allowedFileTypes: [String] = [FileExtension.png]
-    
+    var allowedFileTypes = [String]() {
+        
+        didSet {
+            validator.allowedFileTypes = allowedFileTypes
+        }
+    }
+
     private var validator: DragAndDropValidator
     
     required init?(coder: NSCoder) {
-        validator = DragAndDropValidator(withAllowedFileTypes: allowedFileTypes)
+        validator = DragAndDropValidator()
         super.init(coder: coder)
         self.register(forDraggedTypes: [NSFilenamesPboardType])
     }

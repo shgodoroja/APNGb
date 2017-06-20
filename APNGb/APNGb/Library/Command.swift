@@ -19,14 +19,9 @@ enum CommandExecutable: String {
     case none = ""
     case assembly = "apngasm"
     case disassembly = "apngdis"
-}
-
-protocol CommandExecutableProtocol {
-    
-    /// Identifies command associated executable name.
-    ///
-    /// - Returns: UNIX executable name.
-    func commandExecutable() -> CommandExecutable
+    case optimize = "apngopt"
+    case convertApng = "apng2gif"
+    case convertGif = "gif2apng"
 }
 
 /// Specifies a set of methods used by command instance's client
@@ -36,12 +31,10 @@ protocol CommandArgumentable {
     /// Check if arguments have passed validation.
     ///
     /// - Returns: `true` if arguments passed validation, else returns `false`.
-    func havePassedValidation() -> Bool
+    func validated() -> Bool
     
-    /// Provide command's arguments and additional data.
-    ///
-    /// - Returns: Tuple containing a list of arguments and additional data instance.
-    func commandArguments() -> ([String], Any?)
+    /// Returns command arguments.
+    func arguments() -> [String]
 }
 
 /// Describes a Terminal command.

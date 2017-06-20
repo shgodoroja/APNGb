@@ -12,7 +12,7 @@ final class AssemblyProcess: ExecutableProcess {
     
     private let generatedAnimatedImageName = "apngb-animated.png"
     
-    override init(withCommand command: Command, andAdditionalData additionalData: Any? = nil) {
+    override init(withCommand command: Command) {
         DirectoryManager.shared.createWorkingDirectory(forCommandExecutable: .assembly)
         let animatedImageNewUrl = DirectoryManager.shared.createUrlForFile(withName: generatedAnimatedImageName,
                                                                            forCommandExecutable: .assembly)
@@ -23,11 +23,11 @@ final class AssemblyProcess: ExecutableProcess {
             var sourceUrls: [URL] = []
             var destinationUrls: [URL] = []
             let frameName = command.arguments![1]
-            let imageFrames = additionalData as! [AnimationFrame]
+            let animatedImageFrames = [AnimatedImageFrame]()
             let workingDirectory = DirectoryManager.shared.workingDirectoryUrl(forCommandExecutable: .assembly)
             
             var frameIndex = 0
-            for frame in imageFrames {
+            for frame in animatedImageFrames {
                 sourceUrls.append(URL(fileURLWithPath: frame.path))
                 
                 let fileNameWithoutExtension = frameName + "\(frameIndex)" + String.dot
@@ -37,7 +37,8 @@ final class AssemblyProcess: ExecutableProcess {
                 
                 let textFileName = fileNameWithoutExtension + FileExtension.txt
                 let textFilePath = workingDirectory?.appendingPathComponent(textFileName).path
-                let contentWithDelayValue = "delay=" + frame.displayableFrameDelay
+                let contentWithDelayValue = "delay=" + String(frame.delaySeconds) + String.slash + String(frame.delayFrames)
+
                 FileManager.default.createFile(atPath: textFilePath!,
                                                contents: contentWithDelayValue.data(using: .utf8),
                                                attributes: nil)

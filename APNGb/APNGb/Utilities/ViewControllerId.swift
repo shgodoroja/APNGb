@@ -6,26 +6,23 @@
 //  Copyright © 2016 Godoroja Stefan. All rights reserved.
 //
 
+
 /// Maps identifiers for all view controllers from the application.
 ///
-/// - Assembly: AssemblyViewController identifier
-/// - Disassembly: DisassemblyViewController identifier
-/// - Preferences: PreferencesContainerViewController identifier
-/// - DropHint: DropHintViewController identifier
-/// - ChildContainer: ChildContainerViewController identifier
-/// - SideBar: SideBarViewController identifier
-/// - AssemblyPreferences: AssemblyPreferencesViewController identifier
-/// - DisassemblyPreferences: DisassemblyPreferencesViewController identifier
+/// - SideBar: SideBarViewController identifier.
+/// - ChildContainer: ChildContainerViewController identifier.
+/// - PreferencesPane: PreferencesPaneViewController identifier.
+/// - FrameList: FrameListViewController identifier.
+/// - PlayAnimation: PlayAnimationViewController identifier.
+/// - DropHint: DropHintViewController identifier.
 /// - Unknown: Default value if view controller doesn't have an identifier.
 enum ViewControllerId: Int {
-    case Assembly
-    case Disassembly
-    case Preferences
-    case DropHint
-    case ChildContainer
     case SideBar
-    case AssemblyPreferences
-    case DisassemblyPreferences
+    case ChildContainer
+    case PreferencesPane
+    case FrameList
+    case PlayAnimation
+    case DropHint
     case Unknown = 999
 }
 
@@ -44,20 +41,16 @@ extension ViewControllerId {
     ///  has a valid identifier, else returns an empty string.
     func storyboardVersion() -> String {
         switch self {
-        case .Assembly:
-            return "assembly.view"
-        case .Disassembly:
-            return "disassembly.view"
-        case .Preferences:
-            return "preferences.view"
+        case .PlayAnimation:
+            return "playanimation.view"
+        case .FrameList:
+            return "framelist.view"
+        case .PreferencesPane:
+            return "preferencespane.view"
         case .DropHint:
             return "drophint.view"
         case .ChildContainer:
             return "childcontainer.view"
-        case .AssemblyPreferences:
-            return "assemblypreferences.view"
-        case .DisassemblyPreferences:
-            return "disassemblypreferences.view"
         default:
             return String.empty
         }

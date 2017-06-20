@@ -12,7 +12,7 @@ final class DisassemblyProcess: ExecutableProcess {
     
     private let workingAnimatedImageName = "workingAnimatedImage.png"
     
-    override init(withCommand command: Command, andAdditionalData additionalData: Any? = nil) {
+    override init(withCommand command: Command) {
         DirectoryManager.shared.createWorkingDirectory(forCommandExecutable: .disassembly)
 
         if let animatedImagePath = command.arguments?[0] {

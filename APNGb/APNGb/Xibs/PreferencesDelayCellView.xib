@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="preferences.delay.cellview" id="uGC-3j-bIQ" customClass="PreferencesDelayCellView" customModule="APNGbPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="215" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6py-my-YNI">
+                    <rect key="frame" x="55" y="5" width="35" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="AGA-hB-RFg"/>
+                        <constraint firstAttribute="width" constant="35" id="Seb-kl-RNo"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="fXF-MM-a2x">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="08C-jF-Mbu" customClass="IntegerFormatter" customModule="APNGbPro" customModuleProvider="target"/>
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="uGC-3j-bIQ" name="enabled" keyPath="objectValue.enabled" id="etH-ph-d73"/>
+                        <binding destination="uGC-3j-bIQ" name="value" keyPath="objectValue.secondValue" id="bx2-23-Y2D">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="htD-FQ-Bmw">
+                    <rect key="frame" x="98" y="5" width="35" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="S5x-Xb-wTb"/>
+                        <constraint firstAttribute="height" constant="20" id="lIe-qr-C0z"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="IOr-Qa-jER">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="lxt-Z7-OLJ" customClass="IntegerFormatter" customModule="APNGbPro" customModuleProvider="target"/>
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="uGC-3j-bIQ" name="enabled" keyPath="objectValue.enabled" id="ZtV-Db-FdD"/>
+                        <binding destination="uGC-3j-bIQ" name="value" keyPath="objectValue.frameValue" id="5Fr-Ys-LsS">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKh-Zh-VRL">
+                    <rect key="frame" x="90" y="7" width="9" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="eG4-2b-h2Q"/>
+                        <constraint firstAttribute="width" constant="5" id="kNT-q4-o6o"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/" id="n42-kO-uWf">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nJW-ef-RAa">
+                    <rect key="frame" x="18" y="5" width="34" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="uaN-7o-G2A"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="xHg-66-Jnl"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="Pzw-vq-Bqu">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="uGC-3j-bIQ" name="value" keyPath="objectValue.title" id="JpI-G5-zRU"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="nJW-ef-RAa" firstAttribute="centerY" secondItem="uGC-3j-bIQ" secondAttribute="centerY" id="Cc0-iW-BNI"/>
+                <constraint firstItem="6py-my-YNI" firstAttribute="centerY" secondItem="uGC-3j-bIQ" secondAttribute="centerY" id="DR0-NV-uiN"/>
+                <constraint firstItem="nJW-ef-RAa" firstAttribute="leading" secondItem="uGC-3j-bIQ" secondAttribute="leading" constant="20" id="GMT-3s-nyz"/>
+                <constraint firstItem="6py-my-YNI" firstAttribute="leading" secondItem="nJW-ef-RAa" secondAttribute="trailing" constant="5" id="JHP-FM-LX1"/>
+                <constraint firstItem="htD-FQ-Bmw" firstAttribute="leading" secondItem="yKh-Zh-VRL" secondAttribute="trailing" constant="1" id="SDR-lg-WTm"/>
+                <constraint firstItem="htD-FQ-Bmw" firstAttribute="centerY" secondItem="uGC-3j-bIQ" secondAttribute="centerY" id="f7e-iS-bdl"/>
+                <constraint firstItem="yKh-Zh-VRL" firstAttribute="leading" secondItem="6py-my-YNI" secondAttribute="trailing" constant="2" id="iuk-oX-TMZ"/>
+                <constraint firstItem="yKh-Zh-VRL" firstAttribute="centerY" secondItem="uGC-3j-bIQ" secondAttribute="centerY" id="krC-40-IDv"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="146"/>
+        </tableCellView>
+    </objects>
+</document>

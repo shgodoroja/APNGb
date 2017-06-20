@@ -8,40 +8,27 @@
 
 import Cocoa
 
-final class Strip: NSObject, CommandArgumentable  {
+final class Strip: NSObject, CommandArgumentable {
 
-    var orientation = StripOrientation.none.rawValue
+    var orientation = String.empty
     var numberOfFrames = 0
-    
-    override func setNilValueForKey(_ key: String) {
-        
-        if key == #keyPath(Strip.numberOfFrames) {
-            numberOfFrames = 0
-        }
-    }
     
     // MARK: - CommandArgumentable
     
-    func havePassedValidation() -> Bool {
+    func validated() -> Bool {
         
         if numberOfFrames == 0 {
             return false
         }
         
-        if orientation == StripOrientation.none.rawValue {
+        if orientation == String.empty {
             return false
         }
         
         return true
     }
     
-    func commandArguments() -> ([String], Any?) {
-        var arguments = [String]()
-        
-        if numberOfFrames > 0 {
-            arguments.append(StripOrientation.argumentValue(for: orientation) + "\(numberOfFrames)")
-        }
-
-        return (arguments, nil)
+    func arguments() -> [String] {
+        return [orientation + "\(numberOfFrames)"]
     }
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView id="xbV-J8-ZHi" customClass="PreferencesTextFieldCellView" customModule="APNGbPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="217" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mJS-D7-eND">
+                    <rect key="frame" x="18" y="5" width="44" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="LMD-N2-w5y"/>
+                        <constraint firstAttribute="height" constant="20" id="NYb-tI-dqH"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="ZU8-cK-pxS">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="xbV-J8-ZHi" name="value" keyPath="objectValue.title" id="IyC-Sv-mgO"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a9a-Q6-Eg4">
+                    <rect key="frame" x="65" y="5" width="147" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="LED-df-FVo"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2nh-XO-in2">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="xbV-J8-ZHi" name="value" keyPath="objectValue.value" id="0JO-K1-bHa">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="mJS-D7-eND" firstAttribute="leading" secondItem="xbV-J8-ZHi" secondAttribute="leading" constant="20" id="2mU-CV-cnl"/>
+                <constraint firstItem="mJS-D7-eND" firstAttribute="top" secondItem="xbV-J8-ZHi" secondAttribute="top" constant="5" id="B2k-UD-c3K"/>
+                <constraint firstItem="a9a-Q6-Eg4" firstAttribute="centerY" secondItem="mJS-D7-eND" secondAttribute="centerY" id="Bqv-IG-AkJ"/>
+                <constraint firstAttribute="trailing" secondItem="a9a-Q6-Eg4" secondAttribute="trailing" constant="5" id="Vhr-aq-gs6"/>
+                <constraint firstItem="a9a-Q6-Eg4" firstAttribute="leading" secondItem="mJS-D7-eND" secondAttribute="trailing" constant="5" id="iq7-MT-rg1"/>
+            </constraints>
+            <point key="canvasLocation" x="-97.5" y="142"/>
+        </tableCellView>
+    </objects>
+</document>
