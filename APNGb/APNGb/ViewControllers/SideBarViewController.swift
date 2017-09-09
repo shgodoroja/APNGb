@@ -46,6 +46,7 @@ class SideBarViewController: NSViewController, ScenePresentable {
         sideBarItemGroup?.addItem(item: disassemblyItemButton)
         sideBarItemGroup?.addItem(item: optimizeItemButton)
         sideBarItemGroup?.addItem(item: convertItemButton)
+        
         sideBarItemGroup?.selectItem(item: assemblyItemButton)
     }
 }

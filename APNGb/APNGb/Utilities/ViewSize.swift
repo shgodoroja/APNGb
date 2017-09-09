@@ -21,7 +21,7 @@ extension ViewSize {
     /// Store side bar view dimension properties.
     struct SideBar {
         
-        static let width: CGFloat = 50.0
+        static let width: CGFloat = 80.0
     }
 }
 

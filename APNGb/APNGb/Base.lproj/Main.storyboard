@@ -40,59 +40,59 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53k-AH-Ztp">
-                                <rect key="frame" x="64" y="434" width="30" height="30"/>
+                                <rect key="frame" x="54" y="424" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="1gg-fq-dF4"/>
-                                    <constraint firstAttribute="height" constant="30" id="Rsj-6B-ILO"/>
+                                    <constraint firstAttribute="width" constant="50" id="1gg-fq-dF4"/>
+                                    <constraint firstAttribute="height" constant="40" id="Rsj-6B-ILO"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="assembly-default" imagePosition="only" alignment="center" alternateImage="assembly-selected" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
+                                <buttonCell key="cell" type="squareTextured" title="Assembly" bezelStyle="texturedSquare" image="assembly-default" imagePosition="above" alignment="center" alternateImage="assembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTA-6J-5YB">
-                                <rect key="frame" x="64" y="399" width="30" height="30"/>
+                                <rect key="frame" x="46" y="374" width="65" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="BDv-t1-gX1"/>
-                                    <constraint firstAttribute="width" constant="30" id="aru-wQ-SLQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="BDv-t1-gX1"/>
+                                    <constraint firstAttribute="width" constant="65" id="aru-wQ-SLQ"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="only" alignment="center" alternateImage="disassembly-selected" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
+                                <buttonCell key="cell" type="squareTextured" title="Disassembly" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="above" alignment="center" alternateImage="disassembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gNw-Jz-h62">
-                                <rect key="frame" x="64" y="364" width="30" height="30"/>
+                                <rect key="frame" x="54" y="324" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="2AJ-1b-0bW"/>
-                                    <constraint firstAttribute="height" constant="30" id="hkH-VK-jYO"/>
+                                    <constraint firstAttribute="width" constant="50" id="2AJ-1b-0bW"/>
+                                    <constraint firstAttribute="height" constant="40" id="hkH-VK-jYO"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="optimize-default" imagePosition="only" alignment="center" alternateImage="optimize-selected" imageScaling="proportionallyDown" inset="2" id="tU0-dt-URZ">
+                                <buttonCell key="cell" type="squareTextured" title="Optimize" bezelStyle="texturedSquare" image="optimize-default" imagePosition="above" alignment="center" alternateImage="optimize-selected" imageScaling="proportionallyDown" inset="2" id="tU0-dt-URZ">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vJ6-BM-MUC">
-                                <rect key="frame" x="64" y="329" width="30" height="30"/>
+                                <rect key="frame" x="56" y="274" width="45" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hGK-ty-SjP"/>
-                                    <constraint firstAttribute="width" constant="30" id="mfH-8C-i8q"/>
+                                    <constraint firstAttribute="height" constant="40" id="hGK-ty-SjP"/>
+                                    <constraint firstAttribute="width" constant="45" id="mfH-8C-i8q"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="convert-default" imagePosition="only" alignment="center" alternateImage="convert-selected" imageScaling="proportionallyDown" inset="2" id="pQQ-ru-sMb">
+                                <buttonCell key="cell" type="squareTextured" title="Convert" bezelStyle="texturedSquare" image="convert-default" imagePosition="above" alignment="center" alternateImage="convert-selected" imageScaling="proportionallyDown" inset="2" id="pQQ-ru-sMb">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="DTA-6J-5YB" firstAttribute="top" secondItem="53k-AH-Ztp" secondAttribute="bottom" constant="5" id="ANp-9D-Fil"/>
+                            <constraint firstItem="DTA-6J-5YB" firstAttribute="top" secondItem="53k-AH-Ztp" secondAttribute="bottom" constant="10" id="ANp-9D-Fil"/>
                             <constraint firstItem="gNw-Jz-h62" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="Ahh-Bl-fvo"/>
                             <constraint firstItem="53k-AH-Ztp" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="Cg9-zb-Nv9"/>
                             <constraint firstItem="vJ6-BM-MUC" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="Jd2-XU-ZIS"/>
-                            <constraint firstItem="vJ6-BM-MUC" firstAttribute="top" secondItem="gNw-Jz-h62" secondAttribute="bottom" constant="5" id="KBC-fT-qyr"/>
+                            <constraint firstItem="vJ6-BM-MUC" firstAttribute="top" secondItem="gNw-Jz-h62" secondAttribute="bottom" constant="10" id="KBC-fT-qyr"/>
                             <constraint firstItem="53k-AH-Ztp" firstAttribute="top" secondItem="5Ol-V9-YJy" secondAttribute="top" constant="20" id="NEb-um-cdF"/>
                             <constraint firstItem="DTA-6J-5YB" firstAttribute="centerX" secondItem="5Ol-V9-YJy" secondAttribute="centerX" id="c9s-ea-yzm"/>
-                            <constraint firstItem="gNw-Jz-h62" firstAttribute="top" secondItem="DTA-6J-5YB" secondAttribute="bottom" constant="5" id="oWn-Gp-f2B"/>
+                            <constraint firstItem="gNw-Jz-h62" firstAttribute="top" secondItem="DTA-6J-5YB" secondAttribute="bottom" constant="10" id="oWn-Gp-f2B"/>
                         </constraints>
                     </view>
                     <connections>
@@ -104,7 +104,7 @@
                 </viewController>
                 <customObject id="Acb-Qb-Zyr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="-325"/>
+            <point key="canvasLocation" x="370.5" y="-325"/>
         </scene>
         <!--Child Container View Controller-->
         <scene sceneID="N0A-0z-kMy">
@@ -759,8 +759,8 @@ CA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="93f-iL-rPb">
-                                <rect key="frame" x="7" y="7" width="446" height="389"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="3Nn-dq-470"/>
+                                <rect key="frame" x="10" y="10" width="440" height="383"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="3Nn-dq-470"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-X6-nFM">
                                 <rect key="frame" x="101" y="190" width="258" height="23"/>

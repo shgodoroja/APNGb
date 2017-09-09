@@ -17,7 +17,7 @@ final class PreferencesColorPicker: PreferencesOption {
         didSet {
             
             if let firstOption = comboOptions.first {
-                //comboValue = firstOption
+                title = firstOption
             }
         }
     }
