@@ -142,20 +142,12 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
             return PreferencesTextFieldWithHintCellView.self
         } else if property is PreferencesCheckbox {
             return PreferencesCheckboxCellView.self
-        } else if property is PreferencesRadio {
-            return PreferencesRadioCellView.self
-        } else if property is PreferencesRadioWithTextField {
-            return PreferencesRadioWithTextFieldCellView.self
-        } else if property is PreferencesDelay {
-            return PreferencesDelayCellView.self
         } else if property is PreferencesComboWithTextField {
             return PreferencesComboWithTextFieldCellView.self
         } else if property is PreferencesColorPicker {
             return PreferencesColorPickerCellView.self
         } else if property is PreferencesTextField {
             return PreferencesTextFieldCellView.self
-        } else if property is PreferencesTextFieldWithStepper {
-            return PreferencesTextFieldWithStepperCellView.self
         } else {
             return BaseTableCellView.self
         }

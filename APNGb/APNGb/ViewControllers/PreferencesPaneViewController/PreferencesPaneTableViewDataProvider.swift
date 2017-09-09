@@ -8,24 +8,8 @@
 
 import Cocoa
 
-enum StripOrientation: String  {
-    case vertical = "Vertical"
-    case horizontal = "Horizontal"
-    
-    static func argumentValue(for orientation: String) -> String {
-        
-        if orientation == vertical.rawValue {
-            return Argument.verticalStrip
-        } else if orientation == horizontal.rawValue {
-            return Argument.horizontalStrip
-        }  else {
-            return String.empty
-        }
-    }
-}
-
 final class PreferencesPaneTableViewDataProvider: NSObject {
-
+    
     func preferencesPropertiesForScene(forIdentifier identifier: MainScene) -> [ParameterProtocol] {
         
         if identifier == .AssemblyScene {
@@ -88,52 +72,23 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         compressionHeader.title = Resource.String.compression
         preferencesProperties.append(compressionHeader)
         
-        let zlibRadio = PreferencesRadio()
-        zlibRadio.identifier = .compressionZlib
-        zlibRadio.title = Resource.String.zlib
-        zlibRadio.selected = false
-        preferencesProperties.append(zlibRadio)
+        let compressionSettings = PreferencesComboWithTextField()
+        compressionSettings.hint = Resource.String.iterations
+        compressionSettings.comboOptions = [Resource.String.zlib,
+                                            Resource.String.sevenZip,
+                                            Resource.String.zopfli]
+        preferencesProperties.append(compressionSettings)
         
-        let sevenZipRadio = PreferencesRadioWithTextField()
-        sevenZipRadio.identifier = .compression7Zip
-        sevenZipRadio.title = Resource.String.sevenZip
-        sevenZipRadio.subtitle = Resource.String.iterations
-        sevenZipRadio.selected = true
-        sevenZipRadio.value = 15
-        preferencesProperties.append(sevenZipRadio)
+        // "Delay" section
+        let delayHeader = PreferencesSectionHeader()
+        delayHeader.title = Resource.String.framesDelay
+        preferencesProperties.append(delayHeader)
         
-        let zopfliRadio = PreferencesRadioWithTextField()
-        zopfliRadio.identifier = .compressionZopfli
-        zopfliRadio.title = Resource.String.zopfli
-        zopfliRadio.subtitle = Resource.String.iterations
-        zopfliRadio.selected = false
-        zopfliRadio.value = 15
-        preferencesProperties.append(zopfliRadio)
-        
-        // "All frames delay" section
-        let allFramesDelayHeader = PreferencesSectionHeader()
-        allFramesDelayHeader.title = Resource.String.allFramesDelay
-        preferencesProperties.append(allFramesDelayHeader)
-        
-        let allFrameDelaySetting = PreferencesDelay()
-        allFrameDelaySetting.title = Resource.String.seconds
-        allFrameDelaySetting.secondValue = 1
-        allFrameDelaySetting.frameValue = 10
-        allFrameDelaySetting.category = .All
-        preferencesProperties.append(allFrameDelaySetting)
-        
-        // "Selected frames delay" section
-        let selectedFramesDelayHeader = PreferencesSectionHeader()
-        selectedFramesDelayHeader.title = Resource.String.selectedFramesDelay
-        preferencesProperties.append(selectedFramesDelayHeader)
-        
-        let selectedFramesDelaySetting = PreferencesDelay()
-        selectedFramesDelaySetting.title = Resource.String.seconds
-        selectedFramesDelaySetting.secondValue = 1
-        selectedFramesDelaySetting.enabled = false
-        selectedFramesDelaySetting.frameValue = 10
-        selectedFramesDelaySetting.category = .Selected
-        preferencesProperties.append(selectedFramesDelaySetting)
+        let delaySetting = PreferencesComboWithTextField()
+        delaySetting.hint = Resource.String.milliseconds
+        delaySetting.comboOptions = [Resource.String.all,
+                                     Resource.String.selected]
+        preferencesProperties.append(delaySetting)
         
         // "Strip" section
         let stripHeader = PreferencesSectionHeader()
@@ -141,8 +96,10 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         preferencesProperties.append(stripHeader)
         
         let stripSetting = PreferencesComboWithTextField()
-        stripSetting.comboContent = [StripOrientation.vertical.rawValue,
-                                     StripOrientation.horizontal.rawValue]
+        stripSetting.hint = Resource.String.frames
+        stripSetting.comboOptions = [Resource.String.none,
+                                     Resource.String.vertical,
+                                     Resource.String.horizontal]
         preferencesProperties.append(stripSetting)
         
         return preferencesProperties
@@ -171,31 +128,19 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         compressionHeader.title = Resource.String.compression
         preferencesProperties.append(compressionHeader)
         
-        let zlibRadio = PreferencesRadio()
-        zlibRadio.title = Resource.String.zlib
-        zlibRadio.selected = false
-        preferencesProperties.append(zlibRadio)
-        
-        let sevenZipRadio = PreferencesRadioWithTextField()
-        sevenZipRadio.title = Resource.String.sevenZip
-        sevenZipRadio.subtitle = Resource.String.iterations
-        sevenZipRadio.selected = true
-        sevenZipRadio.value = 15
-        preferencesProperties.append(sevenZipRadio)
-        
-        let zopfliRadio = PreferencesRadioWithTextField()
-        zopfliRadio.title = Resource.String.zopfli
-        zopfliRadio.subtitle = Resource.String.iterations
-        zopfliRadio.selected = false
-        zopfliRadio.value = 15
-        preferencesProperties.append(zopfliRadio)
+        let compressionSettings = PreferencesComboWithTextField()
+        compressionSettings.hint = Resource.String.iterations
+        compressionSettings.comboOptions = [Resource.String.zlib,
+                                            Resource.String.sevenZip,
+                                            Resource.String.zopfli]
+        preferencesProperties.append(compressionSettings)
         
         return preferencesProperties
     }
     
     func convertApngSceneProperties() -> [ParameterProtocol] {
         var preferencesProperties = [ParameterProtocol]()
-
+        
         // "Background" section
         let backgroundHeader = PreferencesSectionHeader()
         backgroundHeader.title = Resource.String.background
@@ -207,30 +152,12 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         colorPickerSetting.value = NSColor.clear
         preferencesProperties.append(colorPickerSetting)
         
-        let thresholdLevelSetting = PreferencesTextFieldWithStepper()
-        thresholdLevelSetting.title = Resource.String.transparency
-        thresholdLevelSetting.selected = true
-        thresholdLevelSetting.stepperMinValue = 0
-        thresholdLevelSetting.stepperMaxValue = 128
-        thresholdLevelSetting.value = 128
-        preferencesProperties.append(thresholdLevelSetting)
-    
-        let options = [NSValueTransformerNameBindingOption: NSValueTransformerName.negateBooleanTransformerName]
-        colorPickerSetting.bind(#keyPath(PreferencesColorPicker.selected),
-                                to: thresholdLevelSetting,
-                                withKeyPath: #keyPath(PreferencesTextFieldWithStepper.selected),
-                                options: options)
-        thresholdLevelSetting.bind(#keyPath(PreferencesTextFieldWithStepper.selected),
-                                to: colorPickerSetting,
-                                withKeyPath: #keyPath(PreferencesColorPicker.selected),
-                                options: options)
-        
         return preferencesProperties
     }
     
     func convertGifSceneProperties() -> [ParameterProtocol] {
         var preferencesProperties = [ParameterProtocol]()
-
+        
         // "Optimizations" section
         let optimizationHeader = PreferencesSectionHeader()
         optimizationHeader.title = Resource.String.optimizations
@@ -246,25 +173,13 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         compressionHeader.title = Resource.String.compression
         preferencesProperties.append(compressionHeader)
         
-        let zlibRadio = PreferencesRadio()
-        zlibRadio.title = Resource.String.zlib
-        zlibRadio.selected = false
-        preferencesProperties.append(zlibRadio)
+        let compressionSettings = PreferencesComboWithTextField()
+        compressionSettings.hint = Resource.String.iterations
+        compressionSettings.comboOptions = [Resource.String.zlib,
+                                            Resource.String.sevenZip,
+                                            Resource.String.zopfli]
+        preferencesProperties.append(compressionSettings)
         
-        let sevenZipRadio = PreferencesRadioWithTextField()
-        sevenZipRadio.title = Resource.String.sevenZip
-        sevenZipRadio.subtitle = Resource.String.iterations
-        sevenZipRadio.selected = true
-        sevenZipRadio.value = 15
-        preferencesProperties.append(sevenZipRadio)
-        
-        let zopfliRadio = PreferencesRadioWithTextField()
-        zopfliRadio.title = Resource.String.zopfli
-        zopfliRadio.subtitle = Resource.String.iterations
-        zopfliRadio.selected = false
-        zopfliRadio.value = 15
-        preferencesProperties.append(zopfliRadio)
-    
         return preferencesProperties
     }
 }

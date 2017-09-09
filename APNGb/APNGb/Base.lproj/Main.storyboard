@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="uuQ-Np-ZUz">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="uuQ-Np-ZUz">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
@@ -769,7 +769,7 @@ CA
                                     <constraint firstAttribute="width" constant="254" id="ssb-Ui-K8E"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="UVB-eI-xHa">
-                                    <font key="font" metaFont="system" size="19"/>
+                                    <font key="font" metaFont="systemLight" size="19"/>
                                     <color key="textColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -946,6 +946,6 @@ CA
         <image name="stop" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="emm-ZJ-pz5"/>
+        <segue reference="IXB-S3-5gF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,8 +10,8 @@ import Cocoa
 
 final class Optimization: NSObject, CommandArgumentable {
     
-    var enablePalette = true
-    var enableColorType = true
+    var enablePalette = false
+    var enableColorType = false
     
     // MARK: - CommandArgumentable
     

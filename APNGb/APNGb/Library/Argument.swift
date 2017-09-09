@@ -10,7 +10,7 @@ import Cocoa
 
 struct Argument {
     
-    static let numberOfLoops = "-l"
+    static let loopCount = "-l"
     static let skipFirstFrame = "-f"
     static let enablePalette = "-kp"
     static let enableColorType = "-kc"
@@ -37,7 +37,7 @@ class ArgumentTransformer {
             case .playbackLoop:
                 
                 if let value = value {
-                    let argument = Argument.numberOfLoops + value
+                    let argument = Argument.loopCount + value
                     arguments.append(argument)
                 }
                 

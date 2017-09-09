@@ -43,25 +43,6 @@ final class FrameListViewController: NSViewController, DragAndDropDelegate, Reor
     
     @objc private func updateFramesDelay(notification: Notification) {
         
-        if let delay = notification.object as? PreferencesDelay {
-            
-            if delay.category == .All {
-                
-                for animationFrame in animatedImageFrames {
-                    animationFrame.delayFrames = delay.frameValue
-                    animationFrame.delaySeconds = delay.secondValue
-                }
-                
-            } else {
-                
-                for index in tableView.selectedRowIndexes {
-                    let animationFrame = animatedImageFrames[index]
-                    animationFrame.delayFrames = delay.frameValue
-                    animationFrame.delaySeconds = delay.secondValue
-                }
-            }
-        }
-        
         tableView.reloadDataKeepingSelection()
     }
     

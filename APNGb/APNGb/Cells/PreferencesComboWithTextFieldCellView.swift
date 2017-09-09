@@ -15,6 +15,6 @@ final class PreferencesComboWithTextFieldCellView: BaseTableCellView {
     }
     
     override class func height() -> CGFloat {
-        return 25
+        return 40
     }
 }

@@ -11,10 +11,10 @@ import Cocoa
 final class Compression: NSObject, CommandArgumentable {
     
     var enableZlib = false
-    var enable7zip = true
+    var enable7zip = false
     var enableZopfli = false
-    var sevenZipIterations = 15
-    var zopfliIterations = 15
+    var sevenZipIterations = 0
+    var zopfliIterations = 0
     
     // MARK: - CommandArgumentable
     

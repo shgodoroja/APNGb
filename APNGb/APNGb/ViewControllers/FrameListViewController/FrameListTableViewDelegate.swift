@@ -10,12 +10,12 @@ import Cocoa
 
 final class FrameListTableViewDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource {
     
-    var onSelectionChange: VoidHandler?
+    var onSelectionChange: (()->())?
     
     func tableViewSelectionDidChange(_ notification: Notification) {
         
         if let onSelectionChange = onSelectionChange {
-            onSelectionChange!()
+            onSelectionChange()
         }
     }
     

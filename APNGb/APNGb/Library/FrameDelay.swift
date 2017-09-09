@@ -10,8 +10,7 @@ import Cocoa
 
 final class FrameDelay: NSObject, CommandArgumentable {
     
-    var seconds = 1
-    var frames = 10
+    var milliseconds = 0
     
     // MARK: - CommandArgumentable
     
@@ -20,6 +19,6 @@ final class FrameDelay: NSObject, CommandArgumentable {
     }
     
     func arguments() -> [String] {
-        return ["\(seconds) \(frames)"]
+        return [""]
     }
 }

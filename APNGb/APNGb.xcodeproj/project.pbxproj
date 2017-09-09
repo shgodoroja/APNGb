@@ -13,9 +13,8 @@
 		AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */; };
 		AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD0801E04B93D0023E528 /* ViewSize.swift */; };
 		AB1900881E2E3EBB000E2ADE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1900871E2E3EBB000E2ADE /* Background.swift */; };
-		AB19008E1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */; };
-		AB1900901E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */; };
-		AB1900921E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */; };
+		AB1C70201F4D86390073837E /* ConvertingProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1C701E1F4D86390073837E /* ConvertingProcess.swift */; };
+		AB1C70211F4D86390073837E /* OptimizationProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1C701F1F4D86390073837E /* OptimizationProcess.swift */; };
 		AB1CEE711E3A59F100072537 /* AnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CEE701E3A59F100072537 /* AnimatedImage.swift */; };
 		AB247E2D1E279F7500B7BA0B /* ReordableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E2C1E279F7500B7BA0B /* ReordableTableView.swift */; };
 		AB247E301E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB247E2F1E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift */; };
@@ -36,14 +35,8 @@
 		AB4B66681E2845F100FB979E /* PreferencesSectionHeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */; };
 		AB4B666A1E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */; };
 		AB4B666E1E28505600FB979E /* PreferencesCheckboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */; };
-		AB4B66701E28520D00FB979E /* PreferencesRadioCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */; };
-		AB4B66721E28550E00FB979E /* PreferencesDelayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */; };
-		AB4B66741E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */; };
 		AB4B66761E2856E900FB979E /* PreferencesColorPickerCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */; };
 		AB63E5A51E2CE486008B0B18 /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5A41E2CE486008B0B18 /* BaseTableCellView.swift */; };
-		AB63E5A71E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */; };
-		AB63E5A91E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */; };
-		AB63E5AB1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */; };
 		AB63E5AD1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */; };
 		AB63E5AF1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */; };
 		AB63E5B11E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */; };
@@ -51,9 +44,9 @@
 		AB702A5C1E0F1FA2003E8FD5 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */; };
 		AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A5E1E0F283F003E8FD5 /* Strip.swift */; };
 		AB702A6F1E112272003E8FD5 /* ActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB702A6E1E112272003E8FD5 /* ActionToolbar.swift */; };
+		AB77D56C1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB77D56B1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib */; };
 		AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */; };
 		AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */; };
-		AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53CB1DF865E6005C8539 /* Closure.swift */; };
 		AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */; };
 		AB8CFEBE1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */; };
 		AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */; };
@@ -80,10 +73,6 @@
 		ABC999531E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */; };
 		ABD238F71E2A419A008E9016 /* PreferencesCheckboxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */; };
 		ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */; };
-		ABD238FD1E2A465D008E9016 /* PreferencesRadioCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */; };
-		ABD238FF1E2A47CF008E9016 /* PreferencesRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */; };
-		ABD239011E2A4817008E9016 /* PreferencesDelayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */; };
-		ABD239031E2A4847008E9016 /* PreferencesDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239021E2A4847008E9016 /* PreferencesDelay.swift */; };
 		ABD239051E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */; };
 		ABD239071E2A4889008E9016 /* PreferencesComboWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */; };
 		ABD239091E2A48AB008E9016 /* PreferencesColorPickerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */; };
@@ -105,9 +94,8 @@
 		AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerId.swift; path = Utilities/ViewControllerId.swift; sourceTree = "<group>"; };
 		AB0FD0801E04B93D0023E528 /* ViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSize.swift; path = Utilities/ViewSize.swift; sourceTree = "<group>"; };
 		AB1900871E2E3EBB000E2ADE /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Library/Background.swift; sourceTree = "<group>"; };
-		AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldWithStepperCellView.xib; path = Xibs/PreferencesTextFieldWithStepperCellView.xib; sourceTree = "<group>"; };
-		AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithStepperCellView.swift; path = Cells/PreferencesTextFieldWithStepperCellView.swift; sourceTree = "<group>"; };
-		AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithStepper.swift; path = Models/PreferencesTextFieldWithStepper.swift; sourceTree = "<group>"; };
+		AB1C701E1F4D86390073837E /* ConvertingProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertingProcess.swift; path = Library/ConvertingProcess.swift; sourceTree = "<group>"; };
+		AB1C701F1F4D86390073837E /* OptimizationProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptimizationProcess.swift; path = Library/OptimizationProcess.swift; sourceTree = "<group>"; };
 		AB1CEE701E3A59F100072537 /* AnimatedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedImage.swift; path = Models/AnimatedImage.swift; sourceTree = "<group>"; };
 		AB247E2C1E279F7500B7BA0B /* ReordableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReordableTableView.swift; path = CustomViews/ReordableTableView.swift; sourceTree = "<group>"; };
 		AB247E2F1E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameListTableViewDelegate.swift; path = ViewControllers/FrameListViewController/FrameListTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -130,14 +118,8 @@
 		AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesSectionHeaderCellView.xib; path = Xibs/PreferencesSectionHeaderCellView.xib; sourceTree = "<group>"; };
 		AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldWithHintCellView.xib; path = Xibs/PreferencesTextFieldWithHintCellView.xib; sourceTree = "<group>"; };
 		AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesCheckboxCellView.xib; path = Xibs/PreferencesCheckboxCellView.xib; sourceTree = "<group>"; };
-		AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesRadioCellView.xib; path = Xibs/PreferencesRadioCellView.xib; sourceTree = "<group>"; };
-		AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesDelayCellView.xib; path = Xibs/PreferencesDelayCellView.xib; sourceTree = "<group>"; };
-		AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesComboWithTextFieldCellView.xib; path = Xibs/PreferencesComboWithTextFieldCellView.xib; sourceTree = "<group>"; };
 		AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesColorPickerCellView.xib; path = Xibs/PreferencesColorPickerCellView.xib; sourceTree = "<group>"; };
 		AB63E5A41E2CE486008B0B18 /* BaseTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableCellView.swift; path = Cells/BaseTableCellView.swift; sourceTree = "<group>"; };
-		AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioWithTextFieldCellView.swift; path = Cells/PreferencesRadioWithTextFieldCellView.swift; sourceTree = "<group>"; };
-		AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesRadioWithTextFieldCellView.xib; path = Xibs/PreferencesRadioWithTextFieldCellView.xib; sourceTree = "<group>"; };
-		AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioWithTextField.swift; path = Cells/PreferencesRadioWithTextField.swift; sourceTree = "<group>"; };
 		AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldCellView.swift; path = Cells/PreferencesTextFieldCellView.swift; sourceTree = "<group>"; };
 		AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesTextFieldCellView.xib; path = Xibs/PreferencesTextFieldCellView.xib; sourceTree = "<group>"; };
 		AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesTextFieldWithHint.swift; path = Models/PreferencesTextFieldWithHint.swift; sourceTree = "<group>"; };
@@ -145,9 +127,9 @@
 		AB702A5B1E0F1FA2003E8FD5 /* Argument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Argument.swift; path = Library/Argument.swift; sourceTree = "<group>"; };
 		AB702A5E1E0F283F003E8FD5 /* Strip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strip.swift; path = Library/Strip.swift; sourceTree = "<group>"; };
 		AB702A6E1E112272003E8FD5 /* ActionToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionToolbar.swift; path = CustomViews/ActionToolbar.swift; sourceTree = "<group>"; };
+		AB77D56B1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesComboWithTextFieldCellView.xib; path = Xibs/PreferencesComboWithTextFieldCellView.xib; sourceTree = "<group>"; };
 		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
 		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
-		AB7B53CB1DF865E6005C8539 /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Closure.swift; path = Utilities/Closure.swift; sourceTree = "<group>"; };
 		AB7B53D41DF983D2005C8539 /* DropHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropHintViewController.swift; path = ViewControllers/DropHintViewController.swift; sourceTree = "<group>"; };
 		AB8CFEBD1DFB092700691ECC /* MainContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContainerViewLayoutCareTaker.swift; path = Layout/MainContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
 		AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildContainerViewLayoutCareTaker.swift; path = Layout/ChildContainerViewLayoutCareTaker.swift; sourceTree = "<group>"; };
@@ -174,10 +156,6 @@
 		ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesPaneTableViewDataProvider.swift; path = ViewControllers/PreferencesPaneViewController/PreferencesPaneTableViewDataProvider.swift; sourceTree = "<group>"; };
 		ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesCheckboxCellView.swift; path = Cells/PreferencesCheckboxCellView.swift; sourceTree = "<group>"; };
 		ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesCheckbox.swift; path = Models/PreferencesCheckbox.swift; sourceTree = "<group>"; };
-		ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadioCellView.swift; path = Cells/PreferencesRadioCellView.swift; sourceTree = "<group>"; };
-		ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesRadio.swift; path = Models/PreferencesRadio.swift; sourceTree = "<group>"; };
-		ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesDelayCellView.swift; path = Cells/PreferencesDelayCellView.swift; sourceTree = "<group>"; };
-		ABD239021E2A4847008E9016 /* PreferencesDelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesDelay.swift; path = Models/PreferencesDelay.swift; sourceTree = "<group>"; };
 		ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesComboWithTextFieldCellView.swift; path = Cells/PreferencesComboWithTextFieldCellView.swift; sourceTree = "<group>"; };
 		ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesComboWithTextField.swift; path = Models/PreferencesComboWithTextField.swift; sourceTree = "<group>"; };
 		ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesColorPickerCellView.swift; path = Cells/PreferencesColorPickerCellView.swift; sourceTree = "<group>"; };
@@ -405,13 +383,9 @@
 				ABB3FDB91E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift */,
 				ABB3FDB71E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift */,
 				ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */,
-				ABD238FC1E2A465D008E9016 /* PreferencesRadioCellView.swift */,
-				AB63E5A61E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift */,
-				ABD239001E2A4817008E9016 /* PreferencesDelayCellView.swift */,
 				ABD239041E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift */,
-				ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */,
 				AB63E5AC1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift */,
-				AB19008F1E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift */,
+				ABD239081E2A48AB008E9016 /* PreferencesColorPickerCellView.swift */,
 			);
 			name = PreferencesPaneCells;
 			sourceTree = "<group>";
@@ -422,6 +396,8 @@
 				ABF4090E1DA9BB5800B0D373 /* ExecutableProcess.swift */,
 				ABB54AAF1E09951A00779F50 /* AssemblyProcess.swift */,
 				ABB54AB11E09954000779F50 /* DisassemblyProcess.swift */,
+				AB1C701E1F4D86390073837E /* ConvertingProcess.swift */,
+				AB1C701F1F4D86390073837E /* OptimizationProcess.swift */,
 			);
 			name = Process;
 			sourceTree = "<group>";
@@ -507,7 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0FD07D1E04B8F70023E528 /* Theme.swift */,
-				AB7B53CB1DF865E6005C8539 /* Closure.swift */,
 				ABB54AAB1E0988DF00779F50 /* Resource.swift */,
 				ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */,
 				AB0FD0841E04B9A70023E528 /* ViewController */,
@@ -521,13 +496,9 @@
 				AB4B66671E2845F100FB979E /* PreferencesSectionHeaderCellView.xib */,
 				AB4B66691E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib */,
 				AB4B666D1E28505600FB979E /* PreferencesCheckboxCellView.xib */,
-				AB4B666F1E28520D00FB979E /* PreferencesRadioCellView.xib */,
-				AB63E5A81E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib */,
-				AB4B66711E28550E00FB979E /* PreferencesDelayCellView.xib */,
-				AB4B66731E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib */,
+				AB77D56B1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib */,
 				AB63E5AE1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib */,
 				AB4B66751E2856E900FB979E /* PreferencesColorPickerCellView.xib */,
-				AB19008D1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib */,
 			);
 			name = PreferencesCellViews;
 			sourceTree = "<group>";
@@ -554,13 +525,9 @@
 			children = (
 				AB63E5B01E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift */,
 				ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */,
-				ABD238FE1E2A47CF008E9016 /* PreferencesRadio.swift */,
-				AB63E5AA1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift */,
-				ABD239021E2A4847008E9016 /* PreferencesDelay.swift */,
 				ABD239061E2A4889008E9016 /* PreferencesComboWithTextField.swift */,
-				ABD2390A1E2A4959008E9016 /* PreferencesColorPicker.swift */,
 				AB63E5B21E2D15C7008B0B18 /* PreferencesTextField.swift */,
-				AB1900911E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift */,
+				ABD2390A1E2A4959008E9016 /* PreferencesColorPicker.swift */,
 			);
 			name = PreferencesOptions;
 			sourceTree = "<group>";
@@ -677,7 +644,7 @@
 				TargetAttributes = {
 					AB3DF22B1D8DDE660048BE0A = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Q453Q9XLFV;
+						DevelopmentTeam = 7YX3D8UMCU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -706,22 +673,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBFF1081E26F5690054677B /* apngopt in Resources */,
-				AB63E5A91E2CFF8D008B0B18 /* PreferencesRadioWithTextFieldCellView.xib in Resources */,
 				AB4B66761E2856E900FB979E /* PreferencesColorPickerCellView.xib in Resources */,
 				ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */,
 				AB4B66681E2845F100FB979E /* PreferencesSectionHeaderCellView.xib in Resources */,
+				AB77D56C1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
 				ABBFF10C1E26F8B00054677B /* apng2gif in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
-				AB4B66701E28520D00FB979E /* PreferencesRadioCellView.xib in Resources */,
-				AB4B66721E28550E00FB979E /* PreferencesDelayCellView.xib in Resources */,
 				AB4B666A1E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib in Resources */,
 				AB4B666E1E28505600FB979E /* PreferencesCheckboxCellView.xib in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
 				ABBFF10E1E26F8B60054677B /* gif2apng in Resources */,
 				AB63E5AF1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib in Resources */,
-				AB19008E1E2E529A000E2ADE /* PreferencesTextFieldWithStepperCellView.xib in Resources */,
-				AB4B66741E28565A00FB979E /* PreferencesComboWithTextFieldCellView.xib in Resources */,
 				AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,35 +704,30 @@
 				AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */,
 				ABABA2711DF77BC300A90962 /* NSViewExtension.swift in Sources */,
 				ABF0D9B61E0578F0008AF40B /* DragAndDropWebView.swift in Sources */,
-				AB63E5AB1E2D02DD008B0B18 /* PreferencesRadioWithTextField.swift in Sources */,
 				AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */,
 				ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */,
 				ABB3FDB41E2913A800CAD483 /* PreferencesSectionHeader.swift in Sources */,
 				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
-				ABD238FF1E2A47CF008E9016 /* PreferencesRadio.swift in Sources */,
 				AB63E5B31E2D15C7008B0B18 /* PreferencesTextField.swift in Sources */,
 				AB247E301E27DE4E00B7BA0B /* FrameListTableViewDelegate.swift in Sources */,
-				ABD239011E2A4817008E9016 /* PreferencesDelayCellView.swift in Sources */,
 				ABD239091E2A48AB008E9016 /* PreferencesColorPickerCellView.swift in Sources */,
 				ABB54AB21E09954000779F50 /* DisassemblyProcess.swift in Sources */,
 				ABB3FDBA1E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift in Sources */,
-				ABD238FD1E2A465D008E9016 /* PreferencesRadioCellView.swift in Sources */,
+				AB1C70201F4D86390073837E /* ConvertingProcess.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				AB04AD041E046A58002D2B40 /* FrameRowView.swift in Sources */,
 				AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* PlayAnimationViewController.swift in Sources */,
 				ABD680771DB8EBB200A4735E /* StringExtension.swift in Sources */,
-				AB63E5A71E2CF85E008B0B18 /* PreferencesRadioWithTextFieldCellView.swift in Sources */,
 				ABF4090F1DA9BB5800B0D373 /* ExecutableProcess.swift in Sources */,
 				ABD239071E2A4889008E9016 /* PreferencesComboWithTextField.swift in Sources */,
 				ABB3FDBC1E2975D000CAD483 /* NSTableCellViewExtension.swift in Sources */,
 				ABC999531E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift in Sources */,
 				AB7B53D51DF983D2005C8539 /* DropHintViewController.swift in Sources */,
 				AB63E5AD1E2D0C29008B0B18 /* PreferencesTextFieldCellView.swift in Sources */,
-				AB1900901E2E5481000E2ADE /* PreferencesTextFieldWithStepperCellView.swift in Sources */,
 				AB2D0ABB1DC95A7500F3B425 /* DragAndDropValidator.swift in Sources */,
 				AB36BB411DB17AA3001F4DDD /* Path.swift in Sources */,
 				ABABA26D1DF77A3600A90962 /* SideBarViewController.swift in Sources */,
@@ -781,8 +739,8 @@
 				ABB3FDB81E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift in Sources */,
 				AB63E5B11E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift in Sources */,
 				ABD239051E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift in Sources */,
+				AB1C70211F4D86390073837E /* OptimizationProcess.swift in Sources */,
 				ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */,
-				AB1900921E2E557F000E2ADE /* PreferencesTextFieldWithStepper.swift in Sources */,
 				ABD2390B1E2A4959008E9016 /* PreferencesColorPicker.swift in Sources */,
 				ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
@@ -792,9 +750,7 @@
 				AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */,
 				AB702A5F1E0F283F003E8FD5 /* Strip.swift in Sources */,
 				ABB54AB01E09951A00779F50 /* AssemblyProcess.swift in Sources */,
-				AB7B53CC1DF865E6005C8539 /* Closure.swift in Sources */,
 				ABF409171DAAF35000B0D373 /* Command.swift in Sources */,
-				ABD239031E2A4847008E9016 /* PreferencesDelay.swift in Sources */,
 				AB7B53C81DF831D4005C8539 /* NSViewControllerExtension.swift in Sources */,
 				ABF443FD1E02C0D800751DB6 /* ChildViewLayoutCareTaker.swift in Sources */,
 				ABABA26F1DF77A8300A90962 /* ChildContainerViewController.swift in Sources */,
@@ -919,7 +875,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q453Q9XLFV;
+				DEVELOPMENT_TEAM = 7YX3D8UMCU;
 				INFOPLIST_FILE = APNGb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -936,7 +892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q453Q9XLFV;
+				DEVELOPMENT_TEAM = 7YX3D8UMCU;
 				INFOPLIST_FILE = APNGb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

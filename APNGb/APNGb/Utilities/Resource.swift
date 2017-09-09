@@ -17,7 +17,7 @@ struct Resource {
         static let selectFolderToSaveAnimatedImage = "Select directory where animated png will be saved"
         static let defaultToolbarLoggingMessage = "Idle..."
         static let size = "Size"
-        static let delay = "Delay"
+        static let framesDelay = "Frames delay"
         static let dropAnimatedImageHere = "Drop animated png or gif here"
         static let playback = "Playback"
         static let loops = "Loops"
@@ -31,9 +31,9 @@ struct Resource {
         static let sevenZip = "7zip"
         static let iterations = "iterations"
         static let zopfli = "zopfli"
-        static let allFramesDelay = "All frames delay"
+        static let all = "All"
         static let seconds = "Seconds"
-        static let selectedFramesDelay = "Selected frames delay"
+        static let selected = "Selected"
         static let strip = "Strip"
         static let frame = "Frame"
         static let prefixName = "Prefix name"
@@ -41,6 +41,11 @@ struct Resource {
         static let background = "Background"
         static let notApplicable = "Not Applicable"
         static let color = "Color"
+        static let milliseconds = "milliseconds"
+        static let frames = "frames"
+        static let none = "None"
+        static let vertical = "Vertical"
+        static let horizontal = "Horizontal"
     }
     
     struct Directory {

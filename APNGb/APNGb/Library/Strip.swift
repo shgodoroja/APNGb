@@ -11,13 +11,13 @@ import Cocoa
 final class Strip: NSObject, CommandArgumentable {
 
     var orientation = String.empty
-    var numberOfFrames = 0
+    var frameCount = 0
     
     // MARK: - CommandArgumentable
     
     func validated() -> Bool {
         
-        if numberOfFrames == 0 {
+        if frameCount == 0 {
             return false
         }
         
@@ -29,6 +29,6 @@ final class Strip: NSObject, CommandArgumentable {
     }
     
     func arguments() -> [String] {
-        return [orientation + "\(numberOfFrames)"]
+        return [orientation + "\(frameCount)"]
     }
 }

@@ -13,4 +13,12 @@ final class PreferencesColorPicker: PreferencesOption {
     var title = String.empty
     var selected = false
     var value = NSColor.clear
+    var comboOptions = [String]() {
+        didSet {
+            
+            if let firstOption = comboOptions.first {
+                //comboValue = firstOption
+            }
+        }
+    }
 }

@@ -25,9 +25,9 @@ struct ExecutableProcessFactory {
 
 class ExecutableProcess: NSObject {
     
-    var initialHandler: VoidHandler
+    var initialHandler: (()->())?
     var progressHandler: ((String) -> ())?
-    var terminationHandler: VoidHandler
+    var terminationHandler: (()->())?
     var cancelled = false
     
     private var fileHandle: FileHandle?
