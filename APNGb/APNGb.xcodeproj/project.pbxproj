@@ -12,6 +12,13 @@
 		AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07D1E04B8F70023E528 /* Theme.swift */; };
 		AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */; };
 		AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD0801E04B93D0023E528 /* ViewSize.swift */; };
+		AB11EFE91F65A91D00809490 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFDC1F65A91D00809490 /* Info.plist */; };
+		AB11EFEA1F65A91D00809490 /* assembly.html in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFDE1F65A91D00809490 /* assembly.html */; };
+		AB11EFEB1F65A91D00809490 /* index.css in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFE01F65A91D00809490 /* index.css */; };
+		AB11EFEC1F65A91D00809490 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFE21F65A91D00809490 /* index.html */; };
+		AB11EFED1F65A91D00809490 /* stripHint.html in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFE41F65A91D00809490 /* stripHint.html */; };
+		AB11EFEE1F65A91D00809490 /* app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFE71F65A91D00809490 /* app-icon.png */; };
+		AB11EFEF1F65A91D00809490 /* strip-img-example.png in Resources */ = {isa = PBXBuildFile; fileRef = AB11EFE81F65A91D00809490 /* strip-img-example.png */; };
 		AB1900881E2E3EBB000E2ADE /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1900871E2E3EBB000E2ADE /* Background.swift */; };
 		AB1C70201F4D86390073837E /* ConvertingProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1C701E1F4D86390073837E /* ConvertingProcess.swift */; };
 		AB1C70211F4D86390073837E /* OptimizationProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1C701F1F4D86390073837E /* OptimizationProcess.swift */; };
@@ -93,6 +100,13 @@
 		AB0FD07D1E04B8F70023E528 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Utilities/Theme.swift; sourceTree = "<group>"; };
 		AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerId.swift; path = Utilities/ViewControllerId.swift; sourceTree = "<group>"; };
 		AB0FD0801E04B93D0023E528 /* ViewSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSize.swift; path = Utilities/ViewSize.swift; sourceTree = "<group>"; };
+		AB11EFDC1F65A91D00809490 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB11EFDF1F65A91D00809490 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/assembly.html; sourceTree = "<group>"; };
+		AB11EFE11F65A91D00809490 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = en; path = en.lproj/index.css; sourceTree = "<group>"; };
+		AB11EFE31F65A91D00809490 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/index.html; sourceTree = "<group>"; };
+		AB11EFE51F65A91D00809490 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/stripHint.html; sourceTree = "<group>"; };
+		AB11EFE71F65A91D00809490 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
+		AB11EFE81F65A91D00809490 /* strip-img-example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strip-img-example.png"; sourceTree = "<group>"; };
 		AB1900871E2E3EBB000E2ADE /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Library/Background.swift; sourceTree = "<group>"; };
 		AB1C701E1F4D86390073837E /* ConvertingProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertingProcess.swift; path = Library/ConvertingProcess.swift; sourceTree = "<group>"; };
 		AB1C701F1F4D86390073837E /* OptimizationProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptimizationProcess.swift; path = Library/OptimizationProcess.swift; sourceTree = "<group>"; };
@@ -222,6 +236,45 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		AB11EFDA1F65A91D00809490 /* APNGb.help */ = {
+			isa = PBXGroup;
+			children = (
+				AB11EFDB1F65A91D00809490 /* Contents */,
+			);
+			name = APNGb.help;
+			path = Resources/APNGb.help;
+			sourceTree = "<group>";
+		};
+		AB11EFDB1F65A91D00809490 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				AB11EFDC1F65A91D00809490 /* Info.plist */,
+				AB11EFDD1F65A91D00809490 /* Resources */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		AB11EFDD1F65A91D00809490 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB11EFE01F65A91D00809490 /* index.css */,
+				AB11EFDE1F65A91D00809490 /* assembly.html */,
+				AB11EFE21F65A91D00809490 /* index.html */,
+				AB11EFE41F65A91D00809490 /* stripHint.html */,
+				AB11EFE61F65A91D00809490 /* shrd */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB11EFE61F65A91D00809490 /* shrd */ = {
+			isa = PBXGroup;
+			children = (
+				AB11EFE71F65A91D00809490 /* app-icon.png */,
+				AB11EFE81F65A91D00809490 /* strip-img-example.png */,
+			);
+			path = shrd;
+			sourceTree = "<group>";
+		};
 		AB1CEE6C1E3A58A900072537 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +398,7 @@
 		AB3DF24E1D8E0D590048BE0A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB11EFDA1F65A91D00809490 /* APNGb.help */,
 				AB4B66661E28455600FB979E /* Documents */,
 				AB4B66651E28454600FB979E /* Graphics */,
 				AB4B66641E28453B00FB979E /* Xibs */,
@@ -674,17 +728,24 @@
 			files = (
 				ABBFF1081E26F5690054677B /* apngopt in Resources */,
 				AB4B66761E2856E900FB979E /* PreferencesColorPickerCellView.xib in Resources */,
+				AB11EFED1F65A91D00809490 /* stripHint.html in Resources */,
 				ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */,
+				AB11EFEC1F65A91D00809490 /* index.html in Resources */,
 				AB4B66681E2845F100FB979E /* PreferencesSectionHeaderCellView.xib in Resources */,
+				AB11EFEB1F65A91D00809490 /* index.css in Resources */,
 				AB77D56C1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib in Resources */,
 				AB2C94E11DAEAD7D008DB042 /* apngasm in Resources */,
 				ABBFF10C1E26F8B00054677B /* apng2gif in Resources */,
 				AB2C94E51DAEAD89008DB042 /* apngdis in Resources */,
+				AB11EFE91F65A91D00809490 /* Info.plist in Resources */,
 				AB4B666A1E28485F00FB979E /* PreferencesTextFieldWithHintCellView.xib in Resources */,
 				AB4B666E1E28505600FB979E /* PreferencesCheckboxCellView.xib in Resources */,
+				AB11EFEA1F65A91D00809490 /* assembly.html in Resources */,
 				AB3DF2341D8DDE660048BE0A /* Assets.xcassets in Resources */,
 				ABBFF10E1E26F8B60054677B /* gif2apng in Resources */,
 				AB63E5AF1E2D0C53008B0B18 /* PreferencesTextFieldCellView.xib in Resources */,
+				AB11EFEE1F65A91D00809490 /* app-icon.png in Resources */,
+				AB11EFEF1F65A91D00809490 /* strip-img-example.png in Resources */,
 				AB3DF2371D8DDE660048BE0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +827,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		AB11EFDE1F65A91D00809490 /* assembly.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB11EFDF1F65A91D00809490 /* en */,
+			);
+			name = assembly.html;
+			sourceTree = "<group>";
+		};
+		AB11EFE01F65A91D00809490 /* index.css */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB11EFE11F65A91D00809490 /* en */,
+			);
+			name = index.css;
+			sourceTree = "<group>";
+		};
+		AB11EFE21F65A91D00809490 /* index.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB11EFE31F65A91D00809490 /* en */,
+			);
+			name = index.html;
+			sourceTree = "<group>";
+		};
+		AB11EFE41F65A91D00809490 /* stripHint.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB11EFE51F65A91D00809490 /* en */,
+			);
+			name = stripHint.html;
+			sourceTree = "<group>";
+		};
 		AB3DF2351D8DDE660048BE0A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
