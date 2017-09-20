@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="uuQ-Np-ZUz">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="uuQ-Np-ZUz">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
@@ -20,8 +20,12 @@
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="zos-eb-x8f">
                         <rect key="frame" x="0.0" y="0.0" width="454" height="482"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="cN4-bN-jrj" id="pbJ-hU-n1y"/>
+                        </connections>
                     </splitView>
                     <connections>
+                        <outlet property="splitView" destination="zos-eb-x8f" id="cJG-EE-ndX"/>
                         <segue destination="h6T-qP-VGX" kind="relationship" relationship="splitItems" id="OBM-1C-oOa"/>
                         <segue destination="E0J-FQ-ho1" kind="relationship" relationship="splitItems" id="hIU-Of-nuX"/>
                         <segue destination="0bP-qV-SCN" kind="relationship" relationship="splitItems" id="eaD-RZ-l6h"/>
@@ -42,7 +46,7 @@
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53k-AH-Ztp">
                                 <rect key="frame" x="54" y="424" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="1gg-fq-dF4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="1gg-fq-dF4"/>
                                     <constraint firstAttribute="height" constant="40" id="Rsj-6B-ILO"/>
                                 </constraints>
                                 <buttonCell key="cell" type="squareTextured" title="Assembly" bezelStyle="texturedSquare" image="assembly-default" imagePosition="above" alignment="center" alternateImage="assembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
@@ -54,7 +58,7 @@
                                 <rect key="frame" x="46" y="374" width="65" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BDv-t1-gX1"/>
-                                    <constraint firstAttribute="width" constant="65" id="aru-wQ-SLQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="aru-wQ-SLQ"/>
                                 </constraints>
                                 <buttonCell key="cell" type="squareTextured" title="Disassembly" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="above" alignment="center" alternateImage="disassembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
@@ -64,7 +68,7 @@
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gNw-Jz-h62">
                                 <rect key="frame" x="54" y="324" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="2AJ-1b-0bW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="2AJ-1b-0bW"/>
                                     <constraint firstAttribute="height" constant="40" id="hkH-VK-jYO"/>
                                 </constraints>
                                 <buttonCell key="cell" type="squareTextured" title="Optimize" bezelStyle="texturedSquare" image="optimize-default" imagePosition="above" alignment="center" alternateImage="optimize-selected" imageScaling="proportionallyDown" inset="2" id="tU0-dt-URZ">
@@ -76,7 +80,7 @@
                                 <rect key="frame" x="56" y="274" width="45" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hGK-ty-SjP"/>
-                                    <constraint firstAttribute="width" constant="45" id="mfH-8C-i8q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="mfH-8C-i8q"/>
                                 </constraints>
                                 <buttonCell key="cell" type="squareTextured" title="Convert" bezelStyle="texturedSquare" image="convert-default" imagePosition="above" alignment="center" alternateImage="convert-selected" imageScaling="proportionallyDown" inset="2" id="pQQ-ru-sMb">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
@@ -213,6 +217,9 @@
                                 <outlet property="startStopButton" destination="B9Q-ns-ZwB" id="r6C-Hs-1l2"/>
                             </connections>
                         </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="uuQ-Np-ZUz" id="DM6-EB-FAY"/>
+                        </connections>
                     </window>
                     <connections>
                         <outlet property="actionToolbar" destination="hUX-qP-2UX" id="uLH-7k-UmW"/>
