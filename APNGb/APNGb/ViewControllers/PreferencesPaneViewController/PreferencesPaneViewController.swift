@@ -78,7 +78,7 @@ class ImageOption: NSObject, ParameterProtocol {
 
 class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Parameterizable {
     
-    dynamic var preferencesProperties = [ParameterProtocol]()
+    @objc dynamic var preferencesProperties = [ParameterProtocol]()
     
     private(set) var sceneIdentifier = MainScene.UnknownScene
     
@@ -119,7 +119,7 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let preferencesProperty = preferencesProperties[row]
         let cellClassObject = self.preferencesTableCellView(forPreferencesProperty: preferencesProperty)
-        var cell = tableView.make(withIdentifier: cellClassObject.reuseIdentifier(),
+        var cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellClassObject.reuseIdentifier()),
                                   owner: self)
         if cell == nil {
             cell = cellClassObject.loadNib(withOwner: self)
@@ -153,7 +153,7 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
         }
     }
     
-    func updateConvertPreferencesPane(notification: Notification) {
+    @objc func updateConvertPreferencesPane(notification: Notification) {
         
         if let fileExtension = notification.object as? String {
             

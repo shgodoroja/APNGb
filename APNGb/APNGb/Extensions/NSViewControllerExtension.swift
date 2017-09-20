@@ -41,7 +41,7 @@ extension NSViewController {
     /// - Returns: View controller identified by storyboard identifier or `nil` if
     /// no view controller was associated with that identifier.
     func showChildViewController(withIdentifier identifier: String) -> NSViewController? {
-        let loadedController = storyboard?.instantiateController(withIdentifier: identifier)
+        let loadedController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: identifier))
         
         if loadedController is NSViewController {
             let childViewController = loadedController as! NSViewController

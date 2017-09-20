@@ -92,7 +92,7 @@ class DirectoryManager {
                                                             withIntermediateDirectories: true,
                                                             attributes: nil)
                     #if DEBUG
-                        NSWorkspace.shared().open(directoryUrl)
+                        NSWorkspace.shared.open(directoryUrl)
                     #endif
                 } catch let error {
                     NSLog("\(#function): \(error)")

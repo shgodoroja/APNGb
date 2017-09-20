@@ -44,7 +44,7 @@ final class ActionToolbar: NSToolbar {
     func taskDone() {
         self.setInProgressMode(false)
         progressStatus = .Success
-        startStopButton.state = NSOnState
+        startStopButton.state = NSControl.StateValue.on
         loggingLabel.stringValue = Resource.String.defaultToolbarLoggingMessage
     }
     
@@ -52,7 +52,7 @@ final class ActionToolbar: NSToolbar {
     
     @IBAction func onStartStopButtomPress(sender: NSButton) {
         
-        if sender.state == NSOnState {
+        if sender.state == NSControl.StateValue.on {
             
             if actionDelegate?.actionWillStop() == true {
                 self.setInProgressMode(false)

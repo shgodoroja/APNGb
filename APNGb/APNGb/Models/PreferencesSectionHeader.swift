@@ -10,5 +10,5 @@ import Cocoa
 
 final class PreferencesSectionHeader: PreferencesMockOption {
     
-    var title = String.empty
+    @objc var title = String.empty
 }

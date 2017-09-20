@@ -10,6 +10,6 @@ import Cocoa
 
 final class PreferencesTextField: PreferencesOption {
     
-    var title = String.empty
-    var value = String.empty
+    @objc var title = String.empty
+    @objc var value = String.empty
 }

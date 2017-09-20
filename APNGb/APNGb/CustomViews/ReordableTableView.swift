@@ -20,7 +20,7 @@ class ReordableTableView: NSTableView {
         didSet {
             
             if let pasteboardDeclaredType = pasteboardDeclaredType {
-                self.register(forDraggedTypes: [pasteboardDeclaredType])
+                self.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: pasteboardDeclaredType)])
             }
         }
     }
@@ -31,8 +31,8 @@ class ReordableTableView: NSTableView {
         let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes)
         
         if let pasteboardDeclaredType = pasteboardDeclaredType {
-            pasteboard.declareTypes([pasteboardDeclaredType], owner: self)
-            pasteboard.setData(data, forType: pasteboardDeclaredType)
+            pasteboard.declareTypes([NSPasteboard.PasteboardType(rawValue: pasteboardDeclaredType)], owner: self)
+            pasteboard.setData(data, forType: NSPasteboard.PasteboardType(rawValue: pasteboardDeclaredType))
         } else {
             debugPrint("\(#function): Pasteboard declared type is nil")
         }
@@ -40,7 +40,7 @@ class ReordableTableView: NSTableView {
         return true
     }
     
-    func validateDrop(validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+    func validateDrop(validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
         
         if dropOperation == .above {
             return .move
@@ -49,11 +49,11 @@ class ReordableTableView: NSTableView {
         }
     }
     
-    func acceptDrop(info: NSDraggingInfo, forTableView tableView: NSTableView, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+    func acceptDrop(info: NSDraggingInfo, forTableView tableView: NSTableView, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
         let pasteboard = info.draggingPasteboard()
         
         if let pasteboardDeclaredType = pasteboardDeclaredType {
-            let pasteboardData = pasteboard.data(forType: pasteboardDeclaredType)
+            let pasteboardData = pasteboard.data(forType: NSPasteboard.PasteboardType(rawValue: pasteboardDeclaredType))
             
             if let pasteboardData = pasteboardData {
                 

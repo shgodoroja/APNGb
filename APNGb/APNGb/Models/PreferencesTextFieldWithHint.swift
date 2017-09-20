@@ -10,9 +10,9 @@ import Cocoa
 
 final class PreferencesTextFieldWithHint: PreferencesOption {
     
-    var title = String.empty
-    var hint = String.empty
-    var value = 0
+    @objc var title = String.empty
+    @objc var hint = String.empty
+    @objc var value = 0
     
     override func setNilValueForKey(_ key: String) {
         

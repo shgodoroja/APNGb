@@ -105,10 +105,10 @@ class SideBarItemGroup: NSObject {
             self.delegate?.presentScene(withIdentifier: selectedScene)
             
             for item in items {
-                item.state = NSOffState
+                item.state = NSControl.StateValue.off
             }
             
-            item.state = NSOnState
+            item.state = NSControl.StateValue.on
         }
     }
 }

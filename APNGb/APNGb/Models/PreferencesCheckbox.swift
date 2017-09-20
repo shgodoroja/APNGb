@@ -10,8 +10,8 @@ import Cocoa
 
 final class PreferencesCheckbox: PreferencesOption {
 
-    var title = String.empty
-    var selected = false
+    @objc var title = String.empty
+    @objc var selected = false
     
     override func getValue() -> String? {
         return String(selected)

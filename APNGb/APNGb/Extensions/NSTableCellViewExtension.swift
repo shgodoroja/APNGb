@@ -11,12 +11,13 @@ import Cocoa
 extension NSTableCellView {
     
     class func loadNib(withOwner owner: Any?) -> NSTableCellView? {
-        var topLevelObjects: NSArray? = []
+        
+        var topLevelObjects: NSArray? = nil
         let nibName = String(describing: self)
-        let cellViewNib = NSNib.init(nibNamed: nibName,
+        let cellViewNib = NSNib.init(nibNamed: NSNib.Name(rawValue: nibName),
                                      bundle: nil)
         cellViewNib?.instantiate(withOwner: owner,
-                                 topLevelObjects: &topLevelObjects!)
+                                 topLevelObjects: &topLevelObjects)
         
         if let topLevelObjects = topLevelObjects {
             

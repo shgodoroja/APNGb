@@ -26,8 +26,8 @@ final class DragAndDropView: NSView {
     
     required init?(coder: NSCoder) {
         validator = DragAndDropValidator()
-        super.init(coder: coder)
-        self.register(forDraggedTypes: [NSFilenamesPboardType])
+        super.init(coder: coder)        
+        self.registerForDraggedTypes([validator.NSFilenamesPboardType])
     }
     
     // MARK: - NSDraggingDestination

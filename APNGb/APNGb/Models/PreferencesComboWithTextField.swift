@@ -10,10 +10,10 @@ import Cocoa
 
 final class PreferencesComboWithTextField: PreferencesOption {
     
-    var hint = String.empty
-    var value = 0
-    var comboValue = String.empty
-    var comboOptions = [String]() {
+    @objc var hint = String.empty
+    @objc var value = 0
+    @objc var comboValue = String.empty
+    @objc var comboOptions = [String]() {
         didSet {
             
             if let firstOption = comboOptions.first {

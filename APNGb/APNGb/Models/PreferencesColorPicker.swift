@@ -10,10 +10,10 @@ import Cocoa
 
 final class PreferencesColorPicker: PreferencesOption {
     
-    var title = String.empty
-    var selected = false
-    var value = NSColor.clear
-    var comboOptions = [String]() {
+    @objc var title = String.empty
+    @objc var selected = false
+    @objc var value = NSColor.clear
+    @objc var comboOptions = [String]() {
         didSet {
             
             if let firstOption = comboOptions.first {

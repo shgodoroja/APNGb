@@ -20,7 +20,7 @@ final class FrameListTableViewDataSource: NSObject, NSTableViewDataSource  {
         }
     }
     
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
         
         if let reordableTableView = tableView as? ReordableTableView {
             return reordableTableView.validateDrop(validateDrop: info,
@@ -31,7 +31,7 @@ final class FrameListTableViewDataSource: NSObject, NSTableViewDataSource  {
         }
     }
     
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
         
         if let reordableTableView = tableView as? ReordableTableView {
             return reordableTableView.acceptDrop(info: info,

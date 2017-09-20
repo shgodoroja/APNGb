@@ -10,11 +10,11 @@ import Cocoa
 
 struct Theme {
     
-    private static let workingPaneColor = NSColor(colorLiteralRed: 246 / 255,
+    private static let workingPaneColor = NSColor(red: 246 / 255,
                                                   green: 246 / 255,
                                                   blue: 246 / 255,
                                                   alpha: 1.0)
-    private static let selectedCellBorderColor = NSColor(colorLiteralRed: 22 / 255,
+    private static let selectedCellBorderColor = NSColor(red: 22 / 255,
                                                          green: 127 / 255,
                                                          blue: 249 / 255,
                                                          alpha: 0.3)

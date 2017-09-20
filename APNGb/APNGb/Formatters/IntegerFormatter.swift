@@ -40,7 +40,7 @@ final class IntegerFormatter: NumberFormatter {
         if partialString.isInt() {
             return true
         } else {
-            NSBeep()
+            NSSound.beep()
             return false
         }
     }

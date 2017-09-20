@@ -10,7 +10,7 @@ import Cocoa
 
 final class FrameListViewController: NSViewController, DragAndDropDelegate, ReordableTableViewDelegate, Parameterizable {
     
-    dynamic var animatedImageFrames = [AnimatedImageFrame]()
+    @objc dynamic var animatedImageFrames = [AnimatedImageFrame]()
     
     private var tableViewDelegate: FrameListTableViewDelegate
     private var tableViewDataSource: FrameListTableViewDataSource

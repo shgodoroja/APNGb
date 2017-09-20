@@ -12,7 +12,8 @@ struct DragAndDropValidator {
     
     var imageTypeIsValid = false
     var allowedFileTypes = [String]()
-    
+    let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
+
     mutating func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         
         if isImageTypeAllowed(drag: sender) {

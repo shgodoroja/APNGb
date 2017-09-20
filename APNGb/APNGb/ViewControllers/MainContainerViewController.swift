@@ -48,7 +48,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
     
     func actionWillStart() -> Bool {
         
-        if let mainViewController = NSApplication.shared().mainWindow?.windowController as? MainWindowController {
+        if let mainViewController = NSApplication.shared.mainWindow?.windowController as? MainWindowController {
             let actionToolbar = mainViewController.actionToolbar
             let sceneIdentifier = preferencesPaneViewController?.sceneIdentifier
             var executable = CommandExecutable.none
@@ -196,8 +196,8 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
         openPanel.allowsMultipleSelection = false
         openPanel.beginSheetModal(for: self.view.window!,
                                   completionHandler: { response in
-                                    
-                                    if response == NSFileHandlingPanelOKButton {
+
+                                    if response == NSApplication.ModalResponse.OK {
                                         let destinationDirectoryUrl = openPanel.urls[0]
                                         onOkButtonPressed(destinationDirectoryUrl)
                                     } else {
