@@ -1,6 +1,7 @@
 ![header-logo](https://cloud.githubusercontent.com/assets/2619031/21511755/0dcd98dc-cca5-11e6-86bf-d5b07a477523.png)
+<p align="center">Over 6.5k downloads [1] :tada:</p>
 
-APNGb 2.0.1 (Over 6.5k downloads [1])
+APNGb 2.0.1
 =====
 APNGb is a macOS app which creates animated png from a series of png frames and disassembles animated png into a series of png frames. Assembling has optimization and compression capabilities, option to change frame delay for all or selected frames, playback options. See `Assembling feature` and `Disassembling feature` sections for more details. App supports macOS 10.11 and above.
 
