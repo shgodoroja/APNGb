@@ -14,16 +14,14 @@
 /// - PreferencesPane: PreferencesPaneViewController identifier.
 /// - FrameList: FrameListViewController identifier.
 /// - PlayAnimation: PlayAnimationViewController identifier.
-/// - DropHint: DropHintViewController identifier.
 /// - Unknown: Default value if view controller doesn't have an identifier.
 enum ViewControllerId: Int {
     case SideBar
     case ChildContainer
     case PreferencesPane
-    case FrameList
-    case PlayAnimation
-    case DropHint
-    case Unknown = 999
+    case ImageList
+    case PreviewImage
+    case Unknown
 }
 
 extension ViewControllerId {
@@ -41,14 +39,12 @@ extension ViewControllerId {
     ///  has a valid identifier, else returns an empty string.
     func storyboardVersion() -> String {
         switch self {
-        case .PlayAnimation:
-            return "playanimation.view"
-        case .FrameList:
-            return "framelist.view"
+        case .PreviewImage:
+            return "previewimage.view"
+        case .ImageList:
+            return "imagelist.view"
         case .PreferencesPane:
             return "preferencespane.view"
-        case .DropHint:
-            return "drophint.view"
         case .ChildContainer:
             return "childcontainer.view"
         default:

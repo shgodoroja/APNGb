@@ -80,10 +80,10 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
     
     @objc dynamic var preferencesProperties = [ParameterProtocol]()
     
-    private(set) var sceneIdentifier = MainScene.UnknownScene
+    private(set) var scene = Scene.Unknown
     
     @IBOutlet private var tableView: NSTableView!
-    @IBOutlet private var tableViewHintTextField: NSTextField!
+    @IBOutlet private var tableViewHint: NSTextField!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -101,18 +101,20 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
         self.applyStyle()
     }
     
-    func showPreferencesForScene(withIdentifier identifier: MainScene) {
-        sceneIdentifier = identifier
+    func showPreferences(forScene scene: Scene) {
+        self.scene = scene
         preferencesProperties.removeAll()
         
         let tableViewDataProvider = PreferencesPaneTableViewDataProvider()
-        let preferences = tableViewDataProvider.preferencesPropertiesForScene(forIdentifier: identifier)
+        let preferences = tableViewDataProvider.preferencesProperties(forScene: scene)
         preferencesProperties.append(contentsOf: preferences)
         
         if preferencesProperties.isEmpty {
-            tableViewHintTextField.stringValue = Resource.String.notApplicable
+            tableViewHint.stringValue = Resource.String.notApplicable
+            tableView.isHidden = true
         } else {
-            tableViewHintTextField.stringValue = String.empty
+            tableViewHint.stringValue = String.empty
+            tableView.isHidden = false
         }
     }
         
@@ -159,9 +161,9 @@ class PreferencesPaneViewController: NSViewController, NSTableViewDelegate, Para
             
             if fileExtension == FileExtension.apng ||
                fileExtension == FileExtension.png {
-                self.showPreferencesForScene(withIdentifier: .ConvertApngScene)
+                self.showPreferences(forScene: .ConvertApng)
             } else if fileExtension == FileExtension.gif {
-                self.showPreferencesForScene(withIdentifier: .ConvertGifScene)
+                self.showPreferences(forScene: .ConvertGif)
             }
         }
     }

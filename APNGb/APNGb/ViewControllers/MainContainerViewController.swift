@@ -32,16 +32,9 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
     
     // MARK: - ScenePresentable
     
-    func presentScene(withIdentifier identifier: MainScene) {
-        childContainerViewController?.addChildViewControllerForScene(withIdentifier: identifier)
-
-        if identifier == .ConvertScene {
-            // Pass unknown identifier. When animated image will be dropped, depend on it's 
-            // extension (gif or png/apng) preferences will be displayed.
-            preferencesPaneViewController?.showPreferencesForScene(withIdentifier: .UnknownScene)
-        } else {
-            preferencesPaneViewController?.showPreferencesForScene(withIdentifier: identifier)
-        }
+    func present(scene: Scene) {
+        childContainerViewController?.addChildViewController(forScene: scene)
+        preferencesPaneViewController?.showPreferences(forScene: scene)
     }
     
     // MARK: ActionToolbarDelegate
@@ -50,21 +43,21 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
         
         if let mainViewController = NSApplication.shared.mainWindow?.windowController as? MainWindowController {
             let actionToolbar = mainViewController.actionToolbar
-            let sceneIdentifier = preferencesPaneViewController?.sceneIdentifier
+            let scene = preferencesPaneViewController?.scene
             var executable = CommandExecutable.none
             
             // 1.
             
-            switch sceneIdentifier! {
-            case .AssemblyScene:
+            switch scene! {
+            case .Assembly:
                 executable = .assembly
-            case .DisassemblyScene:
+            case .Disassembly:
                 executable = .disassembly
-            case .OptimizeScene:
+            case .Optimize:
                 executable = .optimize
-            case .ConvertApngScene:
+            case .ConvertApng:
                 executable = .convertApng
-            case .ConvertGifScene:
+            case .ConvertGif:
                 executable = .convertGif
             default:
                 executable = .none
@@ -135,11 +128,11 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
     // MARK: - Private
     
     private func presentInitialChildViewControllers() {
-        presentScene(withIdentifier: .AssemblyScene)
+        present(scene: .Assembly)
     }
     
     private func setupChildViewControllers() {
-        let viewLayoutCareTaker = MainContainerViewLayoutCareTaker()
+        let viewLayout = MainContainerViewLayout()
         
         for childViewController in self.childViewControllers {
             
@@ -149,10 +142,10 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                 if let view = sideBarViewController?.view {
                     
                     if let superview = view.superview {
-                        viewLayoutCareTaker.updateLayoutOf(view,
-                                                           withIdentifier: .SideBar,
-                                                           superview: superview,
-                                                           andSiblingView: nil)
+                        viewLayout.update(view,
+                                          withIdentifier: .SideBar,
+                                          superview: superview,
+                                          andSiblingView: nil)
                     }
                 }
                 
@@ -163,10 +156,10 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                 if let view = childContainerViewController?.view {
                     
                     if let superview = view.superview {
-                        viewLayoutCareTaker.updateLayoutOf(view,
-                                                           withIdentifier: .ChildContainer,
-                                                           superview: superview,
-                                                           andSiblingView: sideBarViewController?.view)
+                        viewLayout.update(view,
+                                          withIdentifier: .ChildContainer,
+                                          superview: superview,
+                                          andSiblingView: sideBarViewController?.view)
                     }
                 }
                 
@@ -176,10 +169,10 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                 if let view = preferencesPaneViewController?.view {
                     
                     if let superview = view.superview {
-                        viewLayoutCareTaker.updateLayoutOf(view,
-                                                           withIdentifier: .PreferencesPane,
-                                                           superview: superview,
-                                                           andSiblingView: childContainerViewController?.view)
+                        viewLayout.update(view,
+                                          withIdentifier: .PreferencesPane,
+                                          superview: superview,
+                                          andSiblingView: childContainerViewController?.view)
                     }
                 }
             }
@@ -196,7 +189,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
         openPanel.allowsMultipleSelection = false
         openPanel.beginSheetModal(for: self.view.window!,
                                   completionHandler: { response in
-
+                                    
                                     if response == NSApplication.ModalResponse.OK {
                                         let destinationDirectoryUrl = openPanel.urls[0]
                                         onOkButtonPressed(destinationDirectoryUrl)

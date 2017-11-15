@@ -10,17 +10,17 @@ import Cocoa
 
 final class PreferencesPaneTableViewDataProvider: NSObject {
     
-    func preferencesPropertiesForScene(forIdentifier identifier: MainScene) -> [ParameterProtocol] {
+    func preferencesProperties(forScene scene: Scene) -> [ParameterProtocol] {
         
-        if identifier == .AssemblyScene {
+        if scene == .Assembly {
             return self.assemblySceneProperties()
-        } else if identifier == .DisassemblyScene {
+        } else if scene == .Disassembly {
             return self.disassemblySceneProperties()
-        } else if identifier == .OptimizeScene {
+        } else if scene == .Optimize {
             return self.optimizeSceneProperties()
-        } else if identifier == .ConvertApngScene {
+        } else if scene == .ConvertApng {
             return self.convertApngSceneProperties()
-        } else if identifier == .ConvertGifScene {
+        } else if scene == .ConvertGif {
             return self.convertGifSceneProperties()
         } else {
             return []

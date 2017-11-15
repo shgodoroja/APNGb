@@ -1,5 +1,5 @@
 //
-//  FrameListViewController.swift
+//  ImageListViewController.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 9/18/16.
@@ -8,17 +8,24 @@
 
 import Cocoa
 
-final class FrameListViewController: NSViewController, DragAndDropDelegate, ReordableTableViewDelegate, Parameterizable {
+final class ImageListViewController: NSViewController, DragAndDropDelegate, ReordableTableViewDelegate, Parameterizable {
     
-    @objc dynamic var animatedImageFrames = [AnimatedImageFrame]()
+    var tableHint = String.empty {
+        
+        didSet {
+            tableViewHint.stringValue = tableHint
+        }
+    }
+    
+    @objc var animatedImageFrames = [AnimatedImageFrame]()
     
     private var tableViewDelegate: FrameListTableViewDelegate
     private var tableViewDataSource: FrameListTableViewDataSource
-    private var dropHintViewController: DropHintViewController?
     private let pasteboardDeclaredType = "AnimationFrame"
     
     @IBOutlet private var tableView: ReordableTableView!
     @IBOutlet private var tableViewContainer: NSScrollView!
+    @IBOutlet private var tableViewHint: NSTextField!
     
     required init?(coder: NSCoder) {
         tableViewDelegate = FrameListTableViewDelegate()
@@ -36,34 +43,12 @@ final class FrameListViewController: NSViewController, DragAndDropDelegate, Reor
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addDropHintViewController()
         self.configureTableView()
         self.setDragAndDropDelegate()
     }
     
     @objc private func updateFramesDelay(notification: Notification) {
-        
         tableView.reloadDataKeepingSelection()
-    }
-    
-    private func addDropHintViewController() {
-        let viewLayoutCareTaker = ChildViewLayoutCareTaker()
-        
-        if dropHintViewController == nil {
-            dropHintViewController = showChildViewController(withIdentifier: ViewControllerId.DropHint.storyboardVersion()) as! DropHintViewController?
-            
-            if let view = dropHintViewController?.view {
-                
-                if let superview = view.superview {
-                    viewLayoutCareTaker.updateLayoutOf(view,
-                                                       withIdentifier: ViewControllerId.DropHint,
-                                                       superview: superview,
-                                                       andSiblingView: nil)
-                }
-            }
-            
-            dropHintViewController?.hintMessage = Resource.String.dropFramesHere
-        }
     }
     
     // MARK: - Parameterizable
@@ -136,11 +121,10 @@ final class FrameListViewController: NSViewController, DragAndDropDelegate, Reor
     }
     
     private func setDragAndDropDelegate() {
+        
         if let dragAndDropView = self.view as? DragAndDropView {
             dragAndDropView.delegate = self
             dragAndDropView.allowedFileTypes = [FileExtension.png]
-        } else {
-            debugPrint("\(#function): View controller's view is not a DragAndDropView subclass. Drag & Drop will fail.")
         }
     }
     

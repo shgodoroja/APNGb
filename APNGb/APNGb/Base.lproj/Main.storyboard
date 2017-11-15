@@ -33,7 +33,7 @@
                 </splitViewController>
                 <customObject id="3Lr-fw-Gcx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="-323"/>
+            <point key="canvasLocation" x="-58" y="-324"/>
         </scene>
         <!--Side Bar View Controller-->
         <scene sceneID="rFj-zO-tp7">
@@ -108,7 +108,7 @@
                 </viewController>
                 <customObject id="Acb-Qb-Zyr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370.5" y="-325"/>
+            <point key="canvasLocation" x="357" y="-944"/>
         </scene>
         <!--Child Container View Controller-->
         <scene sceneID="N0A-0z-kMy">
@@ -119,13 +119,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                     <connections>
-                        <segue destination="G7N-NI-mjP" kind="custom" identifier="show.playanimation.view" id="CRo-AX-VTX"/>
                         <segue destination="GTU-ZT-XQF" kind="custom" identifier="show.assembly.view" id="qoe-pZ-xIw"/>
                     </connections>
                 </viewController>
                 <customObject id="SUz-8s-iy2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="-326"/>
+            <point key="canvasLocation" x="667" y="-324"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="4ME-E9-zpU">
@@ -613,14 +612,29 @@ CA
             </objects>
             <point key="canvasLocation" x="-133" y="-649"/>
         </scene>
-        <!--Frame List View Controller-->
+        <!--Image List View Controller-->
         <scene sceneID="4Xv-Nf-bWd">
             <objects>
-                <viewController storyboardIdentifier="framelist.view" id="GTU-ZT-XQF" customClass="FrameListViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imagelist.view" id="GTU-ZT-XQF" customClass="ImageListViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dOV-z9-6Fm" customClass="DragAndDropView" customModule="APNGb" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="402"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Q7L-Go-igl">
+                                <rect key="frame" x="132" y="184" width="166" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bYU-J0-Map"/>
+                                    <constraint firstAttribute="height" constant="35" id="gFf-hS-CKg"/>
+                                </constraints>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Nothing to display" id="gF3-BW-w1g">
+                                    <font key="font" metaFont="systemLight" size="20"/>
+                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </textFieldCell>
+                            </textField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZy-5Q-oUD">
                                 <rect key="frame" x="5" y="0.0" width="420" height="397"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="rVE-yO-sdT">
@@ -686,18 +700,6 @@ CA
                                                                         <binding destination="cpy-ri-QHO" name="value" keyPath="objectValue.displayableSize" id="dd4-UF-gb1"/>
                                                                     </connections>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-AL-8Dj">
-                                                                    <rect key="frame" x="63" y="7" width="323" height="15"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="6Qb-hc-qtr">
-                                                                        <font key="font" metaFont="smallSystem"/>
-                                                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                    <connections>
-                                                                        <binding destination="cpy-ri-QHO" name="value" keyPath="objectValue.displayableDelay" id="eEx-sW-wvj"/>
-                                                                    </connections>
-                                                                </textField>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0La-6Q-Ap7">
                                                                     <rect key="frame" x="397" y="25" width="10" height="10"/>
                                                                     <constraints>
@@ -736,16 +738,18 @@ CA
                             </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Q7L-Go-igl" firstAttribute="centerX" secondItem="dOV-z9-6Fm" secondAttribute="centerX" id="4vf-Yi-W6r"/>
                             <constraint firstAttribute="trailing" secondItem="XZy-5Q-oUD" secondAttribute="trailing" constant="5" id="6vG-za-4wL"/>
                             <constraint firstItem="XZy-5Q-oUD" firstAttribute="top" secondItem="dOV-z9-6Fm" secondAttribute="top" constant="5" id="7aa-fQ-Wnb"/>
                             <constraint firstItem="XZy-5Q-oUD" firstAttribute="leading" secondItem="dOV-z9-6Fm" secondAttribute="leading" constant="5" id="FVf-Wc-jtA"/>
+                            <constraint firstItem="Q7L-Go-igl" firstAttribute="centerY" secondItem="dOV-z9-6Fm" secondAttribute="centerY" id="N7c-9S-Cql"/>
                             <constraint firstAttribute="bottom" secondItem="XZy-5Q-oUD" secondAttribute="bottom" id="SJO-nJ-fiR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="Xgz-sb-e8c"/>
                         <outlet property="tableViewContainer" destination="XZy-5Q-oUD" id="pb4-7b-TdK"/>
-                        <segue destination="fHl-gE-Vab" kind="custom" identifier="show.drophint.view" id="emm-ZJ-pz5"/>
+                        <outlet property="tableViewHint" destination="Q7L-Go-igl" id="qyV-0s-nBY"/>
                     </connections>
                 </viewController>
                 <customObject id="fzl-6v-kKk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -755,49 +759,7 @@ CA
                     </connections>
                 </arrayController>
             </objects>
-            <point key="canvasLocation" x="1053" y="291"/>
-        </scene>
-        <!--Drop Hint View Controller-->
-        <scene sceneID="KaW-aB-SGJ">
-            <objects>
-                <viewController storyboardIdentifier="drophint.view" id="fHl-gE-Vab" customClass="DropHintViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="Kvk-nY-THB">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="403"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="93f-iL-rPb">
-                                <rect key="frame" x="10" y="10" width="440" height="383"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="3Nn-dq-470"/>
-                            </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-X6-nFM">
-                                <rect key="frame" x="101" y="190" width="258" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="Lrg-Ox-Ihn"/>
-                                    <constraint firstAttribute="width" constant="254" id="ssb-Ui-K8E"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="UVB-eI-xHa">
-                                    <font key="font" metaFont="systemLight" size="19"/>
-                                    <color key="textColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="93f-iL-rPb" firstAttribute="leading" secondItem="Kvk-nY-THB" secondAttribute="leading" constant="10" id="6se-b4-60z"/>
-                            <constraint firstItem="fh3-X6-nFM" firstAttribute="centerX" secondItem="93f-iL-rPb" secondAttribute="centerX" id="GB4-ki-hVx"/>
-                            <constraint firstAttribute="trailing" secondItem="93f-iL-rPb" secondAttribute="trailing" constant="10" id="JaT-VS-mWC"/>
-                            <constraint firstItem="fh3-X6-nFM" firstAttribute="centerY" secondItem="93f-iL-rPb" secondAttribute="centerY" id="YGN-8k-KyN"/>
-                            <constraint firstItem="93f-iL-rPb" firstAttribute="top" secondItem="Kvk-nY-THB" secondAttribute="top" constant="10" id="lNG-pe-I4m"/>
-                            <constraint firstAttribute="bottom" secondItem="93f-iL-rPb" secondAttribute="bottom" constant="10" id="sq6-04-gEL"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="hintLabel" destination="fh3-X6-nFM" id="oxr-Kw-I17"/>
-                    </connections>
-                </viewController>
-                <customObject id="ZxJ-aw-P6y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="742" y="904"/>
+            <point key="canvasLocation" x="667" y="349"/>
         </scene>
         <!--Preferences Pane View Controller-->
         <scene sceneID="AV9-YP-hZ2">
@@ -871,15 +833,19 @@ CA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KN-UM-DBD">
-                                <rect key="frame" x="1" y="234" width="293" height="18"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3Ms-iA-rGh">
+                                <rect key="frame" x="73" y="233" width="150" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="KoD-a0-qGd"/>
+                                    <constraint firstAttribute="height" constant="20" id="Otm-mG-vBU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Uf5-sn-aQd"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="BXV-4U-EJR">
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="Nothing to display" drawsBackground="YES" id="obs-ci-Ohb">
                                     <font key="font" metaFont="systemLight" size="14"/>
-                                    <color key="textColor" red="0.64313725490196072" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
                                 </textFieldCell>
                             </textField>
                         </subviews>
@@ -887,15 +853,14 @@ CA
                             <constraint firstAttribute="trailing" secondItem="OsF-of-GoY" secondAttribute="trailing" id="CUo-KM-qGv"/>
                             <constraint firstItem="OsF-of-GoY" firstAttribute="top" secondItem="K8L-uM-tmD" secondAttribute="top" id="Odp-KQ-T43"/>
                             <constraint firstAttribute="bottom" secondItem="OsF-of-GoY" secondAttribute="bottom" id="XeQ-cC-vFm"/>
-                            <constraint firstItem="9KN-UM-DBD" firstAttribute="centerY" secondItem="K8L-uM-tmD" secondAttribute="centerY" id="dLf-1A-eHc"/>
-                            <constraint firstAttribute="trailing" secondItem="9KN-UM-DBD" secondAttribute="trailing" constant="4" id="o7z-09-Oh2"/>
+                            <constraint firstItem="3Ms-iA-rGh" firstAttribute="centerY" secondItem="K8L-uM-tmD" secondAttribute="centerY" id="kBm-2I-Na2"/>
                             <constraint firstItem="OsF-of-GoY" firstAttribute="leading" secondItem="K8L-uM-tmD" secondAttribute="leading" id="sFU-RG-mU7"/>
-                            <constraint firstItem="9KN-UM-DBD" firstAttribute="leading" secondItem="K8L-uM-tmD" secondAttribute="leading" constant="3" id="w37-Uk-ldu"/>
+                            <constraint firstItem="3Ms-iA-rGh" firstAttribute="centerX" secondItem="K8L-uM-tmD" secondAttribute="centerX" id="vpY-dx-Djj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Moc-WH-DjN" id="lJY-DW-G7S"/>
-                        <outlet property="tableViewHintTextField" destination="9KN-UM-DBD" id="6mq-yp-15C"/>
+                        <outlet property="tableViewHint" destination="3Ms-iA-rGh" id="Y2A-rT-j2e"/>
                     </connections>
                 </viewController>
                 <customObject id="h5u-Ac-QUU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -905,12 +870,12 @@ CA
                     </connections>
                 </arrayController>
             </objects>
-            <point key="canvasLocation" x="1223" y="-324.5"/>
+            <point key="canvasLocation" x="660" y="-944"/>
         </scene>
-        <!--Play Animation View Controller-->
+        <!--Preview Image View Controller-->
         <scene sceneID="Hiy-e3-ciK">
             <objects>
-                <viewController storyboardIdentifier="playanimation.view" id="G7N-NI-mjP" customClass="PlayAnimationViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="previewimage.view" id="G7N-NI-mjP" customClass="PreviewImageViewController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="I4c-Vu-esD">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="405"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -931,12 +896,11 @@ CA
                     </view>
                     <connections>
                         <outlet property="destinationWebView" destination="vyU-1t-e5K" id="31X-GG-dch"/>
-                        <segue destination="fHl-gE-Vab" kind="custom" identifier="show.drophint.view" id="IXB-S3-5gF"/>
                     </connections>
                 </viewController>
                 <customObject id="WWv-IQ-OUY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="293"/>
+            <point key="canvasLocation" x="120" y="351"/>
         </scene>
     </scenes>
     <resources>
@@ -952,7 +916,4 @@ CA
         <image name="start" width="18" height="18"/>
         <image name="stop" width="17" height="17"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="IXB-S3-5gF"/>
-    </inferredMetricsTieBreakers>
 </document>

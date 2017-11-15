@@ -13,13 +13,6 @@ final class AnimatedImageFrame: ImageOption {
     var delaySeconds = 1
     var delayFrames = 10
     
-    var displayableDelay: String {
-        
-        get {
-            return Resource.String.delay + String.colon + String.space + String(delaySeconds) + String.slash + String(delayFrames)
-        }
-    }
-    
     var displayableSize: String {
         
         get {

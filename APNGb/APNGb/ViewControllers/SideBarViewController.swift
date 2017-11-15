@@ -29,8 +29,8 @@ class SideBarViewController: NSViewController, ScenePresentable {
     
     // MARK: - ScenePresentable
 
-    func presentScene(withIdentifier identifier: MainScene) {
-        delegate?.presentScene(withIdentifier: identifier)
+    func present(scene: Scene) {
+        delegate?.present(scene: scene)
     }
     
     // MARK: - Private
@@ -46,7 +46,6 @@ class SideBarViewController: NSViewController, ScenePresentable {
         sideBarItemGroup?.addItem(item: disassemblyItemButton)
         sideBarItemGroup?.addItem(item: optimizeItemButton)
         sideBarItemGroup?.addItem(item: convertItemButton)
-        
         sideBarItemGroup?.selectItem(item: assemblyItemButton)
     }
 }

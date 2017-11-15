@@ -1,5 +1,5 @@
 //
-//  MainContainerViewLayoutCareTaker.swift
+//  MainContainerViewLayout.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 12/9/16.
@@ -8,20 +8,20 @@
 
 import Cocoa
 
-protocol ViewLayoutCareTaker {
+protocol ViewLayout {
     
-    func updateLayoutOf(_ view: NSView,
-                        withIdentifier identifier: ViewControllerId,
-                        superview: NSView,
-                        andSiblingView sibling: NSView?)
+    func update(_ view: NSView,
+                withIdentifier identifier: ViewControllerId,
+                superview: NSView,
+                andSiblingView sibling: NSView?)
 }
 
-class MainContainerViewLayoutCareTaker: ViewLayoutCareTaker {
+class MainContainerViewLayout: ViewLayout {
     
-    func updateLayoutOf(_ view: NSView,
-                        withIdentifier identifier: ViewControllerId,
-                        superview: NSView,
-                        andSiblingView sibling: NSView?) {
+    func update(_ view: NSView,
+                withIdentifier identifier: ViewControllerId,
+                superview: NSView,
+                andSiblingView sibling: NSView?) {
         
         switch identifier {
             

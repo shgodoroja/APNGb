@@ -22,60 +22,45 @@ class ChildContainerViewController: NSViewController, SceneContainerable, Parame
         super.viewDidLoad()
     }
     
-    // MARK: - SceneContainerable
+    // MARK: - Private
     
-    func addChildViewControllerForScene(withIdentifier identifier: MainScene) {
-        let viewLayoutCareTaker = ChildContainerViewLayoutCareTaker()
+    func updateHint(forViewController viewController: NSViewController?, withScene scene: Scene) {
         
-        self.removeChildViewControllers()
-        let childViewControllerIdentifier = self.childViewControllerIdentifierForScene(withIdentifier: identifier)
-        currentPresentedViewController = self.showChildViewController(withIdentifier: childViewControllerIdentifier.storyboardVersion())
-        
-        if let viewController = currentPresentedViewController as? PlayAnimationViewController {
-            viewController.config = self.playAnimationViewControllerConfigForScene(withIndentifier: identifier)
-        }
-        
-        if let view = currentPresentedViewController?.view {
+        if let viewController = viewController as? ImageListViewController {
             
-            if let superview = view.superview {
-                viewLayoutCareTaker.updateLayoutOf(view,
-                                                   withIdentifier: childViewControllerIdentifier,
-                                                   superview: superview,
-                                                   andSiblingView: nil)
+            switch scene {
+            case .Assembly:
+                viewController.tableHint = Resource.String.Hint.dropPng
+            case .Disassembly, .Optimize:
+                viewController.tableHint = Resource.String.Hint.dropAnimatedPng
+            case .Convert:
+                viewController.tableHint = Resource.String.Hint.dropAnimatedImage
+            default:
+                viewController.tableHint = String.empty
             }
         }
     }
     
-    func childViewControllerIdentifierForScene(withIdentifier identifier: MainScene) -> ViewControllerId {
-        
-        switch identifier {
-        case .AssemblyScene:
-            return .FrameList
-        case .DisassemblyScene,
-             .OptimizeScene,
-             .ConvertScene:
-            return .PlayAnimation
-        default:
-            return .Unknown
-        }
-    }
+    // MARK: - SceneContainerable
     
-    func playAnimationViewControllerConfigForScene(withIndentifier identifier: MainScene) -> PlayAnimationViewControllerConfig? {
-        let config = PlayAnimationViewControllerConfig()
+    func addChildViewController(forScene scene: Scene) {
         
-        switch identifier {
-        case .DisassemblyScene,
-             .OptimizeScene:
-            config.allowedFileTypes = [FileExtension.apng, FileExtension.png]
-            config.hintMessage = Resource.String.dropAnimatedPngHere
-        case .ConvertScene:
-            config.allowedFileTypes = [FileExtension.apng, FileExtension.png, FileExtension.gif]
-            config.hintMessage = Resource.String.dropAnimatedImageHere
-        default:
-            return nil
+        self.removeChildViewControllers()
+        let childViewControllerIdentifier = ViewControllerId.ImageList
+        currentPresentedViewController = self.showChildViewController(withIdentifier: childViewControllerIdentifier.storyboardVersion())
+        updateHint(forViewController: currentPresentedViewController,
+                   withScene: scene)
+        
+        if let view = currentPresentedViewController?.view {
+            
+            if let superview = view.superview {
+                let viewLayout = ChildContainerViewLayout()
+                viewLayout.update(view,
+                                  withIdentifier: childViewControllerIdentifier,
+                                  superview: superview,
+                                  andSiblingView: nil)
+            }
         }
-        
-        return config
     }
     
     // MARK: - Parameterizable

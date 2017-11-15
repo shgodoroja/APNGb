@@ -11,14 +11,18 @@ import Cocoa
 struct Resource {
     
     struct String {
-        static let dropAnimatedPngHere = "Drop animated png here"
-        static let dropFramesHere = "Drop png frames here"
+        
+        struct Hint {
+            static let dropAnimatedImage = "Drop animated png or gif files here"
+            static let dropAnimatedPng = "Drop animated png files here"
+            static let dropPng = "Drop png files here"
+        }
+        
         static let selectFolderToSaveFrames = "Select directory where png frames will be saved"
         static let selectFolderToSaveAnimatedImage = "Select directory where animated png will be saved"
         static let defaultToolbarLoggingMessage = "Idle..."
         static let size = "Size"
         static let framesDelay = "Frames delay"
-        static let dropAnimatedImageHere = "Drop animated png or gif here"
         static let playback = "Playback"
         static let loops = "Loops"
         static let loopsHint = "0 means infinite loop"
