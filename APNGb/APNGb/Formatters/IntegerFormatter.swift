@@ -23,7 +23,7 @@ extension String {
     }
     
     func numberOfCharacters() -> Int {
-        return self.characters.count
+        return self.count
     }
 }
 

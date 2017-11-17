@@ -12,7 +12,6 @@
 		AB03E0701F72B39800CBAEA8 /* ImageListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD392B1F72AF9C007D0093 /* ImageListTableViewDelegate.swift */; };
 		AB03E0711F72B39A00CBAEA8 /* ImageListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD392A1F72AF9C007D0093 /* ImageListTableViewDataSource.swift */; };
 		AB03E0731F72B45A00CBAEA8 /* FrameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03E0721F72B45900CBAEA8 /* FrameRowView.swift */; };
-		AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
 		AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07D1E04B8F70023E528 /* Theme.swift */; };
 		AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */; };
 		AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD0801E04B93D0023E528 /* ViewSize.swift */; };
@@ -71,6 +70,7 @@
 		ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB54AB31E0AB43A00779F50 /* DirectoryManager.swift */; };
 		ABB75E621E11F250006CEC4B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ABB75E611E11F250006CEC4B /* Credits.rtf */; };
 		ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB75E671E142400006CEC4B /* NSTableViewExtension.swift */; };
+		ABBF31221FBF951300599962 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
 		ABC999531E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC999521E2D863A0034A90A /* PreferencesPaneTableViewDataProvider.swift */; };
 		ABD238F71E2A419A008E9016 /* PreferencesCheckboxCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F61E2A419A008E9016 /* PreferencesCheckboxCellView.swift */; };
 		ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD238F81E2A4206008E9016 /* PreferencesCheckbox.swift */; };
@@ -727,7 +727,6 @@
 				ABB75E681E142400006CEC4B /* NSTableViewExtension.swift in Sources */,
 				AB03E0711F72B39A00CBAEA8 /* ImageListTableViewDataSource.swift in Sources */,
 				ABB3FDB41E2913A800CAD483 /* PreferencesSectionHeader.swift in Sources */,
-				AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */,
 				AB7B53C61DF81023005C8539 /* SideBarItemGroup.swift in Sources */,
 				AB36BB481DB17E24001F4DDD /* Compression.swift in Sources */,
 				AB63E5B31E2D15C7008B0B18 /* PreferencesTextField.swift in Sources */,
@@ -736,6 +735,7 @@
 				ABB3FDBA1E29750B00CAD483 /* PreferencesSectionHeaderCellView.swift in Sources */,
 				AB1C70201F4D86390073837E /* ConvertingProcess.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
+				ABBF31221FBF951300599962 /* MainWindowController.swift in Sources */,
 				AB03E06D1F72B07700CBAEA8 /* AnimatedImageFrame.swift in Sources */,
 				AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,

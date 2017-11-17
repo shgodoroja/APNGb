@@ -44,12 +44,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53k-AH-Ztp">
-                                <rect key="frame" x="54" y="424" width="50" height="40"/>
+                                <rect key="frame" x="46" y="424" width="65" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="1gg-fq-dF4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="1gg-fq-dF4"/>
                                     <constraint firstAttribute="height" constant="40" id="Rsj-6B-ILO"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" title="Assembly" bezelStyle="texturedSquare" image="assembly-default" imagePosition="above" alignment="center" alternateImage="assembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
+                                <buttonCell key="cell" type="squareTextured" title="Assembly" bezelStyle="texturedSquare" image="assembly-default" imagePosition="above" alignment="center" alternateImage="assembly-selected" imageScaling="proportionallyDown" inset="2" id="DXM-Jo-2fV">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
@@ -60,7 +60,7 @@
                                     <constraint firstAttribute="height" constant="40" id="BDv-t1-gX1"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="aru-wQ-SLQ"/>
                                 </constraints>
-                                <buttonCell key="cell" type="squareTextured" title="Disassembly" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="above" alignment="center" alternateImage="disassembly-selected" state="on" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
+                                <buttonCell key="cell" type="squareTextured" title="Disassembly" bezelStyle="texturedSquare" image="disassembly-default" imagePosition="above" alignment="center" alternateImage="disassembly-selected" imageScaling="proportionallyDown" inset="2" id="Rea-wL-fut">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="systemLight" size="10"/>
                                 </buttonCell>
@@ -108,7 +108,7 @@
                 </viewController>
                 <customObject id="Acb-Qb-Zyr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="-944"/>
+            <point key="canvasLocation" x="356.5" y="-944"/>
         </scene>
         <!--Child Container View Controller-->
         <scene sceneID="N0A-0z-kMy">
@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                     <connections>
-                        <segue destination="GTU-ZT-XQF" kind="custom" identifier="show.assembly.view" id="qoe-pZ-xIw"/>
+                        <segue destination="GTU-ZT-XQF" kind="show" identifier="show.imagelist.segue" id="qoe-pZ-xIw"/>
                     </connections>
                 </viewController>
                 <customObject id="SUz-8s-iy2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -904,15 +904,15 @@ CA
         </scene>
     </scenes>
     <resources>
-        <image name="assembly-default" width="25" height="25"/>
-        <image name="assembly-selected" width="25" height="25"/>
+        <image name="assembly-default" width="40" height="40"/>
+        <image name="assembly-selected" width="40" height="40"/>
         <image name="convert-default" width="23" height="23"/>
         <image name="convert-selected" width="23" height="23"/>
         <image name="disassembly-default" width="25" height="25"/>
         <image name="disassembly-selected" width="25" height="25"/>
         <image name="optimize-default" width="25" height="25"/>
         <image name="optimize-selected" width="25" height="25"/>
-        <image name="reorder-cell" width="60" height="60"/>
+        <image name="reorder-cell" width="40" height="40"/>
         <image name="start" width="18" height="18"/>
         <image name="stop" width="17" height="17"/>
     </resources>
