@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,29 +28,16 @@
                     </connections>
                 </textField>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="9Rd-Y3-L1O">
-                    <rect key="frame" x="68" y="11" width="237" height="4"/>
+                    <rect key="frame" x="38" y="11" width="267" height="4"/>
                     <constraints>
                         <constraint firstAttribute="height" id="aGL-TN-YGR"/>
                     </constraints>
                 </box>
-                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-8x-snw">
-                    <rect key="frame" x="36" y="0.0" width="25" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="21" id="2xp-5x-YbH"/>
-                        <constraint firstAttribute="height" constant="21" id="9H3-xq-IxG"/>
-                    </constraints>
-                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QQE-BD-dMr">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="cm8-8x-snw" firstAttribute="leading" secondItem="2ai-iH-IM4" secondAttribute="trailing" constant="5" id="5eY-1d-Chf"/>
                 <constraint firstItem="9Rd-Y3-L1O" firstAttribute="centerY" secondItem="YgX-Qw-j9b" secondAttribute="centerY" id="BWP-Ng-a5f"/>
                 <constraint firstItem="2ai-iH-IM4" firstAttribute="leading" secondItem="YgX-Qw-j9b" secondAttribute="leading" constant="5" id="ClM-vW-VaF"/>
-                <constraint firstItem="9Rd-Y3-L1O" firstAttribute="leading" secondItem="2ai-iH-IM4" secondAttribute="trailing" constant="35" id="NUF-2C-hnR"/>
-                <constraint firstItem="cm8-8x-snw" firstAttribute="centerY" secondItem="YgX-Qw-j9b" secondAttribute="centerY" id="RDA-AR-hD3"/>
+                <constraint firstItem="9Rd-Y3-L1O" firstAttribute="leading" secondItem="2ai-iH-IM4" secondAttribute="trailing" constant="5" id="NUF-2C-hnR"/>
                 <constraint firstAttribute="trailing" secondItem="9Rd-Y3-L1O" secondAttribute="trailing" id="W1f-AE-dHq"/>
                 <constraint firstItem="2ai-iH-IM4" firstAttribute="top" secondItem="YgX-Qw-j9b" secondAttribute="top" constant="5" id="tSg-Uz-seM"/>
                 <constraint firstAttribute="bottom" secondItem="2ai-iH-IM4" secondAttribute="bottom" constant="5" id="w6J-pT-IAN"/>
