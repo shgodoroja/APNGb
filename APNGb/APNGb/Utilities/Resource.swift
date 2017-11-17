@@ -13,9 +13,9 @@ struct Resource {
     struct String {
         
         struct Hint {
-            static let dropAnimatedImage = "Drop animated png or gif files here"
-            static let dropAnimatedPng = "Drop animated png files here"
-            static let dropPng = "Drop png files here"
+            static let dropAnimatedImage = "Drop animated PNGs or GIFs here"
+            static let dropAnimatedPng = "Drop animated PNGs here"
+            static let dropPng = "Drop PNGs here"
         }
         
         static let selectFolderToSaveFrames = "Select directory where png frames will be saved"
