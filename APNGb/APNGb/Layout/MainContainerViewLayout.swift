@@ -12,42 +12,32 @@ protocol ViewLayout {
     
     func update(_ view: NSView,
                 withIdentifier identifier: ViewControllerId,
-                superview: NSView,
-                andSiblingView sibling: NSView?)
+                andSuperview: NSView)
 }
 
 class MainContainerViewLayout: ViewLayout {
     
     func update(_ view: NSView,
                 withIdentifier identifier: ViewControllerId,
-                superview: NSView,
-                andSiblingView sibling: NSView?) {
+                andSuperview superview: NSView) {
         
         switch identifier {
             
         case .SideBar:
             view.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            view.heightAnchor.constraint(equalToConstant: ViewSize.windowHeight).isActive = true
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
             view.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
             view.widthAnchor.constraint(equalToConstant: ViewSize.SideBar.width).isActive = true
         case .ChildContainer:
             view.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            view.heightAnchor.constraint(equalToConstant: ViewSize.windowHeight).isActive = true
-            view.widthAnchor.constraint(equalToConstant: ViewSize.ChildContainer.width).isActive = true
-            
-            if let sibling = sibling {
-                view.leftAnchor.constraint(equalTo: sibling.rightAnchor, constant: ViewSize.splitViewSeparatorWidth).isActive = true
-            }
-            
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+            view.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
+            view.rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
         case .PreferencesPane:
             view.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-            view.heightAnchor.constraint(equalToConstant: ViewSize.windowHeight).isActive = true
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
+            view.leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
             view.widthAnchor.constraint(equalToConstant: ViewSize.Preferences.width).isActive = true
-            
-            if let sibling = sibling {
-                view.leftAnchor.constraint(equalTo: sibling.rightAnchor, constant: ViewSize.splitViewSeparatorWidth).isActive = true
-            }
-            
         default:
             assertionFailure("\(#function): View constraints weren't updated because case wasn't handled")
         }

@@ -57,8 +57,7 @@ class ChildContainerViewController: NSViewController, SceneContainerable, Parame
                 let viewLayout = ChildContainerViewLayout()
                 viewLayout.update(view,
                                   withIdentifier: childViewControllerIdentifier,
-                                  superview: superview,
-                                  andSiblingView: nil)
+                                  andSuperview: superview)
             }
         }
     }

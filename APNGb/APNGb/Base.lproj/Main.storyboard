@@ -18,7 +18,7 @@
                         <splitViewItem id="V98-vg-dIT"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="zos-eb-x8f">
-                        <rect key="frame" x="0.0" y="0.0" width="454" height="482"/>
+                        <rect key="frame" x="0.0" y="0.0" width="634" height="482"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="cN4-bN-jrj" id="pbJ-hU-n1y"/>
@@ -33,7 +33,7 @@
                 </splitViewController>
                 <customObject id="3Lr-fw-Gcx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="-324"/>
+            <point key="canvasLocation" x="32" y="-324"/>
         </scene>
         <!--Side Bar View Controller-->
         <scene sceneID="rFj-zO-tp7">
@@ -636,13 +636,13 @@ CA
                                 </textFieldCell>
                             </textField>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZy-5Q-oUD">
-                                <rect key="frame" x="5" y="0.0" width="420" height="397"/>
+                                <rect key="frame" x="5" y="5" width="420" height="372"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="rVE-yO-sdT">
-                                    <rect key="frame" x="0.0" y="0.0" width="420" height="397"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="420" height="372"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="I3p-KA-ejx" customClass="ReordableTableView" customModule="APNGb" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="420" height="397"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="420" height="372"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -736,17 +736,34 @@ CA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-kG-Bli">
+                                <rect key="frame" x="130" y="382" width="172" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="h5R-fa-BPL"/>
+                                    <constraint firstAttribute="height" constant="15" id="uRb-8V-qNa"/>
+                                </constraints>
+                                <segmentedCell key="cell" controlSize="mini" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="XtN-iL-t11">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <segments>
+                                        <segment label="Manual" width="83" selected="YES"/>
+                                        <segment label="Name" width="81" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Q7L-Go-igl" firstAttribute="centerX" secondItem="dOV-z9-6Fm" secondAttribute="centerX" id="4vf-Yi-W6r"/>
                             <constraint firstAttribute="trailing" secondItem="XZy-5Q-oUD" secondAttribute="trailing" constant="5" id="6vG-za-4wL"/>
-                            <constraint firstItem="XZy-5Q-oUD" firstAttribute="top" secondItem="dOV-z9-6Fm" secondAttribute="top" constant="5" id="7aa-fQ-Wnb"/>
                             <constraint firstItem="XZy-5Q-oUD" firstAttribute="leading" secondItem="dOV-z9-6Fm" secondAttribute="leading" constant="5" id="FVf-Wc-jtA"/>
                             <constraint firstItem="Q7L-Go-igl" firstAttribute="centerY" secondItem="dOV-z9-6Fm" secondAttribute="centerY" id="N7c-9S-Cql"/>
-                            <constraint firstAttribute="bottom" secondItem="XZy-5Q-oUD" secondAttribute="bottom" id="SJO-nJ-fiR"/>
+                            <constraint firstItem="sk4-kG-Bli" firstAttribute="centerX" secondItem="dOV-z9-6Fm" secondAttribute="centerX" id="R4g-zC-r4j"/>
+                            <constraint firstAttribute="bottom" secondItem="XZy-5Q-oUD" secondAttribute="bottom" constant="5" id="SJO-nJ-fiR"/>
+                            <constraint firstItem="sk4-kG-Bli" firstAttribute="top" secondItem="dOV-z9-6Fm" secondAttribute="top" constant="5" id="Sbj-kV-ikd"/>
+                            <constraint firstItem="XZy-5Q-oUD" firstAttribute="top" secondItem="sk4-kG-Bli" secondAttribute="bottom" constant="5" id="TH7-ix-6tF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sortingSegmentControl" destination="sk4-kG-Bli" id="2bf-so-fH1"/>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="Xgz-sb-e8c"/>
                         <outlet property="tableViewContainer" destination="XZy-5Q-oUD" id="pb4-7b-TdK"/>
                         <outlet property="tableViewHint" destination="Q7L-Go-igl" id="qyV-0s-nBY"/>

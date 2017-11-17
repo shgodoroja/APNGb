@@ -144,8 +144,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                     if let superview = view.superview {
                         viewLayout.update(view,
                                           withIdentifier: .SideBar,
-                                          superview: superview,
-                                          andSiblingView: nil)
+                                          andSuperview: superview)
                     }
                 }
                 
@@ -158,8 +157,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                     if let superview = view.superview {
                         viewLayout.update(view,
                                           withIdentifier: .ChildContainer,
-                                          superview: superview,
-                                          andSiblingView: sideBarViewController?.view)
+                                          andSuperview: superview)
                     }
                 }
                 
@@ -171,8 +169,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
                     if let superview = view.superview {
                         viewLayout.update(view,
                                           withIdentifier: .PreferencesPane,
-                                          superview: superview,
-                                          andSiblingView: childContainerViewController?.view)
+                                          andSuperview: superview)
                     }
                 }
             }
