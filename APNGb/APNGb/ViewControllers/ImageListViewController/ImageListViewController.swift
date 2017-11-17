@@ -26,6 +26,7 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     @IBOutlet private var tableView: ReordableTableView!
     @IBOutlet private var tableViewContainer: NSScrollView!
     @IBOutlet private var tableViewHint: NSTextField!
+    @IBOutlet private var sortingPopup: NSPopUpButton!
     
     required init?(coder: NSCoder) {
         tableViewDelegate = FrameListTableViewDelegate()
@@ -103,13 +104,16 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
         
         if animatedImageFrames.count > 0 {
             tableViewContainer.isHidden = false
+            sortingPopup.isHidden = false
         } else {
             tableViewContainer.isHidden = true
+            sortingPopup.isHidden = true
         }
     }
     
     private func configureTableView() {
         tableViewContainer.isHidden = true
+        sortingPopup.isHidden = true
         tableView.reorderDelegate = self
         tableView.pasteboardDeclaredType = pasteboardDeclaredType
         tableView.delegate = tableViewDelegate

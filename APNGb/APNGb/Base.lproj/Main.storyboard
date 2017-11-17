@@ -736,34 +736,38 @@ CA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-kG-Bli">
-                                <rect key="frame" x="130" y="382" width="172" height="15"/>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P0D-5k-cad">
+                                <rect key="frame" x="5" y="382" width="99" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="h5R-fa-BPL"/>
-                                    <constraint firstAttribute="height" constant="15" id="uRb-8V-qNa"/>
+                                    <constraint firstAttribute="height" constant="15" id="9FB-xS-gN3"/>
                                 </constraints>
-                                <segmentedCell key="cell" controlSize="mini" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="XtN-iL-t11">
+                                <popUpButtonCell key="cell" type="push" title="Default sorting" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="TD1-rc-A6e" id="sdf-vK-vZB">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="miniSystem"/>
-                                    <segments>
-                                        <segment label="Manual" width="83" selected="YES"/>
-                                        <segment label="Name" width="81" tag="1"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
+                                    <menu key="menu" id="KIn-Gv-uX1">
+                                        <items>
+                                            <menuItem title="Default sorting" state="on" hidden="YES" id="TD1-rc-A6e"/>
+                                            <menuItem title="Sort by name" id="YEP-JV-MAe"/>
+                                            <menuItem title="Sort by delay" id="xn5-Rk-00p"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Q7L-Go-igl" firstAttribute="centerX" secondItem="dOV-z9-6Fm" secondAttribute="centerX" id="4vf-Yi-W6r"/>
                             <constraint firstAttribute="trailing" secondItem="XZy-5Q-oUD" secondAttribute="trailing" constant="5" id="6vG-za-4wL"/>
+                            <constraint firstItem="P0D-5k-cad" firstAttribute="leading" secondItem="dOV-z9-6Fm" secondAttribute="leading" constant="5" id="Dpd-2s-05D"/>
                             <constraint firstItem="XZy-5Q-oUD" firstAttribute="leading" secondItem="dOV-z9-6Fm" secondAttribute="leading" constant="5" id="FVf-Wc-jtA"/>
                             <constraint firstItem="Q7L-Go-igl" firstAttribute="centerY" secondItem="dOV-z9-6Fm" secondAttribute="centerY" id="N7c-9S-Cql"/>
-                            <constraint firstItem="sk4-kG-Bli" firstAttribute="centerX" secondItem="dOV-z9-6Fm" secondAttribute="centerX" id="R4g-zC-r4j"/>
                             <constraint firstAttribute="bottom" secondItem="XZy-5Q-oUD" secondAttribute="bottom" constant="5" id="SJO-nJ-fiR"/>
-                            <constraint firstItem="sk4-kG-Bli" firstAttribute="top" secondItem="dOV-z9-6Fm" secondAttribute="top" constant="5" id="Sbj-kV-ikd"/>
-                            <constraint firstItem="XZy-5Q-oUD" firstAttribute="top" secondItem="sk4-kG-Bli" secondAttribute="bottom" constant="5" id="TH7-ix-6tF"/>
+                            <constraint firstItem="XZy-5Q-oUD" firstAttribute="top" secondItem="P0D-5k-cad" secondAttribute="bottom" constant="5" id="pB2-Dv-bMB"/>
+                            <constraint firstItem="P0D-5k-cad" firstAttribute="top" secondItem="dOV-z9-6Fm" secondAttribute="top" constant="5" id="tSq-6M-DV7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P0D-5k-cad" secondAttribute="trailing" constant="20" symbolic="YES" id="u9Q-pQ-pip"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sortingSegmentControl" destination="sk4-kG-Bli" id="2bf-so-fH1"/>
+                        <outlet property="sortingPopup" destination="P0D-5k-cad" id="ya8-WG-KeO"/>
                         <outlet property="tableView" destination="I3p-KA-ejx" id="Xgz-sb-e8c"/>
                         <outlet property="tableViewContainer" destination="XZy-5Q-oUD" id="pb4-7b-TdK"/>
                         <outlet property="tableViewHint" destination="Q7L-Go-igl" id="qyV-0s-nBY"/>
