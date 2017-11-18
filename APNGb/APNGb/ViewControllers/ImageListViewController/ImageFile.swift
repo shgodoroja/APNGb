@@ -1,5 +1,5 @@
 //
-//  AnimatedImageFrame.swift
+//  ImageFile.swift
 //  APNGb
 //
 //  Created by Stefan Godoroja on 10/18/16.
@@ -8,21 +8,15 @@
 
 import Cocoa
 
-final class AnimatedImageFrame: ImageOption {
+final class ImageFile: ImageOption {
     
-    var delaySeconds = 1
-    var delayFrames = 10
-    
-    var displayableSize: String {
-        
-        get {
-            return Resource.String.size + String.colon +  String.space + String(size) + String.space + String.kilobyteAbbreviation
-        }
-    }
+    @objc var delay = 100
+    @objc var size: Int
+    @objc var name = String.empty
+    @objc var resource: NSImage
     
     private(set) var path = String.empty
-    private(set) var size: Int
-    private(set) var name = String.empty
+
     
     init(url: NSURL, size: Int) {
         self.size = size
@@ -34,5 +28,7 @@ final class AnimatedImageFrame: ImageOption {
         if let urlAsPath = url.path {
             self.path = urlAsPath
         }
+        
+        self.resource = NSImage(contentsOf: url as URL)!
     }
 }

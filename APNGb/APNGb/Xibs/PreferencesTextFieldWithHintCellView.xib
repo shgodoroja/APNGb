@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
@@ -10,18 +10,18 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <tableCellView identifier="preferences.textfieldwithhind.cellview" id="GgU-AQ-nsu" customClass="PreferencesTextFieldWithHintCellView" customModule="APNGbPro" customModuleProvider="target">
+        <tableCellView identifier="preferences.textfieldwithhind.cellview" id="GgU-AQ-nsu" customClass="PreferencesTextFieldWithHintCellView" customModule="APNGb" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="230" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z1t-WJ-fuy">
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1t-WJ-fuy">
                     <rect key="frame" x="61" y="21" width="35" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="2Uj-sL-XfM"/>
                         <constraint firstAttribute="width" constant="35" id="QxN-Ne-idY"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0" drawsBackground="YES" id="6OY-5F-fcW">
-                        <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="dNT-G7-qRx" customClass="IntegerFormatter" customModule="APNGbPro" customModuleProvider="target"/>
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="dNT-G7-qRx" customClass="IntegerFormatter" customModule="APNGb" customModuleProvider="target"/>
                         <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -34,13 +34,13 @@
                         </binding>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ezd-to-lG7">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ezd-to-lG7">
                     <rect key="frame" x="18" y="21" width="40" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="NbA-wB-xre"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="yit-nO-hQI"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title" id="ttG-pI-gES">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Title" id="ttG-pI-gES">
                         <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -49,7 +49,7 @@
                         <binding destination="GgU-AQ-nsu" name="value" keyPath="objectValue.title" id="amW-YG-GIO"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3vx-LU-lVc">
+                <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vx-LU-lVc">
                     <rect key="frame" x="59" y="4" width="163" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="8ML-Ss-2nG"/>

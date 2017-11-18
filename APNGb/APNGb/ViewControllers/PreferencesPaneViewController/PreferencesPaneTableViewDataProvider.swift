@@ -81,13 +81,12 @@ final class PreferencesPaneTableViewDataProvider: NSObject {
         
         // "Delay" section
         let delayHeader = PreferencesSectionHeader()
-        delayHeader.title = Resource.String.framesDelay
+        delayHeader.title = Resource.String.frameDelay
         preferencesProperties.append(delayHeader)
         
-        let delaySetting = PreferencesComboWithTextField()
-        delaySetting.hint = Resource.String.milliseconds
-        delaySetting.comboOptions = [Resource.String.all,
-                                     Resource.String.selected]
+        let delaySetting = PreferencesTextField()
+        delaySetting.title = Resource.String.milliseconds
+        delaySetting.value = "0"
         preferencesProperties.append(delaySetting)
         
         // "Strip" section

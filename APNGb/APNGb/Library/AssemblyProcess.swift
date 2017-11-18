@@ -23,11 +23,11 @@ final class AssemblyProcess: ExecutableProcess {
             var sourceUrls: [URL] = []
             var destinationUrls: [URL] = []
             let frameName = command.arguments![1]
-            let animatedImageFrames = [AnimatedImageFrame]()
+            let imageFiles = [ImageFile]()
             let workingDirectory = DirectoryManager.shared.workingDirectoryUrl(forCommandExecutable: .assembly)
             
             var frameIndex = 0
-            for frame in animatedImageFrames {
+            for frame in imageFiles {
                 sourceUrls.append(URL(fileURLWithPath: frame.path))
                 
                 let fileNameWithoutExtension = frameName + "\(frameIndex)" + String.dot
@@ -37,7 +37,7 @@ final class AssemblyProcess: ExecutableProcess {
                 
                 let textFileName = fileNameWithoutExtension + FileExtension.txt
                 let textFilePath = workingDirectory?.appendingPathComponent(textFileName).path
-                let contentWithDelayValue = "delay=" + String(frame.delaySeconds) + String.slash + String(frame.delayFrames)
+                let contentWithDelayValue = "delay=" + String(frame.delay)
 
                 FileManager.default.createFile(atPath: textFilePath!,
                                                contents: contentWithDelayValue.data(using: .utf8),

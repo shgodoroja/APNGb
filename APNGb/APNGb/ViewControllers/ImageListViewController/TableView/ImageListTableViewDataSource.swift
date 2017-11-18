@@ -9,7 +9,7 @@
 import Cocoa
 
 final class FrameListTableViewDataSource: NSObject, NSTableViewDataSource  {
-
+    
     func tableView(_ tableView: NSTableView, writeRowsWith rowIndexes: IndexSet, to pboard: NSPasteboard) -> Bool {
         
         if let reordableTableView = tableView as? ReordableTableView {

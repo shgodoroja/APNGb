@@ -17,19 +17,18 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
         }
     }
     
-    @objc var animatedImageFrames = [AnimatedImageFrame]()
     
-    private var tableViewDelegate: FrameListTableViewDelegate
+    @IBOutlet private var tableView: ReordableTableView!
+    @IBOutlet private var tableScrollView: NSScrollView!    
+    @IBOutlet private var imageFilesArrayController: NSArrayController!
+    
     private var tableViewDataSource: FrameListTableViewDataSource
     private let pasteboardDeclaredType = "AnimationFrame"
     
-    @IBOutlet private var tableView: ReordableTableView!
-    @IBOutlet private var tableViewContainer: NSScrollView!
+
     @IBOutlet private var tableViewHint: NSTextField!
-    @IBOutlet private var sortingPopup: NSPopUpButton!
     
     required init?(coder: NSCoder) {
-        tableViewDelegate = FrameListTableViewDelegate()
         tableViewDataSource = FrameListTableViewDataSource()
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self,
@@ -49,13 +48,13 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     }
     
     @objc private func updateFramesDelay(notification: Notification) {
-        tableView.reloadDataKeepingSelection()
+        //tableView.reloadDataKeepingSelection()
     }
     
     // MARK: - Parameterizable
     
     func params() -> [ParameterProtocol] {
-        return animatedImageFrames
+        return imageFilesArrayController.arrangedObjects as! [ImageFile]
     }
     
     // MARK: - DragAndDropImageDelegate
@@ -64,9 +63,9 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
         
         for imagePath in paths {
             let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
-            let droppedImage = AnimatedImageFrame(url: URL(fileURLWithPath: imagePath) as NSURL,
+            let droppedImage = ImageFile(url: URL(fileURLWithPath: imagePath) as NSURL,
                                                   size: imageSizeInKB)
-            animatedImageFrames.append(droppedImage)
+            imageFilesArrayController.addObject(droppedImage)
         }
         
         self.updateUI()
@@ -75,20 +74,17 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     // MARK: - ReordableTableViewDelegate
     
     func moveRow(atIndex soureIndex: Int, toIndex destinationIndex: Int) {
-        let animatedImageFrame = animatedImageFrames[soureIndex]
-        animatedImageFrames.remove(at: soureIndex)
-        animatedImageFrames.insert(animatedImageFrame, at: destinationIndex)
+        let images = imageFilesArrayController.arrangedObjects as! [ImageFile]
+        
+        let animatedImageFrame = images[soureIndex]
+//        images.remove(at: soureIndex)
+//        images.insert(animatedImageFrame, at: destinationIndex)
     }
 
     // MARK: - Delete event
     
-    func delete(_ sender: NSMenuItem) {
-        let selectedRowIndexes = tableView.selectedRowIndexes.reversed()
-        
-        for index in selectedRowIndexes {
-            animatedImageFrames.remove(at: index)
-        }
-        
+    @objc func delete(_ sender: NSMenuItem) {
+        imageFilesArrayController.remove(self)
         self.updateUI()
     }
     
@@ -96,32 +92,27 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     
     private func updateUI() {
         showTableViewIfNeeded()
-        tableView.reloadData()
         self.updateSelectedFramesDelayFieldsAvailability()
     }
 
     private func showTableViewIfNeeded() {
         
-        if animatedImageFrames.count > 0 {
-            tableViewContainer.isHidden = false
-            sortingPopup.isHidden = false
+        if (imageFilesArrayController.arrangedObjects as AnyObject).count > 0 {
+            tableScrollView.isHidden = false
         } else {
-            tableViewContainer.isHidden = true
-            sortingPopup.isHidden = true
+            tableScrollView.isHidden = true
         }
     }
     
     private func configureTableView() {
-        tableViewContainer.isHidden = true
-        sortingPopup.isHidden = true
-        tableView.reorderDelegate = self
-        tableView.pasteboardDeclaredType = pasteboardDeclaredType
-        tableView.delegate = tableViewDelegate
-        tableView.dataSource = tableViewDataSource
+        tableScrollView.isHidden = true
+//        tableView.reorderDelegate = self
+//        tableView.pasteboardDeclaredType = pasteboardDeclaredType
+//        tableView.dataSource = tableViewDataSource
         
-        tableViewDelegate.onSelectionChange = {
-            self.updateSelectedFramesDelayFieldsAvailability()
-        }
+//        tableViewDelegate.onSelectionChange = {
+//            self.updateSelectedFramesDelayFieldsAvailability()
+//        }
     }
     
     private func setDragAndDropDelegate() {
@@ -135,9 +126,9 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     private func updateSelectedFramesDelayFieldsAvailability() {
         var enableDelayFields = false
         
-        if tableView.selectedRowIndexes.count > 0 {
-            enableDelayFields = true
-        }
+//        if tableView.selectedRowIndexes.count > 0 {
+//            enableDelayFields = true
+//        }
         
         NotificationCenter.default.post(name: NSNotification.Name(NotificationIdentifier.enableDelayFields.rawValue),
                                         object: enableDelayFields)

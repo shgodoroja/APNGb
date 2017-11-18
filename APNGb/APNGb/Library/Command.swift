@@ -14,7 +14,7 @@ protocol Reseatable {
     func reset()
 }
 
-/// Store UNIX executables names.
+/// Stores UNIX executables names.
 enum CommandExecutable: String {
     case none = ""
     case assembly = "apngasm"

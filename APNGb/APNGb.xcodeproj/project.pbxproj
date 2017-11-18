@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB03E06D1F72B07700CBAEA8 /* AnimatedImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8EAD1F72B01000975197 /* AnimatedImageFrame.swift */; };
+		AB03E06D1F72B07700CBAEA8 /* ImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8EAD1F72B01000975197 /* ImageFile.swift */; };
 		AB03E06F1F72B39300CBAEA8 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD392C1F72AF9C007D0093 /* ImageListViewController.swift */; };
-		AB03E0701F72B39800CBAEA8 /* ImageListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD392B1F72AF9C007D0093 /* ImageListTableViewDelegate.swift */; };
 		AB03E0711F72B39A00CBAEA8 /* ImageListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD392A1F72AF9C007D0093 /* ImageListTableViewDataSource.swift */; };
-		AB03E0731F72B45A00CBAEA8 /* FrameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03E0721F72B45900CBAEA8 /* FrameRowView.swift */; };
 		AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07D1E04B8F70023E528 /* Theme.swift */; };
 		AB0FD0811E04B93D0023E528 /* ViewControllerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */; };
 		AB0FD0821E04B93D0023E528 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD0801E04B93D0023E528 /* ViewSize.swift */; };
@@ -87,7 +85,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB03E0721F72B45900CBAEA8 /* FrameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FrameRowView.swift; path = APNGb/Cells/FrameRowView.swift; sourceTree = SOURCE_ROOT; };
 		AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
 		AB0FD07D1E04B8F70023E528 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Utilities/Theme.swift; sourceTree = "<group>"; };
 		AB0FD07F1E04B93D0023E528 /* ViewControllerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerId.swift; path = Utilities/ViewControllerId.swift; sourceTree = "<group>"; };
@@ -130,7 +127,7 @@
 		AB77D56B1F4C57430000EC73 /* PreferencesComboWithTextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesComboWithTextFieldCellView.xib; path = Xibs/PreferencesComboWithTextFieldCellView.xib; sourceTree = "<group>"; };
 		AB7B53C51DF81023005C8539 /* SideBarItemGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideBarItemGroup.swift; path = ViewControllers/SideBarItemGroup.swift; sourceTree = "<group>"; };
 		AB7B53C71DF831D4005C8539 /* NSViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSViewControllerExtension.swift; path = Extensions/NSViewControllerExtension.swift; sourceTree = "<group>"; };
-		AB7D8EAD1F72B01000975197 /* AnimatedImageFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimatedImageFrame.swift; path = APNGb/ViewControllers/ImageListViewController/TableView/AnimatedImageFrame.swift; sourceTree = SOURCE_ROOT; };
+		AB7D8EAD1F72B01000975197 /* ImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageFile.swift; path = APNGb/ViewControllers/ImageListViewController/ImageFile.swift; sourceTree = SOURCE_ROOT; };
 		AB89D62B1F727AB900EF7859 /* apngasm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = apngasm; sourceTree = "<group>"; };
 		AB89D62C1F727AB900EF7859 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		AB89D62E1F727AB900EF7859 /* apngopt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = apngopt; sourceTree = "<group>"; };
@@ -170,7 +167,6 @@
 		ABD680761DB8EBB200A4735E /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Extensions/StringExtension.swift; sourceTree = "<group>"; };
 		ABD8C3701DB52D3E00C74183 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoolExtension.swift; path = Extensions/BoolExtension.swift; sourceTree = "<group>"; };
 		ABDD392A1F72AF9C007D0093 /* ImageListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListTableViewDataSource.swift; sourceTree = "<group>"; };
-		ABDD392B1F72AF9C007D0093 /* ImageListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListTableViewDelegate.swift; sourceTree = "<group>"; };
 		ABDD392C1F72AF9C007D0093 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		ABE17F731E2EEEF1008AC636 /* IntegerFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerFormatter.swift; path = Formatters/IntegerFormatter.swift; sourceTree = "<group>"; };
 		ABF0D9B51E0578F0008AF40B /* DragAndDropWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragAndDropWebView.swift; path = CustomViews/DragAndDropWebView.swift; sourceTree = "<group>"; };
@@ -192,10 +188,7 @@
 		AB03E06E1F72B29A00CBAEA8 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				ABDD392B1F72AF9C007D0093 /* ImageListTableViewDelegate.swift */,
 				ABDD392A1F72AF9C007D0093 /* ImageListTableViewDataSource.swift */,
-				AB7D8EAD1F72B01000975197 /* AnimatedImageFrame.swift */,
-				AB03E0721F72B45900CBAEA8 /* FrameRowView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -595,6 +588,7 @@
 		ABDD39291F72AF9C007D0093 /* ImageListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AB7D8EAD1F72B01000975197 /* ImageFile.swift */,
 				ABDD392C1F72AF9C007D0093 /* ImageListViewController.swift */,
 				AB03E06E1F72B29A00CBAEA8 /* TableView */,
 			);
@@ -736,7 +730,7 @@
 				AB1C70201F4D86390073837E /* ConvertingProcess.swift in Sources */,
 				AB2D0AB91DC929C600F3B425 /* DragAndDropView.swift in Sources */,
 				ABBF31221FBF951300599962 /* MainWindowController.swift in Sources */,
-				AB03E06D1F72B07700CBAEA8 /* AnimatedImageFrame.swift in Sources */,
+				AB03E06D1F72B07700CBAEA8 /* ImageFile.swift in Sources */,
 				AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */,
 				AB36BB4A1DB183E3001F4DDD /* FrameDelay.swift in Sources */,
 				AB97CACB1DA1600300A6A272 /* PreviewImageViewController.swift in Sources */,
@@ -755,14 +749,12 @@
 				ABB3FDAB1E28EB2500CAD483 /* PreferencesPaneViewController.swift in Sources */,
 				ABD238F71E2A419A008E9016 /* PreferencesCheckboxCellView.swift in Sources */,
 				AB247E2D1E279F7500B7BA0B /* ReordableTableView.swift in Sources */,
-				AB03E0731F72B45A00CBAEA8 /* FrameRowView.swift in Sources */,
 				ABB3FDB81E2974F100CAD483 /* PreferencesTextFieldWithHintCellView.swift in Sources */,
 				AB63E5B11E2D1542008B0B18 /* PreferencesTextFieldWithHint.swift in Sources */,
 				ABD239051E2A4864008E9016 /* PreferencesComboWithTextFieldCellView.swift in Sources */,
 				AB1C70211F4D86390073837E /* OptimizationProcess.swift in Sources */,
 				ABD238F91E2A4206008E9016 /* PreferencesCheckbox.swift in Sources */,
 				ABD2390B1E2A4959008E9016 /* PreferencesColorPicker.swift in Sources */,
-				AB03E0701F72B39800CBAEA8 /* ImageListTableViewDelegate.swift in Sources */,
 				ABB54AB41E0AB43A00779F50 /* DirectoryManager.swift in Sources */,
 				AB3DF2301D8DDE660048BE0A /* AppDelegate.swift in Sources */,
 				AB36BB441DB17BFF001F4DDD /* Playback.swift in Sources */,
