@@ -132,9 +132,9 @@
                 <windowController id="uuQ-Np-ZUz" customClass="MainWindowController" customModule="APNGb" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="V0b-c1-cUq">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="439"/>
+                        <rect key="contentRect" x="494" y="240" width="650" height="439"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <value key="minSize" type="size" width="650" height="439"/>
                         <toolbar key="toolbar" implicitIdentifier="B1D0AC73-D56C-4A71-9CC0-896AA1796082" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="hUX-qP-2UX" customClass="ActionToolbar" customModule="APNGb" customModuleProvider="target">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="KIA-6c-Vb2"/>
