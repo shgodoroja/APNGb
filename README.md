@@ -62,4 +62,4 @@ License
 
 Notes
 ------
-* Based on Sourceforge and Github Stats.
+\* Based on Sourceforge and Github Stats.
