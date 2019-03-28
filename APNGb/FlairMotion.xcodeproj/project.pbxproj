@@ -662,7 +662,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB3DF2271D8DDE660048BE0A /* Build configuration list for PBXProject "APNGb" */;
+			buildConfigurationList = AB3DF2271D8DDE660048BE0A /* Build configuration list for PBXProject "FlairMotion" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -906,7 +906,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-DDebug";
-				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
+				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.flairmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -924,7 +924,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
+				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.flairmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -934,7 +934,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB3DF2271D8DDE660048BE0A /* Build configuration list for PBXProject "APNGb" */ = {
+		AB3DF2271D8DDE660048BE0A /* Build configuration list for PBXProject "FlairMotion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB3DF2441D8DDE660048BE0A /* Debug */,
