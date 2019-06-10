@@ -134,7 +134,7 @@ final class MainContainerViewController: NSSplitViewController, ScenePresentable
     private func setupChildViewControllers() {
         let viewLayout = MainContainerViewLayout()
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             
             if childViewController is SideBarViewController {
                 sideBarViewController = childViewController as? SideBarViewController
