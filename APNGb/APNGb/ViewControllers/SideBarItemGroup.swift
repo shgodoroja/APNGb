@@ -92,7 +92,7 @@ class SideBarItemGroup: NSObject {
     
     @objc
     private func didClickOn(item: NSButton) {
-        let selectedItemIndex = items.index(of: item)
+        let selectedItemIndex = items.firstIndex(of: item)
         
         if let selectedItemIndex = selectedItemIndex {
             let selectedScene = Scene.at(index: selectedItemIndex)

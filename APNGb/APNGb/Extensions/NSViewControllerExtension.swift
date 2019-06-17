@@ -13,9 +13,9 @@ extension NSViewController {
     /// Removes all child view controllers together with associated views.
     func removeChildViewControllers() {
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             childViewController.view.removeFromSuperview()
-            childViewController.removeFromParentViewController()
+            childViewController.removeFromParent()
         }
     }
     
@@ -25,12 +25,12 @@ extension NSViewController {
     /// `childviewcontrollers` stack.
     func removeChildViewControllersExcept(viewControllers: [NSViewController]) {
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             
             if viewControllers.contains(childViewController) == false {
                 
                 childViewController.view.removeFromSuperview()
-                childViewController.removeFromParentViewController()
+                childViewController.removeFromParent()
             }
         }
     }
@@ -41,11 +41,11 @@ extension NSViewController {
     /// - Returns: View controller identified by storyboard identifier or `nil` if
     /// no view controller was associated with that identifier.
     func showChildViewController(withIdentifier identifier: String) -> NSViewController? {
-        let loadedController = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: identifier))
+        let loadedController = storyboard?.instantiateController(withIdentifier: identifier)
         
         if loadedController is NSViewController {
             let childViewController = loadedController as! NSViewController
-            self.addChildViewController(childViewController)
+            self.addChild(childViewController)
             childViewController.view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(childViewController.view)
             return childViewController

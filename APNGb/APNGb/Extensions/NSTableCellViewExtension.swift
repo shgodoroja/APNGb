@@ -14,7 +14,7 @@ extension NSTableCellView {
         
         var topLevelObjects: NSArray? = nil
         let nibName = String(describing: self)
-        let cellViewNib = NSNib.init(nibNamed: NSNib.Name(rawValue: nibName),
+        let cellViewNib = NSNib.init(nibNamed: nibName,
                                      bundle: nil)
         cellViewNib?.instantiate(withOwner: owner,
                                  topLevelObjects: &topLevelObjects)

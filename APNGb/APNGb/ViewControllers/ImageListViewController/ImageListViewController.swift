@@ -76,7 +76,7 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     func moveRow(atIndex soureIndex: Int, toIndex destinationIndex: Int) {
         let images = imageFilesArrayController.arrangedObjects as! [ImageFile]
         
-        let animatedImageFrame = images[soureIndex]
+        _ = images[soureIndex]
 //        images.remove(at: soureIndex)
 //        images.insert(animatedImageFrame, at: destinationIndex)
     }
@@ -124,7 +124,7 @@ final class ImageListViewController: NSViewController, DragAndDropDelegate, Reor
     }
     
     private func updateSelectedFramesDelayFieldsAvailability() {
-        var enableDelayFields = false
+        let enableDelayFields = false
         
 //        if tableView.selectedRowIndexes.count > 0 {
 //            enableDelayFields = true

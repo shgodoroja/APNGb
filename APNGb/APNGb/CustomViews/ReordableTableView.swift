@@ -50,7 +50,7 @@ class ReordableTableView: NSTableView {
     }
     
     func acceptDrop(info: NSDraggingInfo, forTableView tableView: NSTableView, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
-        let pasteboard = info.draggingPasteboard()
+        let pasteboard = info.draggingPasteboard
         
         if let pasteboardDeclaredType = pasteboardDeclaredType {
             let pasteboardData = pasteboard.data(forType: NSPasteboard.PasteboardType(rawValue: pasteboardDeclaredType))
