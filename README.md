@@ -41,10 +41,8 @@ Then, after processing blend/dispose operations, we finally get a vector of full
 Few app screenshots
 -----
 ![screen shot 2016-12-28 at 02 09 47](https://cloud.githubusercontent.com/assets/2619031/21534538/0464a1a4-cd69-11e6-8422-595f304cbefb.png)
-![screen shot 2016-12-28 at 02 09 58](https://cloud.githubusercontent.com/assets/2619031/21534539/046583b2-cd69-11e6-82fb-a6d5bb5badda.png)
 ![screen shot 2016-12-28 at 02 10 03](https://cloud.githubusercontent.com/assets/2619031/21534540/0465b4b8-cd69-11e6-8c7d-d99f140a50d3.png)
 ![screen shot 2016-12-28 at 02 10 23](https://cloud.githubusercontent.com/assets/2619031/21534541/046616c4-cd69-11e6-8c61-d604cfe38e91.png)
-![screen shot 2016-12-28 at 02 11 15](https://cloud.githubusercontent.com/assets/2619031/21534537/046473aa-cd69-11e6-8fde-35e7a79c307d.png)
 ![screen shot 2016-12-28 at 02 11 48](https://cloud.githubusercontent.com/assets/2619031/21534543/048288f4-cd69-11e6-9d65-0f5877309f78.png)
 ![screen shot 2016-12-28 at 02 11 56](https://cloud.githubusercontent.com/assets/2619031/21534542/0480acdc-cd69-11e6-97b0-aa7b25121990.png)
 
