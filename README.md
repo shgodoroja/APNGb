@@ -1,5 +1,5 @@
 ![header-logo](https://cloud.githubusercontent.com/assets/2619031/21511755/0dcd98dc-cca5-11e6-86bf-d5b07a477523.png)
-<p align="center">~ 9k downloads* :tada:</p>
+<p align="center">Over 11k downloads* :tada:</p>
 
 APNGb 2.0.1 ([Download](https://github.com/shgodoroja/APNGb/releases/download/v2.0.1/APNGb-v2.0.1.app.zip))
 =====
@@ -47,12 +47,6 @@ Few app screenshots
 ![screen shot 2016-12-28 at 02 11 15](https://cloud.githubusercontent.com/assets/2619031/21534537/046473aa-cd69-11e6-8fde-35e7a79c307d.png)
 ![screen shot 2016-12-28 at 02 11 48](https://cloud.githubusercontent.com/assets/2619031/21534543/048288f4-cd69-11e6-9d65-0f5877309f78.png)
 ![screen shot 2016-12-28 at 02 11 56](https://cloud.githubusercontent.com/assets/2619031/21534542/0480acdc-cd69-11e6-97b0-aa7b25121990.png)
-
-TO DO
-------
-* Add unit tests.
-* Convert GIF to APNG.
-* Optimize apng file.
 
 License
 ------
